@@ -78,9 +78,17 @@ body  {
   text-align: center;
 }
 
+.highlight-img  img {
+  width:100%;
+}
+
 .ads-field  {
   background-color:#EEEEEE;
   padding:20px;
+}
+
+.ads-field img  {
+  width:100%;
 }
 
 .gallery-img-1  {
@@ -93,5 +101,9 @@ body  {
 }
 
 .banner-ads-field img {
+  width:100%;
+}
+
+.article-img  {
   width:100%;
 }

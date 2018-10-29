@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="tour-holiday-title">แพ็คเกจเรือสำราญ</h1>
+      <h3 class="tour-holiday-title">แพ็คเกจเรือสำราญ</h3>
     </div>
   </div>
   <div class="row">
