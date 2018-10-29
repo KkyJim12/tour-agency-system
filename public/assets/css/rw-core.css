@@ -1,0 +1,553 @@
+/* Reset */
+.ribbonWrap 
+{
+	position:relative;
+}
+
+/* Basic Colours */
+.rw-static > span:first-child,
+.rw-animate > span:first-child
+{
+	position: relative;
+	padding: 14px;
+	background: #fff; /* Ribbon front colour */
+	color: #000; /* ribbon text colour */
+	display: block;
+	margin-bottom: 0;
+	z-index: 5;
+	border-radius: 0 3px 3px 0;
+	box-shadow: 0px 1px rgba(0,0,0,0.4);
+}
+
+
+.rw-back
+{
+	border-color: #000; /* Ribbon back colour */
+}
+
+/* Ribbon Front */
+.rw-static, 
+.rw-animate
+{
+	margin: 0 -10px 0 -10px;
+	padding-bottom: 10px;
+	display: inline-block;
+	zoom:1; *display: inline; /* IE7 fix for inline-block. IE6 is dead to me */
+	position: relative;
+	overflow:hidden;
+
+}
+
+
+
+.rw-right
+{
+	position: absolute;
+	right: 0;
+}
+
+
+.rw-down
+{
+	padding-bottom: 1px !important;
+	padding-top: 10px !important;
+}
+
+
+.rw-top,
+.rw-bottom,
+.rw-very-top,
+.rw-very-bottom
+{
+	position: absolute;
+}
+
+
+.rw-top
+{
+	top: 10px;
+}
+.rw-very-top
+{
+	top: 0;
+}
+.rw-bottom
+{
+	bottom: 10px;
+}
+.rw-very-botom
+{
+	bottom: 0;
+}
+
+
+.rw-right > span:first-child
+{
+	border-radius: 3px 0 0 3px; 
+}
+
+.rw-rounded > span:first-child 
+{
+	border-radius: 0 30px 30px 0;
+}
+
+.rw-right.rw-rounded > span:first-child
+{
+	border-radius: 30px 0 0 30px;
+}
+
+
+.rw-full-width,
+.rw-player
+{
+	width: 100%;
+	margin: 0;
+	padding: 0 20px 10px 0;
+	margin-left: -10px;
+}
+
+.rw-full-width.rw-right,
+.rw-player.rw-right
+{
+	padding: 0 0 10px 20px;
+	margin-left: 0;
+	margin-right: -10px;
+}
+
+.rw-full-width > span:first-child,
+.rw-player > span:first-child
+{
+	display:block;
+	margin-left: -20px;
+}
+
+.rw-full-width.rw-right > span:first-child,
+.rw-player.rw-right > span:first-child
+{
+	margin-left: 0;
+	margin-right: -20px;
+}
+
+.rw-narrow > span:first-child
+{
+	padding: 10px 14px;
+}
+
+.rw-animate > span:first-child
+{
+	left: -100%;
+}
+
+.rw-animate.rw-right > span:first-child
+{
+	left: 100%;
+	
+}
+
+.ribbonWrap:hover > .rw-full-width > span:first-child,
+.ribbonWrap:hover .rw-player > span:first-child,
+.rw-static.rw-full-width > span:first-child,
+.rw-static.rw-player > span:first-child
+{
+	margin-left: 0;
+	margin-right: -20px;
+}
+
+.ribbonWrap:hover > .rw-full-width.rw-right > span:first-child,
+.ribbonWrap:hover .rw-player.rw-right > span:first-child,
+.rw-static.rw-full-width.rw-right > span:first-child,
+.rw-static.rw-player.rw-right > span:first-child
+{
+	margin-right: 0;
+	margin-left: -20px;
+}
+
+.rw-static > span:first-child, 
+.ribbonWrap:hover > .rw-animate span:first-child,
+.ribbonWrap:hover .rw-player span:first-child
+{
+	left: 0;
+}
+
+.rw-static.rw-right > span:first-child, 
+.ribbonWrap:hover > .rw-animate.rw-right > span:first-child,
+.ribbonWrap:hover .rw-player.rw-right span:first-child
+{
+	right: 0;
+}
+
+
+/* Ribbon Back */
+
+.rw-back
+{
+	display: block;
+	width: 0;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+}
+
+
+
+.rw-back:before
+{
+	left: -10px;
+    bottom: -1px;
+	top: 10px;
+}
+
+
+.rw-back:after
+{
+	top: 0;
+	left: 0;
+	bottom: 9px;
+}
+
+
+.rw-down > .rw-back:after
+{
+	left: -10px;
+}
+
+.rw-right > .rw-back:after
+{
+	left: auto;
+	right: 0;
+	bottom: 11px;
+}
+
+
+.rw-down > .rw-back:before
+{
+	left: 0;
+	bottom: 1px;
+}
+
+.rw-right.rw-down > .rw-back:before
+{
+	left: auto;
+	right: 0;
+}
+
+.rw-right.rw-down > .rw-back:after
+{
+	left: auto;
+	right: -10px;
+}
+
+
+.rw-animate > .rw-back
+{
+	bottom: -10px;
+	left: 10px;
+}
+
+.rw-animate.rw-down > .rw-back
+{
+	bottom: 10px;
+	left: 10px;
+}
+.rw-animate.rw-right > .rw-back
+{
+	right: 10px;
+	left: auto;
+}
+
+
+.ribbonWrap:hover > .rw-animate.rw-right > .rw-back,
+.ribbonWrap:hover .rw-player.rw-right > .rw-back,
+.ribbonWrap > .rw-static.rw-right > .rw-back
+{
+	right: 0;
+	left: auto;
+}
+.ribbonWrap:hover > .rw-animate > .rw-back,
+.ribbonWrap:hover .rw-player > .rw-back,
+.ribbonWrap > .rw-static > .rw-back
+{
+	bottom: 0;
+	left: 0;
+}
+
+.rw-back:before,
+.rw-back:after
+{
+	content: "";
+	display: block;
+	border-width: 10px;
+	border-style: solid;
+	position: absolute;
+	width: 0;
+}
+
+.rw-back:before,
+.rw-right.rw-down > .rw-back:before
+{
+	border-top-color: transparent;
+	border-left-color: transparent;
+	border-bottom-color: transparent;
+	border-right-color: inherit;
+}
+
+.rw-down > .rw-back:before,
+.rw-right > .rw-back:before
+{
+	border-top-color: transparent;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	border-left-color: inherit;
+}
+
+.rw-back:after,
+.rw-right.rw-down > .rw-back:after
+{
+	border-top-color: transparent;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	border-left-color: inherit;
+}
+
+.rw-down > .rw-back:after,
+.rw-right > .rw-back:after
+{
+	border-top-color: transparent;
+	border-left-color: transparent;
+	border-bottom-color: transparent;
+	border-right-color: inherit;
+	
+}
+
+/* Ribbon Transitions */
+
+.rw-animate > span:first-child,
+.ribbonWrap:hover > .rw-animate span:first-child,
+.ribbonWrap:hover .rw-player span:first-child,
+.rw-animate .rw-back
+{
+  -webkit-transition-property: all;
+     -moz-transition-property: all;
+      -ms-transition-property: all;
+       -o-transition-property: all;
+          transition-property: all;
+	-webkit-transition-duration: 0.4s;
+	   -moz-transition-duration: 0.4s;
+	     -o-transition-duration: 0.4s;
+	    -ms-transition-duration: 0.4s;
+	        transition-duration: 0.4s;
+	
+			
+}
+
+.rw-animate.rw-slow > span:first-child,
+.ribbonWrap:hover > .rw-animate.rw-slow span:first-child
+{
+
+	-webkit-transition-duration: 0.6s;
+	   -moz-transition-duration: 0.6s;
+	     -o-transition-duration: 0.6s;
+	    -ms-transition-duration: 0.6s;
+	        transition-duration: 0.6s;
+		
+}
+
+.rw-animate > .rw-back
+{
+		-webkit-transition-delay: 0.4s;
+		   -moz-transition-delay: 0.4s;
+			 -o-transition-delay: 0.4s;
+			-ie-transition-delay: 0.4s;
+				transition-delay: 0.4s;
+}
+.ribbonWrap > .rw-animate.rw-slow > .rw-back
+{
+		-webkit-transition-delay: 0.6s;
+		   -moz-transition-delay: 0.6s;
+			 -o-transition-delay: 0.6s;
+			-ie-transition-delay: 0.6s;
+				transition-delay: 0.6s;
+}
+.ribbonWrap > .rw-animate.rw-fast > .rw-back
+{
+		-webkit-transition-delay: 0.2s;
+		   -moz-transition-delay: 0.2s;
+			 -o-transition-delay: 0.2s;
+			-ie-transition-delay: 0.2s;
+				transition-delay: 0.2s;
+}
+
+
+
+.rw-animate.rw-fast > span:first-child,
+.ribbonWrap:hover > .rw-animate.rw-fast > span:first-child,
+.ribbonWrap > .rw-animate.rw-fast > .rw-back
+{
+
+	-webkit-transition-duration: 0.2s;
+	   -moz-transition-duration: 0.2s;
+	     -o-transition-duration: 0.2s;
+	    -ms-transition-duration: 0.2s;
+	        transition-duration: 0.2s;
+	
+}
+
+
+.ribbonWrap:hover > .rw-animate.rw-slow > .rw-back
+{
+	-webkit-transition-duration: 0.3s;
+	   -moz-transition-duration: 0.3s;
+         -o-transition-duration: 0.3s;
+	    -ms-transition-duration: 0.3s;
+	        transition-duration: 0.3s;
+			
+}
+
+.ribbonWrap:hover  > .rw-animate.rw-fast > .rw-back
+{
+	-webkit-transition-duration: 0.1s;
+	   -moz-transition-duration: 0.1s;
+         -o-transition-duration: 0.1s;
+	    -ms-transition-duration: 0.1s;
+	        transition-duration: 0.1s;
+
+}
+.ribbonWrap:hover > .rw-animate > .rw-back,
+.ribbonWrap:hover .rw-player > .rw-back
+{
+
+		-webkit-transition-delay: 0s;
+		   -moz-transition-delay: 0s;
+			 -o-transition-delay: 0s;
+			-ie-transition-delay: 0s;
+				transition-delay: 0s;
+	
+}
+.ribbonWrap:hover  > .rw-animate > span:first-child,
+.ribbonWrap:hover  .rw-player > span:first-child
+{
+	-webkit-transition-delay: 0.3s;
+	   -moz-transition-delay: 0.3s;
+	     -o-transition-delay: 0.3s;
+	    -ie-transition-delay: 0.3s;
+	        transition-delay: 0.3s;
+}
+.ribbonWrap:hover > .rw-animate.rw-fast > span:first-child
+{
+	-webkit-transition-delay: 0.2s;
+	   -moz-transition-delay: 0.2s;
+	     -o-transition-delay: 0.2s;
+	    -ie-transition-delay: 0.2s;
+	        transition-delay: 0.2s;
+}
+.ribbonWrap:hover > .rw-animate.rw-slow > span:first-child
+{
+	-webkit-transition-delay: 0.3s;
+	   -moz-transition-delay: 0.3s;
+	     -o-transition-delay: 0.3s;
+	    -ie-transition-delay: 0.3s;
+	        transition-delay: 0.3s;
+}
+
+
+
+/* Icons */
+
+.rw-includes-icon span:first-child
+{
+	padding-right: 50px; 
+}
+
+
+a.rw-single-icon,
+.rw-icon-list a
+{
+	width: 32px;
+	height: 32px;
+	opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+
+a.rw-single-icon:hover,
+.rw-icon-list a:hover{
+	opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+a.rw-single-icon{
+
+	position: absolute;
+	top:50%;
+	margin-top: -16px;
+	right: 10px;
+	
+}
+
+.rw-icon-list a{
+
+	display: inline-block;
+	margin: 3px;
+	
+}
+
+.rw-icon-list
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 0;
+}
+.rw-icon-list li
+{
+	display: inline-block;
+	width: 38px;
+	height: 38px;
+	margin: 0;
+	padding: 0;
+}
+.rw-vertical span:first-child
+{
+	width: 38px;
+}
+
+.rw-tumblr {  background: url('images/lighticons/tumblr.png'); }
+.rw-stumble {  background: url('images/lighticons/stumble.png'); }
+.rw-flickr {  background: url('images/lighticons/flickr.png'); }
+.rw-vimeo {  background: url('images/lighticons/vimeo.png'); }
+.rw-twitter1 {  background: url('images/lighticons/twitter1.png'); }
+.rw-twitter2 {  background: url('images/lighticons/twitter2.png'); }
+.rw-facebook {  background: url('images/lighticons/facebook.png'); }
+.rw-youtube {  background: url('images/lighticons/youtube.png'); }
+.rw-delicious {  background: url('images/lighticons/delicious.png'); }
+.rw-dribbble {  background: url('images/lighticons/dribbble.png'); }
+.rw-linkedin {  background: url('images/lighticons/linkedin.png'); }
+.rw-wrench {  background: url('images/lighticons/wrench.png'); }
+.rw-heart{  background: url('images/lighticons/heart.png'); }
+.rw-info {  background: url('images/lighticons/info.png'); }
+.rw-link {  background: url('images/lighticons/link.png'); }
+.rw-download {  background: url('images/lighticons/download.png'); }
+.rw-digg {  background: url('images/lighticons/digg.png'); }
+.rw-rss {  background: url('images/lighticons/rss.png'); }
+.rw-deviantart {  background: url('images/lighticons/deviantart.png'); }
+
+.rw-icon-dark .rw-tumblr {  background: url('images/darkicons/tumblr.png'); }
+.rw-icon-dark .rw-stumble {  background: url('images/darkicons/stumble.png'); }
+.rw-icon-dark .rw-flickr {  background: url('images/darkicons/flickr.png'); }
+.rw-icon-dark .rw-vimeo {  background: url('images/darkicons/vimeo.png'); }
+.rw-icon-dark .rw-twitter1 {  background: url('images/darkicons/twitter1.png'); }
+.rw-icon-dark .rw-twitter2 {  background: url('images/darkicons/twitter2.png'); }
+.rw-icon-dark .rw-facebook {  background: url('images/darkicons/facebook.png'); }
+.rw-icon-dark .rw-youtube {  background: url('images/darkicons/youtube.png'); }
+.rw-icon-dark .rw-delicious {  background: url('images/darkicons/delicious.png'); }
+.rw-icon-dark .rw-dribbble {  background: url('images/darkicons/dribbble.png'); }
+.rw-icon-dark .rw-linkedin {  background: url('images/darkicons/linkedin.png'); }
+.rw-icon-dark .rw-wrench {  background: url('images/darkicons/wrench.png'); }
+.rw-icon-dark .rw-heart{  background: url('images/darkicons/heart.png'); }
+.rw-icon-dark .rw-info {  background: url('images/darkicons/info.png'); }
+.rw-icon-dark .rw-link {  background: url('images/darkicons/link.png'); }
+.rw-icon-dark .rw-download {  background: url('images/darkicons/download.png'); }
+.rw-icon-dark .rw-digg {  background: url('images/darkicons/digg.png'); }
+.rw-icon-dark .rw-rss {  background: url('images/darkicons/rss.png'); }
+.rw-icon-dark .rw-deviantart {  background: url('images/darkicons/deviantart.png'); }
+
+

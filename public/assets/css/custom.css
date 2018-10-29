@@ -1,0 +1,97 @@
+body  {
+  font-family: 'Kanit', sans-serif;
+  font-size: 14px;
+}
+
+.first-contact  {
+  font-size: 16px;
+  color:#bfc4c8;
+}
+
+.icon-social  {
+  font-size:20px;
+}
+
+.second-navbar  {
+  border-top:2px solid #EDEDED;
+  border-bottom:2px solid #EDEDED;
+}
+
+
+.main-slide   {
+  width:100%;
+  height:400px;
+}
+
+.slide-img   {
+  width:100%;
+  height:400px;
+}
+
+.tour-suggest-title {
+  text-align: center;
+}
+
+.search-field {
+  background-color:#EDEDED;
+  padding:50px;
+}
+
+.search-box {
+  border-radius: 10px;
+  padding:30px;
+  background-color: #61bef9;
+}
+
+.tour-box {
+  -webkit-box-shadow: 11px 9px 9px -6px rgba(182,182,182,1);
+  -moz-box-shadow: 11px 9px 9px -6px rgba(182,182,182,1);
+  box-shadow: 11px 9px 9px -6px rgba(182,182,182,1);
+}
+
+.tour-detail-box  {
+  width:100%;
+  height:100px;
+  overflow:auto;
+}
+
+.tour-date-box  {
+  width:100%;
+  border-radius: 5px;
+  padding: 1px;
+  background-color: #E4E4E4;
+}
+
+.tour-date-box p  {
+  text-align: center;
+}
+
+.tour-holiday-title {
+  text-align: center;
+}
+
+.highlight  {
+  background: url('http://www.goholidaytour.com/images/img/bg-service.jpg');
+}
+
+.highlight-box  {
+  text-align: center;
+}
+
+.ads-field  {
+  background-color:#EEEEEE;
+  padding:20px;
+}
+
+.gallery-img-1  {
+  width:100%;
+  height: 423px;
+}
+
+.gallery-img-2  {
+  width:100%;
+}
+
+.banner-ads-field img {
+  width:100%;
+}
