@@ -5,23 +5,23 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-4 col-lg-2">
+    <div class="col-lg-2">
       <img src="/assets/img/partner/partner-1.jpg" alt="partner">
     </div>
-    <div class="col-xs-4 col-lg-2">
-      <img src="/assets/img/partner/partner-1.jpg" alt="partner">
+    <div class="col-lg-2">
+      <img src="/assets/img/partner/partner-2.jpg" alt="partner">
     </div>
-    <div class="col-sm-4 col-lg-2">
-      <img src="/assets/img/partner/partner-1.jpg" alt="partner">
+    <div class="col-lg-2">
+      <img src="/assets/img/partner/partner-3.jpg" alt="partner">
     </div>
-    <div class="col-sm-4 col-lg-2">
-      <img src="/assets/img/partner/partner-1.jpg" alt="partner">
+    <div class="col-lg-2">
+      <img src="/assets/img/partner/partner-4.jpg" alt="partner">
     </div>
-    <div class="col-sm-4 col-lg-2">
-      <img src="/assets/img/partner/partner-1.jpg" alt="partner">
+    <div class="col-lg-2">
+      <img src="/assets/img/partner/partner-6.jpg" alt="partner">
     </div>
-    <div class="col-sm-4 col-lg-2">
-      <img src="/assets/img/partner/partner-1.jpg" alt="partner">
+    <div class="col-lg-2">
+      <img src="/assets/img/partner/partner-5.jpg" alt="partner">
     </div>
   </div>
 </div>

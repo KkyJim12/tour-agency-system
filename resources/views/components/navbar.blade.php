@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-sm-block">
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-sm-block d-md-none d-lg-block">
   <div class="container">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -22,7 +22,7 @@
   </div>
 </nav>
 
-<nav class="second-navbar navbar navbar-expand-lg navbar-light bg-light d-none d-sm-block">
+<nav class="second-navbar navbar navbar-expand-lg navbar-light bg-light d-none d-sm-block d-md-none d-lg-block">
   <div class="container">
     <a class="navbar-brand" href="#"><img src="/assets/img/logo/logo.png" alt="logo"> </a>
     <div>
@@ -34,7 +34,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand mr-auto d-md-none d-lg-none" href="#"><img src="/assets/img/logo/logo.png" alt="logo"> </a>
+    <a class="navbar-brand mr-auto d-md-none d-lg-none d-md-block d-lg-none" href="#"><img src="/assets/img/logo/logo.png" alt="logo"> </a>
     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
