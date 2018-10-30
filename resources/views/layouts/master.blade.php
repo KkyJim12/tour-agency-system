@@ -19,7 +19,6 @@
   <body>
     @include('components.fb-js')
     @include('components.navbar')
-    @include('components.slide')
     @yield('content')
   </body>
 </html>

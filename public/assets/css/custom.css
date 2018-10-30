@@ -118,3 +118,27 @@ body  {
   width:100%;
   height:500px;
 }
+
+.category-title {
+  background:url('http://www.royaltour.co.th/uploads/background/image_bg_11.jpg');
+  background-size: auto;
+  color: white;
+  text-align: center;
+  width:100%;
+}
+
+.aboutus-title  {
+  background:url('http://www.royaltour.co.th/uploads/background/image_bg_9.jpg');
+  background-size: auto;
+  color: white;
+  text-align: center;
+  width:100%;
+}
+
+.filter   {
+  padding: 10px;
+  background-color:white;
+  border:2px solid #41C1E2;
+  border-radius: 10px;
+  height: 600px;
+}

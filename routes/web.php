@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','UIViewController@ShowIndex');
+
+Route::get('/category','UIViewController@ShowCategory');
+
+Route::get('/aboutus','UIViewController@ShowAboutus');

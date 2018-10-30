@@ -24,7 +24,7 @@
 
 <nav class="second-navbar navbar navbar-expand-lg navbar-light bg-light d-none d-sm-block d-md-none d-lg-block">
   <div class="container">
-    <a class="navbar-brand" href="#"><img src="/assets/img/logo/logo.png" alt="logo"> </a>
+    <a class="navbar-brand" href="/"><img src="/assets/img/logo/logo.png" alt="logo"> </a>
     <div>
       <img src="/assets/img/banner/banner-1.jpg" alt="">
     </div>
@@ -34,7 +34,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand mr-auto d-md-none d-lg-none d-md-block d-lg-none" href="#"><img src="/assets/img/logo/logo.png" alt="logo"> </a>
+    <a class="navbar-brand mr-auto d-md-none d-lg-none d-md-block d-lg-none" href="/"><img src="/assets/img/logo/logo.png" alt="logo"> </a>
     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -42,10 +42,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item mr-3">
-          <a class="nav-link" href="#">หน้าหลัก</a>
+          <a class="nav-link" href="/">หน้าหลัก</a>
         </li>
         <li class="nav-item mr-3">
-          <a class="nav-link" href="#">ทัวร์ต่างประเทศ</a>
+          <a class="nav-link" href="/category">ทัวร์ต่างประเทศ</a>
         </li>
         <li class="nav-item mr-3">
           <a class="nav-link" href="#">สินค้าและบริการอื่น</a>
@@ -57,7 +57,7 @@
           <a class="nav-link" href="#">การชำระเงิน</a>
         </li>
         <li class="nav-item mr-3">
-          <a class="nav-link" href="#">เกี่ยวกับเรา</a>
+          <a class="nav-link" href="/aboutus">เกี่ยวกับเรา</a>
         </li>
         <li class="nav-item mr-3">
           <a class="nav-link" href="#">ภาพประทับใจ</a>
