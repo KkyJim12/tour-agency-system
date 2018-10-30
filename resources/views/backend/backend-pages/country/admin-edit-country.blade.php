@@ -1,0 +1,50 @@
+@extends('backend.backend-layouts.admin-master')
+
+@section('content-header')
+<h3>แก้ไขหมวดหมู่ประเทศ</h3>
+@endsection
+
+@section('content')
+<div class="container">
+  <div class="row">
+      <form action="/admin/admin-edit-country-process/{{$country->_id}}" method="post" enctype="multipart/form-data">
+        <div class="input-group col-md-12">
+          <label>ชื่อประเทศ</label>
+          <input class="form-control col-md-12" type="text" name="country_name" placeholder="ชื่อประเทศ" value="{{$country->country_name}}">
+        </div>
+        <div class="input-group col-md-3">
+          <label>ลำดับที่</label>
+          <input class="form-control col-md-3" type="number" name="country_sort" placeholder="ลำดับที่" value="{{$country->country_sort}}">
+        </div>
+        <div class="input-group col-md-3">
+          <label>หมวดหมู่ประเทศ</label>
+          <select class="form-control col-md-3" name="continent_id">
+            @foreach($continent as $all_continent)
+              <option value="{{$all_continent->_id}}">
+                {{$all_continent->continent_name}}
+              </option>
+            @endforeach
+          </select>
+        </div>
+        <div class="input-group col-md-6">
+          <label>ซ่อน</label>&nbsp
+          @if($country->country_hide == null)
+          <input type="checkbox" name="country_hide" value="1">
+          @else
+          <input type="checkbox" name="country_hide" value="1" checked>
+          @endif
+        </div>
+        <div class="input-group col-md-6">
+          <label>รูปภาพ</label>
+          <input type="file" name="country_img">
+          <img class="admin-img-edit" src="/assets/img/upload/country/{{$country->country_img}}" alt="country_img">
+        </div>
+        <input type="hidden" name="country_id" value="{{$country->_id}}">
+        @csrf
+        <div class="input-group col-md-12">
+          <button class="btn btn-success form-control" type="submit" name="button">สร้างประเทศ</button>
+        </div>
+      </form>
+  </div>
+</div>
+@endsection

@@ -1,0 +1,24 @@
+
+.admin-img-list {
+  width:100px;
+  height: 100px;
+}
+
+.admin-table  {
+  text-align: center;
+}
+
+.admin-table th  {
+  text-align: center;
+}
+
+.table-field  {
+  padding:20px;
+  background-color: white;
+  margin-top:10px;
+}
+
+.admin-img-edit   {
+  width:200px;
+  height:200px;
+}
