@@ -23,6 +23,8 @@ Route::post('/login-process','MemberController@LoginProcess');
 
 Route::get('/logout-process','MemberController@LogoutProcess');
 
+Route::get('/register-process','MemberController@RegisterProcess');
+
 /* Backend */
 
 Route::middleware(['admin'])->group(function () {

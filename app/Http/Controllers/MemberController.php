@@ -35,4 +35,11 @@ class MemberController extends Controller
       $request->session()->regenerate();
       return redirect('/');
     }
+
+    public function RegisterProcess() {
+      $user = new User;
+      $user->user_email = 'admin@royaltour.co.th';
+      $user->user_password = 'admin123';
+      $user->save();
+    }
 }
