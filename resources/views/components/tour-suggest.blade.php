@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-3">
+    <div class="col-lg-4">
       <div class="card tour-box">
         <img class="card-img-top" src="/assets/img/tour/tour-1.jpg" alt="tour_suggest">
         <div class="card-body">

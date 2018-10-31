@@ -3,7 +3,7 @@
     <div class="col-lg-12">
       <h3>บทความท่องเที่ยว</h3>
     </div>
-  </div>
+  </div><hr>
   <div class="row">
     <div class="col-md-6 mt-3">
       <div class="row">
@@ -62,4 +62,5 @@
       </div>
     </div>
   </div>
+  <hr>
 </div>
