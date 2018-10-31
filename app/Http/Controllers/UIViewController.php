@@ -17,4 +17,16 @@ class UIViewController extends Controller
     public function ShowAboutus() {
       return view('pages.aboutus');
     }
+
+    public function ShowLogin() {
+
+      if (session('user_log') == 1) {
+        return redirect()->route('admin-dashboard');
+      }
+
+      else {
+        return view('pages.member.login');
+      }
+
+    }
 }

@@ -12,10 +12,10 @@ class ComposerStaticInit2e3d43b40368bb95ea5258538f8876f7
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        '3a37ebac017bc098e9a86b35401e7a68' => __DIR__ . '/..' . '/mongodb/mongodb/src/functions.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        '3a37ebac017bc098e9a86b35401e7a68' => __DIR__ . '/..' . '/mongodb/mongodb/src/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '0d8253363903f0ac7b0978dcde4e28a0' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/helpers.php',
@@ -336,6 +336,10 @@ class ComposerStaticInit2e3d43b40368bb95ea5258538f8876f7
         ),
         'J' => 
         array (
+            'Jenssegers\\Mongodb\\Session' => 
+            array (
+                0 => __DIR__ . '/..' . '/jenssegers/mongodb-session/src',
+            ),
             'Jenssegers\\Mongodb' => 
             array (
                 0 => __DIR__ . '/..' . '/jenssegers/mongodb/src',
@@ -355,10 +359,12 @@ class ComposerStaticInit2e3d43b40368bb95ea5258538f8876f7
     );
 
     public static $classMap = array (
+        'App\\City' => __DIR__ . '/../..' . '/app/City.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Continent' => __DIR__ . '/../..' . '/app/Continent.php',
         'App\\Country' => __DIR__ . '/../..' . '/app/Country.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\AdminCityController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminCityController.php',
         'App\\Http\\Controllers\\AdminContinentController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminContinentController.php',
         'App\\Http\\Controllers\\AdminCountryController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminCountryController.php',
         'App\\Http\\Controllers\\AdminUIController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminUIController.php',
@@ -368,8 +374,10 @@ class ComposerStaticInit2e3d43b40368bb95ea5258538f8876f7
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\MemberController' => __DIR__ . '/../..' . '/app/Http/Controllers/MemberController.php',
         'App\\Http\\Controllers\\UIViewController' => __DIR__ . '/../..' . '/app/Http/Controllers/UIViewController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\Admin' => __DIR__ . '/../..' . '/app/Http/Middleware/Admin.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -1950,6 +1958,8 @@ class ComposerStaticInit2e3d43b40368bb95ea5258538f8876f7
         'Jenssegers\\Mongodb\\Schema\\Blueprint' => __DIR__ . '/..' . '/jenssegers/mongodb/src/Jenssegers/Mongodb/Schema/Blueprint.php',
         'Jenssegers\\Mongodb\\Schema\\Builder' => __DIR__ . '/..' . '/jenssegers/mongodb/src/Jenssegers/Mongodb/Schema/Builder.php',
         'Jenssegers\\Mongodb\\Schema\\Grammar' => __DIR__ . '/..' . '/jenssegers/mongodb/src/Jenssegers/Mongodb/Schema/Grammar.php',
+        'Jenssegers\\Mongodb\\Session\\SessionManager' => __DIR__ . '/..' . '/jenssegers/mongodb-session/src/Jenssegers/Mongodb/Session/SessionManager.php',
+        'Jenssegers\\Mongodb\\Session\\SessionServiceProvider' => __DIR__ . '/..' . '/jenssegers/mongodb-session/src/Jenssegers/Mongodb/Session/SessionServiceProvider.php',
         'Jenssegers\\Mongodb\\Validation\\DatabasePresenceVerifier' => __DIR__ . '/..' . '/jenssegers/mongodb/src/Jenssegers/Mongodb/Validation/DatabasePresenceVerifier.php',
         'Jenssegers\\Mongodb\\Validation\\ValidationServiceProvider' => __DIR__ . '/..' . '/jenssegers/mongodb/src/Jenssegers/Mongodb/Validation/ValidationServiceProvider.php',
         'JsonSerializable' => __DIR__ . '/..' . '/nesbot/carbon/src/JsonSerializable.php',

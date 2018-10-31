@@ -152,6 +152,7 @@ return [
          */
 
          Jenssegers\Mongodb\MongodbServiceProvider::class,
+         'Jenssegers\Mongodb\Session\SessionServiceProvider',
 
         /*
          * Application Service Providers...

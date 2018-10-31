@@ -6,10 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\City' => $baseDir . '/app/City.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Continent' => $baseDir . '/app/Continent.php',
     'App\\Country' => $baseDir . '/app/Country.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\AdminCityController' => $baseDir . '/app/Http/Controllers/AdminCityController.php',
     'App\\Http\\Controllers\\AdminContinentController' => $baseDir . '/app/Http/Controllers/AdminContinentController.php',
     'App\\Http\\Controllers\\AdminCountryController' => $baseDir . '/app/Http/Controllers/AdminCountryController.php',
     'App\\Http\\Controllers\\AdminUIController' => $baseDir . '/app/Http/Controllers/AdminUIController.php',
@@ -19,8 +21,10 @@ return array(
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\MemberController' => $baseDir . '/app/Http/Controllers/MemberController.php',
     'App\\Http\\Controllers\\UIViewController' => $baseDir . '/app/Http/Controllers/UIViewController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
+    'App\\Http\\Middleware\\Admin' => $baseDir . '/app/Http/Middleware/Admin.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
@@ -1601,6 +1605,8 @@ return array(
     'Jenssegers\\Mongodb\\Schema\\Blueprint' => $vendorDir . '/jenssegers/mongodb/src/Jenssegers/Mongodb/Schema/Blueprint.php',
     'Jenssegers\\Mongodb\\Schema\\Builder' => $vendorDir . '/jenssegers/mongodb/src/Jenssegers/Mongodb/Schema/Builder.php',
     'Jenssegers\\Mongodb\\Schema\\Grammar' => $vendorDir . '/jenssegers/mongodb/src/Jenssegers/Mongodb/Schema/Grammar.php',
+    'Jenssegers\\Mongodb\\Session\\SessionManager' => $vendorDir . '/jenssegers/mongodb-session/src/Jenssegers/Mongodb/Session/SessionManager.php',
+    'Jenssegers\\Mongodb\\Session\\SessionServiceProvider' => $vendorDir . '/jenssegers/mongodb-session/src/Jenssegers/Mongodb/Session/SessionServiceProvider.php',
     'Jenssegers\\Mongodb\\Validation\\DatabasePresenceVerifier' => $vendorDir . '/jenssegers/mongodb/src/Jenssegers/Mongodb/Validation/DatabasePresenceVerifier.php',
     'Jenssegers\\Mongodb\\Validation\\ValidationServiceProvider' => $vendorDir . '/jenssegers/mongodb/src/Jenssegers/Mongodb/Validation/ValidationServiceProvider.php',
     'JsonSerializable' => $vendorDir . '/nesbot/carbon/src/JsonSerializable.php',

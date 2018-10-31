@@ -1,11 +1,11 @@
 @extends('backend.backend-layouts.admin-master')
 
 @section('content-header')
-<h3>หมวดหมู่ทวีป <i class="fas fa-globe-asia"></i></h3>
+<h3>หมวดหมู่เมือง <i class="fas fa-city"></i></h3>
 @endsection
 
 @section('content')
-<a class="btn btn-success" href="/admin/admin-create-continent">สร้างทวีป</a>
+<a class="btn btn-success" href="/admin/admin-create-city">สร้างทวีป</a>
 <div class="container">
   <div class="row">
     <div class="col-md-11 table-field">
@@ -13,33 +13,33 @@
         <tr>
           <th>ลำดับที่</th>
           <th>รูปภาพ</th>
-          <th>ชื่อทวีป</th>
+          <th>ชื่อประเทศ</th>
           <th>เรียง</th>
           <th>ซ่อน</th>
           <th>แก้ไข</th>
           <th>ลบ</th>
         </tr>
-        @foreach($continent as $show_continent)
+        @foreach($city as $show_city)
         <tr>
           <td>{{$loop->iteration}}</td>
           <td>
-            <img class="admin-img-list" src="/assets/img/upload/continent/{{$show_continent->continent_img}}" alt="continent_img">
+            <img class="admin-img-list" src="/assets/img/upload/city/{{$show_city->city_img}}" alt="city_img">
           </td>
-          <td>{{$show_continent->continent_name}}</td>
-          <td>{{$show_continent->continent_sort}}</td>
+          <td>{{$show_city->city_name}}</td>
+          <td>{{$show_city->city_sort}}</td>
           <td>
-            @if($show_continent->continent_hide == null)
+            @if($show_city->city_hide == null)
               <i class="far fa-times-circle"></i>
             @else
               <i class="far fa-check-circle"></i>
             @endif
           </td>
           <td>
-            <a class="btn btn-warning" href="/admin/admin-edit-continent/{{$show_continent->_id}}">แก้ไข</a>
+            <a class="btn btn-warning" href="/admin/admin-edit-city/{{$show_city->_id}}">แก้ไข</a>
           </td>
           <td>
-            <form class="" action="/admin/admin-delete-continent-process/{{$show_continent->_id}}" method="post">
-              <input type="hidden" name="continent_id" value="{{$show_continent->_id}}">
+            <form class="" action="/admin/admin-delete-city-process/{{$show_city->_id}}" method="post">
+              <input type="hidden" name="city_id" value="{{$show_city->_id}}">
               @csrf
               <button class="btn btn-danger" type="submit" name="button" onclick="confirm('ยืนยันการลบ')">ลบ</button>
             </form>
