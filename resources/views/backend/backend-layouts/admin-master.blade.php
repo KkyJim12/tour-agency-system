@@ -96,6 +96,7 @@
           <li><a href="/admin/admin-city"><i class="fas fa-city"></i>  เมือง</a></li>
         </ul>
       </li>
+      <li><a href="/admin/admin-airline"><i class="fas fa-plane"></i>  <span>สายการบิน</span></a></li>
     </ul>
     <!-- /.sidebar-menu -->
   </section>

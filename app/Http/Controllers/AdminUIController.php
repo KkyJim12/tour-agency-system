@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Continent;
 use App\Country;
 use App\City;
+use App\Airline;
 
 class AdminUIController extends Controller
 {
@@ -86,6 +87,27 @@ class AdminUIController extends Controller
                                                                 'country' => $country,
                                                                 'city' => $city,
                                                                ]);
+    }
+
+    /* Show Airline List */
+    public function ShowAirline() {
+      $airline = Airline::all();
+      return view('backend.backend-pages.airline.admin-airline',[
+                                                                  'airline' => $airline,
+                                                                ]);
+    }
+
+    /* Show Create Airline Page */
+    public function ShowCreateAirline() {
+      return view('backend.backend-pages.airline.admin-create-airline');
+    }
+
+    /* Show Edit Airline Page */
+    public function ShowEditAirline($airline_id) {
+      $airline = Airline::where('_id',$airline_id)->first();
+      return view('backend.backend-pages.airline.admin-edit-airline',[
+                                                                      'airline' => $airline,
+                                                                     ]);
     }
 
 }

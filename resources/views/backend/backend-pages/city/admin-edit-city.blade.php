@@ -43,7 +43,7 @@
         <input type="hidden" name="city_id" value="{{$city->_id}}">
         @csrf
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
-          <button class="btn btn-success form-control" type="submit" name="button">สร้างประเทศ</button>
+          <button class="btn btn-warning form-control" type="submit" name="button">แก้ไข</button>
         </div>
       </form>
   </div>

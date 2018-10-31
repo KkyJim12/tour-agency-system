@@ -101,4 +101,27 @@ Route::middleware(['admin'])->group(function () {
   Route::post('/admin/admin-delete-city-process/{city_id}','AdminCityController@AdminDeleteCityProcess');
 
   /**************************** End City Function **************************/
+
+  /**************************** All Airline Function **************************/
+
+  /* Show Airline List */
+  Route::get('/admin/admin-airline','AdminUIController@ShowAirline')->name('admin-airline');
+
+  /* Show Create Airline */
+  Route::get('/admin/admin-create-airline','AdminUIController@ShowCreateAirline');
+
+  /* Create Airline Process */
+  Route::post('/admin/admin-create-airline-process','AdminAirlineController@AdminCreateAirlineProcess');
+
+  /* Show Edit Airline */
+  Route::get('/admin/admin-edit-airline/{airline_id}','AdminUIController@ShowEditAirline');
+
+  /* Edit Airline Process */
+  Route::post('/admin/admin-edit-airline-process/{airline_id}','AdminAirlineController@AdminEditAirlineProcess');
+
+  /* Delete Airline Process */
+  Route::post('/admin/admin-delete-airline-process/{airline_id}','AdminAirlineController@AdminDeleteAirlineProcess');
+
+  /**************************** End Airline Function **************************/
+
 });
