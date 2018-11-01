@@ -8,6 +8,8 @@ use App\Continent;
 use App\Country;
 use App\City;
 use App\Airline;
+use App\Branch;
+use App\Staff;
 
 class AdminUIController extends Controller
 {
@@ -108,6 +110,53 @@ class AdminUIController extends Controller
       return view('backend.backend-pages.airline.admin-edit-airline',[
                                                                       'airline' => $airline,
                                                                      ]);
+    }
+
+    /* Show Branch List */
+    public function ShowBranch()  {
+      $branch = Branch::all();
+      return view('backend.backend-pages.branch.admin-branch',[
+                                                                'branch' => $branch,
+                                                              ]);
+    }
+
+    /* Show Create Branch Page */
+    public function ShowCreateBranch()  {
+      return view('backend.backend-pages.branch.admin-create-branch');
+    }
+
+    /* Show Edit Branch Page */
+    public function ShowEditBranch($branch_id)  {
+      $branch = Branch::where('_id',$branch_id)->first();
+      return view('backend.backend-pages.branch.admin-edit-branch',[
+                                                                    'branch' => $branch,
+                                                                   ]);
+    }
+
+    /* Show Staff List */
+    public function ShowStaff() {
+      $staff = Staff::all();
+      return view('backend.backend-pages.staff.admin-staff',[
+                                                              'staff' => $staff,
+                                                            ]);
+    }
+
+    /* Show Create Staff Page */
+    public function ShowCreateStaff() {
+      $branch = Branch::all();
+      return view('backend.backend-pages.staff.admin-create-staff',[
+                                                                    'branch' => $branch,
+                                                                   ]);
+    }
+
+    /* Show Edit Staff Page */
+    public function ShowEditStaff($staff_id)  {
+      $branch = Branch::all();
+      $staff = Staff::where('_id',$staff_id)->first();
+      return view('backend.backend-pages.staff.admin-edit-staff',[
+                                                                  'staff' => $staff,
+                                                                  'branch' => $branch,
+                                                                 ]);
     }
 
 }

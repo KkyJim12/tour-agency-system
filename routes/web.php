@@ -124,4 +124,48 @@ Route::middleware(['admin'])->group(function () {
 
   /**************************** End Airline Function **************************/
 
+  /**************************** All Branch Function **************************/
+
+  /* Show Branch List */
+  Route::get('/admin/admin-branch','AdminUIController@ShowBranch')->name('admin-branch');
+
+  /* Show Create Branch */
+  Route::get('/admin/admin-create-branch','AdminUIController@ShowCreateBranch');
+
+  /* Create Branch Process */
+  Route::post('/admin/admin-create-branch-process','AdminBranchController@AdminCreateBranchProcess');
+
+  /* Show Edit Branch */
+  Route::get('/admin/admin-edit-branch/{branch_id}','AdminUIController@ShowEditBranch');
+
+  /* Edit Branch Process */
+  Route::post('/admin/admin-edit-branch-process/{branch_id}','AdminBranchController@AdminEditBranchProcess');
+
+  /* Delete Branch Process */
+  Route::post('/admin/admin-delete-branch-process/{branch_id}','AdminBranchController@AdminDeleteBranchProcess');
+
+  /**************************** End Branch Function **************************/
+
+  /**************************** All Staff Function **************************/
+
+  /* Show Staff List */
+  Route::get('/admin/admin-staff','AdminUIController@ShowStaff')->name('admin-staff');
+
+  /* Show Create Staff */
+  Route::get('/admin/admin-create-staff','AdminUIController@ShowCreateStaff');
+
+  /* Create Branch Process */
+  Route::post('/admin/admin-create-staff-process','AdminStaffController@AdminCreateStaffProcess');
+
+  /* Show Edit Staff */
+  Route::get('/admin/admin-edit-staff/{staff_id}','AdminUIController@ShowEditStaff');
+
+  /* Edit Staff Process */
+  Route::post('/admin/admin-edit-staff-process/{staff_id}','AdminStaffController@AdminEditStaffProcess');
+
+  /* Delete Staff Process */
+  Route::post('/admin/admin-delete-staff-process/{staff_id}','AdminStaffController@AdminDeleteStaffProcess');
+
+  /**************************** End Staff Function **************************/
+
 });
