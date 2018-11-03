@@ -10,6 +10,7 @@ use App\City;
 use App\Airline;
 use App\Branch;
 use App\Staff;
+use App\Tour;
 
 class AdminUIController extends Controller
 {
@@ -156,6 +157,40 @@ class AdminUIController extends Controller
       return view('backend.backend-pages.staff.admin-edit-staff',[
                                                                   'staff' => $staff,
                                                                   'branch' => $branch,
+                                                                 ]);
+    }
+
+    /* Show Tour List */
+    public function ShowTour()  {
+      $tour = Tour::all();
+      return view('backend.backend-pages.tour.admin-tour',[
+                                                            'tour' => $tour,
+                                                          ]);
+    }
+
+    /* Show Create Tour Page */
+    public function ShowCreateTour()  {
+      $staff = Staff::all();
+      $country = Country::all();
+      $airline = Airline::all();
+      return view('backend.backend-pages.tour.admin-create-tour',[
+                                                                  'staff' => $staff,
+                                                                  'country' => $country,
+                                                                  'airline' => $airline,
+                                                                 ]);
+    }
+
+    /* Show Edit Tour Page */
+    public function ShowEditTour($tour_id)  {
+      $staff = Staff::all();
+      $country = Country::all();
+      $airline = Airline::all();
+      $tour = Tour::where('_id',$tour_id)->first();
+      return view('backend.backend-pages.tour.admin-edit-tour',[
+                                                                  'staff' => $staff,
+                                                                  'country' => $country,
+                                                                  'airline' => $airline,
+                                                                  'tour' => $tour,
                                                                  ]);
     }
 

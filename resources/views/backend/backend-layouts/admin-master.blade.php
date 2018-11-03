@@ -99,6 +99,7 @@
       <li><a href="/admin/admin-airline"><i class="fas fa-plane"></i>  <span>สายการบิน</span></a></li>
       <li><a href="/admin/admin-branch"><i class="fas fa-code-branch"></i>  <span>สาขา</span></a></li>
       <li><a href="/admin/admin-staff"><i class="fas fa-user-alt"></i>  <span>พนักงาน</span></a></li>
+      <li><a href="/admin/admin-tour"><i class="fas fa-map-marked"></i>  <span>ทัวร์</span></a></li>
     </ul>
     <!-- /.sidebar-menu -->
   </section>

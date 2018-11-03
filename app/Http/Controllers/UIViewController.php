@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Country;
+use App\Tour;
 
 class UIViewController extends Controller
 {
@@ -28,5 +30,14 @@ class UIViewController extends Controller
         return view('pages.member.login');
       }
 
+    }
+
+    public function ShowTour($tour_id)  {
+      $country = Country::all();
+      $tour = Tour::find($tour_id);
+      return view('pages.tour',[
+                                'country' => $country,
+                                'tour' => $tour,
+                               ]);
     }
 }

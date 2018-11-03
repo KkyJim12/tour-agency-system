@@ -23,6 +23,8 @@ Route::post('/login-process','MemberController@LoginProcess');
 
 Route::get('/logout-process','MemberController@LogoutProcess');
 
+Route::get('/tour/{tour_id}','UIViewController@ShowTour');
+
 /* Backend */
 
 Route::middleware(['admin'])->group(function () {
@@ -167,5 +169,27 @@ Route::middleware(['admin'])->group(function () {
   Route::post('/admin/admin-delete-staff-process/{staff_id}','AdminStaffController@AdminDeleteStaffProcess');
 
   /**************************** End Staff Function **************************/
+
+  /**************************** All Tour Function **************************/
+
+  /* Show Tour List */
+  Route::get('/admin/admin-tour','AdminUIController@ShowTour')->name('admin-tour');
+
+  /* Show Create Tour */
+  Route::get('/admin/admin-create-tour','AdminUIController@ShowCreateTour');
+
+  /* Create Tour Process */
+  Route::post('/admin/admin-create-tour-process','AdminTourController@AdminCreateTourProcess');
+
+  /* Show Edit Tour */
+  Route::get('/admin/admin-edit-tour/{tour_id}','AdminUIController@ShowEditTour');
+
+  /* Edit Tour Process */
+  Route::post('/admin/admin-edit-tour-process/{tour_id}','AdminTourController@AdminEditTourProcess');
+
+  /* Delete Tour Process */
+  Route::post('/admin/admin-delete-tour-process/{tour_id}','AdminTourController@AdminDeleteTourProcess');
+
+  /**************************** End Tour Function **************************/
 
 });
