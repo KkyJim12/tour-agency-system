@@ -19,6 +19,7 @@ class AdminTourController extends Controller
       $tour = new Tour;
       $tour->tour_name = $request->tour_name;
       $tour->tour_price = $request->tour_price;
+      $tour->tour_discount = $request->tour_discount;
       $tour->tour_staff_id = $staff->_id;
       $tour->tour_staff_name = $staff->staff_name;
       $tour->tour_staff_tel = $staff->staff_tel;
@@ -87,6 +88,7 @@ class AdminTourController extends Controller
       $tour = Tour::find($request->tour_id);
       $tour->tour_name = $request->tour_name;
       $tour->tour_price = $request->tour_price;
+      $tour->tour_discount = $request->tour_discount;
       $tour->tour_staff_id = $staff->_id;
       $tour->tour_staff_name = $staff->staff_name;
       $tour->tour_staff_tel = $staff->staff_tel;

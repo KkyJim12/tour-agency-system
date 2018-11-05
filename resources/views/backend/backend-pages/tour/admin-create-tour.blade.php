@@ -17,6 +17,10 @@
           <input class="form-control" type="number" name="tour_price" placeholder="ราคา">
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+          <label>ราคาก่อนลด</label>
+          <input class="form-control" type="number" name="tour_discount" placeholder="ราคาก่อนลด">
+        </div>
+        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>พนักงาน</label>
           <select class="form-control" name="tour_staff">
             @foreach($staff as $all_staff)

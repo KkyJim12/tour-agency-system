@@ -13,7 +13,7 @@
 
 Route::get('/','UIViewController@ShowIndex');
 
-Route::get('/category','UIViewController@ShowCategory');
+Route::get('/category/{country_id}','UIViewController@ShowCategory');
 
 Route::get('/aboutus','UIViewController@ShowAboutus');
 
