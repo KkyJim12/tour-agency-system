@@ -21,6 +21,7 @@
           <th>วันกลับ</th>
           <th>วัน/คืน</th>
           <th>เรียง</th>
+          <th>แนะนำ</th>
           <th>ซ่อน</th>
           <th>แก้ไข</th>
           <th>ลบ</th>
@@ -39,6 +40,13 @@
           <td>{{$show_tour->tour_end_date}}</td>
           <td>{{$show_tour->tour_day}} วัน {{$show_tour->tour_night}} คืน</td>
           <td>{{$show_tour->tour_sort}}</td>
+          <td>
+            @if($show_tour->tour_suggest == null)
+              <i class="far fa-times-circle"></i>
+            @else
+              <i class="far fa-check-circle"></i>
+            @endif
+          </td>
           <td>
             @if($show_tour->tour_hide == null)
               <i class="far fa-times-circle"></i>

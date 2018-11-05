@@ -9,7 +9,10 @@ use App\Tour;
 class UIViewController extends Controller
 {
     public function ShowIndex() {
-      return view('index');
+      $tour_suggest = Tour::where('tour_suggest','1')->get();
+      return view('index',[
+                            'tour_suggest' => $tour_suggest,
+                          ]);
     }
 
     public function ShowCategory()  {

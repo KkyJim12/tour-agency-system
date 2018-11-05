@@ -73,6 +73,14 @@
           <input class="form-control" type="number" name="tour_sort" placeholder="ลำดับที่" value="{{$tour->tour_sort}}">
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+          <label>แนะนำ</label>&nbsp
+          @if($tour->tour_suggest == null)
+          <input type="checkbox" name="tour_suggest" value="1">
+          @else
+          <input type="checkbox" name="tour_suggest" value="1" checked>
+          @endif
+        </div>
+        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>ซ่อน</label>&nbsp
           @if($tour->tour_hide == null)
           <input type="checkbox" name="tour_hide" value="1">

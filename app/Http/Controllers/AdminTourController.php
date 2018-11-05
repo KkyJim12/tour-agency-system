@@ -28,6 +28,7 @@ class AdminTourController extends Controller
       $tour->tour_country_name = $country->country_name;
       $tour->tour_airline_id = $airline->_id;
       $tour->tour_airline_name = $airline->airline_name;
+      $tour->tour_airline_img = $airline->airline_img;
       $tour->tour_start_date = $request->tour_start_date;
       $tour->tour_end_date = $request->tour_end_date;
       $tour->tour_expire_date = $request->tour_expire_date;
@@ -36,6 +37,7 @@ class AdminTourController extends Controller
       $tour->tour_hightlight = $request->tour_hightlight;
       $tour->tour_condition = $request->tour_condition;
       $tour->tour_sort = $request->tour_sort;
+      $tour->tour_suggest = $request->tour_suggest;
       $tour->tour_hide = $request->tour_hide;
 
       /* upload pdf */
@@ -70,7 +72,7 @@ class AdminTourController extends Controller
             }
       }
 
-      $tour->tour_other_img = json_encode($data);
+      $tour->tour_other_img = $data;
 
       $tour->save();
 
@@ -94,6 +96,7 @@ class AdminTourController extends Controller
       $tour->tour_country_name = $country->country_name;
       $tour->tour_airline_id = $airline->_id;
       $tour->tour_airline_name = $airline->airline_name;
+      $tour->tour_airline_img = $airline->airline_img;
       $tour->tour_start_date = $request->tour_start_date;
       $tour->tour_end_date = $request->tour_end_date;
       $tour->tour_expire_date = $request->tour_expire_date;
@@ -102,6 +105,7 @@ class AdminTourController extends Controller
       $tour->tour_hightlight = $request->tour_hightlight;
       $tour->tour_condition = $request->tour_condition;
       $tour->tour_sort = $request->tour_sort;
+      $tour->tour_suggest = $request->tour_suggest;
       $tour->tour_hide = $request->tour_hide;
 
       /* upload pdf */
@@ -134,7 +138,7 @@ class AdminTourController extends Controller
                 $file->move($destinationPathOther, $name);
                 $data[] = $name;
             }
-        $tour->tour_other_img = json_encode($data);
+        $tour->tour_other_img = $data;
       }
 
       $tour->save();

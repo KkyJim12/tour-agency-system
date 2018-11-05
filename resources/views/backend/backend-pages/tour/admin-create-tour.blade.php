@@ -73,6 +73,10 @@
           <input class="form-control" type="number" name="tour_sort" placeholder="ลำดับที่">
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+          <label>แนะนำ</label>&nbsp
+          <input type="checkbox" name="tour_suggest" value="1">
+        </div>
+        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>ซ่อน</label>&nbsp
           <input type="checkbox" name="tour_hide" value="1">
         </div>
