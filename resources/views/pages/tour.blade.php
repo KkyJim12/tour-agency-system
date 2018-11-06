@@ -67,17 +67,21 @@
     <div class="col-lg-3">
       <hr>
       <h5>คิดจะเที่ยวคิดถึงรอยัลทัวร์</h5><br>
-      @foreach($country as $all_country)
-      <div class="col-lg-6">
+      @foreach($continent as $all_continent)
         <div class="row">
-          <div class="col-lg-6">
-            <img class="country-small-img" src="/assets/img/upload/country/{{$all_country->country_img}}" alt="country_img">
+          <div class="col-lg-12">
+            {{$all_continent->continent_name}}
           </div>
-          <div class="col-lg-6">
-            {{$all_country->country_name}}
-          </div>
+          <hr>
+            @foreach($all_continent->subcat as $subcat)
+              <div class="col-lg-6">
+                <a href="/category/{{$subcat->_id}}">
+                  <img class="tour-cat-img" src="/assets/img/upload/country/{{$subcat->country_img}}" alt="country_img">  {{$subcat->country_name}}
+                </a>
+              </div>
+            @endforeach
         </div>
-      </div>
+        <hr>
       @endforeach
     </div>
   </div>

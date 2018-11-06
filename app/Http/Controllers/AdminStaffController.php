@@ -10,6 +10,23 @@ use App\Staff;
 class AdminStaffController extends Controller
 {
     public function AdminCreateStaffProcess(Request $request) {
+
+      /* Validate First */
+
+      $request->validate([
+      'staff_name' => 'required|max:255',
+      'staff_nickname' => 'required|max:255',
+      'staff_tel' => 'required|max:255',
+      'staff_email' => 'required|max:255',
+      'staff_facebook' => 'required|max:255',
+      'staff_line' => 'required|max:255',
+      'staff_branch' => 'required',
+      'staff_sort' => 'required',
+      'staff_img' => 'image|max:2048',
+      ]);
+
+      /* End Validate */
+
       $branch = Branch::find($request->staff_branch);
       $staff = new Staff;
       $staff->staff_name = $request->staff_name;
@@ -38,6 +55,23 @@ class AdminStaffController extends Controller
     }
 
     public function AdminEditStaffProcess(Request $request) {
+
+      /* Validate First */
+
+      $request->validate([
+      'staff_name' => 'required|max:255',
+      'staff_nickname' => 'required|max:255',
+      'staff_tel' => 'required|max:255',
+      'staff_email' => 'required|max:255',
+      'staff_facebook' => 'required|max:255',
+      'staff_line' => 'required|max:255',
+      'staff_branch' => 'required',
+      'staff_sort' => 'required',
+      'staff_img' => 'image|max:2048',
+      ]);
+
+      /* End Validate */
+
       $branch = Branch::find($request->staff_branch);
       $staff = Staff::find($request->staff_id);
       $staff->staff_name = $request->staff_name;

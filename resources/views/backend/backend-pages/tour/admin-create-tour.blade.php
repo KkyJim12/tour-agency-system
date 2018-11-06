@@ -8,6 +8,19 @@
 <div class="container">
   <div class="row">
       <form class="admin-form col-lg-6 col-md-6 col-sm-6" action="/admin/admin-create-tour-process" method="post" enctype="multipart/form-data">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+          <label>รหัสทัวร์</label>
+          <input class="form-control" type="text" name="tour_code" placeholder="รหัสทัวร์">
+        </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>ชื่อทัวร์</label>
           <input class="form-control" type="text" name="tour_name" placeholder="ชื่อทัวร์">
@@ -42,6 +55,24 @@
             @foreach($airline as $all_airline)
             <option value="{{$all_airline->_id}}">{{$all_airline->airline_name}}</option>
             @endforeach
+          </select>
+        </div>
+        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+          <label>เดือนที่เดินทาง</label>
+          <select class="form-control" name="tour_month">
+            <option value="">เลือกเดือน</option>
+            <option value="1">มกราคม</option>
+            <option value="2">กุมภาพันธ์</option>
+            <option value="3">มีนาคม</option>
+            <option value="4">เมษายน</option>
+            <option value="5">พฤษภาคม</option>
+            <option value="6">มิถุนายน</option>
+            <option value="7">กรกฎาคม</option>
+            <option value="8">สิงหาคม</option>
+            <option value="9">กันยายน</option>
+            <option value="10">ตุลาคม</option>
+            <option value="11">พฤษจิกายน</option>
+            <option value="12">ธันวาคม</option>
           </select>
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">

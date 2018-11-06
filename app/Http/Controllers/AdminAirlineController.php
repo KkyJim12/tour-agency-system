@@ -8,6 +8,17 @@ use App\Airline;
 class AdminAirlineController extends Controller
 {
   public function  AdminCreateAirlineProcess(Request $request)  {
+
+    /* Validate First */
+
+    $request->validate([
+    'airline_name' => 'required|max:255',
+    'airline_sort' => 'required',
+    'airline_img' => 'required|max:2048|image',
+    ]);
+
+    /* End Validate */
+
     $airline = new Airline;
     $airline->airline_name = $request->airline_name;
     $airline->airline_sort = $request->airline_sort;
@@ -29,6 +40,17 @@ class AdminAirlineController extends Controller
   }
 
   public function AdminEditAirlineProcess(Request $request) {
+
+    /* Validate First */
+
+    $request->validate([
+    'airline_name' => 'required|max:255',
+    'airline_sort' => 'required',
+    'airline_img' => 'max:2048|image',
+    ]);
+
+    /* End Validate */
+
     $airline = Airline::find($request->airline_id);
     $airline->airline_name = $request->airline_name;
     $airline->airline_sort = $request->airline_sort;

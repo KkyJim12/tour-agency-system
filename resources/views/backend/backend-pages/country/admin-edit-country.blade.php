@@ -8,6 +8,15 @@
 <div class="container">
   <div class="row">
       <form class="admin-form col-lg-6 col-md-6 col-sm-6" action="/admin/admin-edit-country-process/{{$country->_id}}" method="post" enctype="multipart/form-data">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>ชื่อประเทศ</label>
           <input class="form-control" type="text" name="country_name" placeholder="ชื่อประเทศ" value="{{$country->country_name}}">
@@ -20,7 +29,7 @@
           <label>หมวดหมู่ประเทศ</label>
           <select class="form-control" name="continent_id">
             @foreach($continent as $all_continent)
-              <option value="{{$all_continent->_id}}">
+              <option value="{{$all_continent->_id}}" @if($country->continent_id == $all_continent->_id) selected @endif>
                 {{$all_continent->continent_name}}
               </option>
             @endforeach

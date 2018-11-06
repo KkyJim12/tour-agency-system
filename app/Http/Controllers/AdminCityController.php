@@ -11,6 +11,18 @@ class AdminCityController extends Controller
 {
     /* Admin Create City Process*/
     public function AdminCreateCityProcess(Request $request)  {
+
+      /* Validate First */
+
+      $request->validate([
+      'city_name' => 'required|max:255',
+      'city_sort' => 'required',
+      'country_id' => 'required',
+      'city_img' => 'required|max:2048|image'
+      ]);
+
+      /* End Validate */
+
       $country = Country::find($request->country_id);
       $city = new City;
       $city->city_name = $request->city_name;
@@ -36,6 +48,18 @@ class AdminCityController extends Controller
 
     /* Admin Edit City Process */
     public function AdminEditCityProcess(Request $request)  {
+
+      /* Validate First */
+
+      $request->validate([
+      'city_name' => 'required|max:255',
+      'city_sort' => 'required',
+      'country_id' => 'required',
+      'city_img' => 'max:2048|image'
+      ]);
+
+      /* End Validate */
+
       $country = Country::find($request->country_id);
       $city = City::find($request->city_id);
       $city->city_name = $request->city_name;

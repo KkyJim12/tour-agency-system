@@ -25,6 +25,12 @@ Route::get('/logout-process','MemberController@LogoutProcess');
 
 Route::get('/tour/{tour_id}','UIViewController@ShowTour');
 
+Route::post('/search-result','UIViewController@ShowSearchResult');
+
+Route::post('filter_result','UIViewController@ShowFilterResult');
+
+Route::get('/how-to-pay','UIViewController@ShowHowToPay');
+
 /* Backend */
 
 Route::middleware(['admin'])->group(function () {
@@ -36,7 +42,7 @@ Route::middleware(['admin'])->group(function () {
   /**************************** All Continent Function **************************/
 
   /* Show Continent List */
-  Route::get('/admin/admin-continent','AdminUIController@ShowContinent');
+  Route::get('/admin/admin-continent','AdminUIController@ShowContinent')->name('admin-continent');
 
   /* Show Create Continent */
   Route::get('/admin/admin-create-continent','AdminUIController@ShowCreateContinent');
@@ -192,4 +198,19 @@ Route::middleware(['admin'])->group(function () {
 
   /**************************** End Tour Function **************************/
 
+
+  /**************************** Other Page *********************************/
+
+  Route::get('/admin/admin-payment','AdminUIController@ShowPaymentPage');
+
+  Route::post('/admin-save-payment-page','AdminOtherPageController@SavePayment');
+
+  /**************************** End Other Page *****************************/
+
+  /**************************** All Tour Function **************************/
+  Route::get('/admin/admin-banner','AdminUIController@ShowBanner');
+
+  Route::post('/admin/admin-banner-save','AdminBannerController@AdminBannerSave');
+
+  /**************************** End Tour Function **************************/
 });

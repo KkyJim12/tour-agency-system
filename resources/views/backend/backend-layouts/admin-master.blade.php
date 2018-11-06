@@ -13,6 +13,8 @@
     <script src="/assets/admin-js/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="/assets/admin-js/bootstrap.min.js" type="text/javascript"></script>
     <script src="/assets/admin-js/adminlte.min.js" type="text/javascript"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
   </head>
@@ -100,6 +102,8 @@
       <li><a href="/admin/admin-branch"><i class="fas fa-code-branch"></i>  <span>สาขา</span></a></li>
       <li><a href="/admin/admin-staff"><i class="fas fa-user-alt"></i>  <span>พนักงาน</span></a></li>
       <li><a href="/admin/admin-tour"><i class="fas fa-map-marked"></i>  <span>ทัวร์</span></a></li>
+      <li><a href="/admin/admin-payment"><i class="fas fa-money-bill-alt"></i> <span>การชำระเงิน</span></a></li>
+      <li><a href="/admin/admin-banner"><i class="fas fa-chalkboard"></i> <span>แบนเนอร์</span></a></li>
     </ul>
     <!-- /.sidebar-menu -->
   </section>

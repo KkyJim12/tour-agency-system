@@ -11,6 +11,8 @@ use App\Airline;
 use App\Branch;
 use App\Staff;
 use App\Tour;
+use App\PaymentPage;
+use App\Banner;
 
 class AdminUIController extends Controller
 {
@@ -194,4 +196,20 @@ class AdminUIController extends Controller
                                                                  ]);
     }
 
+    /* Show Payment Page */
+    public function ShowPaymentPage() {
+      $content = PaymentPage::first();
+      return view('backend.backend-pages.other.admin-payment',[
+                                                                'content' => $content,
+                                                              ]);
+    }
+
+
+    /* Show Banner Page */
+    public function ShowBanner()  {
+      $nav_banner = Banner::first();
+      return view('backend.backend-pages.banner.admin-banner',[
+                                                                'nav_banner' => $nav_banner,
+                                                              ]);
+    }
 }

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Continent;
 use App\Country;
 use App\Tour;
+use App\PaymentPage;
+use App\Airline;
 
 class UIViewController extends Controller
 {
@@ -23,17 +25,31 @@ class UIViewController extends Controller
 
     public function ShowCategory($country_id)  {
       $continent = Continent::all();
+      $airline = Airline::all();
       $country = Country::where('_id',$country_id)->first();
       $tour = Tour::where('tour_country_id',$country_id)->get();
       return view('pages.category',[
                                     'tour' => $tour,
                                     'country' => $country,
                                     'continent' => $continent,
+                                    'airline' => $airline,
                                    ]);
     }
 
+    public function ShowHowToPay()  {
+      $continent = Continent::all();
+      $content = PaymentPage::first();
+      return view('pages.other.how-to-pay',[
+                                            'continent' => $continent,
+                                            'content' => $content,
+                                           ]);
+    }
+
     public function ShowAboutus() {
-      return view('pages.aboutus');
+      $continent = Continent::all();
+      return view('pages.aboutus',[
+                                    'continent' => $continent,
+                                  ]);
     }
 
     public function ShowLogin() {
@@ -51,9 +67,78 @@ class UIViewController extends Controller
     public function ShowTour($tour_id)  {
       $country = Country::all();
       $tour = Tour::find($tour_id);
+      $continent = Continent::all();
       return view('pages.tour',[
                                 'country' => $country,
                                 'tour' => $tour,
+                                'continent' => $continent,
                                ]);
+    }
+
+    public function ShowSearchResult(Request $request)  {
+      $continent = Continent::all();
+      $search_word = $request->search_name;
+
+      if ($request->search_name && $request->search_tour_code && $request->search_tour_month) {
+        $tour_result = Tour::where('tour_name','LIKE','%'.$request->search_name.'%')
+                            ->orWhere('tour_country_name','LIKE','%'.$request->search_name.'%')
+                            ->orWhere('tour_city_name','LIKE','%'.$request->search_name.'%')
+                            ->where('tour_code','LIKE','%'.$request->search_tour_code.'%')
+                            ->where('tour_month',$request->search_tour_month)
+                            ->get();
+      }
+
+      elseif($request->search_name && $request->search_tour_code) {
+        $tour_result = Tour::where('tour_name','LIKE','%'.$request->search_name.'%')
+                            ->orWhere('tour_country_name','LIKE','%'.$request->search_name.'%')
+                            ->orWhere('tour_city_name','LIKE','%'.$request->search_name.'%')
+                            ->where('tour_code','LIKE','%'.$request->search_tour_code.'%')
+                            ->get();
+      }
+
+      elseif ($request->search_name && $request->search_tour_month) {
+        $tour_result = Tour::where('tour_name','LIKE','%'.$request->search_name.'%')
+                            ->orWhere('tour_country_name','LIKE','%'.$request->search_name.'%')
+                            ->orWhere('tour_city_name','LIKE','%'.$request->search_name.'%')
+                            ->where('tour_month',$request->search_tour_month)
+                            ->get();
+      }
+
+      elseif($request->search_tour_code && $request->search_tour_month) {
+        $tour_result = Tour::where('tour_month',$request->search_tour_month)
+                            ->where('tour_code','LIKE','%'.$request->search_tour_code.'%')
+                            ->get();
+      }
+      elseif($request->search_name) {
+        $tour_result = Tour::where('tour_name','LIKE','%'.$request->search_name.'%')
+                            ->orWhere('tour_country_name','LIKE','%'.$request->search_name.'%')
+                            ->orWhere('tour_city_name','LIKE','%'.$request->search_name.'%')
+                            ->get();
+      }
+      elseif($request->search_tour_code)  {
+        $tour_result = Tour::where('tour_code','LIKE','%'.$request->search_tour_code.'%')
+                            ->get();
+      }
+      elseif ($request->search_tour_month) {
+        $tour_result = Tour::where('tour_month',$request->search_tour_month)
+                            ->get();
+      }
+      else {
+        $tour_result = Tour::all();
+      }
+
+      return view('pages.search-result',[
+                                          'continent' => $continent,
+                                          'tour_result' => $tour_result,
+                                          'search_word' => $search_word,
+                                        ]);
+    }
+
+
+    public function ShowFilterResult(Request $request) {
+      $continent = Continent::all();
+      return view('pages.filter-result',[
+                                          'continent' => $continent,
+                                        ]);
     }
 }

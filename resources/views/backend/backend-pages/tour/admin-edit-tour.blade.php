@@ -8,6 +8,19 @@
 <div class="container">
   <div class="row">
       <form class="admin-form col-lg-6 col-md-6 col-sm-6" action="/admin/admin-edit-tour-process/{{$tour->_id}}" method="post" enctype="multipart/form-data">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+          <label>รหัสทัวร์</label>
+          <input class="form-control" type="text" name="tour_code" placeholder="รหัสทัวร์" value="{{$tour->tour_code}}">
+        </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>ชื่อทัวร์</label>
           <input class="form-control" type="text" name="tour_name" placeholder="ชื่อทัวร์" value="{{$tour->tour_name}}">
@@ -24,7 +37,7 @@
           <label>พนักงาน</label>
           <select class="form-control" name="tour_staff">
             @foreach($staff as $all_staff)
-            <option value="{{$all_staff->_id}}">{{$all_staff->staff_name}}</option>
+            <option value="{{$all_staff->_id}}" @if($tour->tour_staff_id == $all_staff->_id) selected @endif>{{$all_staff->staff_name}}</option>
             @endforeach
           </select>
         </div>
@@ -32,7 +45,7 @@
           <label>ประเทศ</label>
           <select class="form-control" name="tour_country">
             @foreach($country as $all_country)
-            <option value="{{$all_country->_id}}">{{$all_country->country_name}}</option>
+            <option value="{{$all_country->_id}}" @if($tour->tour_country_id == $all_country->_id) selected @endif>{{$all_country->country_name}}</option>
             @endforeach
           </select>
         </div>
@@ -40,8 +53,26 @@
           <label>สายการบิน</label>
           <select class="form-control" name="tour_airline">
             @foreach($airline as $all_airline)
-            <option value="{{$all_airline->_id}}">{{$all_airline->airline_name}}</option>
+            <option value="{{$all_airline->_id}}" @if($tour->tour_airline_id == $all_airline->_id) selected @endif>{{$all_airline->airline_name}}</option>
             @endforeach
+          </select>
+        </div>
+        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+          <label>เดือนที่เดินทาง</label>
+          <select class="form-control" name="tour_month">
+            <option value="">เลือกเดือน</option>
+            <option value="1">มกราคม</option>
+            <option value="2">กุมภาพันธ์</option>
+            <option value="3">มีนาคม</option>
+            <option value="4">เมษายน</option>
+            <option value="5">พฤษภาคม</option>
+            <option value="6">มิถุนายน</option>
+            <option value="7">กรกฎาคม</option>
+            <option value="8">สิงหาคม</option>
+            <option value="9">กันยายน</option>
+            <option value="10">ตุลาคม</option>
+            <option value="11">พฤษจิกายน</option>
+            <option value="12">ธันวาคม</option>
           </select>
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
@@ -66,7 +97,7 @@
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>โปรแกรมไฮไลท์</label>
-          <textarea class="form-control" name="tour_hightlight" rows="8" cols="80" placeholder="โปรแกรมไฮไลท์">{{$tour->tour_highlight}}</textarea>
+          <textarea class="form-control" name="tour_hightlight" rows="8" cols="80" placeholder="โปรแกรมไฮไลท์">{{$tour->tour_hightlight}}</textarea>
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>เงื่อนไขเพิ่มเติม</label>

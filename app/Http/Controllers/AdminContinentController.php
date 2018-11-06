@@ -10,6 +10,16 @@ use App\Continent;
 class AdminContinentController extends Controller
 {
     public function AdminCreateContinentProcess(Request $request) {
+
+      /* Validate First */
+
+      $request->validate([
+      'continent_name' => 'required|max:255',
+      'continent_sort' => 'required',
+      ]);
+
+      /* End Validate */
+
       $continent = new Continent;
       $continent->continent_name = $request->continent_name;
       $continent->continent_sort = $request->continent_sort;
@@ -26,12 +36,22 @@ class AdminContinentController extends Controller
       }
 
       $continent->save();
-      return redirect()->back();
+      return redirect()->route('admin-continent');
     }
 
     /* Admin Edit Continent Process */
 
     public function AdminEditContinentProcess(Request $request) {
+
+      /* Validate First */
+
+      $request->validate([
+      'continent_name' => 'required|max:255',
+      'continent_sort' => 'required',
+      ]);
+
+      /* End Validate */
+
       $continent = Continent::find($request->continent_id);
       $continent->continent_name = $request->continent_name;
       $continent->continent_sort = $request->continent_sort;
@@ -54,7 +74,7 @@ class AdminContinentController extends Controller
       }
 
       $continent->save();
-      return redirect()->back();
+      return redirect()->route('admin-continent');
     }
 
     /* Admin Delete Continent Process */

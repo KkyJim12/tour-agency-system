@@ -3,7 +3,7 @@
 @section('content')
 <div class="jumbotron jumbotron-fluid category-title">
   <div class="container">
-    <h1 class="display-4">ทัวร์ต่างประเทศ</h1>
+    <h1 class="display-4">ผลการค้นหา</h1>
     <p>หน้าแรก > ทัวร์ต่างประเทศ</p>
   </div>
 </div>
@@ -12,21 +12,21 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <strong><h3>{{$country->country_name}} ({{$tour->count()}})</h3> </strong>
-      <h5>{{$country->country_name}}:ทั้งหมด {{$tour->count()}} โปรแกรม</h5>
+      <strong><h3>ผลการค้นหา ({{$tour_result->count()}})</h3> </strong>
+      <h5>ผลการค้นหา:ทั้งหมด {{$tour_result->count()}} โปรแกรม</h5>
     </div>
   </div>
   <hr>
   <div class="filter mb-4 col-md-12">
     <h3>ค้นหาโปรแกรมทัวร์</h3>
-    <form class="row" action="/filter-result" method="post">
+    <form class="row" action="index.html" method="post">
       <div class="form-group col-md-3">
         <label>สถานที่จะไป</label>
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="fas fa-city"></i></span>
           </div>
-          <input class="form-control" type="text" name="filter_name" value="" placeholder="ชื่อประเทศ/เมือง">
+          <input class="form-control" type="text" name="" value="" placeholder="ชื่อประเทศ/เมือง">
         </div>
       </div>
       <div class="form-group col-md-3">
@@ -35,7 +35,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="fas fa-city"></i></span>
           </div>
-          <input class="form-control" type="date" name="filter_start_date" value="" placeholder="วันไป">
+          <input class="form-control" type="date" name="" value="" placeholder="วันไป">
         </div>
       </div>
       <div class="form-group col-md-3">
@@ -44,7 +44,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="fas fa-city"></i></span>
           </div>
-          <input class="form-control" type="date" name="filter_end_date" value="" placeholder="วันกลับ">
+          <input class="form-control" type="date" name="" value="" placeholder="วันกลับ">
         </div>
       </div>
       <div class="form-group col-md-3">
@@ -53,16 +53,14 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="fas fa-city"></i></span>
           </div>
-          <select class="form-control" name="filter_airline">
-            @foreach($airline as $all_airline)
-            <option value="{{$all_airline->_id}}">{{$all_airline->airline_name}}</option>
-            @endforeach
+          <select class="form-control" name="">
+            <option value=""></option>
           </select>
         </div>
       </div>
       <div class="form-group col-md-6">
         <label>ช่วงราคา</label>
-        <input type="text" id="filter_price" name="filter_price" value="" />
+        <input type="text" id="example_id" name="example_name" value="" />
       </div>
       <div class="col-md-3 mt-2">
         <label>รหัสทัวร์</label>
@@ -70,7 +68,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="fas fa-city"></i></span>
           </div>
-        <input class="form-control" type="text" name="filter_code" value="" placeholder="รหัสทัวร์">
+        <input class="form-control" type="text" name="" value="" placeholder="รหัสทัวร์">
       </div>
       </div>
       @csrf
@@ -85,7 +83,7 @@
 <!-- item -->
 <div class="row">
 
-  @foreach($tour as $show_tour)
+  @foreach($tour_result as $show_tour)
   <div class="col-lg-4 mb-5">
       <div class="card tour-box">
         <a href="/tour/{{$show_tour->_id}}">

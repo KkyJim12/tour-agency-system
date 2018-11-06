@@ -10,9 +10,13 @@
     @foreach($tour_discount as $show_tour_discount)
     <div class="item">
         <div class="card tour-box">
+          <a href="/tour/{{$show_tour_discount->_id}}">
           <img class="card-img-top tour-main-img" src="/assets/img/upload/tour/img/{{$show_tour_discount->tour_img}}" alt="tour_suggest">
+          </a>
           <div class="card-body">
-            <h5 class="card-title"><strong>{{$show_tour_discount->tour_name}}</strong></h5>
+            <a href="/tour/{{$show_tour_discount->_id}}">
+              <h5 class="card-title"><strong>{{$show_tour_discount->tour_name}}</strong></h5>
+            </a>
             <small><i>{{$show_tour_discount->tour_country_name}} -  {{$show_tour_discount->tour_day}} วัน {{$show_tour_discount->tour_night}} คืน</i></small>
             <div class="tour-detail-box mt-2">
               <p class="card-text">{{$show_tour_discount->tour_hightlight}}</p>

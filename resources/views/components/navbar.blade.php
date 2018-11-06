@@ -26,7 +26,7 @@
   <div class="container">
     <a class="navbar-brand" href="/"><img src="/assets/img/logo/logo.png" alt="logo"> </a>
     <div>
-      <img src="/assets/img/banner/banner-1.jpg" alt="">
+      <img class="nav-banner-img" src="/assets/img/banner/banner-1.jpg" alt="">
     </div>
   </div>
 </nav>
@@ -46,18 +46,20 @@
         </li>
         <li class="nav-item mr-3">
         <div class="dropdown">
-          <a class="nav-link dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             ทัวร์ต่างประเทศ
           </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <div class="dropdown-menu dropdown-nav" aria-labelledby="dropdownMenu2">
             @foreach($continent as $all_continent)
             <div class="row">
               <div class="col-lg-12">
                 <span class="dropdown-item">{{$all_continent->continent_name}}</span>
               </div>
-              <div class="col-lg-3">
-                <span class="dropdown-item"></span>
-              </div>
+              @foreach($all_continent->subcat as $subcat)
+                <div class="col-lg-3">
+                  <a class="cat-link" href="/category/{{$subcat->_id}}"><span class="dropdown-item"><img src="/assets/img/upload/country/{{$subcat->country_img}}" alt="country_img"> {{$subcat->country_name}}</span></a>
+                </div>
+              @endforeach
             </div>
             <hr>
             @endforeach
@@ -71,7 +73,7 @@
           <a class="nav-link" href="#">บทความ</a>
         </li>
         <li class="nav-item mr-3">
-          <a class="nav-link" href="#">การชำระเงิน</a>
+          <a class="nav-link" href="/how-to-pay">การชำระเงิน</a>
         </li>
         <li class="nav-item mr-3">
           <a class="nav-link" href="/aboutus">เกี่ยวกับเรา</a>

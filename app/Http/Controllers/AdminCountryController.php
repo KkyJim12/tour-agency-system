@@ -12,6 +12,18 @@ class AdminCountryController extends Controller
 
     /* Admin Create Country Process */
     public function AdminCreateCountryProcess(Request $request) {
+
+      /* Validate First */
+
+      $request->validate([
+      'country_name' => 'required|max:255',
+      'country_sort' => 'required',
+      'continent_id' => 'required',
+      'country_img' => 'required|max:2048|image'
+      ]);
+
+      /* End Validate */
+
       $continent = Continent::find($request->continent_id);
       $country = new Country;
       $country->country_name = $request->country_name;
@@ -37,6 +49,18 @@ class AdminCountryController extends Controller
 
     /* Admin Edit Country Process */
     public function AdminEditCountryProcess(Request $request) {
+
+      /* Validate First */
+
+      $request->validate([
+      'country_name' => 'required|max:255',
+      'country_sort' => 'required',
+      'continent_id' => 'required',
+      'country_img' => 'max:2048|image'
+      ]);
+
+      /* End Validate */
+
       $continent = Continent::find($request->continent_id);
       $country = Country::find($request->country_id);
       $country->country_name = $request->country_name;

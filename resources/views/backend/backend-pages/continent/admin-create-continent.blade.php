@@ -8,6 +8,15 @@
 <div class="container">
   <div class="row">
       <form class="admin-form col-lg-6 col-md-6 col-sm-6" action="/admin/admin-create-continent-process" method="post" enctype="multipart/form-data">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>ชื่อทวีป</label>
           <input class="form-control" type="text" name="continent_name" placeholder="ชื่อทวีป">

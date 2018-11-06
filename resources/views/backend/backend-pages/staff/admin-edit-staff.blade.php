@@ -8,6 +8,15 @@
 <div class="container">
   <div class="row">
       <form class="admin-form col-lg-6 col-md-6 col-sm-6" action="/admin/admin-edit-staff-process/{{$staff->_id}}" method="post" enctype="multipart/form-data">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>ชื่อนามสกุล</label>
           <input class="form-control" type="text" name="staff_name" placeholder="ชื่อ-นามสกุล" value="{{$staff->staff_name}}">
@@ -36,7 +45,7 @@
           <label>สาขา</label>
           <select class="form-control" name="staff_branch">
             @foreach($branch as $all_branch)
-            <option value="{{$all_branch->_id}}">{{$all_branch->branch_name}}</option>
+            <option value="{{$all_branch->_id}}" @if($staff->staff_branch_id == $all_branch->_id) selected @endif>{{$all_branch->branch_name}}</option>
             @endforeach
           </select>
         </div>

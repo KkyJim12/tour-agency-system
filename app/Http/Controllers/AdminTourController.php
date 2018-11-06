@@ -13,10 +13,36 @@ class AdminTourController extends Controller
 {
     public function AdminCreateTourProcess(Request $request)  {
 
+      /* Validate First */
+
+      $request->validate([
+      'tour_staff' => 'required',
+      'tour_country' => 'required',
+      'tour_airline' => 'required',
+      'tour_code' => 'required|max:255',
+      'tour_name' => 'required|max:255',
+      'tour_price' => 'required',
+      'tour_month' => 'required',
+      'tour_start_date' => 'required',
+      'tour_end_date' => 'required',
+      'tour_expire_date' => 'required',
+      'tour_day' => 'required',
+      'tour_night' => 'required',
+      'tour_hightlight' => 'required',
+      'tour_condition' => 'required',
+      'tour_sort' => 'required',
+      'tour_pdf' => 'required|max:10000|mimes:pdf',
+      'tour_img' => 'required|image|max:2048',
+      'tour_other_img' => 'required|image|max:2048',
+      ]);
+
+      /* End Validate */
+
       $staff = Staff::find($request->tour_staff);
       $country = Country::find($request->tour_country);
       $airline = Airline::find($request->tour_airline);
       $tour = new Tour;
+      $tour->tour_code = $request->tour_code;
       $tour->tour_name = $request->tour_name;
       $tour->tour_price = $request->tour_price;
       $tour->tour_discount = $request->tour_discount;
@@ -30,6 +56,7 @@ class AdminTourController extends Controller
       $tour->tour_airline_id = $airline->_id;
       $tour->tour_airline_name = $airline->airline_name;
       $tour->tour_airline_img = $airline->airline_img;
+      $tour->tour_month = $requesst->tour_month;
       $tour->tour_start_date = $request->tour_start_date;
       $tour->tour_end_date = $request->tour_end_date;
       $tour->tour_expire_date = $request->tour_expire_date;
@@ -82,10 +109,36 @@ class AdminTourController extends Controller
 
     public function AdminEditTourProcess(Request $request)  {
 
+      /* Validate First */
+
+      $request->validate([
+      'tour_staff' => 'required',
+      'tour_country' => 'required',
+      'tour_airline' => 'required',
+      'tour_code' => 'required|max:255',
+      'tour_name' => 'required|max:255',
+      'tour_price' => 'required',
+      'tour_month' => 'required',
+      'tour_start_date' => 'required',
+      'tour_end_date' => 'required',
+      'tour_expire_date' => 'required',
+      'tour_day' => 'required',
+      'tour_night' => 'required',
+      'tour_hightlight' => 'required',
+      'tour_condition' => 'required',
+      'tour_sort' => 'required',
+      'tour_pdf' => 'max:10000|mimes:pdf',
+      'tour_img' => 'image|max:2048',
+      'tour_other_img' => 'image|max:2048',
+      ]);
+
+      /* End Validate */
+
       $staff = Staff::find($request->tour_staff);
       $country = Country::find($request->tour_country);
       $airline = Airline::find($request->tour_airline);
       $tour = Tour::find($request->tour_id);
+      $tour->tour_code = $request->tour_code;
       $tour->tour_name = $request->tour_name;
       $tour->tour_price = $request->tour_price;
       $tour->tour_discount = $request->tour_discount;
@@ -99,6 +152,7 @@ class AdminTourController extends Controller
       $tour->tour_airline_id = $airline->_id;
       $tour->tour_airline_name = $airline->airline_name;
       $tour->tour_airline_img = $airline->airline_img;
+      $tour->tour_month = $request->tour_month;
       $tour->tour_start_date = $request->tour_start_date;
       $tour->tour_end_date = $request->tour_end_date;
       $tour->tour_expire_date = $request->tour_expire_date;

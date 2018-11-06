@@ -8,7 +8,7 @@
         <div class="col-md-12 mt-3">
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              <form action="index.html" method="post">
+              <form action="/search-result" method="post">
                 <div class="row">
                   <div class="form-group col-lg-3 mb-2">
                     <label>จุดหมาย</label>
@@ -16,7 +16,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1"><i class="fas fa-city"></i></span>
                       </div>
-                      <input type="text" class="form-control" placeholder="ชื่อประเทศ / เมือง" aria-label="Username" aria-describedby="basic-addon1">
+                      <input type="text" class="form-control" placeholder="ชื่อประเทศ / เมือง" aria-label="Username" name="search_name" aria-describedby="basic-addon1">
                     </div>
                   </div>
                   <div class="form-group col-lg-3 mb-2">
@@ -25,8 +25,20 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1"><i class="far fa-calendar-alt"></i></span>
                       </div>
-                      <select class="form-control" name="">
-                        <option value="">มกราคม</option>
+                      <select class="form-control" name="search_tour_month">
+                        <option value="">เลือกเดือน</option>
+                        <option value="1">มกราคม</option>
+                        <option value="2">กุมภาพันธ์</option>
+                        <option value="3">มีนาคม</option>
+                        <option value="4">เมษายน</option>
+                        <option value="5">พฤษภาคม</option>
+                        <option value="6">มิถุนายน</option>
+                        <option value="7">กรกฎาคม</option>
+                        <option value="8">สิงหาคม</option>
+                        <option value="9">กันยายน</option>
+                        <option value="10">ตุลาคม</option>
+                        <option value="11">พฤษจิกายน</option>
+                        <option value="12">ธันวาคม</option>
                       </select>
                     </div>
                   </div>
@@ -36,7 +48,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1"><i class="fas fa-list-ol"></i></span>
                       </div>
-                      <input class="form-control" type="text" name="" value="" placeholder="รหัสทัวร์">
+                      <input class="form-control" type="text" name="search_tour_code" placeholder="รหัสทัวร์">
                     </div>
                   </div>
                   @csrf
