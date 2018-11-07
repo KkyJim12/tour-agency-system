@@ -207,9 +207,19 @@ class AdminUIController extends Controller
 
     /* Show Banner Page */
     public function ShowBanner()  {
-      $nav_banner = Banner::first();
+      $nav_banner = Banner::where('banner_num','1')->first();
+      $second_banner = Banner::where('banner_num','2')->first();
+      $third_banner = Banner::where('banner_num','3')->first();
+      $fourth_banner = Banner::where('banner_num','4')->first();
+      $fifth_banner = Banner::where('banner_num','5')->first();
+      $sixth_banner = Banner::where('banner_num','6')->first();
       return view('backend.backend-pages.banner.admin-banner',[
                                                                 'nav_banner' => $nav_banner,
+                                                                'second_banner' => $second_banner,
+                                                                'third_banner' => $third_banner,
+                                                                'fourth_banner' => $fourth_banner,
+                                                                'fifth_banner' => $fifth_banner,
+                                                                'sixth_banner' => $sixth_banner,
                                                               ]);
     }
 }

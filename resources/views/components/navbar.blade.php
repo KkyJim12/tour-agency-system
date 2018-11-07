@@ -26,7 +26,9 @@
   <div class="container">
     <a class="navbar-brand" href="/"><img src="/assets/img/logo/logo.png" alt="logo"> </a>
     <div>
-      <img class="nav-banner-img" src="/assets/img/banner/banner-1.jpg" alt="">
+      <a href="{{$nav_banner->banner_link}}">
+        <img class="nav-banner-img" class="nav-banner-img" src="/assets/img/upload/banner/{{$nav_banner->banner_img}}" alt="">
+      </a>
     </div>
   </div>
 </nav>

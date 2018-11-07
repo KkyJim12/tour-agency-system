@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 mt-3 banner-fb">
-      <a href="#">
-        <img src="/assets/img/banner/banner-5.jpg" alt="banner">
+      <a href="{{$sixth_banner->banner_link}}">
+        <img class="big-banner-img" src="/assets/img/upload/banner/{{$sixth_banner->banner_img}}" alt="banner-ads">
       </a>
     </div>
     <div class="col-lg-4 mt-3">

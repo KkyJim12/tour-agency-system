@@ -18,37 +18,19 @@ class AdminBannerController extends Controller
 
       /* End Validate */
 
-      if (Banner::count() == 0) {
-        $banner = new Banner;
-        $banner->banner_link = $request->banner_link;
+      $banner = Banner::where('banner_num',$request->banner_num)->first();
 
-        /* upload image */
+      /* upload image */
 
-        if ($request->hasFile('banner_img')) {
-          $image = $request->file('banner_img');
-          $name = time().'.'.$image->getClientOriginalExtension();
-          $destinationPath = public_path('/assets/img/upload/banner');
-          $image->move($destinationPath, $name);
-          $banner->banner_img = $name;
-        }
+      if ($request->hasFile('banner_img')) {
+        $image = $request->file('banner_img');
+        $name = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = public_path('/assets/img/upload/banner');
+        $image->move($destinationPath, $name);
+        $banner->banner_img = $name;
       }
 
-      else {
-        $banner = Banner::first();
-
-        $banner->banner_link = $request->banner_link;
-
-        /* upload image */
-
-        if ($request->hasFile('banner_img')) {
-          $image = $request->file('banner_img');
-          $name = time().'.'.$image->getClientOriginalExtension();
-          $destinationPath = public_path('/assets/img/upload/banner');
-          $image->move($destinationPath, $name);
-          $banner->banner_img = $name;
-        }
-
-      }
+      $banner->banner_link = $request->banner_link;
 
       $banner->save();
 

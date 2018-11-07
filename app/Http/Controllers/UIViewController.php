@@ -8,6 +8,7 @@ use App\Country;
 use App\Tour;
 use App\PaymentPage;
 use App\Airline;
+use App\Banner;
 
 class UIViewController extends Controller
 {
@@ -15,11 +16,23 @@ class UIViewController extends Controller
       $tour_suggest = Tour::where('tour_suggest','1')->get();
       $tour_discount = Tour::where('tour_discount','!=',null)->get();
       $continent = Continent::all();
+      $nav_banner = Banner::where('banner_num','1')->first();
+      $second_banner = Banner::where('banner_num','2')->first();
+      $third_banner = Banner::where('banner_num','3')->first();
+      $fourth_banner = Banner::where('banner_num','4')->first();
+      $fifth_banner = Banner::where('banner_num','5')->first();
+      $sixth_banner = Banner::where('banner_num','6')->first();
 
       return view('index',[
                             'tour_suggest' => $tour_suggest,
                             'tour_discount' => $tour_discount,
                             'continent' => $continent,
+                            'nav_banner' => $nav_banner,
+                            'second_banner' => $second_banner,
+                            'third_banner' => $third_banner,
+                            'fourth_banner' => $fourth_banner,
+                            'fifth_banner' => $fifth_banner,
+                            'sixth_banner' => $sixth_banner,
                           ]);
     }
 
@@ -28,27 +41,33 @@ class UIViewController extends Controller
       $airline = Airline::all();
       $country = Country::where('_id',$country_id)->first();
       $tour = Tour::where('tour_country_id',$country_id)->get();
+      $nav_banner = Banner::where('banner_num','1')->first();
       return view('pages.category',[
                                     'tour' => $tour,
                                     'country' => $country,
                                     'continent' => $continent,
                                     'airline' => $airline,
+                                    'nav_banner' => $nav_banner,
                                    ]);
     }
 
     public function ShowHowToPay()  {
+      $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();
       $content = PaymentPage::first();
       return view('pages.other.how-to-pay',[
+                                            'nav_banner' => $nav_banner,
                                             'continent' => $continent,
                                             'content' => $content,
                                            ]);
     }
 
     public function ShowAboutus() {
+      $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();
       return view('pages.aboutus',[
                                     'continent' => $continent,
+                                    'nav_banner' => $nav_banner,
                                   ]);
     }
 
@@ -65,10 +84,12 @@ class UIViewController extends Controller
     }
 
     public function ShowTour($tour_id)  {
+      $nav_banner = Banner::where('banner_num','1')->first();
       $country = Country::all();
       $tour = Tour::find($tour_id);
       $continent = Continent::all();
       return view('pages.tour',[
+                                'nav_banner' => $nav_banner,
                                 'country' => $country,
                                 'tour' => $tour,
                                 'continent' => $continent,
@@ -76,7 +97,9 @@ class UIViewController extends Controller
     }
 
     public function ShowSearchResult(Request $request)  {
+      $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();
+      $airline = Airline::all();
       $search_word = $request->search_name;
 
       if ($request->search_name && $request->search_tour_code && $request->search_tour_month) {
@@ -128,9 +151,11 @@ class UIViewController extends Controller
       }
 
       return view('pages.search-result',[
+                                          'nav_banner' => $nav_banner,
                                           'continent' => $continent,
                                           'tour_result' => $tour_result,
                                           'search_word' => $search_word,
+                                          'airline' => $airline,
                                         ]);
     }
 
