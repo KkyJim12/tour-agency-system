@@ -13,6 +13,7 @@ use App\Staff;
 use App\Tour;
 use App\PaymentPage;
 use App\Banner;
+use App\Slide;
 
 class AdminUIController extends Controller
 {
@@ -221,5 +222,26 @@ class AdminUIController extends Controller
                                                                 'fifth_banner' => $fifth_banner,
                                                                 'sixth_banner' => $sixth_banner,
                                                               ]);
+    }
+
+    /*Show Slude Page*/
+    public function ShowSlide() {
+      $slide = Slide::all();
+      return view('backend.backend-pages.slide.admin-slide',[
+                                                              'slide' => $slide,
+                                                            ]);
+    }
+
+    /*Show Create Slide Page */
+    public function ShowCreateSlide() {
+      return view('backend.backend-pages.slide.admin-create-slide');
+    }
+
+    /*Show Edit Slide Page */
+    public function ShowEditSlide($slide_id) {
+      $slide = Slide::find($slide_id);
+      return view('backend.backend-pages.slide.admin-edit-slide',[
+                                                                  'slide' => $slide,
+                                                                 ]);
     }
 }

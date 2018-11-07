@@ -9,6 +9,7 @@ use App\Tour;
 use App\PaymentPage;
 use App\Airline;
 use App\Banner;
+use App\Slide;
 
 class UIViewController extends Controller
 {
@@ -22,7 +23,13 @@ class UIViewController extends Controller
       $fourth_banner = Banner::where('banner_num','4')->first();
       $fifth_banner = Banner::where('banner_num','5')->first();
       $sixth_banner = Banner::where('banner_num','6')->first();
-
+      $first_slide = Slide::first();
+      if ($first_slide !== null) {
+        $slide = Slide::where('_id','!=',$first_slide->_id)->get();
+      }
+      else {
+        $slide = null;
+      }
       return view('index',[
                             'tour_suggest' => $tour_suggest,
                             'tour_discount' => $tour_discount,
@@ -33,6 +40,8 @@ class UIViewController extends Controller
                             'fourth_banner' => $fourth_banner,
                             'fifth_banner' => $fifth_banner,
                             'sixth_banner' => $sixth_banner,
+                            'slide' => $slide,
+                            'first_slide' => $first_slide,
                           ]);
     }
 

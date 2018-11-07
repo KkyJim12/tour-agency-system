@@ -198,6 +198,28 @@ Route::middleware(['admin'])->group(function () {
 
   /**************************** End Tour Function **************************/
 
+  /**************************** All Slide Function **************************/
+
+  /* Show Slide List */
+  Route::get('/admin/admin-slide','AdminUIController@ShowSlide')->name('admin-slide');
+
+  /* Show Create Slide */
+  Route::get('/admin/admin-create-slide','AdminUIController@ShowCreateSlide');
+
+  /* Create Slide Process */
+  Route::post('/admin/admin-create-slide-process','AdminSlideController@AdminCreateSlideProcess');
+
+  /* Show Edit Slide */
+  Route::get('/admin/admin-edit-slide/{slide_id}','AdminUIController@ShowEditSlide');
+
+  /* Edit Slide Process */
+  Route::post('/admin/admin-edit-slide-process/{slide_id}','AdminSlideController@AdminEditSlideProcess');
+
+  /* Delete Slide Process */
+  Route::post('/admin/admin-delete-slide-process/{slide_id}','AdminSlideController@AdminDeleteSlideProcess');
+
+  /**************************** End Slide Function **************************/
+
 
   /**************************** Other Page *********************************/
 

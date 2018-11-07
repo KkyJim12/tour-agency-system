@@ -104,6 +104,7 @@
       <li><a href="/admin/admin-tour"><i class="fas fa-map-marked"></i>  <span>ทัวร์</span></a></li>
       <li><a href="/admin/admin-payment"><i class="fas fa-money-bill-alt"></i> <span>การชำระเงิน</span></a></li>
       <li><a href="/admin/admin-banner"><i class="fas fa-chalkboard"></i> <span>แบนเนอร์</span></a></li>
+      <li><a href="/admin/admin-slide"><i class="fab fa-slideshare"></i> <span>สไลด์</span></a></li>
     </ul>
     <!-- /.sidebar-menu -->
   </section>

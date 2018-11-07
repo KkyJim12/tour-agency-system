@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-lg-12">
-      <h3 class="tour-suggest-title">โปรแกรมทัวร์ลดรารคา</h3>
+      <h3 class="tour-suggest-title">โปรแกรมทัวร์ลดราคา</h3>
       <p class="tour-suggest-title">โปรแกรมทัวร์ลดราคา</p>
     </div>
   </div>
