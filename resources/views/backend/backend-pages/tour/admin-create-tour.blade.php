@@ -97,7 +97,7 @@
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>โปรแกรมไฮไลท์</label>
-          <textarea class="form-control" name="tour_highlight" rows="8" cols="80" placeholder="โปรแกรมไฮไลท์"></textarea>
+          <textarea class="form-control" name="tour_hightlight" rows="8" cols="80" placeholder="โปรแกรมไฮไลท์"></textarea>
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>เงื่อนไขเพิ่มเติม</label>
