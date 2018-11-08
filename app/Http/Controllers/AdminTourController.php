@@ -55,7 +55,7 @@ class AdminTourController extends Controller
       $tour->tour_airline_id = $airline->_id;
       $tour->tour_airline_name = $airline->airline_name;
       $tour->tour_airline_img = $airline->airline_img;
-      $tour->tour_month = $requesst->tour_month;
+      $tour->tour_month = $request->tour_month;
       $tour->tour_start_date = $request->tour_start_date;
       $tour->tour_end_date = $request->tour_end_date;
       $tour->tour_expire_date = $request->tour_expire_date;
