@@ -129,7 +129,7 @@ class AdminTourController extends Controller
       'tour_sort' => 'required',
       'tour_pdf' => 'max:10000|mimes:pdf',
       'tour_img' => 'image|max:2048',
-      'tour_other_img' => 'image|max:2048',
+      'tour_other_img[]' => 'image|max:2048',
       ]);
 
       /* End Validate */
