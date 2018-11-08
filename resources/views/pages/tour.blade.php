@@ -15,13 +15,13 @@
           <hr>
           <h5 class="tour-main-title">ติดต่อสอบถามโปรแกรมทัวร์</h5>
           <div class="row">
-            <div class="col-lg-4">
+            <div class="col-4">
               <a href="mailto:{{$tour->tour_staff_email}}"><img src="/assets/img/components/contact-1.png" alt="contact_img"></a>
             </div>
-            <div class="col-lg-4">
+            <div class="col-4">
               <a href="http://line.me/ti/p/{{$tour->tour_staff_line}}"><img src="/assets/img/components/contact-2.png" alt="contact_img"></a>
             </div>
-            <div class="col-lg-4">
+            <div class="col-4">
               <a href="tel:+66 {{$tour->tour_staff_phone}}"><img src="/assets/img/components/contact-3.png" alt="contact_img"></a>
             </div>
           </div>
@@ -69,12 +69,12 @@
       <h5>คิดจะเที่ยวคิดถึงรอยัลทัวร์</h5><br>
       @foreach($continent as $all_continent)
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-12">
             {{$all_continent->continent_name}}
           </div>
           <hr>
             @foreach($all_continent->subcat as $subcat)
-              <div class="col-lg-6">
+              <div class="col-6">
                 <a href="/category/{{$subcat->_id}}">
                   <img class="tour-cat-img" src="/assets/img/upload/country/{{$subcat->country_img}}" alt="country_img">  {{$subcat->country_name}}
                 </a>

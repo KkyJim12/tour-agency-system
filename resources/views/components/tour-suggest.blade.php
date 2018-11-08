@@ -29,14 +29,14 @@
               <img class="col-6 tour-airline-img" src="/assets/img/upload/airline/{{$show_tour_suggest->tour_airline_img}}" alt="airline_suggest">
             </div>
             <div class="row mt-3">
-              <div class="col-lg-6">
+              <div class="col-6">
                 <a class="btn btn-primary" href="/tour/{{$show_tour_suggest->_id}}">
-                <i class="fas fa-file-alt"></i>  รายละเอียด
+                  <i class="fas fa-file-alt"></i>  รายละเอียด
                 </a>
               </div>
-              <div class="col-lg-6 tour-file">
+              <div class="col-6 tour-file">
                 <a class="btn btn-success" href="/assets/img/upload/tour/pdf/{{$show_tour_suggest->tour_pdf}}" download>
-                <i class="fas fa-file-pdf"></i>  ไฟล์โปรแกรม
+                  <i class="fas fa-file-pdf"></i>  ไฟล์โปรแกรม
                 </a>
               </div>
             </div>
