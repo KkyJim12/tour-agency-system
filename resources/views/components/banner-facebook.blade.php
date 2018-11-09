@@ -1,3 +1,6 @@
+<?php
+try {
+    ?>
 <div class="container">
   <div class="row">
     <div class="col-lg-8 mt-3 banner-fb">
@@ -14,3 +17,9 @@
     </div>
   </div>
 </div>
+
+
+<?php
+} catch (\Throwable $egg) {
+    }
+?>

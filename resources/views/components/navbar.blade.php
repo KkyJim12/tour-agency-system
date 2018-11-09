@@ -26,9 +26,20 @@
   <div class="container">
     <a class="navbar-brand" href="/"><img src="/assets/img/logo/logo.png" alt="logo"> </a>
     <div>
+
+        <?php
+        try {
+            ?>
+
       <a href="{{$nav_banner->banner_link}}">
         <img class="nav-banner-img" class="nav-banner-img" src="/assets/img/upload/banner/{{$nav_banner->banner_img}}" alt="">
       </a>
+
+      <?php
+        } catch (\Throwable $egg) {
+        }
+      ?>
+
     </div>
   </div>
 </nav>
