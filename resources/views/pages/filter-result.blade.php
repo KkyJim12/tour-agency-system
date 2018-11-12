@@ -12,14 +12,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <strong><h3>ผลการค้นหา ({{$tour_result->count()}})</h3> </strong>
-      <h5>ผลการค้นหา:ทั้งหมด {{$tour_result->count()}} โปรแกรม</h5>
+      <strong><h3>ผลการค้นหา </h3> </strong>
+      <h5>ผลการค้นหา:ทั้งหมด  โปรแกรม</h5>
     </div>
   </div>
   <hr>
   <div class="filter mb-4 col-md-12">
     <h3>ค้นหาโปรแกรมทัวร์</h3>
-    <form class="row" action="index.html" method="post">
+    <form class="row" action="/filter-result" method="post">
       <div class="form-group col-md-3">
         <label>สถานที่จะไป</label>
         <div class="input-group">
@@ -60,7 +60,7 @@
       </div>
       <div class="form-group col-md-6">
         <label>ช่วงราคา</label>
-        <input type="text" id="example_id" name="example_name" value="" />
+        <input type="integer" id="filter_price" name="filter_price" value="" />
       </div>
       <div class="col-md-3 mt-2">
         <label>รหัสทัวร์</label>
@@ -83,7 +83,7 @@
 <!-- item -->
 <div class="row">
 
-  @foreach($tour_result as $show_tour)
+  @foreach($tours as $show_tour)
   <div class="col-lg-4 mb-5">
       <div class="card tour-box">
         <a href="/tour/{{$show_tour->_id}}">

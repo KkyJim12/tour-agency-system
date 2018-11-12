@@ -27,7 +27,7 @@ Route::get('/tour/{tour_id}','UIViewController@ShowTour');
 
 Route::post('/search-result','UIViewController@ShowSearchResult');
 
-Route::post('filter_result','UIViewController@ShowFilterResult');
+Route::post('/filter-result','TourSearchController@getMatchingTours');
 
 Route::get('/how-to-pay','UIViewController@ShowHowToPay');
 

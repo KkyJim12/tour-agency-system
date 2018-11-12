@@ -13,46 +13,46 @@ use App\Slide;
 
 class TourSearchController extends Controller
 {
-    public static function getMatchingTours(
-        String $countryName,
-        String $departDate,
-        String $returnDate,
-        String $airlineName,
-        Int $minimumPrice,
-        Int $maximumPrice,
-        String $tourCode
-    ) {
+    public static function getMatchingTours(Request $request) {
+
         $searchConditions = [];
 
         // Create tour conditions
-        if ($tourCode != "") {
-            $searchConditions[] = ["tour_code", "=", $tourCode];
+        if ($request->filter_code != "") {
+            $searchConditions[] = ["tour_code", "=", $request->filter_code];
         }
-        if ($countryName != "") {
-            $searchConditions[] = ["tour_country_name", "like", "%$countryName%"];
+        if ($request->filter_name != "") {
+            $searchConditions[] = ["tour_country_name", "like", "%$request->filter_name%"];
         }
-        if ($departDate != "") {
-            $searchConditions[] = ["tour_start_date", "=", $departDate];
+        if ($request->filter_start_date != "") {
+            $searchConditions[] = ["tour_start_date", ">=", $request->filter_start_date];
         }
-        if ($returnDate != "") {
-            $searchConditions[] = ["tour_end_date", "=", $returnDate];
+        if ($request->filter_end_date != "") {
+            $searchConditions[] = ["tour_end_date", "<=", $request->filter_end_date];
         }
-        if ($airlineName != "") {
-            $searchConditions[] = ["tour_airline_name", "=", $airlineName];
+        if ($request->filter_airline != "") {
+            $searchConditions[] = ["tour_airline_name", "=", $request->filter_airline];
         }
-        if ($minimumPrice >= 0) {
-            $searchConditions[] = ["tour_price", ">=", (int) $minimumPrice];
+        if ($request->filter_price[0] >= 0) {
+            $searchConditions[] = ["tour_price", ">=", $request->filter_price[0]];
         }
-        if ($maximumPrice >= 0 && $maximumPrice > $minimumPrice) {
-            $searchConditions[] = ["tour_price", "<=", (int) $maximumPrice];
+        if ($request->filter_price[1] >= 0 && $request->filter_price[1] > $request->filter_price[0]) {
+            $searchConditions[] = ["tour_price", "<=", $request->filter_price[1]];
         }
 
         // Get all matching tours
         if (count($searchConditions) <= 0) {
-            return [];
+          $continent = Continent::all();
+          return view('pages.filter-result',[
+                                              'continent' => $continent,
+                                            ]);
         } else {
             $tours = Tour::where($searchConditions)->get();
-            return $tours;
+            $continent = Continent::all();
+            return view('pages.filter-result',[
+                                                'continent' => $continent,
+                                                'tours' => $tours,
+                                              ]);
         }
     }
 }
