@@ -43,15 +43,19 @@ class TourSearchController extends Controller
         // Get all matching tours
         if (count($searchConditions) <= 0) {
           $continent = Continent::all();
+          $airline = Airline::all();
           return view('pages.filter-result',[
                                               'continent' => $continent,
+                                              'airline' => $airline,
                                             ]);
         } else {
             $tours = Tour::where($searchConditions)->get();
+            $airline = Airline::all();
             $continent = Continent::all();
             return view('pages.filter-result',[
                                                 'continent' => $continent,
                                                 'tours' => $tours,
+                                                'airline' => $airline,
                                               ]);
         }
     }

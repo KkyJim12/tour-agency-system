@@ -31,7 +31,7 @@
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>ราคาก่อนลด</label>
-          <input class="form-control" type="number" name="tour_discount" placeholder="ราคาก่อนลด">
+          <input class="form-control" type="number" name="tour_discount" placeholder="ราคาก่อนลด" value="{{$tour->tour_discount}}">
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>พนักงาน</label>
@@ -61,18 +61,18 @@
           <label>เดือนที่เดินทาง</label>
           <select class="form-control" name="tour_month">
             <option value="">เลือกเดือน</option>
-            <option value="1">มกราคม</option>
-            <option value="2">กุมภาพันธ์</option>
-            <option value="3">มีนาคม</option>
-            <option value="4">เมษายน</option>
-            <option value="5">พฤษภาคม</option>
-            <option value="6">มิถุนายน</option>
-            <option value="7">กรกฎาคม</option>
-            <option value="8">สิงหาคม</option>
-            <option value="9">กันยายน</option>
-            <option value="10">ตุลาคม</option>
-            <option value="11">พฤษจิกายน</option>
-            <option value="12">ธันวาคม</option>
+            <option value="1" @if($tour->tour_month == 1) selected @endif>มกราคม</option>
+            <option value="2" @if($tour->tour_month == 2) selected @endif>กุมภาพันธ์</option>
+            <option value="3" @if($tour->tour_month == 3) selected @endif>มีนาคม</option>
+            <option value="4" @if($tour->tour_month == 4) selected @endif>เมษายน</option>
+            <option value="5" @if($tour->tour_month == 5) selected @endif>พฤษภาคม</option>
+            <option value="6" @if($tour->tour_month == 6) selected @endif>มิถุนายน</option>
+            <option value="7" @if($tour->tour_month == 7) selected @endif>กรกฎาคม</option>
+            <option value="8" @if($tour->tour_month == 8) selected @endif>สิงหาคม</option>
+            <option value="9" @if($tour->tour_month == 9) selected @endif>กันยายน</option>
+            <option value="10" @if($tour->tour_month == 10) selected @endif>ตุลาคม</option>
+            <option value="11" @if($tour->tour_month == 11) selected @endif>พฤษจิกายน</option>
+            <option value="12" @if($tour->tour_month == 12) selected @endif>ธันวาคม</option>
           </select>
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">

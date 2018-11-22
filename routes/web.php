@@ -227,6 +227,14 @@ Route::middleware(['admin'])->group(function () {
 
   Route::post('/admin-save-payment-page','AdminOtherPageController@SavePayment');
 
+  Route::get('/admin/admin-aboutus','AdminUIController@ShowAdminOtherPage');
+
+  Route::post('/admin-save-aboutus-page','AdminOtherPageController@SaveAboutus');
+
+  Route::get('/admin/admin-contact','AdminUIController@ShowAdminContactPage');
+
+  Route::post('/admin-save-contact-page','AdminOtherPageController@SaveContact');
+
   /**************************** End Other Page *****************************/
 
   /**************************** All Tour Function **************************/

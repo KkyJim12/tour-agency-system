@@ -14,6 +14,8 @@ use App\Tour;
 use App\PaymentPage;
 use App\Banner;
 use App\Slide;
+use App\Aboutus;
+use App\Contact;
 
 class AdminUIController extends Controller
 {
@@ -200,9 +202,12 @@ class AdminUIController extends Controller
     /* Show Payment Page */
     public function ShowPaymentPage() {
       $content = PaymentPage::first();
-      return view('backend.backend-pages.other.admin-payment',[
-                                                                'content' => $content,
-                                                              ]);
+
+        return view('backend.backend-pages.other.admin-payment',[
+                                                                  'content' => $content,
+                                                                ]);
+
+
     }
 
 
@@ -224,7 +229,7 @@ class AdminUIController extends Controller
                                                               ]);
     }
 
-    /*Show Slude Page*/
+    /*Show Slide Page*/
     public function ShowSlide() {
       $slide = Slide::all();
       return view('backend.backend-pages.slide.admin-slide',[
@@ -243,5 +248,21 @@ class AdminUIController extends Controller
       return view('backend.backend-pages.slide.admin-edit-slide',[
                                                                   'slide' => $slide,
                                                                  ]);
+    }
+
+    /* Show Admin Other Page */
+    public function ShowAdminOtherPage()  {
+      $content = Aboutus::first();
+      return view('backend.backend-pages.other.admin-aboutus',[
+                                                                'content' => $content,
+                                                              ]);
+    }
+
+    /* Show Admin Contact Page */
+    public function ShowAdminContactPage()  {
+      $content = Contact::first();
+      return view('backend.backend-pages.other.admin-contact',[
+                                                                'content' => $content,
+                                                              ]);
     }
 }

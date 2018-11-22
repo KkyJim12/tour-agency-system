@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <form  action="/admin-save-payment-page" method="post">
+      <form  action="/admin-save-contact-page" method="post">
         <div class="panel-body">
           @if($content == null)
             <textarea rows="20"  name="content"></textarea>
