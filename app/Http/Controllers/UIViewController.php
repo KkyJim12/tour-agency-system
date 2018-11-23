@@ -10,6 +10,8 @@ use App\PaymentPage;
 use App\Airline;
 use App\Banner;
 use App\Slide;
+use App\Aboutus;
+use App\Contact;
 
 class UIViewController extends Controller
 {
@@ -46,6 +48,7 @@ class UIViewController extends Controller
     }
 
     public function ShowCategory($country_id)  {
+      $filter_country = Country::all();
       $continent = Continent::all();
       $airline = Airline::all();
       $country = Country::where('_id',$country_id)->first();
@@ -57,6 +60,7 @@ class UIViewController extends Controller
                                     'continent' => $continent,
                                     'airline' => $airline,
                                     'nav_banner' => $nav_banner,
+                                    'filter_country' => $filter_country,
                                    ]);
     }
 
@@ -71,14 +75,28 @@ class UIViewController extends Controller
                                            ]);
     }
 
+    public function ShowContactus() {
+      $nav_banner = Banner::where('banner_num','1')->first();
+      $continent = Continent::all();
+      $content = Contact::first();
+      return view('pages.other.how-to-pay',[
+                                            'nav_banner' => $nav_banner,
+                                            'continent' => $continent,
+                                            'content' => $content,
+                                           ]);
+    }
+
     public function ShowAboutus() {
       $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();
-      return view('pages.aboutus',[
+      $content = Aboutus::first();
+      return view('pages.other.aboutus',[
                                     'continent' => $continent,
                                     'nav_banner' => $nav_banner,
+                                    'content' => $content,
                                   ]);
     }
+
 
     public function ShowLogin() {
 
@@ -106,6 +124,7 @@ class UIViewController extends Controller
     }
 
     public function ShowSearchResult(Request $request)  {
+      $filter_country = Country::all();
       $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();
       $airline = Airline::all();
@@ -165,14 +184,9 @@ class UIViewController extends Controller
                                           'tour_result' => $tour_result,
                                           'search_word' => $search_word,
                                           'airline' => $airline,
+                                          'filter_country' => $filter_country,
                                         ]);
     }
 
 
-    public function ShowFilterResult(Request $request) {
-      $continent = Continent::all();
-      return view('pages.filter-result',[
-                                          'continent' => $continent,
-                                        ]);
-    }
 }

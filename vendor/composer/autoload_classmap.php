@@ -6,11 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Aboutus' => $baseDir . '/app/Aboutus.php',
     'App\\Airline' => $baseDir . '/app/Airline.php',
     'App\\Banner' => $baseDir . '/app/Banner.php',
     'App\\Branch' => $baseDir . '/app/Branch.php',
     'App\\City' => $baseDir . '/app/City.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Contact' => $baseDir . '/app/Contact.php',
     'App\\Continent' => $baseDir . '/app/Continent.php',
     'App\\Country' => $baseDir . '/app/Country.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -2315,6 +2317,8 @@ return array(
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'Parsedown' => $vendorDir . '/erusev/parsedown/Parsedown.php',
+    'Petehouston\\Tinymce\\TinymceController' => $vendorDir . '/petehouston/laravel-tinymce-simple-imageupload/src/TinymceController.php',
+    'Petehouston\\Tinymce\\TinymceServiceProvider' => $vendorDir . '/petehouston/laravel-tinymce-simple-imageupload/src/TinymceServiceProvider.php',
     'PharIo\\Manifest\\Application' => $vendorDir . '/phar-io/manifest/src/values/Application.php',
     'PharIo\\Manifest\\ApplicationName' => $vendorDir . '/phar-io/manifest/src/values/ApplicationName.php',
     'PharIo\\Manifest\\Author' => $vendorDir . '/phar-io/manifest/src/values/Author.php',

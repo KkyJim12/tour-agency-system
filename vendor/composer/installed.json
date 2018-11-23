@@ -1878,6 +1878,54 @@
         ]
     },
     {
+        "name": "petehouston/laravel-tinymce-simple-imageupload",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/petehouston/laravel-tinymce-simple-imageupload.git",
+            "reference": "0f65b8e9619dc4e24313ce5fdcf4053dd099d178"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/petehouston/laravel-tinymce-simple-imageupload/zipball/0f65b8e9619dc4e24313ce5fdcf4053dd099d178",
+            "reference": "0f65b8e9619dc4e24313ce5fdcf4053dd099d178",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "~5.1",
+            "php": "~5.5|~7.0"
+        },
+        "time": "2016-11-01T08:52:37+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Petehouston\\Tinymce\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Pete Houston",
+                "email": "contact@petehouston.com",
+                "homepage": "http://petehouston.com"
+            }
+        ],
+        "description": "Simple image upload for TinyMCE in Laravel.",
+        "homepage": "https://github.com/petehouston/laravel-tinymce-simple-imageupload",
+        "keywords": [
+            "Image upload",
+            "laravel",
+            "laravel 5",
+            "php",
+            "tinymce"
+        ]
+    },
+    {
         "name": "phar-io/manifest",
         "version": "1.0.3",
         "version_normalized": "1.0.3.0",

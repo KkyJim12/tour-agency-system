@@ -31,6 +31,8 @@ Route::post('/filter-result','TourSearchController@getMatchingTours');
 
 Route::get('/how-to-pay','UIViewController@ShowHowToPay');
 
+Route::get('/contactus','UIViewController@ShowContactus');
+
 /* Backend */
 
 Route::middleware(['admin'])->group(function () {

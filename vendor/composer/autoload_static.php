@@ -68,6 +68,7 @@ class ComposerStaticInit2e3d43b40368bb95ea5258538f8876f7
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
             'PhpParser\\' => 10,
+            'Petehouston\\Tinymce\\' => 20,
         ),
         'O' => 
         array (
@@ -233,6 +234,10 @@ class ComposerStaticInit2e3d43b40368bb95ea5258538f8876f7
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'Petehouston\\Tinymce\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/petehouston/laravel-tinymce-simple-imageupload/src',
+        ),
         'Opis\\Closure\\' => 
         array (
             0 => __DIR__ . '/..' . '/opis/closure/src',
@@ -359,11 +364,13 @@ class ComposerStaticInit2e3d43b40368bb95ea5258538f8876f7
     );
 
     public static $classMap = array (
+        'App\\Aboutus' => __DIR__ . '/../..' . '/app/Aboutus.php',
         'App\\Airline' => __DIR__ . '/../..' . '/app/Airline.php',
         'App\\Banner' => __DIR__ . '/../..' . '/app/Banner.php',
         'App\\Branch' => __DIR__ . '/../..' . '/app/Branch.php',
         'App\\City' => __DIR__ . '/../..' . '/app/City.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Contact' => __DIR__ . '/../..' . '/app/Contact.php',
         'App\\Continent' => __DIR__ . '/../..' . '/app/Continent.php',
         'App\\Country' => __DIR__ . '/../..' . '/app/Country.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -2668,6 +2675,8 @@ class ComposerStaticInit2e3d43b40368bb95ea5258538f8876f7
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'Parsedown' => __DIR__ . '/..' . '/erusev/parsedown/Parsedown.php',
+        'Petehouston\\Tinymce\\TinymceController' => __DIR__ . '/..' . '/petehouston/laravel-tinymce-simple-imageupload/src/TinymceController.php',
+        'Petehouston\\Tinymce\\TinymceServiceProvider' => __DIR__ . '/..' . '/petehouston/laravel-tinymce-simple-imageupload/src/TinymceServiceProvider.php',
         'PharIo\\Manifest\\Application' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Application.php',
         'PharIo\\Manifest\\ApplicationName' => __DIR__ . '/..' . '/phar-io/manifest/src/values/ApplicationName.php',
         'PharIo\\Manifest\\Author' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Author.php',

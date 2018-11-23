@@ -1,12 +1,4 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <strong><h3>ผลการค้นหา </h3> </strong>
-      <h5>ผลการค้นหา:ทั้งหมด โปรแกรม</h5>
-    </div>
-  </div>
-  <hr>
-  <div class="filter mb-4 col-md-12">
+<div class="filter mb-4 col-md-12">
     <h3>ค้นหาโปรแกรมทัวร์</h3>
     <form class="row" action="/filter-result" method="post">
       <div class="form-group col-md-3">
@@ -19,10 +11,21 @@
         </div>
       </div>
       <div class="form-group col-md-3">
+        <label>ประเทศ/เมือง</label>
+        <div class="input-group">
+          <select class="form-control" name="">
+            <option value="">เลือกประเทศ/เมือง</option>
+            @foreach($filter_country as $all_country)
+            <option value="{{$all_country->_id}}">{{$all_country->country_name}}</option>
+            @endforeach
+          </select>
+        </div>
+      </div>
+      <div class="form-group col-md-3">
         <label>วันเดินทาง</label>
         <div class="input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><i class="fas fa-city"></i></span>
+            <span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
           </div>
           <input class="form-control" type="date" name="filter_start_date" value="" placeholder="วันไป">
         </div>
@@ -31,7 +34,7 @@
         <label>วันกลับ</label>
         <div class="input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><i class="fas fa-city"></i></span>
+            <span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
           </div>
           <input class="form-control" type="date" name="filter_end_date" value="" placeholder="วันกลับ">
         </div>
@@ -40,7 +43,7 @@
         <label>สายการบิน</label>
         <div class="input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><i class="fas fa-city"></i></span>
+            <span class="input-group-text" id="basic-addon1"><i class="fas fa-plane"></i></span>
           </div>
           <select class="form-control" name="filter_airline">
             @foreach($airline as $all_airline)
@@ -49,21 +52,21 @@
           </select>
         </div>
       </div>
-      <div class="form-group col-md-6">
-        <label>ช่วงราคา</label>
-        <input type="text" id="filter_price" name="filter_price" value="" />
-      </div>
-      <div class="col-md-3 mt-2">
+      <div class="col-md-3">
         <label>รหัสทัวร์</label>
         <div class="input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><i class="fas fa-city"></i></span>
+            <span class="input-group-text" id="basic-addon1"><i class="fas fa-list-ol"></i></span>
           </div>
         <input class="form-control" type="text" name="filter_code" value="" placeholder="รหัสทัวร์">
       </div>
       </div>
+      <div class="form-group col-md-6">
+        <label>ช่วงราคา</label>
+        <input type="text" id="filter_price" name="filter_price" value="" />
+      </div>
       @csrf
-      <div class="form-group col-md-3">
+      <div class="form-group col-md-12">
         <label></label>
         <button class="btn btn-success form-control" type="submit" name="button">ค้นหา</button>
       </div>
