@@ -97,11 +97,11 @@
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>โปรแกรมไฮไลท์</label>
-          <textarea class="form-control" name="tour_hightlight" rows="8" cols="80" placeholder="โปรแกรมไฮไลท์"></textarea>
+          <textarea class="form-control mcetext" id="mcetext1" name="tour_hightlight" rows="8" cols="80" placeholder="โปรแกรมไฮไลท์"></textarea>
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>เงื่อนไขเพิ่มเติม</label>
-          <textarea class="form-control" name="tour_condition" rows="8" cols="80" placeholder="เงื่อนไขเพิ่มเติม"></textarea>
+          <textarea class="form-control mcetext" id="mcetext2" name="tour_condition" rows="8" cols="80" placeholder="เงื่อนไขเพิ่มเติม"></textarea>
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>ลำดับที่</label>
@@ -132,4 +132,41 @@
       </form>
   </div>
 </div>
+@endsection
+
+@section('script')
+<script>
+    $(function(){
+        tinymce.init({
+            selector: ".mcetext",
+            theme: "modern",
+            plugins: "link code",
+            height: 400,
+            setup: function(editor) {
+                var inp = $('<input id="tinymce-uploader" type="file" name="pic" accept="image/*" style="display:none">');
+                $(editor.getElement()).parent().append(inp);
+
+                inp.on("change",function(){
+                    var input = inp.get(0);
+                    var file = input.files[0];
+                    var fr = new FileReader();
+                    fr.onload = function() {
+                        var img = new Image();
+                        img.src = fr.result;
+                        editor.insertContent('<img src="'+img.src+'"/>');
+                        inp.val('');
+                    }
+                    fr.readAsDataURL(file);
+                });
+                editor.addMenuItem("imageupload", {
+                    text: "Photo (Upload)",
+                    context: "insert",
+                    onclick: function() {
+                        inp.trigger("click");
+                    }
+                });
+            }
+        });
+    });
+</script>
 @endsection

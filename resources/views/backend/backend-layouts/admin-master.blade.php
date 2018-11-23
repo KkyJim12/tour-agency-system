@@ -13,8 +13,7 @@
     <script src="/assets/admin-js/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="/assets/admin-js/bootstrap.min.js" type="text/javascript"></script>
     <script src="/assets/admin-js/adminlte.min.js" type="text/javascript"></script>
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=4f4qi53fn0tznpzkqy9lc3vjcz2mpwewo4x95xpp5azt6crb"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
+    <script src="/assets/tinymce/tinymce.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
   </head>
@@ -120,5 +119,6 @@
     @yield('content')
   </section>
 </div>
+@yield('script')
   </body>
 </html>
