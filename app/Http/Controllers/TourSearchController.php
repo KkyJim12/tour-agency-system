@@ -13,9 +13,18 @@ use App\Slide;
 
 class TourSearchController extends Controller
 {
-    public static function getMatchingTours(Request $request) {
+    public static function getMatchingTours(Request $request)
+    {
 
-        return $request->filter_price[0];
+        // Prep filter price
+        try {
+            $priceFilter = explode(";", $request->filter_price);
+            $minimumPrice = $priceFilter[0];
+            $maximumPrice = $priceFilter[1];
+        } catch (\Throwable $priceError) {
+            $minimumPrice = 0;
+            $maximumPrice = 0;
+        }
 
         $searchConditions = [];
 
@@ -35,20 +44,20 @@ class TourSearchController extends Controller
         if ($request->filter_airline != "") {
             $searchConditions[] = ["tour_airline_id", "=", $request->filter_airline];
         }
-        if ($request->filter_price[0] >= 0) {
-            $searchConditions[] = ["tour_price", ">=", $request->filter_price[0]];
+        if ($minimumPrice >= 0) {
+            $searchConditions[] = ["tour_price", ">=", $minimumPrice];
         }
-        if ($request->filter_price[1] >= 0 && $request->filter_price[1] > $request->filter_price[0]) {
-            $searchConditions[] = ["tour_price", "<=", $request->filter_price[1]];
+        if ($maximumPrice >= 0 && $maximumPrice > $minimumPrice) {
+            $searchConditions[] = ["tour_price", "<=", $maximumPrice];
         }
 
         // Get all matching tours
         if (count($searchConditions) <= 0) {
-          $tours = Tour::all();
-          $filter_country = Country::all();
-          $continent = Continent::all();
-          $airline = Airline::all();
-          return view('pages.filter-result',[
+            $tours = Tour::all();
+            $filter_country = Country::all();
+            $continent = Continent::all();
+            $airline = Airline::all();
+            return view('pages.filter-result', [
                                               'continent' => $continent,
                                               'airline' => $airline,
                                               'filter_country' => $filter_country,
@@ -59,7 +68,7 @@ class TourSearchController extends Controller
             $filter_country = Country::all();
             $airline = Airline::all();
             $continent = Continent::all();
-            return view('pages.filter-result',[
+            return view('pages.filter-result', [
                                                 'continent' => $continent,
                                                 'tours' => $tours,
                                                 'airline' => $airline,
