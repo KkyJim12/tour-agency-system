@@ -9,7 +9,7 @@
   </div>
   <div class="row mt-3">
     @foreach($article_cat as $show_article_cat)
-    <div class="col-3">
+    <div class="col-3 article-category">
       <a href="/article/{{$show_article_cat->_id}}">
         <img class="article-category" src="/assets/img/upload/article/category/{{$show_article_cat->article_cat_img}}" alt="article-category">
       </a>
