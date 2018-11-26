@@ -12,6 +12,8 @@ use App\Banner;
 use App\Slide;
 use App\Aboutus;
 use App\Contact;
+use App\ArticleCat;
+use App\Article;
 
 class UIViewController extends Controller
 {
@@ -188,5 +190,41 @@ class UIViewController extends Controller
                                         ]);
     }
 
+    public function ShowArticle() {
+      $nav_banner = Banner::where('banner_num','1')->first();
+      $continent = Continent::all();
+      $article_cat = ArticleCat::where('article_cat_hide','=',null)->orderBy('article_cat_sort','DESC')->get();
 
+      return view('pages.article.article',[
+                                            'nav_banner' => $nav_banner,
+                                            'continent' => $continent,
+                                            'article_cat' => $article_cat,
+                                          ]);
+    }
+
+    public function ShowArticleCategory($article_category_id) {
+      $nav_banner = Banner::where('banner_num','1')->first();
+      $continent = Continent::all();
+      $show_article = Article::where('article_cat_id',$article_category_id)->get();
+      $this_article_cat = ArticleCat::find($article_category_id);
+
+      return view('pages.article.article-category',[
+                                                    'nav_banner' => $nav_banner,
+                                                    'continent' => $continent,
+                                                    'show_article' => $show_article,
+                                                    'this_article_cat' => $this_article_cat,
+                                                   ]);
+    }
+
+    public function ShowArticleContent($article_category_id,$article_id)  {
+      $nav_banner = Banner::where('banner_num','1')->first();
+      $continent = Continent::all();
+      $article = Article::find($article_id);
+
+      return view('pages.article.article-content',[
+                                                    'nav_banner' => $nav_banner,
+                                                    'continent' => $continent,
+                                                    'article' => $article,
+                                                  ]);
+    }
 }

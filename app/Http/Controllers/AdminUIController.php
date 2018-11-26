@@ -16,6 +16,8 @@ use App\Banner;
 use App\Slide;
 use App\Aboutus;
 use App\Contact;
+use App\ArticleCat;
+use App\Article;
 
 class AdminUIController extends Controller
 {
@@ -264,5 +266,52 @@ class AdminUIController extends Controller
       return view('backend.backend-pages.other.admin-contact',[
                                                                 'content' => $content,
                                                               ]);
+    }
+
+    /* Show Admin Article Category Page */
+    public function ShowAdminArticleCategoryPage()  {
+      $article_cat = ArticleCat::all();
+      return view('backend.backend-pages.article.admin-article-cat',[
+                                                                      'article_cat' => $article_cat,
+                                                                    ]);
+    }
+
+    /* Show Admin Create Article Category Page */
+    public function ShowCreateArticleCat()  {
+      return view('backend.backend-pages.article.admin-create-article-cat');
+    }
+
+    /* Show Admin Edit Article Category Page */
+    public function ShowEditArticleCat($articlecat_id)  {
+      $article_cat = ArticleCat::find($articlecat_id);
+      return view('backend.backend-pages.article.admin-edit-article-cat',[
+                                                                            'article_cat' => $article_cat,
+                                                                         ]);
+    }
+
+    /* Show Admin Article */
+    public function ShowArticle() {
+      $article = Article::all();
+      return view('backend.backend-pages.article.admin-article',[
+                                                                  'article' => $article,
+                                                                ]);
+    }
+
+    /* Show Create Article Page */
+    public function ShowCreateArticle() {
+      $all_article_cat = ArticleCat::all();
+      return view('backend.backend-pages.article.admin-create-article',[
+                                                                        'all_article_cat' => $all_article_cat,
+                                                                       ]);
+    }
+
+    /* Show Edit Article Page*/
+    public function ShowEDitArticle($article_id)  {
+      $article = Article::find($article_id);
+      $all_article_cat = ArticleCat::all();
+      return view('backend.backend-pages.article.admin-edit-article',[
+                                                                      'all_article_cat' => $all_article_cat,
+                                                                      'article' => $article,
+                                                                     ]);
     }
 }

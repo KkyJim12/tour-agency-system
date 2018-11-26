@@ -106,6 +106,17 @@
       <li><a href="/admin/admin-payment"><i class="fas fa-money-bill-alt"></i> <span>การชำระเงิน</span></a></li>
       <li><a href="/admin/admin-aboutus"><i class="fas fa-info-circle"></i> <span>เกี่ยวกับเรา</span></a></li>
       <li><a href="/admin/admin-contact"><i class="fas fa-phone-volume"></i> <span>ติดต่อเรา</span></a></li>
+      <li class="treeview">
+        <a href="#"><i class="far fa-newspaper"></i>  <span>บทความ</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+        <ul class="treeview-menu">
+          <li><a href="/admin/admin-article-cat"><i class="fas fa-book"></i>  หมวดหมู่บทความ</a></li>
+          <li><a href="/admin/admin-article"><i class="fas fa-book"></i>  บทความ</a></li>
+        </ul>
+      </li>
     </ul>
     <!-- /.sidebar-menu -->
   </section>

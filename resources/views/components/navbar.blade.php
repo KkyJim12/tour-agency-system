@@ -83,7 +83,7 @@
           <a class="nav-link" href="#">สินค้าและบริการอื่น</a>
         </li>
         <li class="nav-item mr-3">
-          <a class="nav-link" href="#">บทความ</a>
+          <a class="nav-link" href="/article">บทความ</a>
         </li>
         <li class="nav-item mr-3">
           <a class="nav-link" href="/how-to-pay">การชำระเงิน</a>

@@ -33,6 +33,14 @@ Route::get('/how-to-pay','UIViewController@ShowHowToPay');
 
 Route::get('/contactus','UIViewController@ShowContactus');
 
+
+/* Article Page */
+Route::get('/article','UIViewController@ShowArticle');
+
+Route::get('/article/{article_category_id}','UIViewController@ShowArticleCategory');
+
+Route::get('/article/{article_category_id}/{article_id}','UIViewController@ShowArticleContent');
+
 /* Backend */
 
 Route::middleware(['admin'])->group(function () {
@@ -245,4 +253,36 @@ Route::middleware(['admin'])->group(function () {
   Route::post('/admin/admin-banner-save','AdminBannerController@AdminBannerSave');
 
   /**************************** End Tour Function **************************/
+
+  /**************************** All Article Category Function **************************/
+
+  Route::get('/admin/admin-article-cat','AdminUIController@ShowAdminArticleCategoryPage')->name('admin-article-cat');
+
+  Route::get('/admin/admin-create-article-cat','AdminUIController@ShowCreateArticleCat');
+
+  Route::post('/admin/admin-create-articlecat-process','AdminArticleCatController@CreateArticleCatProcess');
+
+  Route::get('/admin/admin-edit-article-cat/{articlecat_id}','AdminUIController@ShowEditArticleCat');
+
+  Route::post('/admin/admin-edit-articlecat-process/{articlecat_id}','AdminArticleCatController@AdminEditArticleCatProcess');
+
+  Route::post('/admin/admin-delete-article-cat-process/{articlecat_id}','AdminArticleCatController@AdminDeleteArticleCatProcess');
+
+  /**************************** End Article Category Function **************************/
+
+  /**************************** All Article Function **************************/
+
+  Route::get('/admin/admin-article','AdminUIController@ShowArticle')->name('admin-article');
+
+  Route::get('/admin/admin-create-article','AdminUIController@ShowCreateArticle');
+
+  Route::post('/admin/admin-create-article-process','AdminArticleController@AdminCreateArticleProcess');
+
+  Route::get('/admin/admin-edit-article/{article_id}','AdminUIController@ShowEditArticle');
+
+  Route::post('/admin/admin-edit-article-process/{article_id}','AdminArticleController@AdminEditArticleProcess');
+
+  Route::post('/admin/admin-delete-article-process/{article_id}','AdminArticleController@AdminDeleteArticleProcess');
+
+  /**************************** All Article Function **************************/
 });
