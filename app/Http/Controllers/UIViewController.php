@@ -17,7 +17,7 @@ class UIViewController extends Controller
 {
     public function ShowIndex() {
       $tour_suggest = Tour::where('tour_suggest','1')->get();
-      $tour_discount = Tour::where('tour_discount','!=',null)->get();
+      $tour_discount = Tour::where('tour_discount','!=',0)->get();
       $continent = Continent::all();
       $nav_banner = Banner::where('banner_num','1')->first();
       $second_banner = Banner::where('banner_num','2')->first();
