@@ -53,11 +53,13 @@ class TourSearchController extends Controller
 
         // Get all matching tours
         if (count($searchConditions) <= 0) {
+            $nav_banner = Banner::where('banner_num','1')->first();
             $tours = Tour::all();
             $filter_country = Country::all();
             $continent = Continent::all();
             $airline = Airline::all();
             return view('pages.filter-result', [
+                                              'nav_banner' => $nav_banner,
                                               'continent' => $continent,
                                               'airline' => $airline,
                                               'filter_country' => $filter_country,
@@ -65,10 +67,12 @@ class TourSearchController extends Controller
                                             ]);
         } else {
             $tours = Tour::where($searchConditions)->get();
+            $nav_banner = Banner::where('banner_num','1')->first();
             $filter_country = Country::all();
             $airline = Airline::all();
             $continent = Continent::all();
             return view('pages.filter-result', [
+                                                'nav_banner' => $nav_banner,
                                                 'continent' => $continent,
                                                 'tours' => $tours,
                                                 'airline' => $airline,

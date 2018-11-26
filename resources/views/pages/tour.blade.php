@@ -27,14 +27,16 @@
           </div>
         </div>
       </div>
-      <div class="row mt-5 tour-info">
-        <div class="col-lg-6">
-          <p>ประเทศ: {{$tour->tour_country_name}}</p>
-          <p>สายการบิน: {{$tour->tour_airline_name}}</p>
-        </div>
-        <div class="col-lg-6">
-          <p>ระยะเวลา: {{$tour->tour_day}} วัน {{$tour->tour_night}} คืน</p>
-          <p>ช่วงเวลา: {{$tour->tour_start_date}}</p>
+      <div class="mt-5 tour-info">
+        <div class="row">
+          <div class="col-lg-6">
+            <p>ประเทศ: {{$tour->tour_country_name}}</p>
+            <p>สายการบิน: {{$tour->tour_airline_name}}</p>
+          </div>
+          <div class="col-lg-6">
+            <p>ระยะเวลา: {{$tour->tour_day}} วัน {{$tour->tour_night}} คืน</p>
+            <p>ช่วงเวลา: {{$tour->tour_start_date}}</p>
+          </div>
         </div>
       </div>
       <div class="row mt-4">

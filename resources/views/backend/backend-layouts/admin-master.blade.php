@@ -119,6 +119,6 @@
     @yield('content')
   </section>
 </div>
-@yield('script')
+@include('backend.backend-components.tinymce')
   </body>
 </html>

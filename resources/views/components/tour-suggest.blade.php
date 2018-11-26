@@ -19,7 +19,7 @@
             </a>
             <small><i>{{$show_tour_suggest->tour_country_name}} -  {{$show_tour_suggest->tour_day}} วัน {{$show_tour_suggest->tour_night}} คืน</i></small>
             <div class="tour-detail-box mt-2">
-              <p class="card-text">{{$show_tour_suggest->tour_hightlight}}</p>
+              <p class="card-text">{!!$show_tour_suggest->tour_hightlight!!}</p>
             </div>
             <div class="tour-date-box mt-2">
               <p>ช่วงเวลา: {{$show_tour_suggest->tour_start_date}}</p>

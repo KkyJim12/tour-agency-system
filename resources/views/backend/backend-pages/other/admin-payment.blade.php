@@ -7,9 +7,9 @@
       <form  action="/admin-save-payment-page" method="post">
         <div class="panel-body">
           @if($content == null)
-            <textarea rows="20"  name="content"></textarea>
+            <textarea class="mcetext" rows="20"  name="content"></textarea>
           @else
-            <textarea rows="20"  name="content">{{$content->content}}</textarea>
+            <textarea class="mcetext" rows="20"  name="content">{{$content->content}}</textarea>
           @endif
         </div>
         @csrf

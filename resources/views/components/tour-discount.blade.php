@@ -6,7 +6,6 @@
     </div>
   </div>
   <div class="owl-carousel owl-theme">
-
     @foreach($tour_discount as $show_tour_discount)
     <div class="item">
         <div class="card tour-box">
@@ -19,7 +18,7 @@
             </a>
             <small><i>{{$show_tour_discount->tour_country_name}} -  {{$show_tour_discount->tour_day}} วัน {{$show_tour_discount->tour_night}} คืน</i></small>
             <div class="tour-detail-box mt-2">
-              <p class="card-text">{{$show_tour_discount->tour_hightlight}}</p>
+              <p class="card-text">{!!$show_tour_discount->tour_hightlight!!}</p>
             </div>
             <div class="tour-date-box mt-2">
               <p>ช่วงเวลา: {{$show_tour_discount->tour_start_date}}</p>
@@ -44,5 +43,5 @@
         </div>
       </div>
     @endforeach
-</div>
+  </div>
 </div>
