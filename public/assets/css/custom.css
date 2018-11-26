@@ -234,6 +234,6 @@ a:hover {
 }
 
 .article-category {
-  width:100%;
-  height:300px;
+  width:100% !important;
+  height:200px !important;
 }
