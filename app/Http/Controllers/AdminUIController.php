@@ -18,6 +18,7 @@ use App\Aboutus;
 use App\Contact;
 use App\ArticleCat;
 use App\Article;
+use App\Gallery;
 
 class AdminUIController extends Controller
 {
@@ -313,5 +314,31 @@ class AdminUIController extends Controller
                                                                       'all_article_cat' => $all_article_cat,
                                                                       'article' => $article,
                                                                      ]);
+    }
+
+    /* Show Admin Gallery */
+    public function ShowGallery() {
+      $gallery = Gallery::all();
+      return view('backend.backend-pages.gallery.admin-gallery',[
+                                                                  'gallery' => $gallery,
+                                                                ]);
+    }
+
+    /* Show Admin Create Gallery */
+    public function ShowCreateGallery() {
+      $country = Country::all();
+      return view('backend.backend-pages.gallery.admin-create-gallery',[
+                                                                        'country' => $country,
+                                                                       ]);
+    }
+
+    /*Show Admin Edit Gallery */
+    public function ShowEditGallery($gallery_id) {
+      $country = Country::all();
+      $gallery = Gallery::find($gallery_id);
+      return view('backend.backend-pages.gallery.admin-edit-gallery',[
+                                                                        'country' => $country,
+                                                                        'gallery' => $gallery,
+                                                                       ]);
     }
 }

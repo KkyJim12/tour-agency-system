@@ -92,7 +92,7 @@
           <a class="nav-link" href="/aboutus">เกี่ยวกับเรา</a>
         </li>
         <li class="nav-item mr-3">
-          <a class="nav-link" href="#">ภาพประทับใจ</a>
+          <a class="nav-link" href="/gallery">ภาพประทับใจ</a>
         </li>
         <li class="nav-item mr-3">
           <a class="nav-link" href="/contactus">ติดต่อเรา</a>

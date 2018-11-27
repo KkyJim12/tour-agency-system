@@ -41,6 +41,11 @@ Route::get('/article/{article_category_id}','UIViewController@ShowArticleCategor
 
 Route::get('/article/{article_category_id}/{article_id}','UIViewController@ShowArticleContent');
 
+/* Gallery Page */
+Route::get('/gallery','UIViewController@ShowGallery');
+
+Route::get('/gallery/{country_id}','UIViewController@ShowGalleryCountry');
+
 /* Backend */
 
 Route::middleware(['admin'])->group(function () {
@@ -285,4 +290,20 @@ Route::middleware(['admin'])->group(function () {
   Route::post('/admin/admin-delete-article-process/{article_id}','AdminArticleController@AdminDeleteArticleProcess');
 
   /**************************** All Article Function **************************/
+
+  /*************************** All Gallery Function ****************************/
+
+  Route::get('/admin/admin-gallery','AdminUIController@ShowGallery')->name('admin-gallery');
+
+  Route::get('/admin/admin-create-gallery','AdminUIController@ShowCreateGallery');
+
+  Route::post('/admin/admin-create-gallery-process','AdminGalleryController@AdminCreateGalleryProcess');
+
+  Route::get('/admin/admin-edit-gallery/{gallery_id}','AdminUIController@ShowEditGallery');
+
+  Route::post('/admin/admin-edit-gallery-process','AdminGalleryController@AdminEditGalleryProcess');
+
+  Route::post('/admin/admin-delete-gallery-process/{gallery_id}','AdminGalleryController@AdminDeleteGalleryProcess');
+
+  /************************* End Gallery Function *****************************/
 });

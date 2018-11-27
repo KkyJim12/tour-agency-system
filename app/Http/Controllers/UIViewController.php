@@ -227,4 +227,26 @@ class UIViewController extends Controller
                                                     'article' => $article,
                                                   ]);
     }
+
+    public function ShowGallery() {
+      $nav_banner = Banner::where('banner_num','1')->first();
+      $continent = Continent::all();
+
+      return view('pages.gallery.gallery',[
+                                            'nav_banner' => $nav_banner,
+                                            'continent' => $continent,
+                                          ]);
+    }
+
+    public function ShowGalleryCountry($country_id)  {
+      $nav_banner = Banner::where('banner_num','1')->first();
+      $continent = Continent::all();
+      $this_country = Country::find($country_id);
+
+      return view('pages.gallery.gallery-country',[
+                                            'nav_banner' => $nav_banner,
+                                            'continent' => $continent,
+                                            'this_country' => $this_country,
+                                          ]);
+    }
 }

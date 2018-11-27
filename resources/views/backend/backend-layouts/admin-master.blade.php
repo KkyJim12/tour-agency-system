@@ -117,6 +117,8 @@
           <li><a href="/admin/admin-article"><i class="fas fa-book"></i>  บทความ</a></li>
         </ul>
       </li>
+
+      <li><a href="/admin/admin-gallery"><i class="fas fa-image"></i> ภาพประทับใจ</span></a></li>
     </ul>
     <!-- /.sidebar-menu -->
   </section>
