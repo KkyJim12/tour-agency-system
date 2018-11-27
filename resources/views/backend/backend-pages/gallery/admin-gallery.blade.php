@@ -1,7 +1,7 @@
 @extends('backend.backend-layouts.admin-master')
 
 @section('content-header')
-<h3>หมวดหมู่ประเทศ <i class="fas fa-image"></i></h3>
+<h3>ภาพประทับใจ <i class="fas fa-image"></i></h3>
 @endsection
 
 @section('content')

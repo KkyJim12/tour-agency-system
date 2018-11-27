@@ -14,6 +14,7 @@ use App\Aboutus;
 use App\Contact;
 use App\ArticleCat;
 use App\Article;
+use App\Gallery;
 
 class UIViewController extends Controller
 {
@@ -242,11 +243,13 @@ class UIViewController extends Controller
       $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();
       $this_country = Country::find($country_id);
+      $gallery = Gallery::where('gallery_country_id',$country_id)->orderBy('gallery_sort','DESC')->get();
 
       return view('pages.gallery.gallery-country',[
                                             'nav_banner' => $nav_banner,
                                             'continent' => $continent,
                                             'this_country' => $this_country,
+                                            'gallery' => $gallery,
                                           ]);
     }
 }
