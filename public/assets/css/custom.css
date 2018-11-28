@@ -3,6 +3,22 @@ body  {
   font-size: 14px;
 }
 
+.card-body-link {
+  color:black;
+}
+
+.card-body-link:hover {
+  color:black;
+}
+
+.country-link {
+  color:black;
+}
+
+.country-link:hover {
+  color:black;
+}
+
 .first-contact  {
   font-size: 16px;
   color:#bfc4c8;
@@ -268,4 +284,9 @@ a:hover {
 
 .tour-card-title {
   height:48px;
+}
+
+.cat-link:active {
+  background-color: white;
+  color:black;
 }

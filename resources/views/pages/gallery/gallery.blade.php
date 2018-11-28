@@ -12,7 +12,7 @@
   <div class="row">
     @foreach($show_continent->subcat as $subcat)
     <div class="col-md-2 mt-3">
-      <a href="/gallery/{{$subcat->_id}}">
+      <a class="card-body-link" href="/gallery/{{$subcat->_id}}">
       <div class="card" style="width: 100%;">
         <img class="card-img-top gallery-img" src="/assets/img/upload/country/{{$subcat->country_img}}" alt="country_img">
         <div class="card-body">

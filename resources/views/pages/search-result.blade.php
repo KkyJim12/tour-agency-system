@@ -30,7 +30,7 @@
           <img class="card-img-top tour-main-img" src="/assets/img/upload/tour/img/{{$show_tour->tour_img}}" alt="tour_suggest">
         </a>
         <div class="card-body">
-          <a href="/tour/{{$show_tour->_id}}">
+          <a class="card-body-link" href="/tour/{{$show_tour->_id}}">
             <h5 class="card-title tour-card-title"><strong>{{str_limit($show_tour->tour_name,55)}}</strong></h5>
           </a>
           <small><i>{{$show_tour->tour_country_name}} -  {{$show_tour->tour_day}} วัน {{$show_tour->tour_night}} คืน</i></small>

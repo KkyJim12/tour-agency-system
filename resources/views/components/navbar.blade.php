@@ -66,11 +66,11 @@
             @foreach($continent as $all_continent)
             <div class="row">
               <div class="col-12">
-                <span class="dropdown-item">{{$all_continent->continent_name}}</span>
+                <span class="dropdown-item cat-link">{{$all_continent->continent_name}}</span>
               </div>
               @foreach($all_continent->subcat as $subcat)
                 <div class="col-3">
-                  <a class="cat-link" href="/category/{{$subcat->_id}}"><span class="dropdown-item"><img src="/assets/img/upload/country/{{$subcat->country_img}}" alt="country_img"> {{$subcat->country_name}}</span></a>
+                  <a class="cat-link" href="/category/{{$subcat->_id}}"><span class="dropdown-item cat-link"><img src="/assets/img/upload/country/{{$subcat->country_img}}" alt="country_img"> {{$subcat->country_name}}</span></a>
                 </div>
               @endforeach
             </div>

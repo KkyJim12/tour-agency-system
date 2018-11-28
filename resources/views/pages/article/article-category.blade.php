@@ -10,7 +10,7 @@
   <div class="row">
     @foreach($show_article as $show_all_article_cat)
       <div class="col-md-4 mt-3">
-        <a href="/article/{{$show_all_article_cat->article_cat_id}}/{{$show_all_article_cat->_id}}">
+        <a class="card-body-link" href="/article/{{$show_all_article_cat->article_cat_id}}/{{$show_all_article_cat->_id}}">
         <div class="card" style="width:100%;">
           <img class="card-img-top article-category-img" src="/assets/img/upload/article/{{$show_all_article_cat->article_img}}" alt="Card image cap">
           <div class="card-body" style="height:100px;">

@@ -23,7 +23,7 @@
         <div class="row">
           @foreach($show_continent->subcat as $all_country)
           <div class="col-md-6">
-            <a href="/category/{{$all_country->_id}}">
+            <a class="country-link" href="/category/{{$all_country->_id}}">
             <img style="width:40%;" src="/assets/img/upload/country/{{$all_country->country_img}}" alt="">
             {{$all_country->country_name}}
             </a>
