@@ -264,3 +264,7 @@ a:hover {
   width:100%;
   height:350px;
 }
+
+.tour-card-body {
+  height:396px;
+}

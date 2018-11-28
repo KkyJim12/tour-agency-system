@@ -18,16 +18,18 @@
       <hr>
       <h5>คิดจะเที่ยวคิดถึงรอยัลทัวร์</h5>
       @foreach($continent as $show_continent)
-        <p>{{$show_continent->continent_name}}</p>
+        <p class="mt-3">{{$show_continent->continent_name}}</p>
         <hr>
-        @foreach($show_continent->subcat as $all_country)
-        <div class="col-md-6">
-          <a href="/category/{{$all_country->_id}}">
-          <img src="/assets/img/upload/country/{{$all_country->country_img}}" alt="">
-          {{$all_country->country_name}}
-          </a>
+        <div class="row">
+          @foreach($show_continent->subcat as $all_country)
+          <div class="col-md-6">
+            <a href="/category/{{$all_country->_id}}">
+            <img style="width:40%;" src="/assets/img/upload/country/{{$all_country->country_img}}" alt="">
+            {{$all_country->country_name}}
+            </a>
+          </div>
+          @endforeach
         </div>
-        @endforeach
       @endforeach
     </div>
   </div>

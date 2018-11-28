@@ -13,7 +13,7 @@
         <a href="/article/{{$show_all_article_cat->article_cat_id}}/{{$show_all_article_cat->_id}}">
         <div class="card" style="width:100%;">
           <img class="card-img-top article-category-img" src="/assets/img/upload/article/{{$show_all_article_cat->article_img}}" alt="Card image cap">
-          <div class="card-body">
+          <div class="card-body" style="height:100px;">
             <h5 class="card-title">{{str_limit($show_all_article_cat->article_title,50)}}</h5>
           </div>
         </div>

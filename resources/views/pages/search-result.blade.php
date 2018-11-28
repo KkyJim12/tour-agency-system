@@ -29,7 +29,7 @@
         <a href="/tour/{{$show_tour->_id}}">
           <img class="card-img-top tour-main-img" src="/assets/img/upload/tour/img/{{$show_tour->tour_img}}" alt="tour_suggest">
         </a>
-        <div class="card-body">
+        <div class="card-body tour-card-body">
           <a href="/tour/{{$show_tour->_id}}">
             <h5 class="card-title"><strong>{{$show_tour->tour_name}}</strong></h5>
           </a>
