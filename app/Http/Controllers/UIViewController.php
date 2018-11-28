@@ -221,11 +221,13 @@ class UIViewController extends Controller
       $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();
       $article = Article::find($article_id);
+      $article_cat = ArticleCat::all();
 
       return view('pages.article.article-content',[
                                                     'nav_banner' => $nav_banner,
                                                     'continent' => $continent,
                                                     'article' => $article,
+                                                    'article_cat' => $article_cat,
                                                   ]);
     }
 

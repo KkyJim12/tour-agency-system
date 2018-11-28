@@ -56,8 +56,8 @@
       <div class="row mt-5">
         <nav class="col-lg-12">
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">รายละเอียดโปรแกรม</a>
-            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">เงื่อนไขการเดินทาง</a>
+            <a class="nav-item nav-link tour-tab active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">รายละเอียดโปรแกรม</a>
+            <a class="nav-item nav-link tour-tab" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">เงื่อนไขการเดินทาง</a>
           </div>
         </nav>
         <div class="tab-content col-lg-12 mt-3" id="nav-tabContent">

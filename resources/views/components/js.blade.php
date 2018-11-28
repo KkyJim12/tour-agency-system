@@ -12,9 +12,9 @@
       },
       1000:{
           items:3
-      }
-  }
-})
+      },
+  },
+});
 </script>
 <script type="text/javascript">
   $("#filter_price").ionRangeSlider({

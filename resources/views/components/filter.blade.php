@@ -1,5 +1,6 @@
 <div class="filter mb-4 col-md-12">
     <h3>ค้นหาโปรแกรมทัวร์</h3>
+    <hr>
     <form class="row" action="/filter-result" method="post">
       <div class="form-group col-md-3">
         <label>สถานที่จะไป</label>

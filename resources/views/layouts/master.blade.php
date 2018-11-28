@@ -28,6 +28,6 @@
     @include('components.fb-js')
     @include('components.navbar')
     @yield('content')
+    @include('components.js')
   </body>
-  @include('components.js')
 </html>
