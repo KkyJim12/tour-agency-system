@@ -15,18 +15,18 @@
           </a>
           <div class="card-body">
             <a href="/tour/{{$show_tour_suggest->_id}}">
-              <h5 class="card-title tour-card-title"><strong>{{$show_tour_suggest->tour_name}}</strong></h5>
+              <h5 class="card-title tour-card-title"><strong>{{str_limit($show_tour_suggest->tour_name,55)}}</strong></h5>
             </a>
             <small><i>{{$show_tour_suggest->tour_country_name}} -  {{$show_tour_suggest->tour_day}} วัน {{$show_tour_suggest->tour_night}} คืน</i></small>
             <div class="tour-detail-box mt-2">
               <p class="card-text">{!!$show_tour_suggest->tour_hightlight!!}</p>
             </div>
             <div class="tour-date-box mt-2">
-              <p>ช่วงเวลา: {{$show_tour_suggest->tour_start_date}}</p>
+              <span>ช่วงเวลา: {{$show_tour_suggest->tour_start_date}}</span>
             </div>
             <div class="row mt-3">
-              <span class="col-6">เริ่ม {{$show_tour_suggest->tour_price}} บาท</span>
-              <img class="col-6 tour-airline-img" src="/assets/img/upload/airline/{{$show_tour_suggest->tour_airline_img}}" alt="airline_suggest">
+              <span class="col-9">เริ่ม {{$show_tour_suggest->tour_price}} บาท</span>
+              <img class="col-3 tour-airline-img" src="/assets/img/upload/airline/{{$show_tour_suggest->tour_airline_img}}" alt="airline_suggest">
             </div>
             <div class="row mt-3">
               <div class="col-6">

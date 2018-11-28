@@ -67,8 +67,9 @@ body  {
 .tour-date-box  {
   width:100%;
   border-radius: 5px;
-  padding: 1px;
+  padding: 5px;
   background-color: #E4E4E4;
+  text-align: center;
 }
 
 .tour-date-box p  {
@@ -171,8 +172,8 @@ body  {
 }
 
 .tour-airline-img   {
-  width:100%;
-  height:50px;
+  width:80px;
+  height:40px;
 }
 
 .tour-file {
