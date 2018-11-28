@@ -24,7 +24,7 @@
               <span>ช่วงเวลา: {{$show_tour_discount->tour_start_date}}</span>
             </div>
             <div class="row mt-3">
-              <span class="col-3">เริ่ม {{$show_tour_discount->tour_price}} บาท</span>
+              <span class="col-9">เริ่ม {{$show_tour_discount->tour_price}} บาท</span>
               <img class="col-3 tour-airline-img" src="/assets/img/upload/airline/{{$show_tour_discount->tour_airline_img}}" alt="airline_suggest">
             </div>
             <div class="row mt-3">
