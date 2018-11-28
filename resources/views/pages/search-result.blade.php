@@ -29,9 +29,9 @@
         <a href="/tour/{{$show_tour->_id}}">
           <img class="card-img-top tour-main-img" src="/assets/img/upload/tour/img/{{$show_tour->tour_img}}" alt="tour_suggest">
         </a>
-        <div class="card-body tour-card-body">
+        <div class="card-body">
           <a href="/tour/{{$show_tour->_id}}">
-            <h5 class="card-title"><strong>{{$show_tour->tour_name}}</strong></h5>
+            <h5 class="card-title tour-card-title"><strong>{{$show_tour->tour_name}}</strong></h5>
           </a>
           <small><i>{{$show_tour->tour_country_name}} -  {{$show_tour->tour_day}} วัน {{$show_tour->tour_night}} คืน</i></small>
           <div class="tour-detail-box mt-2">

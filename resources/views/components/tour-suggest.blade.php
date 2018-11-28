@@ -15,7 +15,7 @@
           </a>
           <div class="card-body">
             <a href="/tour/{{$show_tour_suggest->_id}}">
-              <h5 class="card-title"><strong>{{$show_tour_suggest->tour_name}}</strong></h5>
+              <h5 class="card-title tour-card-title"><strong>{{$show_tour_suggest->tour_name}}</strong></h5>
             </a>
             <small><i>{{$show_tour_suggest->tour_country_name}} -  {{$show_tour_suggest->tour_day}} วัน {{$show_tour_suggest->tour_night}} คืน</i></small>
             <div class="tour-detail-box mt-2">
