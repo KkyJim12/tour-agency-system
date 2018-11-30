@@ -29,5 +29,8 @@
     @include('components.navbar')
     @yield('content')
     @include('components.js')
+    @include('components.footer')
+    @include('components.last-footer')
+    @include('components.addline')
   </body>
 </html>
