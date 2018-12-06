@@ -66,6 +66,9 @@ class AdminTourController extends Controller
       $tour->tour_sort = $request->tour_sort;
       $tour->tour_suggest = $request->tour_suggest;
       $tour->tour_hide = $request->tour_hide;
+      $tour->tour_seo_title = $request->tour_seo_title;
+      $tour->tour_seo_meta = $request->tour_seo_meta;
+      $tour->tour_seo_url = $request->tour_seo_url;
 
       /* upload pdf */
 
@@ -161,6 +164,9 @@ class AdminTourController extends Controller
       $tour->tour_sort = $request->tour_sort;
       $tour->tour_suggest = $request->tour_suggest;
       $tour->tour_hide = $request->tour_hide;
+      $tour->tour_seo_title = $request->tour_seo_title;
+      $tour->tour_seo_meta = $request->tour_seo_meta;
+      $tour->tour_seo_url = $request->tour_seo_url;
 
       /* upload pdf */
 

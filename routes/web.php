@@ -23,7 +23,7 @@ Route::post('/login-process','MemberController@LoginProcess');
 
 Route::get('/logout-process','MemberController@LogoutProcess');
 
-Route::get('/tour/{tour_id}','UIViewController@ShowTour');
+Route::get('/tour/{tour_id}','UIViewController@ShowTour')->name('show-tour');
 
 Route::post('/search-result','UIViewController@ShowSearchResult');
 
@@ -306,4 +306,12 @@ Route::middleware(['admin'])->group(function () {
   Route::post('/admin/admin-delete-gallery-process/{gallery_id}','AdminGalleryController@AdminDeleteGalleryProcess');
 
   /************************* End Gallery Function *****************************/
+
+  /************************* SEO Function *************************************/
+
+  Route::get('/admin/admin-seo','AdminUIController@ShowSeo');
+
+  Route::post('/admin/admin-seo-process','AdminSEOController@AdminSaveSEO');
+
+  /************************* End SEO Function *************************************/
 });

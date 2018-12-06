@@ -19,6 +19,7 @@ use App\Contact;
 use App\ArticleCat;
 use App\Article;
 use App\Gallery;
+use App\SEO;
 
 class AdminUIController extends Controller
 {
@@ -340,5 +341,13 @@ class AdminUIController extends Controller
                                                                         'country' => $country,
                                                                         'gallery' => $gallery,
                                                                        ]);
+    }
+
+    /*Show Admin SEO */
+    public function ShowSeo() {
+      $seo = SEO::first();
+      return view('backend.backend-pages.seo.admin-seo',[
+                                                          'seo' => $seo,
+                                                        ]);
     }
 }

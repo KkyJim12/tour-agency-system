@@ -119,6 +119,7 @@
       </li>
 
       <li><a href="/admin/admin-gallery"><i class="fas fa-image"></i> ภาพประทับใจ</span></a></li>
+      <li><a href="/admin/admin-seo"><i class="fas fa-cog"></i> <span>ตั้งค่า SEO</span></a></li>
     </ul>
     <!-- /.sidebar-menu -->
   </section>

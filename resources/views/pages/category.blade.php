@@ -1,5 +1,14 @@
 @extends('layouts.master')
 
+
+@section('title')
+Royaltour | เที่ยว {{$country->country_name}}
+@endsection
+
+@section('meta')
+เที่ยว {{$country->country_name}} กับ Royaltour โปรโมชั่นพิเศษมากมาย ราคาถูก ที่เดียวครบ !!
+@endsection
+
 @section('content')
 <div class="jumbotron jumbotron-fluid category-title">
   <div class="container">

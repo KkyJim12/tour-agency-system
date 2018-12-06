@@ -1,5 +1,21 @@
 @extends('layouts.master')
 
+@section('title')
+@if($seo)
+{{$seo->home_seo_title}}
+@else
+Royaltour
+@endif
+@endsection
+
+@section('meta')
+@if($seo)
+{{$seo->home_seo_meta}}
+@else
+Royaltour
+@endif
+@endsection
+
 @section('content')
 @include('components.slide')
 @include('components.search-box')

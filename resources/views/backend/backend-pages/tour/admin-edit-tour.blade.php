@@ -107,6 +107,26 @@
           <label>ลำดับที่</label>
           <input class="form-control" type="number" name="tour_sort" placeholder="ลำดับที่" value="{{$tour->tour_sort}}">
         </div>
+
+        <!-- Seo Support -->
+
+        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+          <label>Title (SEO)</label>
+          <input class="form-control" type="text" name="tour_seo_title" placeholder="title ของเว็บ" value="{{$tour->tour_seo_title}}">
+        </div>
+
+        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+          <label>meta tag (SEO)</label>
+          <input class="form-control" type="text" name="tour_seo_meta" placeholder="คำอธิบายเว็บ เวลา search google" value="{{$tour->tour_seo_meta}}">
+        </div>
+
+        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+          <label>url (SEO)</label>
+          <input class="form-control" type="text" name="tour_seo_url" placeholder="url ต่อท้าย" value="{{$tour->tour_seo_url}}">
+        </div>
+
+        <!-- End Seo Support -->
+
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>แนะนำ</label>&nbsp
           @if($tour->tour_suggest == null)

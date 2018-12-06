@@ -1,5 +1,21 @@
 @extends('layouts.master')
 
+@section('title')
+@if($tour->tour_seo_title)
+{{$tour->tour_seo_title}}
+@else
+{{$tour->tour_name}}
+@endif
+@endsection
+
+@section('meta')
+@if($tour->tour_seo_meta)
+{{$tour->tour_seo_meta}}
+@else
+{{$tour->tour_hightlight}}
+@endif
+@endsection
+
 @section('content')
 <div class="container mt-5">
   <div class="row">

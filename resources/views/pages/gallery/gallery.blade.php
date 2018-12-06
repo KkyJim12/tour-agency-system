@@ -1,5 +1,13 @@
 @extends('layouts.master')
 
+@section('title')
+Royaltour | ภาพประทับใจ
+@endsection
+
+@section('meta')
+Royaltour | ภาพประทับใจ
+@endsection
+
 @section('content')
 <div class="container">
   <div class="row">

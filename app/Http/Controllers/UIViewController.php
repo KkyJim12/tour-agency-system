@@ -15,6 +15,7 @@ use App\Contact;
 use App\ArticleCat;
 use App\Article;
 use App\Gallery;
+use App\SEO;
 
 class UIViewController extends Controller
 {
@@ -29,6 +30,7 @@ class UIViewController extends Controller
       $fifth_banner = Banner::where('banner_num','5')->first();
       $sixth_banner = Banner::where('banner_num','6')->first();
       $first_slide = Slide::first();
+      $seo = SEO::first();
       if ($first_slide !== null) {
         $slide = Slide::where('_id','!=',$first_slide->_id)->get();
       }
@@ -47,6 +49,7 @@ class UIViewController extends Controller
                             'sixth_banner' => $sixth_banner,
                             'slide' => $slide,
                             'first_slide' => $first_slide,
+                            'seo' => $seo,
                           ]);
     }
 

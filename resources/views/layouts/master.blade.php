@@ -21,8 +21,10 @@
     <script src="/assets/js/responsive_bootstrap_carousel.js" type="text/javascript"></script>
     <script src="/assets/js/ion.rangeSlider.min.js" type="text/javascript"></script>
     <script src="/assets/js/owl.carousel.min.js" type="text/javascript"></script>
-    <title></title>
+    <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="@yield('title')">
+    <meta name="description" content="@yield('meata')">
   </head>
   <body>
     @include('components.fb-js')

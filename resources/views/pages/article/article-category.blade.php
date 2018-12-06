@@ -1,5 +1,13 @@
 @extends('layouts.master')
 
+@section('title')
+Royaltour | บทความ {{$this_article_cat->article_cat_name}}
+@endsection
+
+@section('meta')
+Royaltour | ภาพประทับใจ {{$this_article_cat->article_cat_name}}
+@endsection
+
 @section('content')
 <div class="container mt-5">
   <div class="row">

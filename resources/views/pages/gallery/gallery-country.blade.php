@@ -1,5 +1,13 @@
 @extends('layouts.master')
 
+@section('title')
+Royaltour | ภาพประทับใจ {{$this_country->country_name}}
+@endsection
+
+@section('meta')
+Royaltour | ภาพประทับใจ {{$this_country->country_name}}
+@endsection
+
 @section('content')
 <div class="container mt-5">
   <div class="row">
