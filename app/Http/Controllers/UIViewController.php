@@ -16,6 +16,7 @@ use App\ArticleCat;
 use App\Article;
 use App\Gallery;
 use App\SEO;
+use App\Branch;
 
 class UIViewController extends Controller
 {
@@ -85,10 +86,12 @@ class UIViewController extends Controller
       $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();
       $content = Contact::first();
-      return view('pages.other.how-to-pay',[
+      $branch = Branch::all();
+      return view('pages.other.contactus',[
                                             'nav_banner' => $nav_banner,
                                             'continent' => $continent,
                                             'content' => $content,
+                                            'branch' => $branch,
                                            ]);
     }
 

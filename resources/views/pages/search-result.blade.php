@@ -12,7 +12,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <strong><h3>ผลการค้นหา ({{$tour_result->count()}})</h3> </strong>
+      <strong><h3>ผลการค้นหา "{{$search_word}}" ({{$tour_result->count()}})</h3> </strong>
       <h5>ผลการค้นหา:ทั้งหมด {{$tour_result->count()}} โปรแกรม</h5>
     </div>
   </div>

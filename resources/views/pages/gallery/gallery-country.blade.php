@@ -9,6 +9,12 @@ Royaltour | ภาพประทับใจ {{$this_country->country_name}}
 @endsection
 
 @section('content')
+<div class="jumbotron jumbotron-fluid" style="background:url('/assets/img/components/image_bg_7.jpg'); text-align:center; color:white;">
+  <div class="container">
+    <h1>ภาพประทับใจ</h1>
+    <p>หน้าแรก > ภาพประทับใจ > {{$this_country->country_name}}</p>
+  </div>
+</div>
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-12">

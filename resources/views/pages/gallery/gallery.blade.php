@@ -9,6 +9,12 @@ Royaltour | ภาพประทับใจ
 @endsection
 
 @section('content')
+<div class="jumbotron jumbotron-fluid" style="background:url('/assets/img/components/image_bg_7.jpg'); text-align:center; color:white;">
+  <div class="container">
+    <h1>ภาพประทับใจ</h1>
+    <p>หน้าแรก > ภาพประทับใจ</p>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     @foreach($continent as $show_continent)

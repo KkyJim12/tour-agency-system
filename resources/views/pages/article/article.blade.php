@@ -9,6 +9,12 @@ Royaltour | บทความ
 @endsection
 
 @section('content')
+<div class="jumbotron jumbotron-fluid" style="background:url('/assets/img/components/image_bg_7.jpg'); text-align:center; color:white;">
+  <div class="container">
+    <h1>บทความ</h1>
+    <p>หน้าแรก > บทความ</p>
+  </div>
+</div>
 <div class="container mt-5">
   <div class="row">
     <div class="col-12" style="text-align:center;">

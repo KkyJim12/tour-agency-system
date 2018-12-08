@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-md-12">
       <strong><h3>ผลการค้นหา </h3> </strong>
-      <h5>ผลการค้นหา:ทั้งหมด โปรแกรม</h5>
+      <h5>ผลการค้นหา:ทั้งหมด {{count($tours)}} โปรแกรม</h5>
     </div>
   </div>
   <hr>

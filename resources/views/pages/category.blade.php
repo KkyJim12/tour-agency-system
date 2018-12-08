@@ -13,7 +13,7 @@ Royaltour | เที่ยว {{$country->country_name}}
 <div class="jumbotron jumbotron-fluid category-title">
   <div class="container">
     <h1 class="display-4">ทัวร์ต่างประเทศ</h1>
-    <p>หน้าแรก > ทัวร์ต่างประเทศ</p>
+    <p>หน้าแรก > ทัวร์ต่างประเทศ > {{$country->country_name}}</p>
   </div>
 </div>
 

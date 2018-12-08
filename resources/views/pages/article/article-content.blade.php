@@ -9,14 +9,21 @@ Royaltour | ภาพประทับใจ {{str_limit($article->article_cont
 @endsection
 
 @section('content')
+<div class="jumbotron jumbotron-fluid" style="background:url('/assets/img/components/image_bg_7.jpg'); text-align:center; color:white;">
+  <div class="container">
+    <h1>บทความ</h1>
+    <p>หน้าแรก > บทความ > {{$article->article_cat_name}} > {{$article->article_title}}</p>
+  </div>
+</div>
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-9">
       <img class="article-img-content" src="/assets/img/upload/article/{{$article->article_img}}" alt="article_img">
-      <h5>{{$article->article_title}}</h5>
+      <h5 class="mt-3">{{$article->article_title}}</h5>
       {!!$article->article_content!!}
     </div>
     <div class="col-md-3">
+      <div class="fb-share-button" data-layout="box_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">แชร์</a></div>
       <hr>
       <div>
         @foreach($article_cat as $show_article_cat)

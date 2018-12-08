@@ -17,6 +17,12 @@
 @endsection
 
 @section('content')
+<div class="jumbotron jumbotron-fluid" style="background:url('/assets/img/components/image_bg_11.jpg'); text-align:center; color:white;">
+  <div class="container">
+    <h1>ทัวร์ต่างประเทศ</h1>
+    <p>หน้าแรก > ทัวร์ต่างประเทศ > {{$tour->tour_country_name}} > {{$tour->tour_name}}</p>
+  </div>
+</div>
 <div class="container mt-5">
   <div class="row">
     <div class="col-lg-9">
@@ -83,6 +89,7 @@
       </div>
     </div>
     <div class="col-lg-3">
+      <div class="fb-share-button" data-layout="box_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">แชร์</a></div>
       <hr>
       <h5>คิดจะเที่ยวคิดถึงรอยัลทัวร์</h5><br>
       @foreach($continent as $all_continent)
