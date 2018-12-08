@@ -23,10 +23,10 @@ Royaltour | ติดต่อเรา
           <input class="mt-3 form-control" type="text" name="" value="" placeholder="ชื่อ-นามสกุล *">
         </div>
         <div class="col-md-6">
-          <input class="col-md-6 mt-3 form-control" type="email" name="" value="" placeholder="อีเมลล์ *">
+          <input class="mt-3 form-control" type="email" name="" value="" placeholder="อีเมลล์ *">
         </div>
         <div class="col-md-12">
-          <input class="col-md-12 form-control mt-3" type="text" name="" value="" placeholder="โทรศัพท์ *">
+          <input class="form-control mt-3" type="text" name="" value="" placeholder="โทรศัพท์ *">
         </div>
         <div class="col-md-12">
           <textarea class="form-control mt-3" name="" rows="8" cols="80" placeholder="รายละเอียด"></textarea>
