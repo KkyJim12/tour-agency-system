@@ -8,6 +8,8 @@ use App\ArticleCat;
 
 class AdminArticleCatController extends Controller
 {
+
+    /** Admin Create Article Category Process **/
     public function CreateArticleCatProcess(Request $request)  {
 
       $request->validate([
@@ -36,6 +38,8 @@ class AdminArticleCatController extends Controller
       return redirect()->route('admin-article-cat');
     }
 
+
+    /** Admin Edit Article Category Process **/
     public function AdminEditArticleCatProcess(Request $request)  {
 
       $request->validate([
@@ -64,6 +68,8 @@ class AdminArticleCatController extends Controller
       return redirect()->route('admin-article-cat');
     }
 
+
+    /** Admin Delete Article Category Process **/
     public function AdminDeleteArticleCatProcess(Request $request)  {
       $article_cat = ArticleCat::find($request->article_cat_id);
       $article_cat->delete();

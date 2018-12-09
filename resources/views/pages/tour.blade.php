@@ -1,22 +1,23 @@
 @extends('layouts.master')
 
 @section('title')
-@if($tour->tour_seo_title)
-{{$tour->tour_seo_title}}
-@else
-{{$tour->tour_name}}
-@endif
+  @if($tour->tour_seo_title)
+    {{$tour->tour_seo_title}}
+  @else
+    {{$tour->tour_name}}
+  @endif
 @endsection
 
 @section('meta')
-@if($tour->tour_seo_meta)
-{{$tour->tour_seo_meta}}
-@else
-{{$tour->tour_hightlight}}
-@endif
+  @if($tour->tour_seo_meta)
+    {{$tour->tour_seo_meta}}
+  @else
+    {{$tour->tour_hightlight}}
+  @endif
 @endsection
 
 @section('content')
+
 <div class="jumbotron jumbotron-fluid" style="background:url('/assets/img/components/image_bg_11.jpg'); text-align:center; color:white;">
   <div class="container">
     <h1>ทัวร์ต่างประเทศ</h1>

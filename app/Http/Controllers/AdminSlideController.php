@@ -8,6 +8,8 @@ use App\Slide;
 
 class AdminSlideController extends Controller
 {
+
+    /** Admin Create Slide Process **/
     public function AdminCreateSlideProcess(Request $request) {
       $slide = new Slide;
       $slide->slide_link = $request->slide_link;
@@ -29,6 +31,8 @@ class AdminSlideController extends Controller
       return redirect()->route('admin-slide');
     }
 
+
+    /** Admin Edit Slide Process **/
     public function AdminEditSlideProcess(Request $request) {
       $slide = Slide::find($request->slide_id);
       $slide->slide_link = $request->slide_link;
@@ -50,6 +54,8 @@ class AdminSlideController extends Controller
       return redirect()->route('admin-slide');
     }
 
+
+    /** Admin Delete Slide Process **/
     public function AdminDeleteSlideProcess(Request $request) {
       $slide = Slide::find($request->slide_id);
       $slide->delete();

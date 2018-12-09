@@ -9,7 +9,7 @@ use App\City;
 
 class AdminCityController extends Controller
 {
-    /* Admin Create City Process*/
+    /** Admin Create City Process **/
     public function AdminCreateCityProcess(Request $request)  {
 
       /* Validate First */
@@ -46,7 +46,8 @@ class AdminCityController extends Controller
       return redirect()->route('admin-city');
     }
 
-    /* Admin Edit City Process */
+
+    /** Admin Edit City Process **/
     public function AdminEditCityProcess(Request $request)  {
 
       /* Validate First */
@@ -84,7 +85,8 @@ class AdminCityController extends Controller
 
     }
 
-    /* Admin Delete City Process */
+
+    /** Admin Delete City Process **/
     public function AdminDeleteCityProcess(Request $request)  {
       $city = City::find($request->city_id);
 

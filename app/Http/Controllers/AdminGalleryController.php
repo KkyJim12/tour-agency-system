@@ -8,6 +8,8 @@ use App\Country;
 
 class AdminGalleryController extends Controller
 {
+
+    /** Admin Create Gallery Process **/
     public function AdminCreateGalleryProcess(Request $request) {
 
       /* Validate First */
@@ -58,6 +60,8 @@ class AdminGalleryController extends Controller
 
     }
 
+
+    /** Admin Edit Gallery Process **/
     public function AdminEditGalleryProcess(Request $request) {
 
       /* Validate First */
@@ -108,6 +112,8 @@ class AdminGalleryController extends Controller
 
     }
 
+
+    /** Admin Delete Gallery Process **/
     public function AdminDeleteGalleryProcess(Request $request,$gallery_id) {
       $gallery = Gallery::find($request->gallery_id);
       $gallery->delete();

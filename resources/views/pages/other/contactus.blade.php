@@ -18,18 +18,23 @@ Royaltour | ติดต่อเรา
 </div>
 <div class="container">
       <h3 style="text-align:center;">ติดต่อเรา</h3>
-      <form class="row" action="index.html" method="post">
+      @if(session('success'))
+      <div class="alert alert-success" role="alert">
+        {{session('success')}}
+      </div>
+      @endif
+      <form class="row" action="/contactus-process" method="post">
         <div class="col-md-6">
-          <input class="mt-3 form-control" type="text" name="" value="" placeholder="ชื่อ-นามสกุล *">
+          <input class="mt-3 form-control" type="text" name="contact_name" value="" placeholder="ชื่อ-นามสกุล *">
         </div>
         <div class="col-md-6">
-          <input class="mt-3 form-control" type="email" name="" value="" placeholder="อีเมลล์ *">
+          <input class="mt-3 form-control" type="email" name="contact_email" value="" placeholder="อีเมลล์ *">
         </div>
         <div class="col-md-12">
-          <input class="form-control mt-3" type="text" name="" value="" placeholder="โทรศัพท์ *">
+          <input class="form-control mt-3" type="text" name="contact_tel" value="" placeholder="โทรศัพท์ *">
         </div>
         <div class="col-md-12">
-          <textarea class="form-control mt-3" name="" rows="8" cols="80" placeholder="รายละเอียด"></textarea>
+          <textarea class="form-control mt-3" name="contact_info" rows="8" cols="80" placeholder="รายละเอียด"></textarea>
         </div>
         <div class="col-md-12">
           @csrf

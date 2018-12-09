@@ -9,6 +9,8 @@ use App\Continent;
 
 class AdminContinentController extends Controller
 {
+
+    /** Admin Create Continent Process **/
     public function AdminCreateContinentProcess(Request $request) {
 
       /* Validate First */
@@ -39,8 +41,8 @@ class AdminContinentController extends Controller
       return redirect()->route('admin-continent');
     }
 
-    /* Admin Edit Continent Process */
 
+    /** Admin Edit Continent Process **/
     public function AdminEditContinentProcess(Request $request) {
 
       /* Validate First */
@@ -77,7 +79,8 @@ class AdminContinentController extends Controller
       return redirect()->route('admin-continent');
     }
 
-    /* Admin Delete Continent Process */
+
+    /** Admin Delete Continent Process **/
 
     public function AdminDeleteContinentProcess(Request $request) {
       $continent = Continent::find($request->continent_id);

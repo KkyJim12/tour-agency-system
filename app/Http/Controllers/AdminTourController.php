@@ -11,6 +11,8 @@ use App\Airline;
 
 class AdminTourController extends Controller
 {
+
+    /** Admin Create Tour Process **/
     public function AdminCreateTourProcess(Request $request)  {
 
       /* Validate First */
@@ -109,6 +111,8 @@ class AdminTourController extends Controller
       return redirect()->route('admin-tour');
     }
 
+
+    /** Admin Edit Tour Process **/
     public function AdminEditTourProcess(Request $request)  {
 
       /* Validate First */
@@ -207,6 +211,8 @@ class AdminTourController extends Controller
 
     }
 
+
+    /** Admin Delete Tour Process **/
     public function AdminDeleteTourProcess(Request $request)  {
       $tour = Tour::find($request->tour_id);
       $tour->delete();

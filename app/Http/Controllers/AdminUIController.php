@@ -20,6 +20,7 @@ use App\ArticleCat;
 use App\Article;
 use App\Gallery;
 use App\SEO;
+use App\ContactInfo;
 
 class AdminUIController extends Controller
 {
@@ -349,5 +350,13 @@ class AdminUIController extends Controller
       return view('backend.backend-pages.seo.admin-seo',[
                                                           'seo' => $seo,
                                                         ]);
+    }
+
+    /* Show Contact Info */
+    public function ShowContactInfo() {
+      $contactinfo = ContactInfo::all();
+      return view('backend.backend-pages.contactinfo.admin-contactinfo',[
+                                                                          'contactinfo' => $contactinfo,
+                                                                        ]);
     }
 }

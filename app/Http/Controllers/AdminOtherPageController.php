@@ -10,7 +10,8 @@ use App\Contact;
 
 class AdminOtherPageController extends Controller
 {
-    /* Save Payment Page */
+
+    /** Save Payment Page **/
     public function SavePayment(Request $request) {
 
       if ($check = PaymentPage::count() >= 1) {
@@ -28,7 +29,8 @@ class AdminOtherPageController extends Controller
       return redirect()->back();
     }
 
-    /* Save Aboutus Page */
+
+    /** Save Aboutus Page **/
     public function SaveAboutus(Request $request) {
       if ($check = Aboutus::count() >=1) {
         $aboutuspage = Aboutus::first();
@@ -45,7 +47,8 @@ class AdminOtherPageController extends Controller
       return redirect()->back();
     }
 
-    /* Save Contact Page */
+
+    /** Save Contact Page **/
     public function SaveContact(Request $request) {
       if ($check = Contact::count() >=1) {
         $aboutuspage = Contact::first();

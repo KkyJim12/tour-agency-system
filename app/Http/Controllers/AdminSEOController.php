@@ -8,6 +8,8 @@ use App\SEO;
 
 class AdminSEOController extends Controller
 {
+
+    /** Admin Save SEO Information **/
     public function AdminSaveSEO(Request $request)  {
 
       if (SEO::count() == 0) {

@@ -20,6 +20,8 @@ use App\Branch;
 
 class UIViewController extends Controller
 {
+
+    /** Show Index Page **/
     public function ShowIndex() {
       $tour_suggest = Tour::where('tour_suggest','1')->get();
       $tour_discount = Tour::where('tour_discount','!=',0)->get();
@@ -54,6 +56,8 @@ class UIViewController extends Controller
                           ]);
     }
 
+
+    /** Show Category Page **/
     public function ShowCategory($country_id)  {
       $filter_country = Country::all();
       $continent = Continent::all();
@@ -71,6 +75,8 @@ class UIViewController extends Controller
                                    ]);
     }
 
+
+    /** Show How to pay Page **/
     public function ShowHowToPay()  {
       $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();
@@ -82,6 +88,8 @@ class UIViewController extends Controller
                                            ]);
     }
 
+
+    /** Show Contact us Page **/
     public function ShowContactus() {
       $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();
@@ -95,6 +103,8 @@ class UIViewController extends Controller
                                            ]);
     }
 
+
+    /** Show About us Page **/
     public function ShowAboutus() {
       $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();
@@ -107,6 +117,8 @@ class UIViewController extends Controller
     }
 
 
+
+    /** Show Login Page **/
     public function ShowLogin() {
 
       if (session('user_log') == 1) {
@@ -119,6 +131,8 @@ class UIViewController extends Controller
 
     }
 
+
+    /** Show Tour Page **/
     public function ShowTour($tour_id)  {
       $nav_banner = Banner::where('banner_num','1')->first();
       $country = Country::all();
@@ -197,6 +211,8 @@ class UIViewController extends Controller
                                         ]);
     }
 
+
+    /** Show Article Page **/
     public function ShowArticle() {
       $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();
@@ -209,6 +225,8 @@ class UIViewController extends Controller
                                           ]);
     }
 
+
+    /** Show Article Category Page **/
     public function ShowArticleCategory($article_category_id) {
       $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();
@@ -223,6 +241,8 @@ class UIViewController extends Controller
                                                    ]);
     }
 
+
+    /** Show Article Content Page **/
     public function ShowArticleContent($article_category_id,$article_id)  {
       $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();
@@ -237,6 +257,8 @@ class UIViewController extends Controller
                                                   ]);
     }
 
+
+    /** Show Gallery Page **/
     public function ShowGallery() {
       $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();
@@ -247,6 +269,8 @@ class UIViewController extends Controller
                                           ]);
     }
 
+
+    /** Show Gallery Country Page **/
     public function ShowGalleryCountry($country_id)  {
       $nav_banner = Banner::where('banner_num','1')->first();
       $continent = Continent::all();

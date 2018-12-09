@@ -11,44 +11,65 @@
 |
 */
 
+
+/** Index Page **/
 Route::get('/','UIViewController@ShowIndex');
 
+/** Country Page **/
 Route::get('/category/{country_id}','UIViewController@ShowCategory');
 
+/** Aboutus Page **/
 Route::get('/aboutus','UIViewController@ShowAboutus');
 
+/** Admin Login Page **/
 Route::get('/login','UIViewController@ShowLogin');
 
+/** Admin Login Process **/
 Route::post('/login-process','MemberController@LoginProcess');
 
+/** Admin Logout Process **/
 Route::get('/logout-process','MemberController@LogoutProcess');
 
+/** Tour Page **/
 Route::get('/tour/{tour_id}','UIViewController@ShowTour')->name('show-tour');
 
+/** Search Page **/
 Route::post('/search-result','UIViewController@ShowSearchResult');
 
+/** Filter Page **/
 Route::post('/filter-result','TourSearchController@getMatchingTours');
 
+/** How to pay Page **/
 Route::get('/how-to-pay','UIViewController@ShowHowToPay');
 
+/** Contact us Page **/
 Route::get('/contactus','UIViewController@ShowContactus');
 
+/** Contact us Process **/
+Route::post('contactus-process','ContactController@ContactProcess');
 
-/* Article Page */
+
+/** Article Page **/
 Route::get('/article','UIViewController@ShowArticle');
 
+/** Article Country Page **/
 Route::get('/article/{article_category_id}','UIViewController@ShowArticleCategory');
 
+/** Article Content Page **/
 Route::get('/article/{article_category_id}/{article_id}','UIViewController@ShowArticleContent');
 
-/* Gallery Page */
+/** Gallery Page **/
 Route::get('/gallery','UIViewController@ShowGallery');
 
+/** Gallery Country Page **/
 Route::get('/gallery/{country_id}','UIViewController@ShowGalleryCountry');
 
-/* Backend */
+/***************************** Backend Page *********************************/
+
 
 Route::middleware(['admin'])->group(function () {
+
+
   /* Admin Dashboard */
   Route::get('/admin','AdminUIController@ShowDashboard')->name('admin-dashboard');
 
@@ -238,80 +259,119 @@ Route::middleware(['admin'])->group(function () {
 
   /**************************** Other Page *********************************/
 
+  /* Show Payment Page */
   Route::get('/admin/admin-payment','AdminUIController@ShowPaymentPage');
 
+  /* Save Payment */
   Route::post('/admin-save-payment-page','AdminOtherPageController@SavePayment');
 
+  /* Show Other Page */
   Route::get('/admin/admin-aboutus','AdminUIController@ShowAdminOtherPage');
 
+  /* Save Aboutus Page */
   Route::post('/admin-save-aboutus-page','AdminOtherPageController@SaveAboutus');
 
+  /* Show Contact Page */
   Route::get('/admin/admin-contact','AdminUIController@ShowAdminContactPage');
 
+  /* Save Contact */
   Route::post('/admin-save-contact-page','AdminOtherPageController@SaveContact');
 
   /**************************** End Other Page *****************************/
 
+
   /**************************** All Tour Function **************************/
+
+  /* Show Banner */
   Route::get('/admin/admin-banner','AdminUIController@ShowBanner');
 
+  /* Save Banner */
   Route::post('/admin/admin-banner-save','AdminBannerController@AdminBannerSave');
 
   /**************************** End Tour Function **************************/
 
+
   /**************************** All Article Category Function **************************/
 
+  /* Show Article Page */
   Route::get('/admin/admin-article-cat','AdminUIController@ShowAdminArticleCategoryPage')->name('admin-article-cat');
 
+  /* Show Create Article Category Page */
   Route::get('/admin/admin-create-article-cat','AdminUIController@ShowCreateArticleCat');
 
+  /* Create Article Category Process */
   Route::post('/admin/admin-create-articlecat-process','AdminArticleCatController@CreateArticleCatProcess');
 
+  /* Show Edit Article Category Page */
   Route::get('/admin/admin-edit-article-cat/{articlecat_id}','AdminUIController@ShowEditArticleCat');
 
+  /* Edit Article Category Process */
   Route::post('/admin/admin-edit-articlecat-process/{articlecat_id}','AdminArticleCatController@AdminEditArticleCatProcess');
 
+  /* Delete Article Category Process */
   Route::post('/admin/admin-delete-article-cat-process/{articlecat_id}','AdminArticleCatController@AdminDeleteArticleCatProcess');
 
   /**************************** End Article Category Function **************************/
 
+
   /**************************** All Article Function **************************/
 
+  /* Show Article Page */
   Route::get('/admin/admin-article','AdminUIController@ShowArticle')->name('admin-article');
 
+  /* Show Create Article Page */
   Route::get('/admin/admin-create-article','AdminUIController@ShowCreateArticle');
 
+  /* Create Article Process */
   Route::post('/admin/admin-create-article-process','AdminArticleController@AdminCreateArticleProcess');
 
+  /* Show Edit Article Page */
   Route::get('/admin/admin-edit-article/{article_id}','AdminUIController@ShowEditArticle');
 
+  /* Edit Article Process */
   Route::post('/admin/admin-edit-article-process/{article_id}','AdminArticleController@AdminEditArticleProcess');
 
+  /* Delete Article Process */
   Route::post('/admin/admin-delete-article-process/{article_id}','AdminArticleController@AdminDeleteArticleProcess');
 
   /**************************** All Article Function **************************/
 
   /*************************** All Gallery Function ****************************/
 
+  /* Show Gallery Page */
   Route::get('/admin/admin-gallery','AdminUIController@ShowGallery')->name('admin-gallery');
 
+  /* Show Create Gallery Page */
   Route::get('/admin/admin-create-gallery','AdminUIController@ShowCreateGallery');
 
+  /* Create Gallery Process */
   Route::post('/admin/admin-create-gallery-process','AdminGalleryController@AdminCreateGalleryProcess');
 
+  /* Show Edit Gallery Page */
   Route::get('/admin/admin-edit-gallery/{gallery_id}','AdminUIController@ShowEditGallery');
 
+  /* Edit Gallery Process */
   Route::post('/admin/admin-edit-gallery-process','AdminGalleryController@AdminEditGalleryProcess');
 
+  /* Delete Gallery Process */
   Route::post('/admin/admin-delete-gallery-process/{gallery_id}','AdminGalleryController@AdminDeleteGalleryProcess');
 
   /************************* End Gallery Function *****************************/
 
   /************************* SEO Function *************************************/
 
+  /* Show SEO Page */
   Route::get('/admin/admin-seo','AdminUIController@ShowSeo');
 
+  /* Save SEO Information */
   Route::post('/admin/admin-seo-process','AdminSEOController@AdminSaveSEO');
 
   /************************* End SEO Function *************************************/
+
+  /************************ Contact Info **************************************/
+
+  /* Show Contact Info Page */
+  Route::get('/admin/admin-contactinfo','AdminUIController@ShowContactInfo');
+
+  /********************** End Contact Info ************************************/
 });

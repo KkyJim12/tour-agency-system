@@ -8,6 +8,8 @@ use App\Banner;
 
 class AdminBannerController extends Controller
 {
+
+    /** Admin Banner Save **/
     public function AdminBannerSave(Request $request) {
 
       /* Validate First */

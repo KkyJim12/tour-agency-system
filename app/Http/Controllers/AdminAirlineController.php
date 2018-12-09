@@ -7,6 +7,8 @@ use App\Airline;
 
 class AdminAirlineController extends Controller
 {
+
+  /** Admin Create Airline Process **/
   public function  AdminCreateAirlineProcess(Request $request)  {
 
     /* Validate First */
@@ -39,6 +41,8 @@ class AdminAirlineController extends Controller
     return redirect()->route('admin-airline');
   }
 
+
+  /** Admin Edit Airline Process **/
   public function AdminEditAirlineProcess(Request $request) {
 
     /* Validate First */
@@ -71,6 +75,8 @@ class AdminAirlineController extends Controller
     return redirect()->route('admin-airline');
   }
 
+
+  /** Admin Delete Airline Process **/
   public function AdminDeleteAirlineProcess(Request $request) {
     $airline = Airline::find($request->airline_id);
 

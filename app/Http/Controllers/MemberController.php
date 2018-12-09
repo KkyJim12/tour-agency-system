@@ -8,6 +8,8 @@ use App\User;
 
 class MemberController extends Controller
 {
+
+    /** Admin Login Process **/
     public function LoginProcess(Request $request)  {
 
       if (User::where('user_email',$request->user_email)->count() == 1)  {
@@ -30,6 +32,8 @@ class MemberController extends Controller
       }
     }
 
+
+    /** Admin Log out Process **/
     public function LogoutProcess(Request $request) {
       $request->session()->flush();
       $request->session()->regenerate();

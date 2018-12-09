@@ -8,6 +8,8 @@ use App\Branch;
 
 class AdminBranchController extends Controller
 {
+
+    /** Admin Create Branch Process **/
     public function AdminCreateBranchProcess(Request $request)  {
 
       /* Validate First */
@@ -28,6 +30,8 @@ class AdminBranchController extends Controller
       return redirect()->route('admin-branch');
     }
 
+
+    /** Admin Edit Branch Process **/
     public function AdminEditBranchProcess(Request $request)  {
 
       $request->validate([
@@ -44,6 +48,8 @@ class AdminBranchController extends Controller
       return redirect()->route('admin-branch');
     }
 
+
+    /** Admin Delete Branch Process **/
     public function AdminDeleteBranchProcess(Request $request)  {
       $branch = Branch::find($request->branch_id);
       $branch->delete();

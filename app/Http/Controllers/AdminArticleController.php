@@ -9,6 +9,8 @@ use App\ArticleCat;
 
 class AdminArticleController extends Controller
 {
+
+    /** Admin Create Article Process **/
     public function AdminCreateArticleProcess(Request $request) {
 
       /* Validate First */
@@ -46,6 +48,8 @@ class AdminArticleController extends Controller
       return redirect()->route('admin-article');
     }
 
+
+    /** Admin Edit Article Process **/
     public function AdminEditArticleProcess(Request $request) {
 
       /* Validate First */
@@ -84,6 +88,8 @@ class AdminArticleController extends Controller
       return redirect()->route('admin-article');
     }
 
+
+    /** Admin Delete Article Process **/
     public function AdminDeleteArticleProcess(Request $request) {
 
       $article = Article::find($request->article_id);

@@ -9,6 +9,8 @@ use App\Staff;
 
 class AdminStaffController extends Controller
 {
+
+    /** Admin Create Staff Process **/
     public function AdminCreateStaffProcess(Request $request) {
 
       /* Validate First */
@@ -54,6 +56,8 @@ class AdminStaffController extends Controller
       return redirect()->route('admin-staff');
     }
 
+
+    /** Admin Edit Staff Process **/
     public function AdminEditStaffProcess(Request $request) {
 
       /* Validate First */
@@ -100,6 +104,8 @@ class AdminStaffController extends Controller
 
     }
 
+
+    /** Admin Delete Staff Process **/
     public function AdminDeleteStaffProcess(Request $request) {
       $staff = Staff::find($request->staff_id);
 

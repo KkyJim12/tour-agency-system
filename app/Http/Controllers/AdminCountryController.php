@@ -10,7 +10,7 @@ use App\Country;
 class AdminCountryController extends Controller
 {
 
-    /* Admin Create Country Process */
+    /** Admin Create Country Process **/
     public function AdminCreateCountryProcess(Request $request) {
 
       /* Validate First */
@@ -47,7 +47,8 @@ class AdminCountryController extends Controller
       return redirect()->route('admin-country');
     }
 
-    /* Admin Edit Country Process */
+
+    /** Admin Edit Country Process **/
     public function AdminEditCountryProcess(Request $request) {
 
       /* Validate First */
@@ -90,7 +91,8 @@ class AdminCountryController extends Controller
 
     }
 
-    /* Admin Delete Country Process */
+
+    /** Admin Delete Country Process **/
     public function AdminDeleteCountryProcess(Request $request) {
       $country = Country::find($request->country_id);
 
