@@ -21,6 +21,7 @@
   @include('components.search-box')
   @include('components.tour-suggest')
   @include('components.tour-discount')
+  @include('components.holiday')
   @include('components.banner')
   @include('components.banner-facebook')
 @endsection

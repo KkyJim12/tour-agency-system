@@ -17,6 +17,7 @@ use App\Article;
 use App\Gallery;
 use App\SEO;
 use App\Branch;
+use App\Holiday;
 
 class UIViewController extends Controller
 {
@@ -34,6 +35,8 @@ class UIViewController extends Controller
       $sixth_banner = Banner::where('banner_num','6')->first();
       $first_slide = Slide::first();
       $seo = SEO::first();
+      $holiday = Holiday::all();
+      $tour = Tour::where('tour_holiday_id','!=',null)->get();
       if ($first_slide !== null) {
         $slide = Slide::where('_id','!=',$first_slide->_id)->get();
       }
@@ -53,6 +56,8 @@ class UIViewController extends Controller
                             'slide' => $slide,
                             'first_slide' => $first_slide,
                             'seo' => $seo,
+                            'holiday' => $holiday,
+                            'tour' => $tour,
                           ]);
     }
 
