@@ -1,6 +1,19 @@
 body  {
   font-family: 'Kanit', sans-serif;
   font-size: 14px;
+  background-color: #FFFFFF !important;
+  color:rgba(0,0,0,0.84);
+}
+
+.nav-link {
+  font-size: 14px;
+}
+
+.cat-link:hover {
+  color:#6ABCDC !important;
+}
+.nav-link:hover {
+  color:#6ABCDC !important;
 }
 
 .card-body-link {
@@ -54,18 +67,17 @@ body  {
 
 .search-box {
   border-radius: 10px;
-  background-color:rgba(0,0,0,0.6) !important;
+  background-color:#6ABCDC !important;
   padding:30px;
-  background-color:white;
 }
 
 .search-box h3  {
   text-align: center;
-  color:white;
+  color:rgba(0,0,0,0.84);
 }
 
 .search-box label  {
-  color:white;
+  color:rgba(0,0,0,0.84);
 }
 
 .tour-box {
@@ -158,9 +170,9 @@ body  {
 }
 
 .filter   {
-  padding: 30px;
-  background-color:rgba(0,0,0,0.6) !important;
   border-radius: 10px;
+  background-color:#6ABCDC !important;
+  padding:30px;
 }
 
 .country-small-img  {

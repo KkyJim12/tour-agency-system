@@ -4,6 +4,7 @@
       <div class="row">
         <div class="col-md-12">
           <h3>ค้นหาทัวร์</h3>
+          <hr>
         </div>
         <div class="col-md-12 mt-3">
           <div class="tab-content" id="myTabContent">
