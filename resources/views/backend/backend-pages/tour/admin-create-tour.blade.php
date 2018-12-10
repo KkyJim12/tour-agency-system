@@ -36,6 +36,7 @@
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>พนักงาน</label>
           <select class="form-control" name="tour_staff">
+            <option>เลือกพนักงาน</option>
             @foreach($staff as $all_staff)
             <option value="{{$all_staff->_id}}">{{$all_staff->staff_name}}</option>
             @endforeach
@@ -44,6 +45,7 @@
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>ประเทศ</label>
           <select class="form-control" name="tour_country">
+            <option>เลือกประเทศ</option>
             @foreach($country as $all_country)
             <option value="{{$all_country->_id}}">{{$all_country->country_name}}</option>
             @endforeach
@@ -52,8 +54,18 @@
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>สายการบิน</label>
           <select class="form-control" name="tour_airline">
+            <option>เลือกสายการบิน</option>
             @foreach($airline as $all_airline)
             <option value="{{$all_airline->_id}}">{{$all_airline->airline_name}}</option>
+            @endforeach
+          </select>
+        </div>
+        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+          <label>วันหยุดพิเศษ (ไม่จำเป็นต้องใส่)</label>
+          <select class="form-control" name="tour_holiday">
+            <option>วันหยุดพิเศษ</option>
+            @foreach($holiday as $all_holiday)
+            <option value="{{$all_holiday->_id}}">{{$all_holiday->holiday_name}}</option>
             @endforeach
           </select>
         </div>
@@ -107,6 +119,8 @@
           <label>ลำดับที่</label>
           <input class="form-control" type="number" name="tour_sort" placeholder="ลำดับที่">
         </div>
+
+
         <!-- Seo Support -->
 
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">

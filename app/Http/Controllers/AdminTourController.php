@@ -8,6 +8,7 @@ use App\Tour;
 use App\Staff;
 use App\Country;
 use App\Airline;
+use App\Holiday;
 
 class AdminTourController extends Controller
 {
@@ -42,6 +43,7 @@ class AdminTourController extends Controller
       $staff = Staff::find($request->tour_staff);
       $country = Country::find($request->tour_country);
       $airline = Airline::find($request->tour_airline);
+      $holiday = Holiday::find($request->tour_holiday);
       $tour = new Tour;
       $tour->tour_code = $request->tour_code;
       $tour->tour_name = $request->tour_name;
@@ -71,6 +73,8 @@ class AdminTourController extends Controller
       $tour->tour_seo_title = $request->tour_seo_title;
       $tour->tour_seo_meta = $request->tour_seo_meta;
       $tour->tour_seo_url = $request->tour_seo_url;
+      $tour->tour_holiday_id = $holiday->_id;
+      $tour->tour_holiday_name = $holiday->holiday_name;
 
       /* upload pdf */
 
@@ -171,6 +175,8 @@ class AdminTourController extends Controller
       $tour->tour_seo_title = $request->tour_seo_title;
       $tour->tour_seo_meta = $request->tour_seo_meta;
       $tour->tour_seo_url = $request->tour_seo_url;
+      $tour->tour_holiday_id = $holiday->_id;
+      $tour->tour_holiday_name = $holiday->holiday_name;
 
       /* upload pdf */
 

@@ -21,6 +21,7 @@ use App\Article;
 use App\Gallery;
 use App\SEO;
 use App\ContactInfo;
+use App\Holiday;
 
 class AdminUIController extends Controller
 {
@@ -183,10 +184,12 @@ class AdminUIController extends Controller
       $staff = Staff::all();
       $country = Country::all();
       $airline = Airline::all();
+      $holiday = Holiday::all();
       return view('backend.backend-pages.tour.admin-create-tour',[
                                                                   'staff' => $staff,
                                                                   'country' => $country,
                                                                   'airline' => $airline,
+                                                                  'holiday' => $holiday,
                                                                  ]);
     }
 
@@ -196,11 +199,13 @@ class AdminUIController extends Controller
       $country = Country::all();
       $airline = Airline::all();
       $tour = Tour::where('_id',$tour_id)->first();
+      $holiday = Holiday::all();
       return view('backend.backend-pages.tour.admin-edit-tour',[
                                                                   'staff' => $staff,
                                                                   'country' => $country,
                                                                   'airline' => $airline,
                                                                   'tour' => $tour,
+                                                                  'holiday' => $holiday,
                                                                  ]);
     }
 
@@ -358,5 +363,26 @@ class AdminUIController extends Controller
       return view('backend.backend-pages.contactinfo.admin-contactinfo',[
                                                                           'contactinfo' => $contactinfo,
                                                                         ]);
+    }
+
+    /* Show Holiday Page */
+    public function ShowHoliday() {
+      $holiday = Holiday::all();
+      return view('backend.backend-pages.holiday.admin-holiday',[
+                                                                  'holiday' => $holiday,
+                                                                ]);
+    }
+
+    /* Show Create Holiday Page */
+    public function ShowCreateHoliday() {
+      return view('backend.backend-pages.holiday.admin-create-holiday');
+    }
+
+    /* Show Edit Holiday Page */
+    public function ShowEditHoliday($holiday_id) {
+      $holiday = Holiday::find($holiday_id);
+      return view('backend.backend-pages.holiday.admin-edit-holiday',[
+                                                                      'holiday' => $holiday,
+                                                                     ]);
     }
 }

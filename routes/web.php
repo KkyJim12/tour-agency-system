@@ -374,4 +374,27 @@ Route::middleware(['admin'])->group(function () {
   Route::get('/admin/admin-contactinfo','AdminUIController@ShowContactInfo');
 
   /********************** End Contact Info ************************************/
+
+
+  /*********************** Holiday Function *********************************/
+
+  /* Show Holiday Page */
+  Route::get('/admin/admin-holiday','AdminUIController@ShowHoliday')->name('admin-holiday');
+
+  /* Show Create Holiday Page */
+  Route::get('/admin/admin-create-holiday','AdminUIController@ShowCreateHoliday');
+
+  /* Create Holiday Process */
+  Route::post('/admin/admin-create-holiday-process','AdminHolidayController@AdminCreateHolidayProcess');
+
+  /* Show Edit Holiday Page */
+  Route::get('/admin/admin-edit-holiday/{holiday_id}','AdminUIController@ShowEditHoliday');
+
+  /* Edit Holiday Process */
+  Route::post('/admin/admin-edit-holiday-process','AdminHolidayController@AdminEditHolidayProcess');
+
+  /* Delete Holiday Process */
+  Route::post('/admin/admin-delete-holiday-process/{holiday_id}','AdminHolidayController@AdminDeleteHolidayProcess');
+
+  /*********************** End Holiday Function ****************************/
 });
