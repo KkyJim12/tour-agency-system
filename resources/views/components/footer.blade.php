@@ -9,43 +9,43 @@
          <div class="col-md-4 mt-5 mb-5">
             <h5>ช่องทางติดต่อ</h5>
             <div class="row mt-4 ml-2">
-               <div class="col-md-2">
+               <div class="col-2">
                   <img class="soc-icon mt-2" src="/assets/img/components/icon_con_1.png" alt="icon_con">
                </div>
-               <div class="col-md-10">
+               <div class="col-10">
                   <span>02 595 0279 (สาขาบางใหญ่)</span><br>
                   <span>02 207 8608 (สาขาเซ็นทรัลเวิลด์)</span>
                </div>
             </div>
             <div class="row mt-2 ml-2">
-               <div class="col-md-2">
+               <div class="col-2">
                   <img class="soc-icon" src="/assets/img/components/icon_con_2.png" alt="icon_con">
                </div>
-               <div class="col-md-10">
+               <div class="col-10">
                   <span>royaltourgroup@gmail.com</span>
                </div>
             </div>
             <div class="row mt-2 ml-2">
-               <div class="col-md-2">
+               <div class="col-2">
                   <img class="soc-icon" src="/assets/img/components/icon_con_3.png" alt="icon_con">
                </div>
-               <div class="col-md-10">
+               <div class="col-10">
                   <span>royaltourgroup</span>
                </div>
             </div>
             <div class="row mt-2 ml-2">
-               <div class="col-md-2">
+               <div class="col-2">
                   <img class="soc-icon" src="/assets/img/components/icon_con_4.png" alt="icon_con">
                </div>
-               <div class="col-md-10">
+               <div class="col-10">
                   <span>@royaltour</span>
                </div>
             </div>
             <div class="row mt-2 ml-2">
-               <div class="col-md-2">
+               <div class="col-2">
                   <img class="soc-icon" src="/assets/img/components/icon_con_5.png" alt="icon_con">
                </div>
-               <div class="col-md-10">
+               <div class="col-10">
                   <span>royaltourgroup</span>
                </div>
             </div>
