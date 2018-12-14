@@ -72,8 +72,12 @@ class AdminTourController extends Controller
       $tour->tour_seo_title = $request->tour_seo_title;
       $tour->tour_seo_meta = $request->tour_seo_meta;
       $tour->tour_seo_url = $request->tour_seo_url;
-      $tour->tour_holiday_id = $holiday->_id;
-      $tour->tour_holiday_name = $holiday->holiday_name;
+
+
+      if ($request->tour_holiday) {
+        $tour->tour_holiday_id = $holiday->_id;
+        $tour->tour_holiday_name = $holiday->holiday_name;
+      }
 
       /* upload pdf */
 
@@ -173,8 +177,12 @@ class AdminTourController extends Controller
       $tour->tour_seo_title = $request->tour_seo_title;
       $tour->tour_seo_meta = $request->tour_seo_meta;
       $tour->tour_seo_url = $request->tour_seo_url;
-      $tour->tour_holiday_id = $holiday->_id;
-      $tour->tour_holiday_name = $holiday->holiday_name;
+
+
+      if ($request->tour_holiday) {
+        $tour->tour_holiday_id = $holiday->_id;
+        $tour->tour_holiday_name = $holiday->holiday_name;
+      }
 
       /* upload pdf */
 
