@@ -106,9 +106,9 @@ class AdminTourController extends Controller
                 $file->move($destinationPathOther, $name);
                 $data[] = $name;
             }
-      }
 
-      $tour->tour_other_img = $data;
+        $tour->tour_other_img = $data;
+      }
 
       $tour->save();
 
