@@ -42,7 +42,6 @@ class AdminTourController extends Controller
       $staff = Staff::find($request->tour_staff);
       $country = Country::find($request->tour_country);
       $airline = Airline::find($request->tour_airline);
-      $holiday = Holiday::find($request->tour_holiday);
       $tour = new Tour;
       $tour->tour_code = $request->tour_code;
       $tour->tour_name = $request->tour_name;
@@ -75,6 +74,7 @@ class AdminTourController extends Controller
 
 
       if ($request->tour_holiday) {
+        $holiday = Holiday::find($request->tour_holiday);
         $tour->tour_holiday_id = $holiday->_id;
         $tour->tour_holiday_name = $holiday->holiday_name;
       }
@@ -180,6 +180,7 @@ class AdminTourController extends Controller
 
 
       if ($request->tour_holiday) {
+        $holiday = Holiday::find($request->tour_holiday);
         $tour->tour_holiday_id = $holiday->_id;
         $tour->tour_holiday_name = $holiday->holiday_name;
       }
