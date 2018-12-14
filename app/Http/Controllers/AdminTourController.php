@@ -34,7 +34,7 @@ class AdminTourController extends Controller
       'tour_hightlight' => 'required',
       'tour_condition' => 'required',
       'tour_sort' => 'required',
-      'tour_pdf' => 'required|max:10000|mimes:pdf',
+      'tour_pdf' => 'required|max:100000|mimes:pdf',
       'tour_img' => 'required|image|max:2048',
       ]);
 
@@ -137,7 +137,7 @@ class AdminTourController extends Controller
       'tour_hightlight' => 'required',
       'tour_condition' => 'required',
       'tour_sort' => 'required',
-      'tour_pdf' => 'max:10000|mimes:pdf',
+      'tour_pdf' => 'max:100000|mimes:pdf',
       'tour_img' => 'image|max:2048',
       ]);
 
