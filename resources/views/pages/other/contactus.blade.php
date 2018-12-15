@@ -44,7 +44,7 @@ Royaltour | ติดต่อเรา
    </div>
    <div class="row mt-5">
       @foreach($branch as $show_branch)
-      <div class="col-md-12">
+      <div class="col-md-12 mt-5">
          <h5>ติดต่อฝ่ายขายรอยัลทัวร์ ({{$show_branch->branch_name}})</h5>
          <div class="contact-table">
             <table class="table table-striped">
