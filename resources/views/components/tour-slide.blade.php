@@ -17,14 +17,10 @@
          <img src="/assets/img/upload/tour/img/{{$tour->tour_img}}" alt="slider" />
       </div>
       <!--========= Second Slide =========-->
-      @if($tour->tour_other_img == "")
-        <!-- Do Nothing -->
-      @else
       @foreach($tour->tour_other_img as $tour_other_img)
       <div class="item">
          <img src="/assets/img/upload/tour/otherimg/{{$tour_other_img}}" alt="slider" />
       </div>
       @endforeach
-      @endif
    </div>
 </div>
