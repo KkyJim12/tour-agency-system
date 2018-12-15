@@ -61,7 +61,7 @@
          <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
             <label>วันหยุดพิเศษ (ไม่จำเป็นต้องใส่)</label>
             <select class="form-control" name="tour_holiday">
-               <option>วันหยุดพิเศษ</option>
+               <option value="">วันหยุดพิเศษ</option>
                @foreach($holiday as $all_holiday)
                <option value="{{$all_holiday->_id}}">{{$all_holiday->holiday_name}}</option>
                @endforeach
