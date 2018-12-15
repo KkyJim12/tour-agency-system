@@ -10,6 +10,16 @@ class ContactController extends Controller
 {
     /** Contact Process Save **/
     public function ContactProcess(Request $request)  {
+
+
+      /** Validate First **/
+      $request->validate([
+          'contact_name' => 'required',
+          'contact_email' => 'required',
+          'contact_tel' => 'required',
+          'contact_info' => 'required,'
+      ]);
+
       $contactinfo = new ContactInfo;
       $contactinfo->contact_name = $request->contact_name;
       $contactinfo->contact_email = $request->contact_email;
