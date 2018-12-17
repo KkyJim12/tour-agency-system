@@ -46,11 +46,19 @@ Royaltour | ติดต่อเรา
          <button class="btn btn-success mt-3 form-control" type="submit" name="button">ส่ง</button>
       </div>
    </form>
-   <div class="row mt-5">
-      <div class="col-md-12">
-         <span>{!!$content->content!!}</span>
-      </div>
-   </div>
+ </div>
+
+<div style="background-color:#eee;">
+  <div class="container">
+    <div class="row mt-5">
+       <div class="col-md-12">
+          <span>{!!$content->content!!}</span>
+       </div>
+    </div>
+  </div>
+</div>
+
+ <div class="container">
    <div class="row">
       @foreach($branch as $show_branch)
       <div class="col-md-12 mt-5">
@@ -72,5 +80,5 @@ Royaltour | ติดต่อเรา
       </div>
       @endforeach
    </div>
-</div>
+ </div>
 @endsection

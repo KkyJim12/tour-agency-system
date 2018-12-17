@@ -19,4 +19,5 @@ Royaltour | วิธีการชำระเงิน
       </div>
    </div>
 </div>
+
 @endsection

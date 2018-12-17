@@ -26,6 +26,7 @@ Royaltour | ภาพประทับใจ
          <a class="card-body-link" href="/gallery/{{$subcat->_id}}">
             <div class="card" style="width: 100%;">
                <img class="card-img-top gallery-img" src="/assets/img/upload/country/{{$subcat->country_img}}" alt="country_img">
+               <hr>
                <div class="card-body">
                   <p class="card-text">{{$subcat->country_name}}</p>
                </div>
