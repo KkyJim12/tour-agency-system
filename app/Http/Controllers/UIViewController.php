@@ -37,6 +37,7 @@ class UIViewController extends Controller
       $seo = SEO::first();
       $holiday = Holiday::all();
       $tour = Tour::where('tour_holiday_id','!=',null)->get();
+      $article = Article::take(4)->get();
       if ($first_slide !== null) {
         $slide = Slide::where('_id','!=',$first_slide->_id)->get();
       }
@@ -58,6 +59,7 @@ class UIViewController extends Controller
                             'seo' => $seo,
                             'holiday' => $holiday,
                             'tour' => $tour,
+                            'article' => $article,
                           ]);
     }
 

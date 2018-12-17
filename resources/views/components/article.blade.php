@@ -1,67 +1,24 @@
-<div class="container mt-5">
-   <div class="row">
-      <div class="col-lg-12">
-         <h3>บทความท่องเที่ยว</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h3>บทความแนะนำ</h3>
+    </div>
+    <div class="col-4" style="text-align:right;">
+      <a href="/article">อ่านทั้งหมด</a>
+    </div>
+  </div>
+  <div class="row">
+    @foreach($article as $show_article)
+    <div class="col-md-3 mt-3">
+      <div class="card">
+        <img class="card-img-top" src="/assets/img/upload/article/{{$show_article->article_img}}" alt="article" style="width:100%; height:175px;">
+        <div class="card-body">
+          <h5 class="card-title">{{$show_article->article_title}}</h5>
+          <p class="card-text">{!!str_limit($show_article->article_content,95)!!}</p>
+          <a href="/article/{{$show_article->article_cat_id}}/{{$show_article->_id}}" class="btn btn-primary form-control">อ่านต่อ</a>
+        </div>
       </div>
-   </div>
-   <hr>
-   <div class="row">
-      <div class="col-md-6 mt-3">
-         <div class="row">
-            <div class="col-md-6">
-               <img class="article-img" src="/assets/img/article/article-1.jpg" alt="article">
-            </div>
-            <div class="col-md-6">
-               <h5>10 สถานที่น่าไปเดือนตุลาคม</h5>
-               <p>tsettestsetsetsetsetsetset</p>
-               <p>tsettestsetsetsetsetsetset</p>
-               <p>tsettestsetsetsetsetsetset</p>
-               <p>tsettestsetsetsetsetsetset</p>
-            </div>
-         </div>
-      </div>
-      <div class="col-md-6 mt-3">
-         <div class="row">
-            <div class="col-md-6">
-               <img class="article-img" src="/assets/img/article/article-1.jpg" alt="article">
-            </div>
-            <div class="col-md-6">
-               <h5>10 สถานที่น่าไปเดือนตุลาคม</h5>
-               <p>tsettestsetsetsetsetsetset</p>
-               <p>tsettestsetsetsetsetsetset</p>
-               <p>tsettestsetsetsetsetsetset</p>
-               <p>tsettestsetsetsetsetsetset</p>
-            </div>
-         </div>
-      </div>
-      <div class="col-md-6 mt-3">
-         <div class="row">
-            <div class="col-md-6">
-               <img class="article-img" src="/assets/img/article/article-1.jpg" alt="article">
-            </div>
-            <div class="col-md-6">
-               <h5>10 สถานที่น่าไปเดือนตุลาคม</h5>
-               <p>tsettestsetsetsetsetsetset</p>
-               <p>tsettestsetsetsetsetsetset</p>
-               <p>tsettestsetsetsetsetsetset</p>
-               <p>tsettestsetsetsetsetsetset</p>
-            </div>
-         </div>
-      </div>
-      <div class="col-md-6 mt-3">
-         <div class="row">
-            <div class="col-md-6">
-               <img class="article-img" src="/assets/img/article/article-1.jpg" alt="article">
-            </div>
-            <div class="col-md-6">
-               <h5>10 สถานที่น่าไปเดือนตุลาคม</h5>
-               <p>tsettestsetsetsetsetsetset</p>
-               <p>tsettestsetsetsetsetsetset</p>
-               <p>tsettestsetsetsetsetsetset</p>
-               <p>tsettestsetsetsetsetsetset</p>
-            </div>
-         </div>
-      </div>
-   </div>
-   <hr>
+    </div>
+    @endforeach
+  </div>
 </div>

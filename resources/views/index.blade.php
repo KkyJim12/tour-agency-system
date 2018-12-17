@@ -22,6 +22,7 @@
   @include('components.tour-suggest')
   @include('components.tour-discount')
   @include('components.holiday')
+  @include('components.article')
   @include('components.banner')
   @include('components.banner-facebook')
 @endsection
