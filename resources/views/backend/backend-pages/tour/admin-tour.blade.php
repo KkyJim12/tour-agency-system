@@ -8,7 +8,7 @@
    <div class="row">
       <div class="col-md-11 table-field">
          <table class="table table-bordered table-hover admin-table">
-            <tr>
+            <thead><tr>
                <th>ลำดับที่</th>
                <th>รูปภาพ</th>
                <th>ชื่อทัวร์</th>
@@ -23,7 +23,7 @@
                <th>ซ่อน</th>
                <th>แก้ไข</th>
                <th>ลบ</th>
-            </tr>
+           </tr></thead><tbody>
             @foreach($tour as $show_tour)
             <tr>
                <td>{{$loop->iteration}}</td>
@@ -64,8 +64,14 @@
                </td>
             </tr>
             @endforeach
+            </tbody>
          </table>
       </div>
    </div>
 </div>
+<script>
+$(document).ready(function() {
+    $('.table').DataTable();
+} );
+</script>
 @endsection

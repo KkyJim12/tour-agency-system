@@ -8,20 +8,23 @@
    <div class="row">
       <div class="col-md-11 table-field">
          <table class="table table-bordered table-hover admin-table">
-            <tr>
-               <th>ลำดับที่</th>
-               <th>รูปภาพ</th>
-               <th>ชื่อ-นามสกุล</th>
-               <th>ชื่อเล่น</th>
-               <th>เบอร์โทร</th>
-               <th>อีเมลล์</th>
-               <th>เฟสบุ๊ค</th>
-               <th>ไลน์</th>
-               <th>เรียง</th>
-               <th>ซ่อน</th>
-               <th>แก้ไข</th>
-               <th>ลบ</th>
-            </tr>
+             <thead>
+                <tr>
+                   <th>ลำดับที่</th>
+                   <th>รูปภาพ</th>
+                   <th>ชื่อ-นามสกุล</th>
+                   <th>ชื่อเล่น</th>
+                   <th>เบอร์โทร</th>
+                   <th>อีเมลล์</th>
+                   <th>เฟสบุ๊ค</th>
+                   <th>ไลน์</th>
+                   <th>เรียง</th>
+                   <th>ซ่อน</th>
+                   <th>แก้ไข</th>
+                   <th>ลบ</th>
+                </tr>
+            </thead>
+            <tbody>
             @foreach($staff as $show_staff)
             <tr>
                <td>{{$loop->iteration}}</td>
@@ -54,8 +57,14 @@
                </td>
             </tr>
             @endforeach
+            </tbody>
          </table>
       </div>
    </div>
 </div>
+<script>
+$(document).ready(function() {
+    $('.table').DataTable();
+} );
+</script>
 @endsection

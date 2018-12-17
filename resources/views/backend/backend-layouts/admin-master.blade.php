@@ -7,12 +7,14 @@
       <link rel="stylesheet" href="/assets/admin-css/AdminLTE.min.css">
       <link rel="stylesheet" href="/assets/admin-css/all-skins.min.css">
       <link rel="stylesheet" href="/assets/admin-css/ionicons.min.css">
+      <link rel="stylesheet" href="/assets/admin-css/datatables.min.css">
       <link rel="stylesheet" href="/assets/admin-css/jquery-jvectormap.css">
       <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
       <script src="/assets/admin-js/jquery-3.3.1.min.js" type="text/javascript"></script>
       <script src="/assets/admin-js/bootstrap.min.js" type="text/javascript"></script>
       <script src="/assets/admin-js/adminlte.min.js" type="text/javascript"></script>
+      <script src="/assets/admin-js/datatables.min.js" type="text/javascript"></script>
       <script src="/assets/tinymce/tinymce.min.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title></title>

@@ -10,6 +10,7 @@
   <div class="row">
     <div class="col-md-11 table-field">
       <table class="table table-bordered table-hover admin-table">
+          <thead>
         <tr>
           <th>ลำดับที่</th>
           <th>ชื่อสาขา</th>
@@ -18,6 +19,7 @@
           <th>แก้ไข</th>
           <th>ลบ</th>
         </tr>
+    </thead><tbody>
         @foreach($branch as $show_branch)
         <tr>
           <td>{{$loop->iteration}}</td>
@@ -42,8 +44,14 @@
           </td>
         </tr>
         @endforeach
+    </tbody>
       </table>
     </div>
   </div>
 </div>
+<script>
+$(document).ready(function() {
+    $('.table').DataTable();
+} );
+</script>
 @endsection

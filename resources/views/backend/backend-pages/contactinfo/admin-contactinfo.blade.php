@@ -9,6 +9,7 @@
   <div class="row">
     <div class="col-md-11 table-field">
       <table class="table table-bordered table-hover admin-table">
+          <thead>
         <tr>
           <th>ลำดับที่</th>
           <th>ชื่อ-นามสกุล</th>
@@ -16,6 +17,7 @@
           <th>เบอร์โทร</th>
           <th>รายละเอียด</th>
         </tr>
+    </thead><tbody>
         @foreach($contactinfo as $show_contactinfo)
           <tr>
             <th>{{$loop->iteration}}</th>
@@ -34,8 +36,14 @@
             </th>
           </tr>
         @endforeach
+    </tbody>
       </table>
     </div>
   </div>
 </div>
+<script>
+$(document).ready(function() {
+    $('.table').DataTable();
+} );
+</script>
 @endsection

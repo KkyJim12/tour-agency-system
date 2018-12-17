@@ -11,6 +11,7 @@
   <div class="row">
     <div class="col-md-11 table-field">
       <table class="table table-bordered table-hover admin-table">
+          <thead>
         <tr>
           <th>ลำดับที่</th>
           <th>รูปภาพ</th>
@@ -21,6 +22,7 @@
           <th>แก้ไข</th>
           <th>ลบ</th>
         </tr>
+    </thead><tbody>
         @foreach($country as $show_country)
         <tr>
           <td>{{$loop->iteration}}</td>
@@ -49,8 +51,14 @@
           </td>
         </tr>
         @endforeach
+    </tbody>
       </table>
     </div>
   </div>
 </div>
+<script>
+$(document).ready(function() {
+    $('.table').DataTable();
+} );
+</script>
 @endsection
