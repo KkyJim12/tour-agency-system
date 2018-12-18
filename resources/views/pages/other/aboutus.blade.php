@@ -12,11 +12,5 @@ Royaltour | เกี่ยวกับเรา
       <p>หน้าแรก > เกี่ยวกับเรา</p>
    </div>
 </div>
-<div class="container">
-   <div class="row">
-      <div class="col-md-12">
-         <span>{!!$content->content!!}</span>
-      </div>
-   </div>
-</div>
+<span>{!!$content->content!!}</span>
 @endsection
