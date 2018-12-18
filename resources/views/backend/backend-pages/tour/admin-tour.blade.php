@@ -34,8 +34,20 @@
                <td>{{$show_tour->tour_country_name}}</td>
                <td>{{$show_tour->tour_staff_name}}</td>
                <td>{{$show_tour->tour_airline_name}}</td>
-               <td>{{$show_tour->tour_start_date}}</td>
-               <td>{{$show_tour->tour_end_date}}</td>
+               <td>
+                   @if(isset($show_tour->tour_start_date) && count($show_tour->tour_start_date) > 0)
+                    @foreach($show_tour->tour_start_date as $date)
+                        {{$date}},
+                    @endforeach
+                   @endif
+               </td>
+               <td>
+                   @if(isset($show_tour->tour_end_date) && count($show_tour->tour_end_date) > 0)
+                    @foreach($show_tour->tour_end_date as $date)
+                        {{$date}},
+                    @endforeach
+                   @endif
+               </td>
                <td>{{$show_tour->tour_day}} วัน {{$show_tour->tour_night}} คืน</td>
                <td>{{$show_tour->tour_sort}}</td>
                <td>

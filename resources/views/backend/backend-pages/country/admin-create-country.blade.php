@@ -22,6 +22,15 @@
           <input class="form-control" type="text" name="country_name" placeholder="ชื่อประเทศ">
         </div>
         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+          <label>ทวีป</label>
+          <select class="form-control" name="continent_id">
+              @foreach($continent as $continent)
+              <option value="{{$continent->_id}}">{{ $continent->continent_name }}</option>
+              @endforeach
+          </select>
+        </div>
+
+        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
           <label>ลำดับที่</label>
           <input class="form-control" type="number" name="country_sort" placeholder="ลำดับที่">
         </div>

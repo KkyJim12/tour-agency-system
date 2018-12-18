@@ -85,14 +85,50 @@
                <option value="12" @if($tour->tour_month == 12) selected @endif>ธันวาคม</option>
             </select>
          </div>
+
          <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
-            <label>วันเดินทาง</label>
-            <input class="form-control" type="date" name="tour_start_date" placeholder="วันเดินทาง" value="{{$tour->tour_start_date}}">
+            <label>วันเดินทาง (1)</label>
+            <input class="form-control" type="date" name="tour_start_date[]" placeholder="วันเดินทาง" value="{{$tour->tour_start_date[0]}}">
          </div>
          <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
-            <label>วันกลับ</label>
-            <input class="form-control" type="date" name="tour_end_date" placeholder="วันกลับ" value="{{$tour->tour_end_date}}">
+            <label>วันกลับ (1)</label>
+            <input class="form-control" type="date" name="tour_end_date[]" placeholder="วันกลับ" value="{{$tour->tour_end_date[0]}}">
          </div>
+
+         <div id="divAdditionalTourDates">
+             <?php
+                $newTdIndex = 2;
+                $actualIndex = 1;
+                $fiSkipped = false;
+             ?>
+             @foreach($tour->tour_start_date as $tourDate)
+                @if($fiSkipped)
+                    <?php $fiSkipped = true; ?>
+                @else
+                    @if(isset($tour->tour_start_date[$actualIndex]) and isset($tour->tour_end_date[$actualIndex]))
+                    <span>
+                        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+                           <label>วันเดินทาง ({{ $newTdIndex }})</label>
+                           <input class="form-control" type="date" name="tour_start_date[]" placeholder="วันเดินทาง" value="{{$tour->tour_start_date[$actualIndex]}}">
+                        </div>
+                        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+                           <label>วันกลับ ({{ $newTdIndex }})</label>
+                           <input class="form-control" type="date" name="tour_end_date[]" placeholder="วันกลับ" value="{{$tour->tour_end_date[$actualIndex]}}">
+                        </div>
+                        <a class="btn btn-sm btn-danger btnDeleteThisDateGroup" href="#">ลบวันเดินทาง/วันกลับชุดนี้ ({{$newTdIndex}})</a>
+                    </span>
+                    @endif
+                @endif
+                <?php $newTdIndex++; $actualIndex++; ?>
+             @endforeach
+
+         </div>
+
+         <hr />
+         <a class="btn btn-block btn-info" id="btnAddTourDate" href="#">เพิ่มวันเดินทางอื่น</a>
+         <hr />
+
+
          <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
             <label>วันหมดเขตจอง</label>
             <input class="form-control" type="date" name="tour_expire_date" placeholder="วันหมดเขตจอง" value="{{$tour->tour_expire_date}}">
@@ -165,6 +201,25 @@
       </form>
    </div>
 </div>
+<script>
+    tdIndex = {{ (int) $newTdIndex - 1 }};
+    $("#btnAddTourDate").click(function(e){
+        e.preventDefault();
+        $("#divAdditionalTourDates").append("<span class=\"additionalTourDateItemGrp\"></div><hr /><div class=\"input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input\"> \
+           <label>วันเดินทาง (" + tdIndex + ")</label> \
+           <input class=\"form-control\" type=\"date\" name=\"tour_start_date[]\" placeholder=\"วันเดินทาง\"> \
+        </div> \
+        <div class=\"input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input\"> \
+           <label>วันกลับ (" + tdIndex + ")</label> \
+           <input class=\"form-control\" type=\"date\" name=\"tour_end_date[]\" placeholder=\"วันกลับ\"> \
+        </div><a class=\"btn btn-sm btn-danger btnDeleteThisDateGroup\" href=\"#\">ลบวันเดินทาง/วันกลับชุดนี้ (" + tdIndex + ")</a></span>");
+        tdIndex++;
+    });
+    $("#divAdditionalTourDates").on('click', '.btnDeleteThisDateGroup', function(e) {
+        e.preventDefault();
+        $(this).closest("span").remove();
+    });
+</script>
 @endsection
 @section('script')
 <script>
