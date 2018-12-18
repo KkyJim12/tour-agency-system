@@ -17,7 +17,7 @@ class ContactController extends Controller
           'contact_name' => 'required',
           'contact_email' => 'required',
           'contact_tel' => 'required',
-          'contact_info' => 'required,'
+          'contact_info' => 'required',
       ]);
 
       $contactinfo = new ContactInfo;
