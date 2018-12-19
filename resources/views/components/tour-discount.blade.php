@@ -21,7 +21,7 @@
                   <p class="card-text">{!!$show_tour_discount->tour_hightlight!!}</p>
                </div>
                <div class="tour-date-box mt-2">
-                  <span>ช่วงเวลา: {{$show_tour_discount->tour_start_date}}</span>
+                  <span>ช่วงเวลา: {{$show_tour_discount->tour_start_date[0]}}</span>
                </div>
                <div class="row mt-3">
                   <span class="col-9">เริ่ม {{$show_tour_discount->tour_price}} บาท</span>

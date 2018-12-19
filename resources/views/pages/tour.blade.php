@@ -54,7 +54,7 @@
                </div>
                <div class="col-lg-6">
                   <p>ระยะเวลา: {{$tour->tour_day}} วัน {{$tour->tour_night}} คืน</p>
-                  <p>ช่วงเวลา: {{$tour->tour_start_date}}</p>
+                  <p>ช่วงเวลา: {{$tour->tour_start_date[0]}}</p>
                </div>
             </div>
          </div>
