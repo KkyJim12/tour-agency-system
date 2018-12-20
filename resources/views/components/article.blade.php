@@ -14,7 +14,6 @@
         <img class="card-img-top" src="/assets/img/upload/article/{{$show_article->article_img}}" alt="article" style="width:100%; height:175px;">
         <div class="card-body">
           <h5 class="card-title" style="height:48px;">{{str_limit($show_article->article_title,30)}}</h5>
-          <p class="card-text" style="height:63px;">{!!str_limit($show_article->article_content,95)!!}</p>
           <a href="/article/{{$show_article->article_cat_id}}/{{$show_article->_id}}" class="btn btn-primary form-control">อ่านต่อ</a>
         </div>
       </div>
