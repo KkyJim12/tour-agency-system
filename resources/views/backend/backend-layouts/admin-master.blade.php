@@ -117,6 +117,7 @@
                <li><a href="/admin/admin-seo"><i class="fas fa-cog"></i> <span>ตั้งค่า SEO</span></a></li>
                <li><a href="/admin/admin-contactinfo"><i class="fab fa-telegram-plane"></i> <span>ข้อมูลติดต่อ</span></a></li>
                <li><a href="/admin/admin-holiday"><i class="fas fa-calendar-alt"></i> <span>วันหยุดพิเศษ</span></a></li>
+               <li><a href="/admin/admin-reserve-tour"><i class="fas fa-envelope"></i> <span>ข้อมูลการจองทัวร์</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
          </section>

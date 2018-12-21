@@ -1,7 +1,7 @@
 @extends('backend.backend-layouts.admin-master')
 
 @section('content-header')
-<h3>ข้อมูลติดต่อ <i class="fab fa-telegram-plane"></i></h3>
+<h3>ข้อมูลการจองทัวร์ <i class="fas fa-envelope"></i></h3>
 @endsection
 
 @section('content')
@@ -13,23 +13,25 @@
         <tr>
           <th>ลำดับที่</th>
           <th>ชื่อ-นามสกุล</th>
-          <th>อีเมลล์</th>
+          <th>จำนวน</th>
           <th>เบอร์โทร</th>
           <th>รายละเอียด</th>
         </tr>
     </thead><tbody>
-        @foreach($contactinfo as $show_contactinfo)
+        @foreach($reserve as $reserve_tour)
           <tr>
             <th>{{$loop->iteration}}</th>
-            <th>{{$show_contactinfo->contact_name}}</th>
-            <th>{{$show_contactinfo->contact_email}}</th>
-            <th>{{$show_contactinfo->contact_tel}}</th>
+            <th>{{$reserve_tour->reserve_name}}</th>
+            <th>{{$reserve_tour->reserve_qty}}</th>
+            <th>{{$reserve_tour->reserve_tel}}</th>
             <th>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$show_contactinfo->_id}}">รายละเอียด</button>
-              <div id="{{$show_contactinfo->_id}}" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$reserve_tour->_id}}">รายละเอียด</button>
+              <div id="{{$reserve_tour->_id}}" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
-                    {{$show_contactinfo->contact_info}}
+                    <h3>{{$reserve_tour->reserve_tour_name}}</h3>
+                    <h5>{{$reserve_tour->reserve_tour_start_date}} ถึง {{$reserve_tour->reserve_tour_end_date}}</h5>
+                    {{$reserve_tour->reserve_info}}
                   </div>
                 </div>
               </div>

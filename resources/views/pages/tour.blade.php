@@ -69,7 +69,93 @@
          </div>
          <hr>
          <div class="row mt-5">
-            <h5 class="col-lg-12">กำหนดการเดินทาง/อัตราค่าบริการ</h5>
+            <div class="col-md-12">
+              <h5 class="col-lg-12">กำหนดการเดินทาง/อัตราค่าบริการ</h5>
+            </div>
+            @if(session('success'))
+              <div class="col-md-12">
+                <div class="alert alert-success" role="alert">
+                {{session('success')}}
+                </div>
+              </div>
+            @endif
+            @if ($errors->any())
+             <div class="col-md-12">
+               <div class="alert alert-danger">
+                   <ul>
+                       @foreach ($errors->all() as $error)
+                           <li>{{ $error }}</li>
+                       @endforeach
+                   </ul>
+               </div>
+             </div>
+            @endif
+            <div class="col-md-12">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">วันไป</th>
+                    <th scope="col">วันกลับ</th>
+                    <th scope="col">ราคา</th>
+                    <th scope="col">จอง</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach(array_combine($tour->tour_start_date,$tour->tour_end_date) as $tour_start_date=>$tour_end_date)
+                  <tr>
+                    <td>{{$tour_start_date}}</td>
+                    <td>{{$tour_end_date}}</td>
+                    <td>{{$tour->tour_price}}</td>
+                    <td>
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        จอง
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">{{str_limit($tour->tour_name,35)}} </br> {{$tour_start_date}} - {{$tour_end_date}} ราคา {{$tour->tour_price}} บาท/คน</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <form action="/reserve-tour-process" method="post">
+                                <div class="form-group">
+                                  <label>ชื่อผู้จอง</label>
+                                  <input class="form-control" type="text" name="reserve_name" value="" placeholder="กรุณากรอกชื่อ">
+                                </div>
+                                <div class="form-group">
+                                  <label>จำนวนผู้เดินทาง</label>
+                                  <input class="form-control" type="number" name="reserve_qty" value="" placeholder="กรุณากรอกจำนวน">
+                                </div>
+                                <div class="form-group">
+                                  <label>เบอร์โทร</label>
+                                  <input class="form-control" type="number" name="reserve_tel" value="" placeholder="กรุณากรอกเบอร์โทร">
+                                </div>
+                                <div class="form-group">
+                                  <label>รายละเอียดอื่นๆ</label>
+                                  <textarea class="form-control" name="reserve_info" rows="6" cols="80" placeholder="รายละเอียดเพิ่มเติม"></textarea>
+                                </div>
+                                <input type="hidden" name="reserve_tour_id" value="{{$tour->_id}}">
+                                <input type="hidden" name="reserve_tour_start_date" value="{{$tour_start_date}}">
+                                <input type="hidden" name="reserve_tour_end_date" value="{{$tour_end_date}}">
+                                @csrf
+                                <button class="btn btn-success form-control" type="submit" name="button">ลงชื่อจอง</button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+            </div>
          </div>
          <hr>
          <div class="row mt-5">

@@ -22,6 +22,7 @@ use App\Gallery;
 use App\SEO;
 use App\ContactInfo;
 use App\Holiday;
+use App\ReserveTour;
 
 class AdminUIController extends Controller
 {
@@ -384,5 +385,13 @@ class AdminUIController extends Controller
       return view('backend.backend-pages.holiday.admin-edit-holiday',[
                                                                       'holiday' => $holiday,
                                                                      ]);
+    }
+
+    /* Show Reserve Tour Page */
+    public function ShowReserveTour()  {
+      $reserve = ReserveTour::all();
+      return view('backend.backend-pages.tour.admin-reserve-tour',[
+                                                                    'reserve' => $reserve,
+                                                                  ]);
     }
 }
