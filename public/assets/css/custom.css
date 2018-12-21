@@ -172,16 +172,25 @@ body  {
 .filter   {
   border-radius: 5px;
   background-color:#ffffff !important;
-  padding: 10px 40px;
+  padding: 25px 40px;
   color: #000000;
   border: 1px solid #e3e3e3;
   box-shadow: 2px 2px 12px 0px rgba(191,191,191,1);
-  background: url(/filter/bg-filter.jpg) no-repeat bottom center;
-  background-size: cover;
+  background: url(/assets/img/filter/bg-filter.jpg) no-repeat bottom center;
+  background-size: 100% auto;
 }
-.filter h3 { font-size: 1.3em; }
+.filter h3 { font-size: 1.3em; border-bottom: 1px dashed #219dbb; padding-bottom: 15px; margin-bottom: 20px; }
 .filter .icon-title { height: 25px; width: auto; margin-right: 10px;}
-.filter input { font-size: 0.9em; }
+.filter .icon-search { height: 15px; width: auto; margin-right: 10px; }
+.filter input { font-size: 0.9em; box-shadow: 2px 2px 12px 0px rgba(191,191,191,1); }
+.filter select { font-size: 0.9em; box-shadow: 2px 2px 12px 0px rgba(191,191,191,1); }
+.filter label { color: #219dbb; }
+.filter .irs { height: auto; }
+.filter .irs-bar { background: linear-gradient(to bottom, rgba(133,206,255,1) 0%, rgba(3,139,237,1) 100%); }
+.filter .irs-from { font-size: 0.9em; background: #b3b3b3; }
+.filter .irs-to { font-size: 0.9em; background: #b3b3b3; }
+.filter .irs-single { font-size: 0.9em; background: #b3b3b3; }
+.filter .irs-slider { width: 20px; height: 20px; top: 28px; }
 .filter .btn-search { background: linear-gradient(to bottom, rgba(133,206,255,1) 0%, rgba(3,139,237,1) 100%); border: 1px solid #68c1f6; color: #fff; }
 
 .country-small-img  {
