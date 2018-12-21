@@ -1,6 +1,6 @@
 <div class="filter mb-4 col-md-12">
-   <h3>ค้นหาโปรแกรมทัวร์</h3>
-   <hr>
+   <h3><img src='/filter/globe.png' class='icon-title'>ค้นหาโปรแกรมทัวร์</h3>
+   <hr class="mt-2 mb-3">
    <form class="row" action="/filter-result" method="post">
       <div class="form-group col-md-3">
          <label>สถานที่จะไป</label>
@@ -69,7 +69,7 @@
       @csrf
       <div class="form-group col-md-12">
          <label></label>
-         <button class="btn btn-success form-control" type="submit" name="button">ค้นหา</button>
+         <button class="btn btn-search form-control" type="submit" name="button">ค้นหา</button>
       </div>
    </form>
 </div>
