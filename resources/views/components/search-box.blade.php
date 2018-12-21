@@ -3,10 +3,9 @@
    <div class="container search-box">
       <div class="row">
          <div class="col-md-12">
-            <h3>ค้นหาทัวร์</h3>
-            <hr>
+            <h3 class='text-left'><img src='/assets/img/filter/worldwide.png' class='icon-title'>ค้นหาทัวร์</h3>
          </div>
-         <div class="col-md-12 mt-3">
+         <div class="col-md-12">
             <div class="tab-content" id="myTabContent">
                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                   <form action="/search-result" method="post">
@@ -55,7 +54,7 @@
                         @csrf
                         <div class="form-group col-lg-3">
                            <label class="d-none d-sm-none d-md-block d-lg-block">&nbsp</label>
-                           <button class="form-control btn btn-success" type="sumit" name="button"><i class="fas fa-search"></i> Search</button>
+                           <button class="form-control btn btn-search" type="sumit" name="button"><i class="fas fa-search"></i> Search</button>
                         </div>
                      </div>
                   </form>
