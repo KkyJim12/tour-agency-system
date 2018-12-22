@@ -64,6 +64,9 @@ Route::get('/gallery','UIViewController@ShowGallery');
 /** Gallery Country Page **/
 Route::get('/gallery/{country_id}','UIViewController@ShowGalleryCountry');
 
+/** Reserve Tour Process **/
+Route::post('/reserve-tour-process','ReserveTourController@ReserveTourProcess');
+
 /***************************** Backend Page *********************************/
 
 
@@ -372,6 +375,9 @@ Route::middleware(['admin'])->group(function () {
 
   /* Show Contact Info Page */
   Route::get('/admin/admin-contactinfo','AdminUIController@ShowContactInfo');
+
+  /* Show Reserve Info Page */
+  Route::get('/admin/admin-reserve-tour','AdminUIController@ShowReserveTour');
 
   /********************** End Contact Info ************************************/
 
