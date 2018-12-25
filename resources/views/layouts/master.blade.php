@@ -4,6 +4,7 @@
       <meta charset="utf-8">
       <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
       <link rel="stylesheet" href="/assets/css/custom.css">
+      <link rel="stylesheet" href="/assets/design-css/style.css">
       <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
       <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
       <link rel="stylesheet" href="/assets/css/rw-core.css">
@@ -22,6 +23,10 @@
       <script src="/assets/js/responsive_bootstrap_carousel.js" type="text/javascript"></script>
       <script src="/assets/js/ion.rangeSlider.min.js" type="text/javascript"></script>
       <script src="/assets/js/owl.carousel.min.js" type="text/javascript"></script>
+      <link type="text/css" rel="stylesheet" href="/assets/css/lightslider.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.2/css/lightgallery.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.2/js/lightgallery.js"></script>
+      <script src="/assets/js/lightslider.js"></script>
       <title>@yield('title')</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="keywords" content="@yield('title')">

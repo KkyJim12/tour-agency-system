@@ -1,47 +1,44 @@
-<div class="container mt-5">
-   <div class="row">
-      <div class="col-lg-12">
-         <h3 class="tour-suggest-title">โปรแกรมทัวร์ลดราคา</h3>
-         <p class="tour-suggest-title">โปรแกรมทัวร์ลดราคา</p>
-      </div>
-   </div>
-   <div class="owl-carousel owl-theme">
-      @foreach($tour_discount as $show_tour_discount)
-      <div class="item">
-         <div class="card tour-box">
-            <a href="/tour/{{$show_tour_discount->_id}}">
-            <img class="card-img-top tour-main-img" src="/assets/img/upload/tour/img/{{$show_tour_discount->tour_img}}" alt="tour_suggest">
-            </a>
-            <div class="card-body">
-               <a class="card-body-link" href="/tour/{{$show_tour_discount->_id}}">
-                  <h5 class="card-title tour-card-title"><strong>{{str_limit($show_tour_discount->tour_name,55)}}</strong></h5>
-               </a>
-               <small><i>{{$show_tour_discount->tour_country_name}} -  {{$show_tour_discount->tour_day}} วัน {{$show_tour_discount->tour_night}} คืน</i></small>
-               <div class="tour-detail-box mt-2">
-                  <p class="card-text">{!!$show_tour_discount->tour_hightlight!!}</p>
-               </div>
-               <div class="tour-date-box mt-2">
-                  <span>ช่วงเวลา: {{$show_tour_discount->tour_start_date[0]}}</span>
-               </div>
-               <div class="row mt-3">
-                  <span class="col-9">เริ่ม {{$show_tour_discount->tour_price}} บาท</span>
-                  <img class="col-3 tour-airline-img" src="/assets/img/upload/airline/{{$show_tour_discount->tour_airline_img}}" alt="airline_suggest">
-               </div>
-               <div class="row mt-3">
-                  <div class="col-6">
-                     <a class="btn btn-primary" href="/tour/{{$show_tour_discount->_id}}">
-                     <i class="fas fa-file-alt"></i>  รายละเอียด
-                     </a>
-                  </div>
-                  <div class="col-6 tour-file">
-                     <a class="btn btn-success" href="/assets/img/upload/tour/pdf/{{$show_tour_discount->tour_pdf}}" download>
-                     <i class="fas fa-file-pdf"></i>  ไฟล์โปรแกรม
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      @endforeach
-   </div>
+<div class='discountTemp'>
+  <div class="container">
+    <div class="row">
+       <div class="col-lg-12">
+          <h3 class="title"><img src='/assets/img/home/icn-sale.png' class='icon-title'>โปรแกรมทัวร์ลดราคา</h3>
+       </div>
+    </div>
+     <div class="owl-carousel owlDiscount">
+        @foreach($tour_discount as $show_tour_discount)
+        <div class="item">
+           <div class="card">
+              <a href="/tour/{{$show_tour_discount->_id}}">
+                <img src="/assets/img/upload/tour/img/{{$show_tour_discount->tour_img}}">
+                <p class='text-right'>ลดเหลือ</br><span>{{$show_tour_discount->tour_price}}฿</span></p>
+              </a>
+              <div class="card-body">
+                 <a class="card-body-link" href="#">
+                    <h5 class="card-title">{{str_limit($show_tour_discount->tour_name,55)}}</h5>
+                    <h6>{{$show_tour_discount->tour_country_name}} -  {{$show_tour_discount->tour_day}} วัน {{$show_tour_discount->tour_night}} คืน</h6>
+                    {!!$show_tour_discount->tour_hightlight!!}
+                    <h2>สายการบิน<span><img src="/assets/img/upload/airline/{{$show_tour_discount->tour_airline_img}}" alt="airline_suggest"> AirAsia</span></h2>
+                    <h4>ราคาเริ่มต้น<span>3000฿</span></h4>
+                    <h3>ลดเหลือ<span>{{$show_tour_discount->tour_price}}฿</span></h3>
+                    <section class='text-center'><i class="far fa-clock"></i><span>{{$show_tour_discount->tour_start_date[0]}}</span><span class='tourTime'>12:00 PM</span></section>
+                 </a>
+                 <div class='row discountFooter'>
+                   <div class="col-6">
+                      <a class="btn btnDetail" href="/tour/{{$show_tour_discount->_id}}">
+                      <i class="fas fa-file-alt"></i>  รายละเอียด
+                      </a>
+                   </div>
+                   <div class="col-6 tour-file">
+                      <a class="btn btnFile" href="#" download>
+                      <i class="fas fa-file-pdf"></i>  ไฟล์โปรแกรม
+                      </a>
+                   </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+        @endforeach
+     </div>
+  </div>
 </div>

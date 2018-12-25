@@ -2,11 +2,11 @@
 <div id="carouselExampleControls" class="carousel slide d-none d-sm-block" data-ride="carousel">
    <div class="carousel-inner main-slide">
       <div class="carousel-item active">
-         <img class="d-block w-100 slide-img" src="/assets/img/upload/slide/{{$first_slide->slide_img}}" alt="First slide">
+        <img class="d-block slide-img" src="/assets/img/upload/slide/{{$first_slide->slide_img}}" alt="First slide">
       </div>
       @foreach($slide as $show_slide)
       <div class="carousel-item">
-         <img class="d-block w-100 slide-img" src="/assets/img/upload/slide/{{$show_slide->slide_img}}" alt="First slide">
+         <img class="d-block slide-img" src="/assets/img/upload/slide/{{$show_slide->slide_img}}" alt="First slide">
       </div>
       @endforeach
    </div>

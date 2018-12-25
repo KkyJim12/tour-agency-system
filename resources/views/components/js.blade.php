@@ -1,21 +1,71 @@
 <script type="text/javascript">
-   $('.owl-carousel').owlCarousel({
+   $('.owlDiscount').owlCarousel({
    loop:true,
    margin:20,
    nav:false,
    responsive:{
        0:{
-           items:1
+         items:1
        },
-       600:{
+       576:{
            items:2
        },
-       1000:{
+       767:{
+           items:2
+       },
+       991:{
            items:3
+       },
+       1200:{
+           items:4
        },
    },
    });
 </script>
+<script type="text/javascript">
+   $('.owlMoment').owlCarousel({
+     loop:true,
+      margin:10,
+      nav:true,
+      responsive:{
+          0:{
+              items:1
+          },
+      }
+   });
+</script>
+<script type="text/javascript">
+   $('.owlArticle').owlCarousel({
+   loop:true,
+   margin:20,
+   nav:false,
+   responsive:{
+       0:{
+         items:1
+       }
+   },
+   });
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#imageGallery').lightSlider({
+      gallery:true,
+      item:1,
+      loop:true,
+      thumbItem:9,
+      slideMargin:0,
+      enableDrag: false,
+      currentPagerPosition:'left',
+      onSliderLoad: function(el) {
+          el.lightGallery({
+              selector: '#imageGallery .lslide'
+          });
+      }
+  });
+});
+</script>
+
 <script type="text/javascript">
    $("#filter_price").ionRangeSlider({
      min:0,

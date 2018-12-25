@@ -1,41 +1,43 @@
 <!-- Nav Bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-sm-block d-md-none d-lg-block" style="border-top: 2px solid #6ABCDC;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-md-none d-lg-block" style="border-top: 2px solid #6ABCDC;">
    <div class="container">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse headerTop">
          <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-               <h3 class="first-contact"><i class="fab fa-telegram"></i>    02-595-0279 , 083-888-3894</h3>
+               <h3 class="first-contact mb-0"><i class="fab fa-telegram"></i> <a href='tel:025950279'>02-595-0279</a> , <a href='tel:0838883894'>083-888-3894</a></h3>
             </li>
          </ul>
-         <ul class="navbar-nav ml-auto">
+         <ul class="navbar-nav ml-auto ">
             <li class="nav-item">
-               <a class="nav-link" href="#"><i class="fab fa-facebook-square"></i></a>
+               <a class="nav-link p-0" href="#"><i class="fab fa-facebook-square"></i></a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="#"><i class="fab fa-line"></i></a>
+               <a class="nav-link p-0" href="#"><i class="fab fa-line"></i></a>
             </li>
          </ul>
       </div>
    </div>
 </nav>
-<nav class="second-navbar navbar navbar-expand-lg navbar-light bg-light d-none d-sm-block d-md-none d-lg-block">
+<nav class="second-navbar navbar navbar-expand-lg navbar-light bg-light d-none d-md-none d-lg-block">
    <div class="container">
-      <a class="navbar-brand" href="/"><img src="/assets/img/logo/logo.png" alt="logo"> </a>
-      <div>
-         <?php
-            try {
-                ?>
-         <a href="{{$nav_banner->banner_link}}">
-         <img class="nav-banner-img" class="nav-banner-img" src="/assets/img/upload/banner/{{$nav_banner->banner_img}}" alt="">
-         </a>
-         <?php
-            } catch (\Throwable $egg) {
-            }
-            ?>
-      </div>
+     <div class='col-4'>
+       <a class="navbar-brand" href="/"><img src="/assets/img/logo/logo.png" alt="logo"> </a>
+     </div>
+     <div class='col-8'>
+       <?php
+          try {
+              ?>
+       <a href="{{$nav_banner->banner_link}}" class='bannerTop'>
+         <img class="nav-banner-img" src="/assets/img/upload/banner/{{$nav_banner->banner_img}}" alt="">
+       </a>
+       <?php
+          } catch (\Throwable $egg) {
+          }
+          ?>
+     </div>
    </div>
 </nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
