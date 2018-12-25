@@ -5,7 +5,7 @@
           <h3 class="title"><img src='/assets/img/home/icn-sale.png' class='icon-title'>โปรแกรมทัวร์ลดราคา</h3>
        </div>
     </div>
-     <div class="owl-carousel owlDiscount">
+     <div class="owl-carousel owlDiscount tempCategory">
         @foreach($tour_discount as $show_tour_discount)
         <div class="item">
            <div class="card">
