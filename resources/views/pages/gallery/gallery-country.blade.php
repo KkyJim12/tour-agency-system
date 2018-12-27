@@ -6,29 +6,39 @@ Royaltour | ภาพประทับใจ {{$this_country->country_name}}
 Royaltour | ภาพประทับใจ {{$this_country->country_name}}
 @endsection
 @section('content')
-<div class="jumbotron jumbotron-fluid" style="background:url('/assets/img/components/image_bg_7.jpg'); text-align:center; color:white;">
-   <div class="container">
-      <h1>ภาพประทับใจ</h1>
-      <p>หน้าแรก > ภาพประทับใจ > {{$this_country->country_name}}</p>
-   </div>
-</div>
-<div class="container mt-5">
-   <div class="row">
-      <div class="col-md-12">
-         <h3>ภาพประทับใจ {{$this_country->country_name}}</h3>
+<div class="galleryContent">
+  <div class="banner">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+          <div class="titleBanner">
+            <h1>Royal Tour And Travel</h1>
+            <p>- ภาพประทับใจ -</p>
+          </div>
+        </div>
       </div>
-   </div>
-   <hr>
-   <div class="row">
+    </div>
+  </div>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="title"><img src='/assets/img/home/icn-camera.png' class='icon-title'>ภาพความประทับใจ <span class='country'>{{$this_country->country_name}}</span></h3>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
       @foreach($gallery as $show_gallery)
-      <div class="col-md-4">
+      <div class="col-md-3 galleryTemp">
          <a data-toggle="modal" data-target="#exampleModalCenter">
-            <div class="card" style="width:100%; text-align:center;">
-               <img class="card-img-top gallery-content-img" src="/assets/img/upload/gallery/img/{{$show_gallery->gallery_img}}" alt="gallery_img">
-               <div class="card-body">
-                  <p class="card-text">{{$show_gallery->gallery_name}}</p>
+            <section>
+              <figure>
+                <img src="/assets/img/upload/gallery/img/{{$show_gallery->gallery_img}}" alt="gallery_img">
+              </figure>
+               <div  class="card-body-link">
+                  <p>{{$show_gallery->gallery_name}}</p>
                </div>
-            </div>
+            </section>
          </a>
       </div>
       <!-- Modal -->
@@ -73,6 +83,7 @@ Royaltour | ภาพประทับใจ {{$this_country->country_name}}
          </div>
       </div>
       @endforeach
-   </div>
+    </div>
+  </div>
 </div>
 @endsection

@@ -446,6 +446,198 @@
 .aboutus .content img {
   height: auto;
   max-width: 100%; }
+.aboutus .concept {
+  background: url(/assets/img/aboutus/bg-concept.jpg) no-repeat center bottom;
+  padding: 50px 0;
+  box-shadow: inset 0px 0px 5px 1px rgba(99, 99, 99, 0.2);
+  background-attachment: fixed; }
+  .aboutus .concept section {
+    background-color: #ffffffbd;
+    padding: 15px 30px;
+    border: 1px solid #f3f3f3;
+    box-shadow: 2px 2px 12px 0px #bfbfbf;
+    border-radius: 5px; }
+    .aboutus .concept section h1 {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 2.5em;
+      margin-bottom: 5px;
+      color: #002371;
+      font-style: italic; }
+    .aboutus .concept section p {
+      font-size: 1.3em;
+      font-weight: bold;
+      margin-bottom: 0; }
+.aboutus .history section {
+  text-align: center; }
+  .aboutus .history section span {
+    vertical-align: top;
+    display: inline-block;
+    margin: 0 5px; }
+    .aboutus .history section span div {
+      padding: 5px;
+      border: 1px solid #f3f3f3;
+      box-shadow: 2px 2px 12px 0px #bfbfbf;
+      display: inline-block;
+      width: 135px; }
+  .aboutus .history section figure {
+    height: 100px;
+    width: 120px;
+    margin: 0;
+    display: inline-block; }
+  .aboutus .history section img {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 10px;
+    object-fit: cover; }
+  .aboutus .history section p {
+    margin-bottom: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+
+.galleryPage .banner {
+  background: url(/assets/img/gallery/banner.jpg) no-repeat center center;
+  background-size: cover; }
+.galleryPage .titleBanner {
+  background-color: #ffffffb5;
+  padding: 25px 50px;
+  margin: 50px 0;
+  text-align: center;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 2px 2px 12px 0px #bfbfbf; }
+  .galleryPage .titleBanner h1 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    color: #002371;
+    font-style: italic; }
+  .galleryPage .titleBanner p {
+    font-size: 2em;
+    line-height: 1em;
+    text-transform: uppercase;
+    margin-bottom: 15px; }
+.galleryPage .list h1 {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  color: #fff;
+  font-weight: 600;
+  background-color: #024dc1;
+  padding: 5px 15px;
+  border-radius: 5px; }
+.galleryPage .list section {
+  border: 1px solid #f3f3f3;
+  box-shadow: 2px 2px 12px 0px #bfbfbf; }
+  .galleryPage .list section figure {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #f3f3f3;
+    box-shadow: 2px 2px 12px 0px #bfbfbf;
+    padding: 5px; }
+    .galleryPage .list section figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+  .galleryPage .list section .card-body {
+    padding: 10px;
+    text-align: center; }
+    .galleryPage .list section .card-body p {
+      text-transform: uppercase;
+      font-size: 1.2em;
+      font-weight: 600; }
+
+.galleryContent .banner {
+  background: url(/assets/img/gallery/banner.jpg) no-repeat center center;
+  background-size: cover; }
+.galleryContent .titleBanner {
+  background-color: #ffffffb5;
+  padding: 25px 50px;
+  margin: 50px 0;
+  text-align: center;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 2px 2px 12px 0px #bfbfbf; }
+  .galleryContent .titleBanner h1 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    color: #002371;
+    font-style: italic; }
+  .galleryContent .titleBanner p {
+    font-size: 2em;
+    line-height: 1em;
+    text-transform: uppercase;
+    margin-bottom: 15px; }
+.galleryContent .country {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  color: #000; }
+.galleryContent .galleryTemp section {
+  border: 1px solid #f3f3f3;
+  box-shadow: 2px 2px 12px 0px #bfbfbf; }
+  .galleryContent .galleryTemp section figure {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #f3f3f3;
+    box-shadow: 2px 2px 12px 0px #bfbfbf;
+    padding: 5px;
+    margin-bottom: 0; }
+    .galleryContent .galleryTemp section figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+  .galleryContent .galleryTemp section .card-body-link {
+    padding: 10px;
+    text-align: center; }
+    .galleryContent .galleryTemp section .card-body-link p {
+      font-size: 1em;
+      margin-bottom: 0; }
+
+.contactus .banner {
+  background: url(/assets/img/contactus/banner.jpg) no-repeat center center;
+  background-size: cover; }
+.contactus .titleBanner {
+  background-color: #ffffffb5;
+  padding: 25px 50px;
+  margin: 50px 0;
+  text-align: center;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 2px 2px 12px 0px #bfbfbf; }
+  .contactus .titleBanner h1 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    color: #002371;
+    font-style: italic; }
+  .contactus .titleBanner p {
+    font-size: 2em;
+    line-height: 1em;
+    text-transform: uppercase;
+    margin-bottom: 15px; }
+.contactus .contactForm {
+  border: 1px solid #f3f3f3;
+  box-shadow: 2px 2px 12px 0px #bfbfbf;
+  padding: 25px;
+  border-radius: 5px; }
+.contactus .listStaff table {
+  margin-bottom: 0; }
+.contactus .listStaff th, .contactus .listStaff td {
+  padding-top: 5px;
+  padding-bottom: 5px; }
+.contactus .listStaff a {
+  color: #024dc1;
+  font-weight: 600; }
+.contactus .listStaff .staffTemp {
+  border: 1px solid #f3f3f3;
+  box-shadow: 2px 2px 12px 0px #bfbfbf;
+  padding: 25px;
+  border-radius: 5px; }
 
 .payment .banner {
   background: url(/assets/img/payment/banner.jpg) no-repeat center center;

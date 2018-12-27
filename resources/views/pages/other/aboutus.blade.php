@@ -100,5 +100,169 @@ Royaltour | เกี่ยวกับเรา
       </div>
     </div>
   </div>
+  <div class="concept my-4">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-10">
+          <section>
+            <h1>ทีมงานคุณภาพ</h1>
+            <p>บริษัทของเราฯ และเจ้าหน้าที่ที่มีประสบการณ์การทำงาน พร้อมที่จะให้บริการทุกท่านอย่างดีที่สุด</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="history">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="title"><img src='/assets/img/aboutus/icn-reward.png' class='icon-title'>รางวัลแห่งความสำเร็จ</h3>
+          <p class='text-center mb-4'>ถือเป็นการยืนยันถึงความมุ่งมั่นของบริษัทในการให้บริการ และการตอบรับจากลูกค้าทางบริษัทมีความยินดีอย่างยิ่งกับทุกรางวัลและจะมุ่งมั่นต่อเพื่อลูกค้าทุกท่านค่ะ</p>
+          <section>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/awards-1.png'>
+                </figure>
+                <p>Best Seller Awards</p>
+              </div>
+            </span>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/awards-2.png'>
+                </figure>
+                <p>Best PerformanceAwards</p>
+              </div>
+            </span>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/awards-3.png'>
+                </figure>
+                <p>Top Performance</p>
+              </div>
+            </span>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/awards-4.png'>
+                </figure>
+                <p>Best Seller Awards</p>
+              </div>
+            </span>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="history mt-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="title"><img src='/assets/img/aboutus/icn-customer.png' class='icon-title'>ลูกค้าองค์กร/ผลงาน</h3>
+          <p class='text-center mb-4'>บริษัท รอยัล ทัวร์ จำกัด ขอขอบคุณลูกค้าองค์กรต่างๆ ที่ได้ไว้วางใจและใช้บริการจากทางบริษัท เพื่อพาพนักงานไปดูงาน/ท่องเที่ยว ศึกษาต่อ และอื่นๆ อีกมากมาย ไว้ ณ ที่นี้ค่ะ</p>
+          <section>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/customer1.png'>
+                </figure>
+                <p>บ. ปูนซิเมนต์ไทย</p>
+              </div>
+            </span>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/customer2.png'>
+                </figure>
+                <p>บริษัท ปตท.จำกัด</p>
+              </div>
+            </span>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/customer3.png'>
+                </figure>
+                <p>Central group</p>
+              </div>
+            </span>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/customer4.png'>
+                </figure>
+                <p>unilever</p>
+              </div>
+            </span>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/customer5.jpg'>
+                </figure>
+                <p>AP HONDA</p>
+              </div>
+            </span>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/customer6.jpg'>
+                </figure>
+                <p>หนังสือพิมพิ์มติชน</p>
+              </div>
+            </span>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/customer7.jpg'>
+                </figure>
+                <p>ม.ธรรมศาสตร์</p>
+              </div>
+            </span>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/customer8.jpg'>
+                </figure>
+                <p>ธนาคารธนชาติ</p>
+              </div>
+            </span>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/customer9.png'>
+                </figure>
+                <p>ธนาคารกสิกรไทย</p>
+              </div>
+            </span>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/customer10.jpg'>
+                </figure>
+                <p>บจก. ทีโอเอ เพ้นท์</p>
+              </div>
+            </span>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/customer11.jpg'>
+                </figure>
+                <p>บริษัท ทีโอที จำกัด</p>
+              </div>
+            </span>
+            <span>
+              <div>
+                <figure>
+                  <img src='/assets/img/aboutus/customer12.png'>
+                </figure>
+                <p>CP ALL</p>
+              </div>
+            </span>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 @endsection
