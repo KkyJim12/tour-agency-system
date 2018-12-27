@@ -21,6 +21,7 @@
   @include('components.search-box')
   @include('components.tour-suggest')
   @include('components.tour-discount')
+  @include('components.tour-country')
   @include('components.tour-holiday')
   @include('components.article')
   @include('components.tour-moment')

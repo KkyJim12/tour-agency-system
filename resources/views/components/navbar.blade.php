@@ -52,26 +52,21 @@
                <a class="nav-link" href="/">หน้าหลัก</a>
             </li>
             <li class="nav-item mr-3">
-               <div class="dropdown">
-                  <a class="nav-link" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  ทัวร์ต่างประเทศ
-                  </a>
-                  <div class="dropdown-menu dropdown-nav" aria-labelledby="dropdownMenu2">
-                     @foreach($continent as $all_continent)
-                     <div class="row">
-                        <div class="col-12">
-                           <span class="dropdown-item cat-link">{{$all_continent->continent_name}}</span>
-                        </div>
-                        @foreach($all_continent->subcat as $subcat)
-                        <div class="col-3">
-                           <a class="cat-link" href="/category/{{$subcat->_id}}"><span class="dropdown-item cat-link"><img src="/assets/img/upload/country/{{$subcat->country_img}}" alt="country_img"> {{$subcat->country_name}}</span></a>
-                        </div>
-                        @endforeach
-                     </div>
-                     <hr>
-                     @endforeach
-                  </div>
-               </div>
+              <div class="accordion" id="accordionExample">
+                <a class="nav-link" data-toggle="collapse" data-target="#tourlist" aria-expanded="true" aria-controls="tourlist">
+                  <i class="fas fa-plus-square"></i> ทัวร์ต่างประเทศ
+                </a>
+                <div id="tourlist" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  @foreach($continent as $all_continent)
+                  <section>
+                    <h1>{{$all_continent->continent_name}}</h1>
+                    @foreach($all_continent->subcat as $subcat)
+                     <a href="/category/{{$subcat->_id}}">{{$subcat->country_name}}</a>
+                  @endforeach
+                  @endforeach
+                  </section>
+                </div>
+              </div>
             </li>
             <li class="nav-item mr-3">
                <a class="nav-link" href="#">สินค้าและบริการอื่น</a>
