@@ -30,7 +30,7 @@ Royaltour | เที่ยว {{$country->country_name}}
    <!-- item -->
    <div class="row tempCategory">
      @foreach($tour as $show_tour)
-     <div class="col-lg-3 col-md-6 col-xs-12">
+     <div class="col-lg-3 col-md-6 col-xs-12 mb-3">
         <div class="card">
            <a href="/tour/{{$show_tour->_id}}">
              <img src="/assets/img/upload/tour/img/{{$show_tour->tour_img}}">
@@ -38,7 +38,7 @@ Royaltour | เที่ยว {{$country->country_name}}
            </a>
            <div class="card-body">
               <a class="card-body-link" href="#">
-                 <h5 class="card-title">{{str_limit($show_tour->tour_name,30)}}</h5>
+                 <h5 class="card-title">{{str_limit($show_tour->tour_name,27)}}</h5>
                  <h6>{{$show_tour->tour_country_name}} -  {{$show_tour->tour_day}} วัน {{$show_tour->tour_night}} คืน</h6>
                  <div style="overflow:auto; width:100%; height:50px; align:center;">
                    {!!$show_tour->tour_hightlight!!}
