@@ -30,7 +30,7 @@ Royaltour | เที่ยว {{$country->country_name}}
    <!-- item -->
    <div class="row tempCategory">
      @foreach($tour as $show_tour)
-     <div class="item">
+     <div class="col-lg-3 col-md-6 col-xs-12">
         <div class="card">
            <a href="/tour/{{$show_tour->_id}}">
              <img src="/assets/img/upload/tour/img/{{$show_tour->tour_img}}">

@@ -22,7 +22,7 @@
     </div>
     <div class="row tempCategory">
       @foreach($tours as $show_tour)
-      <div class="item">
+      <div class="col-lg-3 col-md-6 col-xs-12">
          <div class="card">
             <a href="/tour/{{$show_tour->_id}}">
               <img src="/assets/img/upload/tour/img/{{$show_tour->tour_img}}">
