@@ -29,28 +29,28 @@ class TourSearchController extends Controller
         $searchConditions = [];
 
         // Create tour conditions
-        if ($request->filter_code != "") {
-            $searchConditions[] = ["tour_code", "=", $request->filter_code];
-        }
-        if ($request->filter_name != "") {
-            $searchConditions[] = ["tour_country_name", "like", "%$request->filter_name%"];
-        }
-
-        //if ($request->filter_start_date != "") {
-        //    $searchConditions[] = ["tour_start_date[]", ">=", $request->filter_start_date];
-        //}
-        //if ($request->filter_end_date != "") {
-        //    $searchConditions[] = ["tour_end_date[]", "<=", $request->filter_end_date];
-        //}
-        if ($request->filter_airline != "") {
-            $searchConditions[] = ["tour_airline_id", "=", $request->filter_airline];
-        }
-        if ($minimumPrice >= 0) {
-            $searchConditions[] = ["tour_price", ">=", $minimumPrice];
-        }
-        if ($maximumPrice >= 0 && $maximumPrice > $minimumPrice) {
-            $searchConditions[] = ["tour_price", "<=", $maximumPrice];
-        }
+        // if ($request->filter_code != "") {
+        //     $searchConditions[] = ["tour_code", "=", $request->filter_code];
+        // }
+        // if ($request->filter_name != "") {
+        //     $searchConditions[] = ["tour_country_name", "like", "%$request->filter_name%"];
+        // }
+        //
+        // if ($request->filter_start_date != "") {
+        //     $searchConditions[] = ["tour_start_date[]", ">=", $request->filter_start_date];
+        // }
+        // if ($request->filter_end_date != "") {
+        //     $searchConditions[] = ["tour_end_date[]", "<=", $request->filter_end_date];
+        // }
+        // if ($request->filter_airline != "") {
+        //     $searchConditions[] = ["tour_airline_id", "=", $request->filter_airline];
+        // }
+        // if ($minimumPrice >= 0) {
+        //     $searchConditions[] = ["tour_price", ">=", $minimumPrice];
+        // }
+        // if ($maximumPrice >= 0 && $maximumPrice > $minimumPrice) {
+        //     $searchConditions[] = ["tour_price", "<=", $maximumPrice];
+        // }
 
         // Get all matching tours
         if (count($searchConditions) <= 0) {
