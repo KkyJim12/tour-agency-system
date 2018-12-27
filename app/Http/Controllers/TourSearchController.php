@@ -36,10 +36,10 @@ class TourSearchController extends Controller
             $searchConditions[] = ["tour_country_name", "like", "%$request->filter_name%"];
         }
         if ($request->filter_start_date != "") {
-            $searchConditions[] = ["tour_start_date[]", ">=", $request->filter_start_date];
+            $searchConditions[] = ["tour_start_date[0]", ">=", $request->filter_start_date];
         }
         if ($request->filter_end_date != "") {
-            $searchConditions[] = ["tour_end_date[]", "<=", $request->filter_end_date];
+            $searchConditions[] = ["tour_end_date[0]", "<=", $request->filter_end_date];
         }
         if ($request->filter_airline != "") {
             $searchConditions[] = ["tour_airline_id", "=", $request->filter_airline];
