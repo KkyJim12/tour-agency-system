@@ -15,7 +15,7 @@
               </a>
               <div class="card-body">
                  <a class="card-body-link" href="#">
-                    <h5 class="card-title">{{str_limit($show_tour_discount->tour_name,55)}}</h5>
+                    <h5 class="card-title">{{str_limit($show_tour_discount->tour_name,30)}}</h5>
                     <h6>{{$show_tour_discount->tour_country_name}} -  {{$show_tour_discount->tour_day}} วัน {{$show_tour_discount->tour_night}} คืน</h6>
                     <div style="overflow:auto; width:100%; height:50px; align:center;">
                       {!!$show_tour_discount->tour_hightlight!!}
