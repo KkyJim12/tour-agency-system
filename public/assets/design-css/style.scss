@@ -387,6 +387,11 @@
 }
 
 @media (max-width: 991px) {
+  .navbar {
+    .selectTemp { width: 70%;
+      select { font-size: 0.9em; line-height: 1em; color: #024dc1; font-weight: bold; }
+    }
+  }
   .nav-link { padding-left: 15px!important; font-size: 1.1em; font-weight: bold; }
   .nav-item { border-bottom: 1px dashed #3aa9dd; }
   .navbar-collapse { margin-top: 15px; margin-bottom: 5px; padding-top: 5px;  padding-bottom: 5px; border-top: 1px dashed #3aa9dd; }

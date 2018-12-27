@@ -1008,6 +1008,14 @@
       display: block;
       padding: 7px 0; } }
 @media (max-width: 991px) {
+  .navbar .selectTemp {
+    width: 70%; }
+    .navbar .selectTemp select {
+      font-size: 0.9em;
+      line-height: 1em;
+      color: #024dc1;
+      font-weight: bold; }
+
   .nav-link {
     padding-left: 15px !important;
     font-size: 1.1em;

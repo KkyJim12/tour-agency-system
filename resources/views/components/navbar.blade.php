@@ -46,12 +46,45 @@
       <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
+      <div class='d-lg-none w-100 text-center mt-3'>
+        <div class="form-group d-inline-block selectTemp">
+          <select class="form-control d-inline-block">
+            <option>กรุณาเลือกประเทศ</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav mr-auto">
             <li class="nav-item mr-3">
                <a class="nav-link" href="/">หน้าหลัก</a>
             </li>
-            <li class="nav-item mr-3">
+            <li class="nav-item mr-3 d-none d-lg-block">
+               <div class="dropdown">
+                  <a class="nav-link" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  ทัวร์ต่างประเทศ
+                  </a>
+                  <div class="dropdown-menu dropdown-nav" aria-labelledby="dropdownMenu2">
+                     @foreach($continent as $all_continent)
+                     <div class="row">
+                        <div class="col-12">
+                           <span class="dropdown-item cat-link">{{$all_continent->continent_name}}</span>
+                        </div>
+                        @foreach($all_continent->subcat as $subcat)
+                        <div class="col-3">
+                           <a class="cat-link" href="/category/{{$subcat->_id}}"><span class="dropdown-item cat-link"><img src="/assets/img/upload/country/{{$subcat->country_img}}" alt="country_img"> {{$subcat->country_name}}</span></a>
+                        </div>
+                        @endforeach
+                     </div>
+                     <hr>
+                     @endforeach
+                  </div>
+               </div>
+            </li>
+            <li class="nav-item mr-3 d-lg-none">
               <div class="accordion" id="accordionExample">
                 <a class="nav-link" data-toggle="collapse" data-target="#tourlist" aria-expanded="true" aria-controls="tourlist">
                   <i class="fas fa-plus-square"></i> ทัวร์ต่างประเทศ
