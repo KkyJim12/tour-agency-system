@@ -12,10 +12,10 @@
          </ul>
          <ul class="navbar-nav ml-auto ">
             <li class="nav-item">
-               <a class="nav-link p-0" href="#"><i class="fab fa-facebook-square"></i></a>
+               <a class="nav-link p-0" href="https://www.facebook.com/royaltourgroup/" target="_blank"><i class="fab fa-facebook-square"></i></a>
             </li>
             <li class="nav-item">
-               <a class="nav-link p-0" href="#"><i class="fab fa-line"></i></a>
+               <a class="nav-link p-0" href="http://line.me/ti/p/@royaltour" target="_blank"><i class="fab fa-line"></i></a>
             </li>
          </ul>
       </div>
@@ -48,12 +48,14 @@
       </button>
       <div class='d-lg-none w-100 text-center mt-3'>
         <div class="form-group d-inline-block selectTemp">
-          <select class="form-control d-inline-block">
+          <select class="form-control d-inline-block" onchange="location = this.value;">
             <option>กรุณาเลือกประเทศ</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            @foreach($continent as $show_continent)
+            <option disabled>{{$show_continent->continent_name}}</option><hr>
+            @foreach($show_continent->subcat as $subcat)
+            <option value="/category/{{$subcat->_id}}">{{$subcat->country_name}}</option>
+            @endforeach
+            @endforeach
           </select>
         </div>
       </div>
@@ -90,13 +92,13 @@
                   <i class="fas fa-plus-square"></i> ทัวร์ต่างประเทศ
                 </a>
                 <div id="tourlist" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                  @foreach($continent as $all_continent)
                   <section>
+                    @foreach($continent as $all_continent)
                     <h1>{{$all_continent->continent_name}}</h1>
                     @foreach($all_continent->subcat as $subcat)
                      <a href="/category/{{$subcat->_id}}">{{$subcat->country_name}}</a>
-                  @endforeach
-                  @endforeach
+                    @endforeach
+                    @endforeach
                   </section>
                 </div>
               </div>

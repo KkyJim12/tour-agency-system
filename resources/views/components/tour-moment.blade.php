@@ -8,50 +8,28 @@
     <div class="row homeMoment">
       <div class='col-lg-4'>
         <div class="row leftSide">
+          @if($main_gallery)
+          @foreach($main_gallery as $show_main_gallery)
           <div class="col-md-4 col-lg-12">
             <figure>
-              <img src='/assets/img/moment/moment1.jpg'>
+              <img src='/assets/img/upload/gallery/img/{{$show_main_gallery->gallery_img}}'>
             </figure>
           </div>
-          <div class="col-md-4 col-lg-12">
-            <figure>
-              <img src='/assets/img/moment/moment2.jpg'>
-            </figure>
-          </div>
-          <div class="col-md-4 col-lg-12">
-            <figure>
-              <img src='/assets/img/moment/moment3.jpg'>
-            </figure>
-          </div>
+          @endforeach
+          @endif
         </div>
       </div>
       <div class='col-lg-8'>
         <ul id="imageGallery">
-          <li data-thumb="/assets/img/moment/moment1.jpg" data-src="/assets/img/moment/moment1.jpg">
+          @if($gallery)
+          @foreach($gallery->gallery_other_img as $show_gallery)
+          <li data-thumb="/assets/img/upload/gallery/otherimg/{{$show_gallery}}" data-src="/assets/img/upload/gallery/otherimg/{{$show_gallery}}">
             <figure>
-              <img src='/assets/img/moment/moment1.jpg'>
+              <img src='/assets/img/upload/gallery/otherimg/{{$show_gallery}}'>
             </figure>
           </li>
-          <li data-thumb="/assets/img/moment/moment2.jpg" data-src="/assets/img/moment/moment2.jpg">
-            <figure>
-              <img src='/assets/img/moment/moment2.jpg'>
-            </figure>
-          </li>
-          <li data-thumb="/assets/img/moment/moment3.jpg" data-src="/assets/img/moment/moment3.jpg">
-            <figure>
-              <img src='/assets/img/moment/moment3.jpg'>
-            </figure>
-          </li>
-          <li data-thumb="/assets/img/moment/moment4.jpg" data-src="/assets/img/moment/moment4.jpg">
-            <figure>
-              <img src='/assets/img/moment/moment4.jpg'>
-            </figure>
-          </li>
-          <li data-thumb="/assets/img/moment/moment5.jpg" data-src="/assets/img/moment/moment5.jpg">
-            <figure>
-              <img src='/assets/img/moment/moment5.jpg'>
-            </figure>
-          </li>
+          @endforeach
+          @endif
         </ul>
       </div>
     </div>

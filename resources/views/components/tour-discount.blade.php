@@ -17,11 +17,13 @@
                  <a class="card-body-link" href="#">
                     <h5 class="card-title">{{str_limit($show_tour_discount->tour_name,55)}}</h5>
                     <h6>{{$show_tour_discount->tour_country_name}} -  {{$show_tour_discount->tour_day}} วัน {{$show_tour_discount->tour_night}} คืน</h6>
-                    {!!$show_tour_discount->tour_hightlight!!}
+                    <div style="overflow:auto; width:100%; height:50px; align:center;">
+                      {!!$show_tour_discount->tour_hightlight!!}
+                    </div>
                     <h2>สายการบิน<span><img src="/assets/img/upload/airline/{{$show_tour_discount->tour_airline_img}}" alt="airline_suggest"> AirAsia</span></h2>
-                    <h4>ราคาเริ่มต้น<span>3000฿</span></h4>
-                    <h3>ลดเหลือ<span>{{$show_tour_discount->tour_price}}฿</span></h3>
-                    <section class='text-center'><i class="far fa-clock"></i><span>{{$show_tour_discount->tour_start_date[0]}}</span><span class='tourTime'>12:00 PM</span></section>
+                    <h4>ราคาเริ่มต้น<span>{{number_format($show_tour_discount->tour_discount)}}</span></h4>
+                    <h3>ลดเหลือ<span>{{number_format($show_tour_discount->tour_price)}}฿</span></h3>
+                    <section class='text-center'><i class="far fa-clock"></i><span>{{date('d/m/Y',strtotime($show_tour_discount->tour_start_date[0]))}} ถึง {{date('d/m/Y',strtotime($show_tour_discount->tour_end_date[0]))}}</section>
                  </a>
                  <div class='row discountFooter'>
                    <div class="col-6">

@@ -29,8 +29,8 @@ Royaltour | เที่ยว {{$country->country_name}}
    <!-- End Filter -->
    <!-- item -->
    <div class="row tempCategory">
-      @foreach($tour as $show_tour)
-      <div class="col-sm-6 col-lg-4 col-xl-3 mb-3">
+     @foreach($tour as $show_tour)
+     <div class="item">
         <div class="card">
            <a href="/tour/{{$show_tour->_id}}">
              <img src="/assets/img/upload/tour/img/{{$show_tour->tour_img}}">
@@ -40,11 +40,13 @@ Royaltour | เที่ยว {{$country->country_name}}
               <a class="card-body-link" href="#">
                  <h5 class="card-title">{{str_limit($show_tour->tour_name,55)}}</h5>
                  <h6>{{$show_tour->tour_country_name}} -  {{$show_tour->tour_day}} วัน {{$show_tour->tour_night}} คืน</h6>
-                 {!!$show_tour->tour_hightlight!!}
+                 <div style="overflow:auto; width:100%; height:50px; align:center;">
+                   {!!$show_tour->tour_hightlight!!}
+                 </div>
                  <h2>สายการบิน<span><img src="/assets/img/upload/airline/{{$show_tour->tour_airline_img}}" alt="airline_suggest"> AirAsia</span></h2>
-                 <h4>ราคาเริ่มต้น<span>3000฿</span></h4>
-                 <h3>ลดเหลือ<span>{{$show_tour->tour_price}}฿</span></h3>
-                 <section class='text-center'><i class="far fa-clock"></i><span>{{$show_tour->tour_start_date[0]}}</span><span class='tourTime'>12:00 PM</span></section>
+                 <h4>ราคาเริ่มต้น<span>{{number_format($show_tour->tour_discount)}}</span></h4>
+                 <h3>ลดเหลือ<span>{{number_format($show_tour->tour_price)}}฿</span></h3>
+                 <section class='text-center'><i class="far fa-clock"></i><span>{{date('d/m/Y',strtotime($show_tour->tour_start_date[0]))}} ถึง {{date('d/m/Y',strtotime($show_tour->tour_end_date[0]))}}</section>
               </a>
               <div class='row discountFooter'>
                 <div class="col-6">
@@ -53,15 +55,15 @@ Royaltour | เที่ยว {{$country->country_name}}
                    </a>
                 </div>
                 <div class="col-6 tour-file">
-                   <a class="btn btnFile" href="/assets/img/upload/tour/pdf/{{$show_tour->tour_pdf}}" download>
+                   <a class="btn btnFile" href="#" download>
                    <i class="fas fa-file-pdf"></i>  ไฟล์โปรแกรม
                    </a>
                 </div>
               </div>
            </div>
         </div>
-      </div>
-      @endforeach
+     </div>
+     @endforeach
    </div>
 </div>
 <!-- End Item -->

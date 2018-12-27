@@ -15,6 +15,7 @@
     <div class="col-lg-12">
         แบนเนอร์ Navbar
     </div><hr>
+    @if($nav_banner)
     <div class="col-lg-12">
       <img class="nav-banner-img" src="/assets/img/upload/banner/{{$nav_banner->banner_img}}"><br>
     </div>
@@ -34,6 +35,22 @@
         <button class="btn btn-success" type="submit" name="button">บันทึก</button>
       </form>
     </div>
+    @else
+    <form action="/admin/admin-banner-save" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label>728x90</label>
+        <input type="file" name="banner_img">
+      </div>
+      <div class="form-group">
+        <label>ลิงค์</label>
+        <input class="form-control" type="text" name="banner_link">
+      </div>
+      <input type="hidden" name="banner_num" value="1">
+      <br>
+      @csrf
+      <button class="btn btn-success" type="submit" name="button">บันทึก</button>
+    </form>
+    @endif
   </div>
 </div>
 
@@ -44,6 +61,7 @@
     <div class="col-lg-12">
         แบนเนอร์
     </div><hr>
+    @if($second_banner)
     <div class="col-lg-12">
       <img class="second-banner-img" src="/assets/img/upload/banner/{{$second_banner->banner_img}}"><br>
     </div>
@@ -63,6 +81,24 @@
         <button class="btn btn-success" type="submit" name="button">บันทึก</button>
       </form>
     </div>
+    @else
+    <div class="col-lg-12">
+      <form action="/admin/admin-banner-save" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label>350x279.47</label>
+          <input type="file" name="banner_img">
+        </div>
+        <div class="form-group">
+          <label>ลิงค์</label>
+          <input class="form-control" type="text" name="banner_link">
+        </div>
+        <input type="hidden" name="banner_num" value="2">
+        <br>
+        @csrf
+        <button class="btn btn-success" type="submit" name="button">บันทึก</button>
+      </form>
+    </div>
+    @endif
   </div>
 </div>
 
@@ -73,6 +109,7 @@
     <div class="col-lg-12">
         แบนเนอร์
     </div><hr>
+    @if($third_banner)
     <div class="col-lg-12">
       <img class="second-banner-img" src="/assets/img/upload/banner/{{$third_banner->banner_img}}"><br>
     </div>
@@ -92,6 +129,24 @@
         <button class="btn btn-success" type="submit" name="button">บันทึก</button>
       </form>
     </div>
+    @else
+    <div class="col-lg-12">
+      <form action="/admin/admin-banner-save" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label>350x279.47</label>
+          <input type="file" name="banner_img">
+        </div>
+        <div class="form-group">
+          <label>ลิงค์</label>
+          <input class="form-control" type="text" name="banner_link">
+        </div>
+        <input type="hidden" name="banner_num" value="3">
+        <br>
+        @csrf
+        <button class="btn btn-success" type="submit" name="button">บันทึก</button>
+      </form>
+    </div>
+    @endif
   </div>
 </div>
 
@@ -102,6 +157,7 @@
     <div class="col-lg-12">
         แบนเนอร์
     </div><hr>
+    @if($fourth_banner)
     <div class="col-lg-12">
       <img class="couple-banner-img" src="/assets/img/upload/banner/{{$fourth_banner->banner_img}}"><br>
     </div>
@@ -121,6 +177,24 @@
         <button class="btn btn-success" type="submit" name="button">บันทึก</button>
       </form>
     </div>
+    @else
+    <div class="col-lg-12">
+      <form action="/admin/admin-banner-save" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label>350x140</label>
+          <input type="file" name="banner_img">
+        </div>
+        <div class="form-group">
+          <label>ลิงค์</label>
+          <input class="form-control" type="text" name="banner_link">
+        </div>
+        <input type="hidden" name="banner_num" value="4">
+        <br>
+        @csrf
+        <button class="btn btn-success" type="submit" name="button">บันทึก</button>
+      </form>
+    </div>
+    @endif
   </div>
 </div>
 
@@ -131,6 +205,7 @@
     <div class="col-lg-12">
         แบนเนอร์
     </div><hr>
+    @if($fifth_banner)
     <div class="col-lg-12">
       <img class="couple-banner-img" src="/assets/img/upload/banner/{{$fifth_banner->banner_img}}"><br>
     </div>
@@ -150,6 +225,24 @@
         <button class="btn btn-success" type="submit" name="button">บันทึก</button>
       </form>
     </div>
+    @else
+    <div class="col-lg-12">
+      <form action="/admin/admin-banner-save" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label>350x140</label>
+          <input type="file" name="banner_img">
+        </div>
+        <div class="form-group">
+          <label>ลิงค์</label>
+          <input class="form-control" type="text" name="banner_link">
+        </div>
+        <input type="hidden" name="banner_num" value="5">
+        <br>
+        @csrf
+        <button class="btn btn-success" type="submit" name="button">บันทึก</button>
+      </form>
+    </div>
+    @endif
   </div>
 </div>
 
@@ -160,6 +253,7 @@
     <div class="col-lg-12">
         แบนเนอร์
     </div><hr>
+    <!-- @if($sixth_banner)
     <div class="col-lg-12">
       <img class="big-banner-img" src="/assets/img/upload/banner/{{$sixth_banner->banner_img}}"><br>
     </div>
@@ -179,6 +273,24 @@
         <button class="btn btn-success" type="submit" name="button">บันทึก</button>
       </form>
     </div>
+    @else
+    <div class="col-lg-12">
+      <form action="/admin/admin-banner-save" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label>730x500</label>
+          <input type="file" name="banner_img" value="">
+        </div>
+        <div class="form-group">
+          <label>ลิงค์</label>
+          <input class="form-control" type="text" name="banner_link" value="">
+        </div>
+        <input type="hidden" name="banner_num" value="6">
+        <br>
+        @csrf
+        <button class="btn btn-success" type="submit" name="button">บันทึก</button>
+      </form>
+    </div>
+    @endif -->
   </div>
 </div>
 @endsection

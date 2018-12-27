@@ -29,7 +29,7 @@ Royaltour | ภาพประทับใจ
   <div class="container list">
     <div class="row">
       @foreach($continent as $show_continent)
-      <div class="col-12 mb-3">
+      <div class="col-12 mb-3 mt-4">
         <h1>{{$show_continent->continent_name}}</h1>
       </div>
       @foreach($show_continent->subcat as $subcat)

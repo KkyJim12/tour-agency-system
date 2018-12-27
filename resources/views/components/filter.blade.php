@@ -13,6 +13,9 @@
       <div class="form-group col-lg-3">
          <label>ประเทศ/เมือง</label>
          <div class="input-group">
+           <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-globe-asia"></i></span>
+           </div>
             <select class="form-control" name="">
                <option value="">เลือกประเทศ/เมือง</option>
                @foreach($filter_country as $all_country)
@@ -46,6 +49,7 @@
                <span class="input-group-text" id="basic-addon1"><i class="fas fa-plane"></i></span>
             </div>
             <select class="form-control" name="filter_airline">
+              <option value="">เลือกสายการบิน</option>
                @foreach($airline as $all_airline)
                <option value="{{$all_airline->_id}}">{{$all_airline->airline_name}}</option>
                @endforeach

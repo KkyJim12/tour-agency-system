@@ -30,13 +30,6 @@
       @foreach($article as $show_article)
         <a href="/article/{{$show_article->article_cat_id}}/{{$show_article->_id}}"><i class="far fa-newspaper"></i>{{str_limit($show_article->article_title,30)}}</a>
       @endforeach
-      <a href="#"><i class="far fa-newspaper"></i>5 จุดถ่ายรูปสวยแบบฮิปๆ ที่ไม่ควรพลาดในฮ่องกง</a>
-      <a href="#"><i class="far fa-newspaper"></i>5 จุดถ่ายรูปสวยแบบฮิปๆ ที่ไม่ควรพลาดในฮ่องกง</a>
-      <a href="#"><i class="far fa-newspaper"></i>5 จุดถ่ายรูปสวยแบบฮิปๆ ที่ไม่ควรพลาดในฮ่องกง</a>
-      <a href="#"><i class="far fa-newspaper"></i>5 จุดถ่ายรูปสวยแบบฮิปๆ ที่ไม่ควรพลาดในฮ่องกง</a>
-      <a href="#"><i class="far fa-newspaper"></i>5 จุดถ่ายรูปสวยแบบฮิปๆ ที่ไม่ควรพลาดในฮ่องกง</a>
-      <a href="#"><i class="far fa-newspaper"></i>5 จุดถ่ายรูปสวยแบบฮิปๆ ที่ไม่ควรพลาดในฮ่องกง</a>
-      <a href="#"><i class="far fa-newspaper"></i>5 จุดถ่ายรูปสวยแบบฮิปๆ ที่ไม่ควรพลาดในฮ่องกง</a>
     </div>
   </div>
 </div>

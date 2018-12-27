@@ -34,10 +34,12 @@ class UIViewController extends Controller
       $fifth_banner = Banner::where('banner_num','5')->first();
       $sixth_banner = Banner::where('banner_num','6')->first();
       $first_slide = Slide::first();
+      $gallery = Gallery::orderBy('created_at','asc')->first();
+      $main_gallery = Gallery::orderBy('created_at','asc')->take(3)->get();
       $seo = SEO::first();
       $holiday = Holiday::all();
       $tour = Tour::where('tour_holiday_id','!=',null)->get();
-      $article = Article::take(4)->get();
+      $article = Article::take(7)->get();
       if ($first_slide !== null) {
         $slide = Slide::where('_id','!=',$first_slide->_id)->get();
       }
@@ -60,6 +62,8 @@ class UIViewController extends Controller
                             'holiday' => $holiday,
                             'tour' => $tour,
                             'article' => $article,
+                            'gallery' => $gallery,
+                            'main_gallery' => $main_gallery,
                           ]);
     }
 

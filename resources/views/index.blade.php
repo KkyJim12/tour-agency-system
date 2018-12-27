@@ -26,5 +26,4 @@
   @include('components.article')
   @include('components.tour-moment')
   @include('components.banner')
-  @include('components.banner-facebook')
 @endsection

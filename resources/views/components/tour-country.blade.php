@@ -8,65 +8,21 @@
     <div class="row">
       <div class="col-12">
         <div class="countryTemp">
-          <h1>asia</h1>
+          @foreach($continent as $all_continent)
+          <h1>{{$all_continent->continent_name}}</h1>
           <div class='row'>
+            @foreach($all_continent->subcat as $subcat)
             <div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-3">
-              <a href="#">
+              <a href="/category/{{$subcat->_id}}">
                 <span>
-                  <img src='/assets/img/home/flag-thailand.png'>
+                  <img src='/assets/img/upload/country/{{$subcat->country_img}}'>
                 </span>
-                <span><p class='mb-0 d-inline-block'>Thailand</p></span>
+                <span><p class='mb-0 d-inline-block'>{{$subcat->country_name}}</p></span>
               </a>
             </div>
-            <div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-3">
-              <a href="#">
-                <span>
-                  <img src='/assets/img/home/flag-thailand.png'>
-                </span>
-                <span><p class='mb-0 d-inline-block'>Thailand</p></span>
-              </a>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-3">
-              <a href="#">
-                <span>
-                  <img src='/assets/img/home/flag-thailand.png'>
-                </span>
-                <span><p class='mb-0 d-inline-block'>Thailand</p></span>
-              </a>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-3">
-              <a href="#">
-                <span>
-                  <img src='/assets/img/home/flag-thailand.png'>
-                </span>
-                <span><p class='mb-0 d-inline-block'>Thailand</p></span>
-              </a>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-3">
-              <a href="#">
-                <span>
-                  <img src='/assets/img/home/flag-thailand.png'>
-                </span>
-                <span><p class='mb-0 d-inline-block'>Thailand</p></span>
-              </a>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-3">
-              <a href="#">
-                <span>
-                  <img src='/assets/img/home/flag-thailand.png'>
-                </span>
-                <span><p class='mb-0 d-inline-block'>Thailand</p></span>
-              </a>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-3">
-              <a href="#">
-                <span>
-                  <img src='/assets/img/home/flag-thailand.png'>
-                </span>
-                <span><p class='mb-0 d-inline-block'>Thailand</p></span>
-              </a>
-            </div>
+            @endforeach
           </div>
+          @endforeach
         </div>
       </div>
     </div>
