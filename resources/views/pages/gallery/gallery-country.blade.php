@@ -29,7 +29,7 @@ Royaltour | ภาพประทับใจ {{$this_country->country_name}}
   <div class="container">
     <div class="row">
       @foreach($gallery as $show_gallery)
-      <div class="col-md-3 galleryTemp">
+      <div class="col-sm-6 col-md-4 col-lg-3 galleryTemp">
          <a data-toggle="modal" data-target="#exampleModalCenter">
             <section>
               <figure>

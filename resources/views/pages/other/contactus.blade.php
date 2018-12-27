@@ -41,10 +41,10 @@ Royaltour | ติดต่อเรา
           </div>
           @endif
           <form class="row" action="/contactus-process" method="post">
-             <div class="col-md-4">
-                <input class=" form-control" type="text" name="contact_name" value="" placeholder="ชื่อ-นามสกุล *">
+             <div class="col-md-4 mb-3 mb-md-0">
+                <input class="form-control" type="text" name="contact_name" value="" placeholder="ชื่อ-นามสกุล *">
              </div>
-             <div class="col-md-4">
+             <div class="col-md-4 mb-3 mb-md-0">
                 <input class=" form-control" type="email" name="contact_email" value="" placeholder="อีเมลล์ *">
              </div>
              <div class="col-md-4">
@@ -80,24 +80,26 @@ Royaltour | ติดต่อเรา
       <div class="col-12 mb-4">
         <div class="staffTemp">
           @foreach($show_branch->subcon as $show_con)
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col" class='text-center'>รายชื่อ</th>
-                <th scope="col" class='text-center'>เบอร์ติดต่อ</th>
-                <th scope="col" class='text-center'>Line ID</th>
-                <th scope="col" class='text-center'>Facebook</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class='text-center'>{{$show_con->staff_name}}</th>
-                <td class='text-center'>Tel: {{$show_con->staff_tel}}</td>
-                <td class='text-center'>Line: <a href="http://line.me/ti/p/@royaltour/{{$show_con->staff_line}}" target="_blank" rel="noopener noreferrer">{{$show_con->staff_line}}</a> </td>
-                <td class='text-center'><a href="{{$show_con->staff_facebook}}">Facebook</a> </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col" class='text-center'>รายชื่อ</th>
+                  <th scope="col" class='text-center'>เบอร์ติดต่อ</th>
+                  <th scope="col" class='text-center'>Line ID</th>
+                  <th scope="col" class='text-center'>Facebook</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class='text-center'>{{$show_con->staff_name}}</th>
+                  <td class='text-center'>{{$show_con->staff_tel}}</td>
+                  <td class='text-center'><a href="http://line.me/ti/p/@royaltour/{{$show_con->staff_line}}" target="_blank" rel="noopener noreferrer">{{$show_con->staff_line}}</a> </td>
+                  <td class='text-center'><a href="{{$show_con->staff_facebook}}">Facebook</a> </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         @endforeach
         </div>
