@@ -164,6 +164,8 @@ class UIViewController extends Controller
       $airline = Airline::all();
       $search_word = $request->search_name;
 
+      $searchConditions = [];
+
       if ($request->search_name != "") {
         $searchConditions[] = ["tour_name", "like", "%$request->search_name%"];
       }
