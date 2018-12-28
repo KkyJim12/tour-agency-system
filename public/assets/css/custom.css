@@ -337,68 +337,10 @@ a:hover {
 
 
 /** Mobile Scrollbar **/
-::-webkit-scrollbar {
-    -webkit-appearance: none;
-}
-
-::-webkit-scrollbar:vertical {
-    width: 12px;
-}
-
-::-webkit-scrollbar:horizontal {
-    height: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, .5);
-    border-radius: 10px;
-    border: 2px solid #ffffff;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background-color: #ffffff;
-}
 
 /** End Mobile Scrollbar **/
 
 /** Dropdown Mobile **/
 
-.acc-menu {
-  margin-top: -6px;
-  padding: 0;
-  list-style: none;
-}
-.parent span {
-  letter-spacing: 3px;
-}
-.acc-menu li {
-  float: left;
-  display: block;
-  background: #fff;
-  position: relative;
-  z-index: 500;
-  margin: 0 1px;
-}
-.acc-menu li a {
-  display: block;
-  line-height: 18px;
-  color: #333;
-  text-align: left;
-}
-.acc-menu ul {
-  position: absolute;
-  left: -14px;
-  display: none;
-  margin: 0 0 0 -1px;
-  padding: 0;
-  list-style: none;
-  text-indent: 10px;
-}
-.acc-menu ul.display {
-  display: block;
-}
-.acc-menu ul li {
-  width: 150px;
 
 /** End Dropdown Mobile **/
