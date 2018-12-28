@@ -36,6 +36,10 @@ class TourSearchController extends Controller
             $searchConditions[] = ["tour_country_name", "like", "%$request->filter_name%"];
         }
 
+        if ($request->filter_country != "") {
+          $searchConditions[] = ["tour_country_id", "=", $request->filter_country];
+        }
+
         if ($request->filter_start_date != "") {
             $searchConditions[] = ["tour_start_date", ">=", $request->filter_start_date];
         }

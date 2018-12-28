@@ -51,10 +51,11 @@
           <select class="form-control d-inline-block" onchange="location = this.value;">
             <option>กรุณาเลือกประเทศ</option>
             @foreach($continent as $show_continent)
-            <option disabled>{{$show_continent->continent_name}}</option><hr>
+            <optgroup label="{{$show_continent->continent_name}}">
             @foreach($show_continent->subcat as $subcat)
             <option value="/category/{{$subcat->_id}}">{{$subcat->country_name}}</option>
             @endforeach
+            </optgroup>
             @endforeach
           </select>
         </div>

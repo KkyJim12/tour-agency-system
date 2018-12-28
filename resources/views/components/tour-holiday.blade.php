@@ -10,17 +10,25 @@
           <li class="nav-item">
               <a class="nav-link active" id="pills-all-tab" data-toggle="pill" href="#pills-all" role="tab" aria-controls="pills-all" aria-selected="true">ทั้งหมด</a>
           </li>
+          @foreach($holiday as $all_holiday)
           <li class="nav-item">
-              <a class="nav-link" id="pills-one-tab" data-toggle="pill" href="#pills-one" role="tab" aria-controls="pills-one" aria-selected="false">มกราคม</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills-tow-tab" data-toggle="pill" href="#pills-tow" role="tab" aria-controls="pills-tow" aria-selected="false">กุมภาพันธ์</a>
-            </li>
+              <a class="nav-link" id="pills-one-tab" data-toggle="pill" href="#pill{{$loop->iteration}}" role="tab" aria-controls="pills-one" aria-selected="false">{{$all_holiday->holiday_name}}</a>
+          </li>
+          @endforeach
         </ul>
         <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab"><img src="/assets/img/holiday/holiday-1.jpg" alt="holiday-tour"></div>
-        <div class="tab-pane fade" id="pills-one" role="tabpanel" aria-labelledby="pills-one-tab"><img src="/assets/img/holiday/holiday-1.jpg" alt="holiday-tour"></div>
-        <div class="tab-pane fade" id="pills-tow" role="tabpanel" aria-labelledby="pills-tow-tab"><img src="/assets/img/holiday/holiday-1.jpg" alt="holiday-tour"></div>
+        <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
+          @foreach($all_tour_holiday as $show_all_tour_holiday)
+            <a href="/tour/{{$show_all_tour_holiday->_id}}"><img src="/assets/img/upload/tour/img/{{$show_all_tour_holiday->tour_img}}" alt="holiday_tour"></a>
+          @endforeach
+        </div>
+        @foreach($holiday as $all_holiday)
+        <div class="tab-pane fade" id="pill{{$loop->iteration}}" role="tabpanel" aria-labelledby="pills-one-tab">
+          @foreach($all_holiday->subholiday as $subholiday)
+            <a href="/tour/{{$subholiday->_id}}"><img src="/assets/img/upload/tour/img/{{$subholiday->tour_img}}" alt="holiday-tour"></a>
+          @endforeach
+        </div>
+        @endforeach
         </div>
       </div>
    </div>

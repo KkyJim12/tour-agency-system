@@ -10,6 +10,6 @@ class Holiday extends Moloquent
 
     public function subholiday()
     {
-        return $this->hasMany('App\Tour');
+        return $this->hasMany('App\Tour','tour_holiday_id','_id');
     }
 }

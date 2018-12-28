@@ -16,7 +16,7 @@
            <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fas fa-globe-asia"></i></span>
            </div>
-            <select class="form-control" name="">
+            <select class="form-control" name="filter_country">
                <option value="">เลือกประเทศ/เมือง</option>
                @foreach($filter_country as $all_country)
                <option value="{{$all_country->_id}}">{{$all_country->country_name}}</option>
