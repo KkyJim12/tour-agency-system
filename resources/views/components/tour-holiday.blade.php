@@ -18,8 +18,8 @@
         </ul>
         <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
-          @foreach($all_tour_holiday as $show_all_tour_holiday)
           <div class="row recommend">
+            @foreach($all_tour_holiday as $show_all_tour_holiday)
             <div class="col-6 col-md-4 col-lg-3">
               <figure>
                 <a href='/tour/{{$show_all_tour_holiday->_id}}'>
@@ -32,27 +32,27 @@
                 <p>ราคา {{number_format($show_all_tour_holiday->tour_price)}} บาท</p>
               </a>
             </div>
+            @endforeach
           </div>
-          @endforeach
         </div>
         @foreach($holiday as $all_holiday)
         <div class="tab-pane fade" id="pill{{$loop->iteration}}" role="tabpanel" aria-labelledby="pills-one-tab">
-          @foreach($all_holiday->subholiday as $subholiday)
           <div class="row recommend">
+            @foreach($all_holiday->subholiday as $subholiday)
             <div class="col-6 col-md-4 col-lg-3">
               <figure>
-                <a href='/tour/{{$show_all_tour_holiday->_id}}'>
-                  <img src='/assets/img/upload/tour/img/{{$show_all_tour_holiday->tour_img}}'>
+                <a href='/tour/{{$subholiday->_id}}'>
+                  <img src='/assets/img/upload/tour/img/{{$subholiday->tour_img}}'>
                 </a>
               </figure>
               <a href='/tour/{{$show_all_tour_holiday->_id}}'>
-                <h1>{{$show_all_tour_holiday->tour_name}}</h1>
-                <h2>วันที่ {{date('d/m/Y',strtotime($show_all_tour_holiday->tour_start_date[0]))}} ถึง {{date('d/m/Y',strtotime($show_all_tour_holiday->tour_end_date[0]))}}</h2>
-                <p>ราคา {{number_format($show_all_tour_holiday->tour_price)}} บาท</p>
+                <h1>{{$subholiday->tour_name}}</h1>
+                <h2>วันที่ {{date('d/m/Y',strtotime($subholiday->tour_start_date[0]))}} ถึง {{date('d/m/Y',strtotime($subholiday->tour_end_date[0]))}}</h2>
+                <p>ราคา {{number_format($subholiday->tour_price)}} บาท</p>
               </a>
             </div>
+            @endforeach
           </div>
-          @endforeach
         </div>
         @endforeach
         </div>
