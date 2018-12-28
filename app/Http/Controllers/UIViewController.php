@@ -38,9 +38,8 @@ class UIViewController extends Controller
       $main_gallery = Gallery::orderBy('created_at','asc')->take(3)->get();
       $seo = SEO::first();
       $holiday = Holiday::all();
-      $tour = Tour::where('tour_holiday_id','!=',null)->get();
       $article = Article::take(7)->get();
-      $all_tour_holiday = Tour::where('tour_holiday_id','!=','null')->get();
+      $all_tour_holiday = Tour::where('tour_holiday_id','!=',null)->get();
       if ($first_slide !== null) {
         $slide = Slide::where('_id','!=',$first_slide->_id)->get();
       }
@@ -61,7 +60,6 @@ class UIViewController extends Controller
                             'first_slide' => $first_slide,
                             'seo' => $seo,
                             'holiday' => $holiday,
-                            'tour' => $tour,
                             'article' => $article,
                             'gallery' => $gallery,
                             'main_gallery' => $main_gallery,

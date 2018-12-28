@@ -10,7 +10,7 @@
        <div class='col-6 col-md-4 col-lg-3 mb-4'>
          <div>
            <figure>
-             <a href='#'>
+             <a href='/tour/{{$show_tour_suggest->_id}}'>
                <img src='/assets/img/upload/tour/img/{{$show_tour_suggest->tour_img}}'>
              </a>
            </figure>
