@@ -22,11 +22,11 @@
             @foreach($all_tour_holiday as $show_all_tour_holiday)
             <div class="col-6 col-md-4 col-lg-3">
               <figure>
-                <a href='/tour/{{$show_all_tour_holiday->_id}}'>
+                <a href='/tour/{{ isset($show_all_tour_holiday->tour_seo_url) && $show_all_tour_holiday->tour_seo_url != "" ? $show_all_tour_holiday->tour_seo_url : $show_all_tour_holiday->_id }}'>
                   <img src='/assets/img/upload/tour/img/{{$show_all_tour_holiday->tour_img}}'>
                 </a>
               </figure>
-              <a href='/tour/{{$show_all_tour_holiday->_id}}'>
+              <a href='/tour/{{ isset($show_all_tour_holiday->tour_seo_url) && $show_all_tour_holiday->tour_seo_url != "" ? $show_all_tour_holiday->tour_seo_url : $show_all_tour_holiday->_id }}'>
                 <h1>{{$show_all_tour_holiday->tour_name}}</h1>
                 <h2>วันที่ {{date('d/m/Y',strtotime($show_all_tour_holiday->tour_start_date[0]))}} ถึง {{date('d/m/Y',strtotime($show_all_tour_holiday->tour_end_date[0]))}}</h2>
                 <p>ราคา {{number_format($show_all_tour_holiday->tour_price)}} บาท</p>
@@ -41,11 +41,11 @@
             @foreach($all_holiday->subholiday as $subholiday)
             <div class="col-6 col-md-4 col-lg-3">
               <figure>
-                <a href='/tour/{{$subholiday->_id}}'>
+                <a href='/tour/{{ isset($subholiday->tour_seo_url) && $subholiday->tour_seo_url != "" ? $subholiday->tour_seo_url : $subholiday->_id }}'>
                   <img src='/assets/img/upload/tour/img/{{$subholiday->tour_img}}'>
                 </a>
               </figure>
-              <a href='/tour/{{$show_all_tour_holiday->_id}}'>
+              <a href='/tour/{{ isset($show_all_tour_holiday->tour_seo_url) && $show_all_tour_holiday->tour_seo_url != "" ? $show_all_tour_holiday->tour_seo_url : $show_all_tour_holiday->_id }}'>
                 <h1>{{$subholiday->tour_name}}</h1>
                 <h2>วันที่ {{date('d/m/Y',strtotime($subholiday->tour_start_date[0]))}} ถึง {{date('d/m/Y',strtotime($subholiday->tour_end_date[0]))}}</h2>
                 <p>ราคา {{number_format($subholiday->tour_price)}} บาท</p>

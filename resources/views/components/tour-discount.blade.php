@@ -9,7 +9,7 @@
         @foreach($tour_discount as $show_tour_discount)
         <div class="item">
            <div class="card">
-              <a href="/tour/{{$show_tour_discount->_id}}">
+              <a href="/tour/{{ isset($show_tour_discount->tour_seo_url) && $show_tour_discount->tour_seo_url != "" ? $show_tour_discount->tour_seo_url : $show_tour_discount->_id }}">
                 <img src="/assets/img/upload/tour/img/{{$show_tour_discount->tour_img}}">
                 <p class='text-right'>ลดเหลือ</br><span>{{$show_tour_discount->tour_price}}฿</span></p>
               </a>

@@ -10,11 +10,11 @@
        <div class='col-6 col-md-4 col-lg-3 mb-4'>
          <div>
            <figure>
-             <a href='/tour/{{$show_tour_suggest->_id}}'>
+             <a href='/tour/{{ isset($show_tour_suggest->tour_seo_url) && $show_tour_suggest->tour_seo_url != "" ? $show_tour_suggest->tour_seo_url : $show_tour_suggest->_id }}'>
                <img src='/assets/img/upload/tour/img/{{$show_tour_suggest->tour_img}}'>
              </a>
            </figure>
-           <a href='/tour/{{$show_tour_suggest->_id}}'>
+           <a href='/tour/{{ isset($show_tour_suggest->tour_seo_url) && $show_tour_suggest->tour_seo_url != "" ? $show_tour_suggest->tour_seo_url : $show_tour_suggest->_id }}'>
              <h1>{{$show_tour_suggest->tour_name}}</h1>
              <h2>วันที่ {{date('d/m/Y',strtotime($show_tour_suggest->tour_start_date[0]))}} ถึง {{date('d/m/Y',strtotime($show_tour_suggest->tour_end_date[0]))}}</h2>
              <p>ราคา {{number_format($show_tour_suggest->tour_price)}} บาท</p>

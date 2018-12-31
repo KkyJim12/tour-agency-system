@@ -32,7 +32,7 @@ Royaltour | เที่ยว {{$country->country_name}}
      @foreach($tour as $show_tour)
      <div class="col-lg-3 col-md-6 col-xs-12 mb-3">
         <div class="card">
-           <a href="/tour/{{$show_tour->_id}}">
+           <a href="/tour/{{ isset($show_tour->tour_seo_url) && $show_tour->tour_seo_url != "" ? $show_tour->tour_seo_url : $show_tour->_id }}">
              <img src="/assets/img/upload/tour/img/{{$show_tour->tour_img}}">
              <p class='text-right'>ลดเหลือ</br><span>{{$show_tour->tour_price}}฿</span></p>
            </a>
@@ -50,7 +50,7 @@ Royaltour | เที่ยว {{$country->country_name}}
               </a>
               <div class='row discountFooter'>
                 <div class="col-6">
-                   <a class="btn btnDetail" href="/tour/{{$show_tour->_id}}">
+                   <a class="btn btnDetail" href="/tour/{{ isset($show_tour->tour_seo_url) && $show_tour->tour_seo_url != "" ? $show_tour->tour_seo_url : $show_tour->_id }}">
                    <i class="fas fa-file-alt"></i>  รายละเอียด
                    </a>
                 </div>

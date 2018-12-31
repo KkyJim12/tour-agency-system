@@ -248,7 +248,14 @@ class UIViewController extends Controller
     {
         $nav_banner = Banner::where('banner_num', '1')->first();
         $continent = Continent::all();
-        $article = Article::find($article_id);
+
+        $artSEO = Article::where("article_title", trim($article_id))->first();
+        if ($artSEO) {
+            $article = $artSEO;
+        } else {
+            $article = Article::find($article_id);
+        }
+
         $article_cat = ArticleCat::all();
 
         return view('pages.article.article-content', [

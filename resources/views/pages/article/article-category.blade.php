@@ -28,7 +28,7 @@ Royaltour | ภาพประทับใจ {{$this_article_cat->article_cat_n
      <div class="row mt-3 category">
        @foreach($show_article as $show_all_article_cat)
        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-          <a href="/article/{{$show_all_article_cat->article_cat_id}}/{{$show_all_article_cat->_id}}">
+          <a href="/article/{{$show_all_article_cat->article_cat_id}}/{{$show_all_article_cat->article_title}}">
              <div class='list'>
                <figure>
                  <img src="/assets/img/upload/article/{{$show_all_article_cat->article_img}}" alt="Card image cap">
