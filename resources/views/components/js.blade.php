@@ -17,7 +17,7 @@
            items:3
        },
        1200:{
-           items:4
+           items:3
        },
    },
    });
@@ -91,4 +91,10 @@ jQuery('.acc-menu').on("click", function() {
   jQuery('ul').toggleClass("display");
 });
 }
+</script>
+
+<script type="text/javascript">
+$(window).on('load', function(){
+  $('#cover').fadeOut(1000);
+})
 </script>

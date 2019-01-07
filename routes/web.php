@@ -34,10 +34,10 @@ Route::get('/logout-process','MemberController@LogoutProcess');
 Route::get('/tour/{tour_id}','UIViewController@ShowTour')->name('show-tour');
 
 /** Search Page **/
-Route::post('/search-result','UIViewController@ShowSearchResult');
+Route::get('/search-result','UIViewController@ShowSearchResult');
 
 /** Filter Page **/
-Route::post('/filter-result','TourSearchController@getMatchingTours');
+Route::get('/filter-result','TourSearchController@getMatchingTours');
 
 /** How to pay Page **/
 Route::get('/how-to-pay','UIViewController@ShowHowToPay');
