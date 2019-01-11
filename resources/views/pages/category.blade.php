@@ -34,7 +34,7 @@ Royaltour | เที่ยว {{$country->country_name}}
         <div class="card">
            <a href="/tour/{{ isset($show_tour->tour_seo_url) && $show_tour->tour_seo_url != "" ? $show_tour->tour_seo_url : $show_tour->_id }}">
              <img src="/assets/img/upload/tour/img/{{$show_tour->tour_img}}">
-             <p class='text-right'>ราคา</br><span>{{$show_tour->tour_price}}฿</span></p>
+             <p class='text-right'>ราคา</br><span>{{number_format($show_tour->tour_price)}}฿</span></p>
            </a>
            <div class="card-body">
               <a class="card-body-link" href="#">

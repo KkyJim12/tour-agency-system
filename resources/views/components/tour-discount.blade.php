@@ -11,7 +11,7 @@
            <div class="card">
               <a href="/tour/{{ isset($show_tour_discount->tour_seo_url) && $show_tour_discount->tour_seo_url != "" ? $show_tour_discount->tour_seo_url : $show_tour_discount->_id }}">
                 <img src="/assets/img/upload/tour/img/{{$show_tour_discount->tour_img}}">
-                <p class='text-right'>ลดเหลือ</br><span>{{$show_tour_discount->tour_price}}฿</span></p>
+                <p class='text-right'>ลดเหลือ</br><span>{{number_format($show_tour_discount->tour_price)}}฿</span></p>
               </a>
               <div class="card-body">
                  <a class="card-body-link" href="#">
