@@ -40,7 +40,7 @@
                    <h5>ราคาเริ่มต้น</h5>
                 </div>
                 <div class="col-7">
-                   <h4 class='text-right'><span>{{$tour->tour_price}}</span> บาท/ท่าน</h4>
+                   <h4 class='text-right'><span>{{number_format($tour->tour_price)}}</span> บาท/ท่าน</h4>
                 </div>
                 <div class="col-6">
                     <h5>ติดต่อสอบถามโปรแกรมทัวร์</h5>
@@ -59,7 +59,7 @@
                    </div>
                    <div class="col-lg-6 text-center">
                       <p class='text-uppercase'>ระยะเวลา:<span>{{$tour->tour_day}} วัน {{$tour->tour_night}} คืน</span> </p>
-                      <p class='mb-0 text-uppercase'>ช่วงเวลา:<span>{{$tour->tour_start_date[0]}}</span> </p>
+                      <p class='mb-0 text-uppercase'>ช่วงเวลา:<span>{{date('d/m/Y',strtotime($tour->tour_start_date[0]))}} ถึง {{date('d/m/Y',strtotime($tour->tour_end_date[0]))}}</span> </p>
                    </div>
                 </div>
              </div>
