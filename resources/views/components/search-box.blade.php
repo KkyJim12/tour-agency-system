@@ -8,7 +8,7 @@
          <div class="col-md-12">
             <div class="tab-content" id="myTabContent">
                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                  <form action="/search-result" method="post">
+                  <form action="/search-result" method="get">
                      <div class="row">
                         <div class="form-group col-lg-3 mb-2">
                            <label>จุดหมาย</label>

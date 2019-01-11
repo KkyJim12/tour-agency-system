@@ -33,6 +33,7 @@
       <meta name="description" content="@yield('meta')">
    </head>
    <body>
+     <div id="cover"> </div>
       @include('components.fb-js')
       @include('components.navbar')
       @yield('content')

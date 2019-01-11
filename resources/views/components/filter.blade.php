@@ -1,6 +1,6 @@
 <div class="filter mb-4 col-lg-12">
    <h3><img src='/assets/img/filter/globe.png' class='icon-title'>ค้นหาโปรแกรมทัวร์</h3>
-   <form class="row" action="/filter-result" method="post">
+   <form class="row" action="/filter-result" method="get">
       <div class="form-group col-lg-3">
          <label>สถานที่จะไป</label>
          <div class="input-group">
