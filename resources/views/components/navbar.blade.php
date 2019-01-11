@@ -43,7 +43,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
    <div class="container">
       <a class="navbar-brand mr-auto d-md-none d-lg-none d-md-block d-lg-none" href="/"><img src="/assets/img/logo/logo.png" alt="logo"> </a>
-      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
       <div class='d-lg-none w-100 text-center mt-3'>
@@ -60,7 +60,7 @@
           </select>
         </div>
       </div>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav mr-auto">
             <li class="nav-item mr-3">
                <a class="nav-link" href="/">หน้าหลัก</a>
@@ -89,7 +89,7 @@
             </li>
             <li class="nav-item mr-3 d-lg-none">
               <div class="accordion" id="accordionExample">
-                <a class="nav-link" data-toggle="dropdown" data-target="#tourlist" aria-expanded="true" aria-controls="tourlist">
+                <a class="nav-link" data-toggle="collapse" data-target="#tourlist" aria-expanded="true" aria-controls="tourlist">
                   <i class="fas fa-plus-square"></i> ทัวร์ต่างประเทศ
                 </a>
                 <div id="tourlist" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
