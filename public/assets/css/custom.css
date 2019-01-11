@@ -251,9 +251,6 @@ body  {
 }
 
 
-@media only screen and (min-width: 992px) { .dropdown:hover>.dropdown-menu {
-  }
-}
 
 a:hover {
     text-decoration: none;
