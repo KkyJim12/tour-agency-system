@@ -84,11 +84,11 @@ $(document).ready(function() {
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 var viewport = $(window).width();
 if (viewport <= 414) {
 jQuery('.acc-menu').on("click", function() {
   jQuery('ul').toggleClass("display");
 });
 }
-</script>
+</script> -->

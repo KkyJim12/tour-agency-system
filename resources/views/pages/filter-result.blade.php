@@ -35,7 +35,7 @@
                   <div style="overflow:auto; width:100%; height:50px; align:center;">
                     {!!$show_tour->tour_hightlight!!}
                   </div>
-                  <h2>สายการบิน<span><img src="/assets/img/upload/airline/{{$show_tour->tour_airline_img}}" alt="airline_suggest"> AirAsia</span></h2>
+                  <h2>สายการบิน<span><img src="/assets/img/upload/airline/{{$show_tour->tour_airline_img}}" alt="airline_suggest"> {{$show_tour->tour_airline_name}}</span></h2>
                   <h4>ราคาเริ่มต้น<span>{{number_format($show_tour->tour_discount)}}</span></h4>
                   <h3>ลดเหลือ<span>{{number_format($show_tour->tour_price)}}฿</span></h3>
                   <section class='text-center'><i class="far fa-clock"></i><span>{{date('d/m/Y',strtotime($show_tour->tour_start_date[0]))}} ถึง {{date('d/m/Y',strtotime($show_tour->tour_end_date[0]))}}</section>
@@ -47,7 +47,7 @@
                     </a>
                  </div>
                  <div class="col-6 tour-file">
-                    <a class="btn btnFile" href="#" download>
+                    <a class="btn btnFile" href="/assets/img/upload/tour/pdf/{{$show_tour->tour_pdf}}" download>
                     <i class="fas fa-file-pdf"></i>  ไฟล์โปรแกรม
                     </a>
                  </div>

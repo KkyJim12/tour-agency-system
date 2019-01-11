@@ -30,7 +30,7 @@
       <title>@yield('title')</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="keywords" content="@yield('title')">
-      <meta name="description" content="@yield('meata')">
+      <meta name="description" content="@yield('meta')">
    </head>
    <body>
       @include('components.fb-js')
