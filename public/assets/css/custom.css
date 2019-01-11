@@ -251,7 +251,7 @@ body  {
 }
 
 @media only screen { .dropdown:hover>.dropdown-menu {
-    display: block;
+    display: block !important;
   }
 }
 
