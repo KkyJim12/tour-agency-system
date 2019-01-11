@@ -34,7 +34,7 @@ Royaltour | เที่ยว {{$country->country_name}}
         <div class="card">
            <a href="/tour/{{ isset($show_tour->tour_seo_url) && $show_tour->tour_seo_url != "" ? $show_tour->tour_seo_url : $show_tour->_id }}">
              <img src="/assets/img/upload/tour/img/{{$show_tour->tour_img}}">
-             <p class='text-right'>ลดเหลือ</br><span>{{$show_tour->tour_price}}฿</span></p>
+             <p class='text-right'>ราคา</br><span>{{$show_tour->tour_price}}฿</span></p>
            </a>
            <div class="card-body">
               <a class="card-body-link" href="#">
@@ -44,8 +44,12 @@ Royaltour | เที่ยว {{$country->country_name}}
                    {!!$show_tour->tour_hightlight!!}
                  </div>
                  <h2>สายการบิน<span><img src="/assets/img/upload/airline/{{$show_tour->tour_airline_img}}" alt="airline_suggest"> {{$show_tour->tour_airline_name}}</span></h2>
-                 <h4>ราคาเริ่มต้น<span>{{number_format($show_tour->tour_discount)}}</span></h4>
-                 <h3>ลดเหลือ<span>{{number_format($show_tour->tour_price)}}฿</span></h3>
+                 @if($show_tour->tour_discount)
+                 <h4>ราคาก่อนลด<span>{{number_format($show_tour->tour_discount)}}</span></h4>
+                 @else
+                 <br>
+                 @endif
+                 <h3>ราคา<span>{{number_format($show_tour->tour_price)}}฿</span></h3>
                  <section class='text-center'><i class="far fa-clock"></i><span>
                    @if(formatDateThat(date('F',strtotime($show_tour->tour_start_date[0]))) == formatDateThat(date('F',strtotime($show_tour->tour_end_date[0]))))
                      {{formatDateThat(date('F',strtotime($show_tour->tour_start_date[0])))}}

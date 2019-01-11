@@ -38,7 +38,7 @@
                       </a>
                    </div>
                    <div class="col-6 tour-file">
-                      <a class="btn btnFile" href="#" download>
+                      <a class="btn btnFile" href="/assets/img/upload/tour/pdf/{{$show_tour_discount->tour_pdf}}" download>
                       <i class="fas fa-file-pdf"></i>  ไฟล์โปรแกรม
                       </a>
                    </div>
