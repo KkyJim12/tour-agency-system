@@ -33,7 +33,7 @@ Royaltour | ภาพประทับใจ
         <h1>{{$show_continent->continent_name}}</h1>
       </div>
       @foreach($show_continent->subcat as $subcat)
-      <div class="col-sm-4 col-md-2 col-lg-1 mt-3" style="height:100px;">
+      <div class="col-sm-4 col-md-2 col-lg-1 mt-3">
         <a class="card-body-link" href="/gallery/{{$subcat->_id}}">
            <section>
              <figure class='mb-0'>
