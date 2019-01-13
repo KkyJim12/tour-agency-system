@@ -20,7 +20,7 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
       <script src="/assets/js/jquery.touchSwipe.min.js" type="text/javascript"></script>
       <script src="/assets/js/responsive_bootstrap_carousel.js" type="text/javascript"></script>
-      <script src="/assets/js/ion.rangeSlider.min.js" type="text/javascript"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script>
       <script src="/assets/js/owl.carousel.min.js" type="text/javascript"></script>
       <link type="text/css" rel="stylesheet" href="/assets/css/lightslider.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.2/css/lightgallery.css" />
