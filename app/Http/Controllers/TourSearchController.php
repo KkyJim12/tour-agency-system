@@ -22,8 +22,8 @@ class TourSearchController extends Controller
             $minimumPrice =  $priceFilter[0];
             $maximumPrice =  $priceFilter[1];
         } catch (\Throwable $priceError) {
-            $minimumPrice = 0;
-            $maximumPrice = 0;
+            $minimumPrice = '0';
+            $maximumPrice = '0';
         }
 
         $searchConditions = [];
