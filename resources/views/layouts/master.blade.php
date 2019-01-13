@@ -18,6 +18,7 @@
       <script src="/assets/js/jquery-3.3.1.min.js" type="text/javascript"></script>
       <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
       <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+      <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
       <script src="/assets/js/jquery.touchSwipe.min.js" type="text/javascript"></script>
       <script src="/assets/js/responsive_bootstrap_carousel.js" type="text/javascript"></script>
