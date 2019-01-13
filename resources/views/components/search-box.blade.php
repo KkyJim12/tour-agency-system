@@ -70,7 +70,7 @@
 
 
 <!-- Mobile Search Box -->
-<div class="container">
+<div class="container mt-3">
   <div class="row">
     <div class="col-12">
       <p class="d-md-block d-lg-none d-xl-none">
