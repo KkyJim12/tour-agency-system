@@ -18,13 +18,14 @@ class TourSearchController extends Controller
 
         // Prep filter price
         try {
-            $priceFilter = $request->filter_price;
-            $minimumPrice =  $priceFilter[0];
-            $maximumPrice =  $priceFilter[1];
+            $priceFilter = explode(";", $request->filter_price);
+            $minimumPrice = (integer) $priceFilter[0];
+            $maximumPrice = (integer) $priceFilter[1];
         } catch (\Throwable $priceError) {
-            $minimumPrice = '0';
-            $maximumPrice = '0';
+            $minimumPrice = 0;
+            $maximumPrice = 0;
         }
+
 
         $searchConditions = [];
 
@@ -50,10 +51,10 @@ class TourSearchController extends Controller
             $searchConditions[] = ["tour_airline_id", "=", $request->filter_airline];
         }
         if ($minimumPrice >= 0) {
-            $searchConditions[] = ["tour_price[0]", ">=", $minimumPrice];
+            $searchConditions[] = [(integer) "tour_price[0]", ">=", $minimumPrice];
         }
         if ($maximumPrice >= 0 && $maximumPrice > $minimumPrice) {
-            $searchConditions[] = ["tour_price[0]", "<=", $maximumPrice];
+            $searchConditions[] = [(integer) "tour_price[0]", "<=", $maximumPrice];
         }
 
         // Get all matching tours
