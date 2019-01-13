@@ -29,7 +29,7 @@
               <a href='/tour/{{ isset($show_all_tour_holiday->tour_seo_url) && $show_all_tour_holiday->tour_seo_url != "" ? $show_all_tour_holiday->tour_seo_url : $show_all_tour_holiday->_id }}'>
                 <h1>{{str_limit($show_all_tour_holiday->tour_name,50)}}</h1>
                 <h2>วันที่ {{date('d/m/Y',strtotime($show_all_tour_holiday->tour_start_date[0]))}} ถึง {{date('d/m/Y',strtotime($show_all_tour_holiday->tour_end_date[0]))}}</h2>
-                <p>ราคา {{number_format($show_all_tour_holiday->tour_price)}} บาท</p>
+                <p>ราคา {{number_format($show_all_tour_holiday->tour_price[0])}} บาท</p>
               </a>
             </div>
             @endforeach
@@ -54,7 +54,7 @@
               <a href='/tour/{{ isset($show_all_tour_holiday->tour_seo_url) && $show_all_tour_holiday->tour_seo_url != "" ? $show_all_tour_holiday->tour_seo_url : $show_all_tour_holiday->_id }}'>
                 <h1>{{str_limit($subholiday->tour_name,50)}}</h1>
                 <h2>วันที่ {{date('d/m/Y',strtotime($subholiday->tour_start_date[0]))}} ถึง {{date('d/m/Y',strtotime($subholiday->tour_end_date[0]))}}</h2>
-                <p>ราคา {{number_format($subholiday->tour_price)}} บาท</p>
+                <p>ราคา {{number_format($subholiday->tour_price[0])}} บาท</p>
               </a>
             </div>
             @endforeach

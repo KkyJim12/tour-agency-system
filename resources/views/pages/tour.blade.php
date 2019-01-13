@@ -40,7 +40,7 @@
                    <h5>ราคาเริ่มต้น</h5>
                 </div>
                 <div class="col-7">
-                   <h4 class='text-right'><span>{{number_format($tour->tour_price)}}</span> บาท/ท่าน</h4>
+                   <h4 class='text-right'><span>{{number_format($tour->tour_price[0])}}</span> บาท/ท่าน</h4>
                 </div>
                 <div class="col-6">
                     <h5>ติดต่อสอบถามโปรแกรมทัวร์</h5>
