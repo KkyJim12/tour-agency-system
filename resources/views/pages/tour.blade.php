@@ -109,19 +109,19 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach(array_combine($tour->tour_start_date,$tour->tour_end_date,$tour->tour_price) as $tour_start_date=>$tour_end_date=>$tour_price)
-                      <tr>
-                        <td class='text-center'>{{date('d/m/Y',strtotime($tour_start_date))}}</td>
-                        <td class='text-center'>{{date('d/m/Y',strtotime($tour_end_date))}}</td>
-                        <td class='text-center'>{{number_format($tour_price)}}</td>
-                        <td class='text-center'>
-                          <!-- Button trigger modal -->
-                          <button type="button" class="btn btnCheckin py-1 px-3" data-toggle="modal" data-target="#modal{{$loop->iteration}}">
-                            จอง
-                          </button>
-                        </td>
-                      </tr>
-                      @endforeach
+                        @foreach($tour->tour_start_date as $tc => $tsd)
+                        <tr>
+                          <td class='text-center'>{{date('d/m/Y',strtotime($tour->tour_start_date[$tc]))}}</td>
+                          <td class='text-center'>{{date('d/m/Y',strtotime($tour->tour_end_date[$tc]))}}</td>
+                          <td class='text-center'>{{number_format($tour->tour_price[$tc])}}</td>
+                          <td class='text-center'>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btnCheckin py-1 px-3" data-toggle="modal" data-target="#modal{{$loop->iteration}}">
+                              จอง
+                            </button>
+                          </td>
+                        </tr>
+                        @endforeach
                     </tbody>
                   </table>
                 </div>
@@ -174,13 +174,13 @@
   </div>
 </div>
 
-@foreach(array_combine($tour->tour_start_date,$tour->tour_end_date) as $tour_start_date=>$tour_end_date)
+@foreach($tour->tour_start_date as $tc => $tsd)
 <!-- Modal -->
 <div style="text-align:left;" class="modal fade" id="modal{{$loop->iteration}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{str_limit($tour->tour_name,35)}} </br> {{date('d/m/Y',strtotime($tour_start_date))}} ถึง {{date('d/m/Y',strtotime($tour_end_date))}} | ราคา {{number_format($tour->tour_price)}} บาท/คน</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{str_limit($tour->tour_name,35)}} </br> {{date('d/m/Y',strtotime($tour->tour_start_date[$tc]))}} ถึง {{date('d/m/Y',strtotime($tour->tour_end_date[$tc]))}} | ราคา {{number_format($tour->tour_price[$tc])}} บาท/คน</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -204,8 +204,8 @@
             <textarea class="form-control" name="reserve_info" rows="6" cols="80" placeholder="รายละเอียดเพิ่มเติม"></textarea>
           </div>
           <input type="hidden" name="reserve_tour_id" value="{{$tour->_id}}">
-          <input type="hidden" name="reserve_tour_start_date" value="{{$tour_start_date}}">
-          <input type="hidden" name="reserve_tour_end_date" value="{{$tour_end_date}}">
+          <input type="hidden" name="reserve_tour_start_date" value="{{$tour->tour_start_date[$tc]}}">
+          <input type="hidden" name="reserve_tour_end_date" value="{{$tour->tour_end_date[$tc]}}">
           @csrf
           <button class="btn btn-success form-control" type="submit" name="button">ลงชื่อจอง</button>
         </form>
