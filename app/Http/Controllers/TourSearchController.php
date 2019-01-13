@@ -18,9 +18,9 @@ class TourSearchController extends Controller
 
         // Prep filter price
         try {
-            $priceFilter = explode(";", $request->filter_price);
-            $minimumPrice = (integer) $priceFilter[0];
-            $maximumPrice = (integer) $priceFilter[1];
+            $priceFilter = $request->filter_price;
+            $minimumPrice =  $priceFilter[0];
+            $maximumPrice =  $priceFilter[1];
         } catch (\Throwable $priceError) {
             $minimumPrice = 0;
             $maximumPrice = 0;
