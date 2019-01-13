@@ -160,7 +160,7 @@
           </div>
           <div class="form-group col-12 mt-3 mt-lg-0">
              <label>ช่วงราคา</label>
-             <input type="text" id="filter_price" name="filter_price" value="" />
+             <input type="text" id="filter_price2" name="filter_price" value="" />
           </div>
           @csrf
           <div class="form-group mb-0 mt-4 mt-lg-0 col-12">
