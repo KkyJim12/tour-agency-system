@@ -84,7 +84,7 @@
 
 
          <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
-            <label>ราคา</label>
+            <label>ราคา (1)</label>
             <input class="form-control" type="number" name="tour_price[]" placeholder="ราคา" value="{{$tour->tour_price[0]}}">
          </div>
          <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
@@ -109,7 +109,7 @@
                     @if(isset($tour->tour_start_date[$actualIndex]) and isset($tour->tour_end_date[$actualIndex]) and isset($tour->tour_price[$actualIndex] ))
                     <span>
                         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
-                           <label>ราคา</label>
+                           <label>ราคา ({{ $newTdIndex }})</label>
                            <input class="form-control" type="number" name="tour_price[]" placeholder="ราคา" value="{{$tour->tour_price[$actualIndex]}}">
                         </div>
                         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
