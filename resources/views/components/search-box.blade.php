@@ -1,11 +1,11 @@
 <!--Search Box-->
-<div class="search-field d-none d-sm-none d-md-block">
+<div class="search-field d-none d-sm-none d-md-none d-lg-block">
    <div class="container search-box">
       <div class="row">
-         <div class="col-md-12">
+         <div class="col-lg-12">
             <h3 class='text-left'><img src='/assets/img/filter/worldwide.png' class='icon-title'>ค้นหาทัวร์</h3>
          </div>
-         <div class="col-md-12">
+         <div class="col-lg-12">
             <div class="tab-content" id="myTabContent">
                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                   <form action="/search-result" method="get">
