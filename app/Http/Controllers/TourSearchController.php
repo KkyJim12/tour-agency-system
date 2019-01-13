@@ -50,10 +50,10 @@ class TourSearchController extends Controller
             $searchConditions[] = ["tour_airline_id", "=", $request->filter_airline];
         }
         if ($minimumPrice >= 0) {
-            $searchConditions[] = [array_map("intval","tour_price"), ">=", $minimumPrice];
+            $searchConditions[] = ["tour_price[0]", ">=", $minimumPrice];
         }
         if ($maximumPrice >= 0 && $maximumPrice > $minimumPrice) {
-            $searchConditions[] = [array_map("intval","tour_price"), "<=", $maximumPrice];
+            $searchConditions[] = ["tour_price[0]", "<=", $maximumPrice];
         }
 
         // Get all matching tours
