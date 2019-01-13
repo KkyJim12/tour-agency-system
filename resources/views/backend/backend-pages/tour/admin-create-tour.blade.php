@@ -24,14 +24,6 @@
             <input class="form-control" type="text" name="tour_name" placeholder="ชื่อทัวร์">
          </div>
          <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
-            <label>ราคา</label>
-            <input class="form-control" type="number" name="tour_price" placeholder="ราคา">
-         </div>
-         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
-            <label>ราคาก่อนลด</label>
-            <input class="form-control" type="number" name="tour_discount" placeholder="ราคาก่อนลด">
-         </div>
-         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
             <label>พนักงาน</label>
             <select class="form-control" name="tour_staff">
                <option>เลือกพนักงาน</option>
@@ -85,10 +77,17 @@
                <option value="12">ธันวาคม</option>
             </select>
          </div>
+         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+            <label>ราคาก่อนลด</label>
+            <input class="form-control" type="number" name="tour_discount" placeholder="ราคาก่อนลด">
+         </div>
          <!-- Add Day Function -->
 
          <hr />
-
+         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+            <label>ราคา (1)</label>
+            <input class="form-control" type="number" name="tour_price[]" placeholder="ราคา">
+         </div>
          <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
             <label>วันเดินทาง (1)</label>
             <input class="form-control" type="date" name="tour_start_date[]" placeholder="วันเดินทาง">
@@ -175,6 +174,9 @@
     $("#btnAddTourDate").click(function(e){
         e.preventDefault();
         $("#divAdditionalTourDates").append("<span class=\"additionalTourDateItemGrp\"></div><hr /><div class=\"input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input\"> \
+           <label>ราคา (" + tdIndex + ")</label> \
+           <input class=\"form-control\" type=\"number\" name=\"tour_price[]\" placeholder=\"ราคา\"> \
+        </div> \<div class=\"input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input\"> \
            <label>วันเดินทาง (" + tdIndex + ")</label> \
            <input class=\"form-control\" type=\"date\" name=\"tour_start_date[]\" placeholder=\"วันเดินทาง\"> \
         </div> \
