@@ -351,6 +351,8 @@ a:hover {
 /** End Mobile Scrollbar **/
 
 /** Dropdown Mobile **/
-
+.dropdown-backdrop{
+    position: static !important;
+}
 
 /** End Dropdown Mobile **/

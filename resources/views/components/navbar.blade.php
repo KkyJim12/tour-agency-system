@@ -87,7 +87,7 @@
                   </div>
                </div>
             </li>
-            <li class="nav-item mr-3 d-lg-none d-md-block">
+            <li class="nav-item mr-3 d-lg-none">
               <div class="accordion" id="accordionExample">
                 <a class="nav-link" data-toggle="collapse" data-target="#tourlist" aria-expanded="true" aria-controls="tourlist">
                   <i class="fas fa-plus-square"></i> ทัวร์ต่างประเทศ
