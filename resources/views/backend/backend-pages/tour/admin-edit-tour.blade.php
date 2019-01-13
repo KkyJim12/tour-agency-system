@@ -82,6 +82,7 @@
             <input class="form-control" type="number" name="tour_discount" placeholder="ราคาก่อนลด" value="{{$tour->tour_discount}}">
          </div>
 
+         <hr />
 
          <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
             <label>ราคา (1)</label>
@@ -106,7 +107,8 @@
                 @if($fiSkipped)
                     <?php $fiSkipped = true; ?>
                 @else
-                    @if(isset($tour->tour_start_date[$actualIndex]) and isset($tour->tour_end_date[$actualIndex]) and isset($tour->tour_price[$actualIndex] ))
+                    @if(isset($tour->tour_start_date[$actualIndex]) and isset($tour->tour_end_date[$actualIndex]) and isset($tour->tour_price[$actualIndex]) )
+                    <hr />
                     <span>
                         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
                            <label>ราคา ({{ $newTdIndex }})</label>
