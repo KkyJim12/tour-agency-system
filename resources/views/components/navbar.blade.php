@@ -89,7 +89,7 @@
             </li>
             <li class="nav-item mr-3 d-lg-none">
               <div class="accordion" id="accordionExample">
-                <button type="button" class="btn form-control nav-link text-left" data-toggle="collapse" data-target="#tourlist" aria-expanded="true" aria-controls="tourlist">
+                <button type="button" class="btn form-control nav-link text-left" data-toggle="collapse" data-target="#tourlist" aria-expanded="true" aria-controls="tourlist" style="background-color:ghostwhite">
                   <i class="fas fa-plus-square"></i> ทัวร์ต่างประเทศ
                 </button>
                 <div id="tourlist" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
