@@ -1,5 +1,5 @@
 <!--Search Box-->
-<div class="search-field">
+<div class="search-field d-none d-sm-none">
    <div class="container search-box">
       <div class="row">
          <div class="col-md-12">
