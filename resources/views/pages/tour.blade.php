@@ -109,11 +109,11 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach(array_combine($tour->tour_start_date,$tour->tour_end_date) as $tour_start_date=>$tour_end_date)
+                      @foreach(array_combine($tour->tour_start_date,$tour->tour_end_date,$tour->tour_price) as $tour_start_date=>$tour_end_date=>$tour_price)
                       <tr>
                         <td class='text-center'>{{date('d/m/Y',strtotime($tour_start_date))}}</td>
                         <td class='text-center'>{{date('d/m/Y',strtotime($tour_end_date))}}</td>
-                        <td class='text-center'>{{number_format($tour->tour_price)}}</td>
+                        <td class='text-center'>{{number_format($tour_price)}}</td>
                         <td class='text-center'>
                           <!-- Button trigger modal -->
                           <button type="button" class="btn btnCheckin py-1 px-3" data-toggle="modal" data-target="#modal{{$loop->iteration}}">
