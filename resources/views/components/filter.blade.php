@@ -94,7 +94,7 @@
     <div class="filter mb-4 col-12 d-md-block d-lg-none d-xl-none">
        <h3><img src='/assets/img/filter/globe.png' class='icon-title'>ค้นหาโปรแกรมทัวร์</h3>
        <form class="row" action="/filter-result" method="get">
-          <div class="form-group col-3">
+          <div class="form-group col-12">
              <label>สถานที่จะไป</label>
              <div class="input-group">
                 <div class="input-group-prepend">
@@ -103,7 +103,7 @@
                 <input class="form-control" type="text" name="filter_name" value="" placeholder="ชื่อประเทศ/เมือง">
              </div>
           </div>
-          <div class="form-group col-3">
+          <div class="form-group col-12">
              <label>ประเทศ/เมือง</label>
              <div class="input-group">
                <div class="input-group-prepend">
@@ -117,7 +117,7 @@
                 </select>
              </div>
           </div>
-          <div class="form-group col-3">
+          <div class="form-group col-12">
              <label>วันเดินทาง</label>
              <div class="input-group">
                 <div class="input-group-prepend">
@@ -126,7 +126,7 @@
                 <input class="form-control" type="date" name="filter_start_date" value="" placeholder="วันไป">
              </div>
           </div>
-          <div class="form-group col-3">
+          <div class="form-group col-12">
              <label>วันกลับ</label>
              <div class="input-group">
                 <div class="input-group-prepend">
@@ -135,7 +135,7 @@
                 <input class="form-control" type="date" name="filter_end_date" value="" placeholder="วันกลับ">
              </div>
           </div>
-          <div class="form-group col-3">
+          <div class="form-group col-12">
              <label>สายการบิน</label>
              <div class="input-group">
                 <div class="input-group-prepend">
@@ -149,7 +149,7 @@
                 </select>
              </div>
           </div>
-          <div class="col-3">
+          <div class="col-12">
              <label>รหัสทัวร์</label>
              <div class="input-group">
                 <div class="input-group-prepend">
@@ -158,7 +158,7 @@
                 <input class="form-control" type="text" name="filter_code" value="" placeholder="รหัสทัวร์">
              </div>
           </div>
-          <div class="form-group col-6 mt-3 mt-lg-0">
+          <div class="form-group col-12 mt-3 mt-lg-0">
              <label>ช่วงราคา</label>
              <input type="text" id="filter_price" name="filter_price" value="" />
           </div>
