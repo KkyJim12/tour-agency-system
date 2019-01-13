@@ -5,8 +5,8 @@
            <h3 class="title"><img src='/assets/img/home/icn-recommend.png' class='icon-title'>โปรแกรมทัวร์ยอดนิยม</h3>
         </div>
      </div>
-     @foreach($tour_suggest as $show_tour_suggest)
      <div class='row recommend'>
+       @foreach($tour_suggest as $show_tour_suggest)
        <div class='col-6 col-md-4 col-lg-3 mb-4'>
          <div>
            <figure>
@@ -21,7 +21,7 @@
            </a>
          </div>
        </div>
+       @endforeach
      </div>
-     @endforeach
   </div>
 </div>
