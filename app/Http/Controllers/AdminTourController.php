@@ -36,7 +36,7 @@ class AdminTourController extends Controller
       'tour_sort' => 'required',
       'tour_img' => 'required|image|max:2048',
       'tour_other_img' => 'required',
-      'tour_pdf' => 'mimes:pdf|max:10000'
+      'tour_pdf' => 'mimes:pdf|max:10000|nullable'
       ]);
 
 
@@ -85,7 +85,7 @@ class AdminTourController extends Controller
 
         if ($request->hasFile('tour_pdf')) {
             $pdf = $request->file('tour_pdf');
-            $name = time().'.'.$pdf->getClientOriginalExtension();
+            $name = uniqid().'.'.$pdf->getClientOriginalExtension();
             $destinationPath = public_path('/assets/img/upload/tour/pdf');
             $pdf->move($destinationPath, $name);
             $tour->tour_pdf = $name;
@@ -143,7 +143,7 @@ class AdminTourController extends Controller
       'tour_condition' => 'required',
       'tour_sort' => 'required',
       'tour_img' => 'image|max:2048',
-      'tour_pdf' => 'mimes:pdf|max:10000'
+      'tour_pdf' => 'mimes:pdf|max:10000|nullable'
       ]);
 
         /* End Validate */
@@ -190,7 +190,7 @@ class AdminTourController extends Controller
 
         if ($request->hasFile('tour_pdf')) {
             $pdf = $request->file('tour_pdf');
-            $name = time().'.'.$pdf->getClientOriginalExtension();
+            $name = uniqid().'.'.$pdf->getClientOriginalExtension();
             $destinationPath = public_path('/assets/img/upload/tour/pdf');
             $pdf->move($destinationPath, $name);
             $tour->tour_pdf = $name;
