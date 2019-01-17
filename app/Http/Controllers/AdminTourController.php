@@ -17,8 +17,7 @@ class AdminTourController extends Controller
     public function AdminCreateTourProcess(Request $request)
     {
         /* Validate First */
-
-        $request->validate([
+        $validate = $request->validate([
       'tour_staff' => 'required',
       'tour_country' => 'required',
       'tour_airline' => 'required',
@@ -34,13 +33,11 @@ class AdminTourController extends Controller
       'tour_hightlight' => 'required',
       'tour_condition' => 'required',
       'tour_sort' => 'required',
-      'tour_img' => 'required|image|max:2048',
-      'tour_other_img' => 'required',
-      'tour_pdf' => 'mimes:pdf|max:10000'
+      'tour_img' => 'nullable|image|max:2048',
+      'tour_other_img' => 'nullable|image|max:2048',
+      'tour_pdf' => 'nullable|mimes:pdf|max:10000'
       ]);
-
-
-
+        
         /* End Validate */
 
         $staff = Staff::find($request->tour_staff);
@@ -142,8 +139,9 @@ class AdminTourController extends Controller
       'tour_hightlight' => 'required',
       'tour_condition' => 'required',
       'tour_sort' => 'required',
-      'tour_img' => 'image|max:2048',
-      'tour_pdf' => 'mimes:pdf|max:10000'
+      'tour_img' => 'nullable|image|max:2048',
+      'tour_other_img' => 'nullable|image|max:2048',
+      'tour_pdf' => 'nullable|mimes:pdf|max:10000'
       ]);
 
         /* End Validate */

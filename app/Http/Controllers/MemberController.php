@@ -11,9 +11,8 @@ class MemberController extends Controller
 
     /** Admin Login Process **/
     public function LoginProcess(Request $request)  {
-
-      if (User::where('user_email',$request->user_email)->count() == 1)  {
-        $that_user = User::where('user_email',$request->user_email)->first();
+      $that_user = User::where('user_email',$request->user_email)->first();
+      if ($that_user)  {
         if ($that_user->user_password == $request->user_password) {
 
           session([
