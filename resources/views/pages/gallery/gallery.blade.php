@@ -26,23 +26,20 @@ Royaltour | ภาพประทับใจ
       </div>
     </div>
   </div>
-  <div class="container list">
+
+  <div class="container galleryCountryTemp">
     <div class="row">
       @foreach($continent as $show_continent)
       <div class="col-12 mb-3 mt-4">
         <h1>{{$show_continent->continent_name}}</h1>
       </div>
       @foreach($show_continent->subcat as $subcat)
-      <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-        <a class="card-body-link" href="/gallery/{{$subcat->_id}}">
-           <section>
-             <figure class='mb-0'>
-               <img src="/assets/img/upload/country/{{$subcat->country_img}}" alt="country_img">
-             </figure>
-              <div class="card-body">
-                 <p class="card-text">{{$subcat->country_name}}</p>
-              </div>
-           </section>
+      <div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-3">
+        <a href="/gallery/{{$subcat->_id}}">
+          <span>
+            <img src="/assets/img/upload/country/{{$subcat->country_img}}" alt="country_img">
+          </span>
+          <span><p class='mb-0 d-inline-block'>{{$subcat->country_name}}</p></span>
         </a>
       </div>
       @endforeach

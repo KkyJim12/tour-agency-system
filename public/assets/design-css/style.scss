@@ -1,3 +1,9 @@
+.navCountry { padding: 5px 15px; border: 1px solid #e3e3e3; border-radius: 5px; color: #333; box-shadow: 2px 2px 12px 0px #bfbfbf; margin-bottom: 10px;
+  img { height: 30px; width: auto; }
+}
+.tempCountry { 
+  .dropdown-item { padding-left: 0; padding-right: 0; }
+}
 .search-field { padding: 20px!important; }
 .headerTop {
   .first-contact { color: #a3a3a3; font-size: 1em;
@@ -236,6 +242,15 @@
       }
     }
   }
+}
+
+.galleryCountryTemp { background-color: #fff; border: 1px solid #f3f3f3; box-shadow: 2px 2px 12px 0px rgba(191,191,191,1); padding-left: 25px; padding-right: 25px; border-radius: 5px;
+  h1 { font-size: 1.2em; font-weight: bold; text-transform: uppercase; border-bottom: 1px dashed #e3e3e3; padding-bottom: 10px; margin-bottom: 25px; }
+  a { display: block; padding: 5px 15px; border: 1px solid #e3e3e3; border-radius: 5px; color: #333; box-shadow: 2px 2px 12px 0px rgba(191,191,191,1);
+    &:hover , &:focus ,&:active { background-color: #024dc1; color: #fff; }
+    img { width: 30%; height: auto; margin-right: 10px; }
+  }
+  p { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; }
 }
 
 .homeCountry {
