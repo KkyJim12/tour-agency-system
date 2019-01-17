@@ -85,7 +85,7 @@ class AdminTourController extends Controller
 
         if ($request->hasFile('tour_pdf')) {
             $pdf = $request->file('tour_pdf');
-            $name = uniqid().'.'.$pdf->getClientOriginalExtension();
+            $name = time().'.'.$pdf->getClientOriginalExtension();
             $destinationPath = public_path('/assets/img/upload/tour/pdf');
             $pdf->move($destinationPath, $name);
             $tour->tour_pdf = $name;
@@ -191,7 +191,7 @@ class AdminTourController extends Controller
 
         if ($request->hasFile('tour_pdf')) {
             $pdf = $request->file('tour_pdf');
-            $name = uniqid().'.'.$pdf->getClientOriginalExtension();
+            $name = time().'.'.$pdf->getClientOriginalExtension();
             $destinationPath = public_path('/assets/img/upload/tour/pdf');
             $pdf->move($destinationPath, $name);
             $tour->tour_pdf = $name;
