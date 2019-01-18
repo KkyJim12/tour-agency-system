@@ -63,7 +63,15 @@
                      <p class='text-uppercase'>สายการบิน:<span>{{$tour->tour_airline_name}}</span> </p>
                    </div>
                    <div class="col-md-6 text-left">
-                     <p class='text-uppercase'>ช่วงเวลา:<span>{{date('d/m/Y',strtotime($tour->tour_start_date[0]))}} ถึง {{date('d/m/Y',strtotime($tour->tour_end_date[0]))}}</span> </p>
+                     <p class='text-uppercase'>ช่วงเวลา:
+                       <span>
+                         @if(formatDateThat(date('F',strtotime($tour->tour_start_date[0]))) == formatDateThat(date('F',strtotime($tour->tour_end_date[0]))))
+                           {{formatDateThat(date('F',strtotime($tour->tour_start_date[0])))}}
+                         @else
+                           {{formatDateThat(date('F',strtotime($tour->tour_start_date[0])))}} ถึง {{formatDateThat(date('F',strtotime($tour->tour_end_date[0])))}}
+                         @endif
+                       </span>
+                     </p>
                    </div>
                 </div>
              </div>
