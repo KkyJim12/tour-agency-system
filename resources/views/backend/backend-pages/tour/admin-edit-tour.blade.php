@@ -24,6 +24,10 @@
             <input class="form-control" type="text" name="tour_name" placeholder="ชื่อทัวร์" value="{{$tour->tour_name}}">
          </div>
          <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+            <label>ราคาทัวร์ที่จะโชว์</label>
+            <input class="form-control" type="number" name="tour_price_show" placeholder="ราคาทัวร์ที่จะโชว์" value="{{$tour->tour_price_show}}">
+         </div>
+         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
             <label>พนักงาน</label>
             <select class="form-control" name="tour_staff">
                <option>เลือกพนักงาน</option>

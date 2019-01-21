@@ -26,7 +26,7 @@
          <div class="card">
             <a href="/tour/{{ isset($show_tour->tour_seo_url) && $show_tour->tour_seo_url != "" ? $show_tour->tour_seo_url : $show_tour->_id }}">
               <img src="/assets/img/upload/tour/img/{{$show_tour->tour_img}}">
-              <p class='text-right'>ราคา</br><span>{{number_format($show_tour->tour_price[0])}}฿</span></p>
+              <p class='text-right'>ราคา</br><span>{{number_format($show_tour->tour_price_show)}}฿</span></p>
             </a>
             <div class="card-body">
                <a class="card-body-link" href="#">
@@ -41,7 +41,7 @@
                   @else
                   <br>
                   @endif
-                  <h3>ราคา<span>{{number_format($show_tour->tour_price[0])}}฿</span></h3>
+                  <h3>ราคา<span>{{number_format($show_tour->tour_price_show)}}฿</span></h3>
                   <section class='text-center'><i class="far fa-clock"></i><span>
                     @if(formatDateThat(date('F',strtotime($show_tour->tour_start_date[0]))) == formatDateThat(date('F',strtotime($show_tour->tour_end_date[0]))))
                       {{formatDateThat(date('F',strtotime($show_tour->tour_start_date[0])))}}

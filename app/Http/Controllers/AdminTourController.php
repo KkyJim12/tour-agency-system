@@ -24,6 +24,7 @@ class AdminTourController extends Controller
       'tour_airline' => 'required',
       'tour_code' => 'required|max:255',
       'tour_name' => 'required|max:255',
+      'tour_price_show' => 'required',
       'tour_price' => 'required',
       'tour_month' => 'required',
       'tour_start_date' => 'required',
@@ -49,6 +50,7 @@ class AdminTourController extends Controller
         $tour = new Tour;
         $tour->tour_code = $request->tour_code;
         $tour->tour_name = $request->tour_name;
+        $tour->tour_price_show = (integer)$request->tour_price_show;
         $tour->tour_price = array_map('intval',$request->tour_price);
         $tour->tour_discount = (integer)$request->tour_discount;
         $tour->tour_staff_id = $staff->_id;
@@ -132,6 +134,7 @@ class AdminTourController extends Controller
       'tour_airline' => 'required',
       'tour_code' => 'required|max:255',
       'tour_name' => 'required|max:255',
+      'tour_price_show' => 'required',
       'tour_price' => 'required',
       'tour_month' => 'required',
       'tour_start_date' => 'required',
@@ -155,6 +158,7 @@ class AdminTourController extends Controller
         $tour = Tour::find($request->tour_id);
         $tour->tour_code = $request->tour_code;
         $tour->tour_name = $request->tour_name;
+        $tour->tour_price_show = (integer) $request->tour_price_show;
         $tour->tour_price = array_map('intval',$request->tour_price);
         $tour->tour_discount = (integer)$request->tour_discount;
         $tour->tour_staff_id = $staff->_id;

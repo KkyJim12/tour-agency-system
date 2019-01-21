@@ -11,7 +11,7 @@
            <div class="card">
               <a href="/tour/{{ isset($show_tour_discount->tour_seo_url) && $show_tour_discount->tour_seo_url != "" ? $show_tour_discount->tour_seo_url : $show_tour_discount->_id }}">
                 <img src="/assets/img/upload/tour/img/{{$show_tour_discount->tour_img}}">
-                <p class='text-right'>ลดเหลือ</br><span>{{number_format($show_tour_discount->tour_price[0])}}฿</span></p>
+                <p class='text-right'>ลดเหลือ</br><span>{{number_format($show_tour_discount->tour_price_show)}}฿</span></p>
               </a>
               <div class="card-body">
                  <a class="card-body-link" href="#">
@@ -22,7 +22,7 @@
                     </div>
                     <h2>สายการบิน<span><img src="/assets/img/upload/airline/{{$show_tour_discount->tour_airline_img}}" alt="airline_suggest"> {{$show_tour_discount->tour_airline_name}}</span></h2>
                     <h4>ราคาเริ่มต้น<span>{{number_format($show_tour_discount->tour_discount)}}</span></h4>
-                    <h3>ลดเหลือ<span>{{number_format($show_tour_discount->tour_price[0])}}฿</span></h3>
+                    <h3>ลดเหลือ<span>{{number_format($show_tour_discount->tour_price_show)}}฿</span></h3>
                     <section class='text-center'><i class="far fa-clock"></i><span>
                       @if(formatDateThat(date('F',strtotime($show_tour_discount->tour_start_date[0]))) == formatDateThat(date('F',strtotime($show_tour_discount->tour_end_date[0]))))
                         {{formatDateThat(date('F',strtotime($show_tour_discount->tour_start_date[0])))}}

@@ -177,8 +177,7 @@
     box-shadow: 2px 2px 12px 0px #bfbfbf; }
     .tempCategory .card > a img {
       width: 100%;
-      height: 100%;
-      object-fit: cover; }
+      height: 100%; }
     .tempCategory .card > a p {
       position: absolute;
       bottom: 0;
