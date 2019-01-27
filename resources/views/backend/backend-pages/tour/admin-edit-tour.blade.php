@@ -116,16 +116,16 @@
                     <hr />
                     <span>
                         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
-                           <label>ราคา ({{ $newTdIndex }})</label>
-                           <input class="form-control" type="number" name="tour_price[]" placeholder="ราคา" value="{{$tour->tour_price[$actualIndex]}}">
-                        </div>
-                        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
                            <label>วันเดินทาง ({{ $newTdIndex }})</label>
                            <input class="form-control" type="date" name="tour_start_date[]" placeholder="วันเดินทาง" value="{{$tour->tour_start_date[$actualIndex]}}">
                         </div>
                         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
                            <label>วันกลับ ({{ $newTdIndex }})</label>
                            <input class="form-control" type="date" name="tour_end_date[]" placeholder="วันกลับ" value="{{$tour->tour_end_date[$actualIndex]}}">
+                        </div>
+                        <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+                           <label>ราคา ({{ $newTdIndex }})</label>
+                           <input class="form-control" type="number" name="tour_price[]" placeholder="ราคา" value="{{$tour->tour_price[$actualIndex]}}">
                         </div>
                         <a class="btn btn-sm btn-danger btnDeleteThisDateGroup" href="#">ลบวันเดินทาง/วันกลับชุดนี้ ({{$newTdIndex}})</a>
                     </span>
