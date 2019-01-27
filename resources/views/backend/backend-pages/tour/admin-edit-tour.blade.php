@@ -218,11 +218,11 @@
     $("#btnAddTourDate").click(function(e){
         e.preventDefault();
         $("#divAdditionalTourDates").append("<span class=\"additionalTourDateItemGrp\"></div><hr /><div class=\"input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input\"> \
+        <label>วันเดินทาง (" + tdIndex + ")</label> \
+        <input class=\"form-control\" type=\"date\" name=\"tour_start_date[]\" placeholder=\"วันเดินทาง\"> \
+        </div> \<div class=\"input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input\"> \
         <label>วันกลับ (" + tdIndex + ")</label> \
         <input class=\"form-control\" type=\"date\" name=\"tour_end_date[]\" placeholder=\"วันกลับ\"> \
-        </div> \<div class=\"input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input\"> \
-           <label>วันเดินทาง (" + tdIndex + ")</label> \
-           <input class=\"form-control\" type=\"date\" name=\"tour_start_date[]\" placeholder=\"วันเดินทาง\"> \
         </div> \
         <div class=\"input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input\"> \
         <label>ราคา (" + tdIndex + ")</label> \
