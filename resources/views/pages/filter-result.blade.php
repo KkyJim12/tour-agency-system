@@ -43,10 +43,10 @@
                   @endif
                   <h3>ราคา<span>{{number_format($show_tour->tour_price_show)}}฿</span></h3>
                   <section class='text-center'><i class="far fa-clock"></i><span>
-                    @if(formatDateThat(date('F',strtotime($show_tour->tour_start_date[0]))) == formatDateThat(date('F',strtotime($show_tour->tour_end_date[0]))))
-                      {{formatDateThat(date('F',strtotime($show_tour->tour_start_date[0])))}}
+                    @if($show_tour->tour_month == $show_tour->tour_month_last)
+                      {{$show_tour->tour_month}}
                     @else
-                      {{formatDateThat(date('F',strtotime($show_tour->tour_start_date[0])))}} ถึง {{formatDateThat(date('F',strtotime($show_tour->tour_end_date[0])))}}
+                      {{$show_tour->tour_month}} - {{$show_tour->tour_month_last}}
                     @endif
                   </section>
                </a>

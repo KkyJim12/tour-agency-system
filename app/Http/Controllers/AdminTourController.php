@@ -27,6 +27,7 @@ class AdminTourController extends Controller
       'tour_price_show' => 'required',
       'tour_price' => 'required',
       'tour_month' => 'required',
+      'tour_month_last' => 'required',
       'tour_start_date' => 'required',
       'tour_end_date' => 'required',
       'tour_expire_date' => 'required',
@@ -64,6 +65,7 @@ class AdminTourController extends Controller
         $tour->tour_airline_name = $airline->airline_name;
         $tour->tour_airline_img = $airline->airline_img;
         $tour->tour_month = $request->tour_month;
+        $tour->tour_month_last = $request->tour_month_last;
         $tour->tour_start_date = $request->tour_start_date;
         $tour->tour_end_date = $request->tour_end_date;
         $tour->tour_expire_date = $request->tour_expire_date;
@@ -137,6 +139,7 @@ class AdminTourController extends Controller
       'tour_price_show' => 'required',
       'tour_price' => 'required',
       'tour_month' => 'required',
+      'tour_month_last' => 'required',
       'tour_start_date' => 'required',
       'tour_end_date' => 'required',
       'tour_expire_date' => 'required',
@@ -172,6 +175,7 @@ class AdminTourController extends Controller
         $tour->tour_airline_name = $airline->airline_name;
         $tour->tour_airline_img = $airline->airline_img;
         $tour->tour_month = $request->tour_month;
+        $tour->tour_month_last = $request->tour_month_last;
         $tour->tour_start_date = $request->tour_start_date;
         $tour->tour_end_date = $request->tour_end_date;
         $tour->tour_expire_date = $request->tour_expire_date;

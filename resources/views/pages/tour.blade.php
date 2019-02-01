@@ -65,10 +65,10 @@
                    <div class="col-md-6 text-left">
                      <p class='text-uppercase'>ช่วงเวลา:
                        <span>
-                         @if(formatDateThat(date('F',strtotime($tour->tour_start_date[0]))) == formatDateThat(date('F',strtotime($tour->tour_end_date[0]))))
-                           {{formatDateThat(date('F',strtotime($tour->tour_start_date[0])))}}
+                         @if($tour->tour_month == $tour->tour_month_last)
+                           {{$tour->tour_month}}
                          @else
-                           {{formatDateThat(date('F',strtotime($tour->tour_start_date[0])))}} ถึง {{formatDateThat(date('F',strtotime($tour->tour_end_date[0])))}}
+                           {{$tour->tour_month}} - {{$tour->tour_month_last}}
                          @endif
                        </span>
                      </p>

@@ -64,21 +64,39 @@
             </select>
          </div>
          <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
-            <label>เดือนที่เดินทาง</label>
+            <label>>ช่วงเวลาเดินทาง (เริ่มต้น)</label>
             <select class="form-control" name="tour_month">
                <option value="">เลือกเดือน</option>
-               <option value="1">มกราคม</option>
-               <option value="2">กุมภาพันธ์</option>
-               <option value="3">มีนาคม</option>
-               <option value="4">เมษายน</option>
-               <option value="5">พฤษภาคม</option>
-               <option value="6">มิถุนายน</option>
-               <option value="7">กรกฎาคม</option>
-               <option value="8">สิงหาคม</option>
-               <option value="9">กันยายน</option>
-               <option value="10">ตุลาคม</option>
-               <option value="11">พฤษจิกายน</option>
-               <option value="12">ธันวาคม</option>
+               <option value="มกราคม">มกราคม</option>
+               <option value="กุมภาพันธ์">กุมภาพันธ์</option>
+               <option value="มีนาคม">มีนาคม</option>
+               <option value="เมษายน">เมษายน</option>
+               <option value="พฤษภาคม">พฤษภาคม</option>
+               <option value="มิถุนายน">มิถุนายน</option>
+               <option value="กรกฎาคม">กรกฎาคม</option>
+               <option value="สิงหาคม">สิงหาคม</option>
+               <option value="กันยายน">กันยายน</option>
+               <option value="ตุลาคม">ตุลาคม</option>
+               <option value="พฤษจิกายน">พฤษจิกายน</option>
+               <option value="ธันวาคม">ธันวาคม</option>
+            </select>
+         </div>
+         <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+            <label>ช่วงเวลาเดินทาง (สุดท้าย)</label>
+            <select class="form-control" name="tour_month_last">
+               <option value="">เลือกเดือน</option>
+               <option value="มกราคม">มกราคม</option>
+               <option value="กุมภาพันธ์">กุมภาพันธ์</option>
+               <option value="มีนาคม">มีนาคม</option>
+               <option value="เมษายน">เมษายน</option>
+               <option value="พฤษภาคม">พฤษภาคม</option>
+               <option value="มิถุนายน">มิถุนายน</option>
+               <option value="กรกฎาคม">กรกฎาคม</option>
+               <option value="สิงหาคม">สิงหาคม</option>
+               <option value="กันยายน">กันยายน</option>
+               <option value="ตุลาคม">ตุลาคม</option>
+               <option value="พฤษจิกายน">พฤษจิกายน</option>
+               <option value="ธันวาคม">ธันวาคม</option>
             </select>
          </div>
          <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">

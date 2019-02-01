@@ -24,10 +24,10 @@
                     <h4>ราคาเริ่มต้น<span>{{number_format($show_tour_discount->tour_discount)}}</span></h4>
                     <h3>ลดเหลือ<span>{{number_format($show_tour_discount->tour_price_show)}}฿</span></h3>
                     <section class='text-center'><i class="far fa-clock"></i><span>
-                      @if(formatDateThat(date('F',strtotime($show_tour_discount->tour_start_date[0]))) == formatDateThat(date('F',strtotime($show_tour_discount->tour_end_date[0]))))
-                        {{formatDateThat(date('F',strtotime($show_tour_discount->tour_start_date[0])))}}
+                      @if($show_tour_discount->tour_month == $show_tour_discount->tour_month_last)
+                        {{$show_tour_discount->tour_month}}
                       @else
-                        {{formatDateThat(date('F',strtotime($show_tour_discount->tour_start_date[0])))}} ถึง {{formatDateThat(date('F',strtotime($show_tour_discount->tour_end_date[0])))}}
+                        {{$show_tour_discount->tour_month}} - {{$show_tour_discount->tour_month_last}}
                       @endif
                     </section>
                  </a>
