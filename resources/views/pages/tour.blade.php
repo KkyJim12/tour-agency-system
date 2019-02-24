@@ -143,7 +143,7 @@
                 </nav>
                 <div class="tab-content col-lg-12 mt-3" id="nav-tabContent">
                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                      <embed class="pdf-embed" src="/assets/img/upload/tour/pdf/{{$tour->tour_pdf}}" style="width:100%; height:600px;">
+                      <embed class="pdf-embed" src="/assets/img/upload/tour/pdf/{{$tour->tour_pdf}}" width="100%" height="600px">
                    </div>
                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">{!!$tour->tour_condition!!}</div>
                 </div>
