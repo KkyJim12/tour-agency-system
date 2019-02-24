@@ -5,6 +5,11 @@ body  {
   color:rgba(0,0,0,0.84);
 }
 
+.pdf-embed {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+
 .nav-link {
   font-size: 14px;
 }
