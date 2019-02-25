@@ -147,7 +147,7 @@
                            <embed src="/assets/img/upload/tour/pdf/{{$tour->tour_pdf}}" type="application/pdf" width="100%" height="600px">
                        </div>
                        <div id="tourpdf-viewer-mobile-hack" class="tourpdf-container-mobile-hack" style="display: none;">
-                           <iframe class="tourpdf-object-mobile-hack" style="display: none;" id="tourpdf-object-mobile-hack" src="/assets/img/upload/tour/pdf/{{$tour->tour_pdf}}" frameborder="0"></iframe>
+                           <iframe class="tourpdf-object-mobile-hack" id="tourpdf-object-mobile-hack" src="/assets/img/upload/tour/pdf/{{$tour->tour_pdf}}" frameborder="0"></iframe>
                        </div>
                        <script>
                            $(function(){
