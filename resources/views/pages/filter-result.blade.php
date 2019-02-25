@@ -32,9 +32,9 @@
                <a class="card-body-link" href="#">
                   <h5 class="card-title">{{str_limit($show_tour->tour_name,27)}}</h5>
                   <h6>{{$show_tour->tour_country_name}} -  {{$show_tour->tour_day}} วัน {{$show_tour->tour_night}} คืน</h6>
-                  <iframe style="overflow:auto; width:100%; height:125px; align:center;">
+                  <div style="overflow:auto; width:100%; height:50px; align:center;">
                     {!!$show_tour->tour_hightlight!!}
-                  </iframe>
+                  </div>
                   <h2>สายการบิน<span><img src="/assets/img/upload/airline/{{$show_tour->tour_airline_img}}" alt="airline_suggest"> {{$show_tour->tour_airline_name}}</span></h2>
                   @if($show_tour->tour_discount)
                   <h4>ราคาก่อนลด<span>{{number_format($show_tour->tour_discount)}}</span></h4>

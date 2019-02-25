@@ -17,9 +17,9 @@
                  <a class="card-body-link" href="#">
                     <h5 class="card-title">{{str_limit($show_tour_discount->tour_name,27)}}</h5>
                     <h6>{{$show_tour_discount->tour_country_name}} -  {{$show_tour_discount->tour_day}} วัน {{$show_tour_discount->tour_night}} คืน</h6>
-                    <iframe style="overflow:auto; width:100%; height:125px; align:center;">
+                    <div style="overflow:auto; width:100%; height:50px; align:center;">
                       {!!$show_tour_discount->tour_hightlight!!}
-                    </iframe>
+                    </div>
                     <h2>สายการบิน<span><img src="/assets/img/upload/airline/{{$show_tour_discount->tour_airline_img}}" alt="airline_suggest"> {{$show_tour_discount->tour_airline_name}}</span></h2>
                     <h4>ราคาเริ่มต้น<span>{{number_format($show_tour_discount->tour_discount)}}</span></h4>
                     <h3>ลดเหลือ<span>{{number_format($show_tour_discount->tour_price_show)}}฿</span></h3>
