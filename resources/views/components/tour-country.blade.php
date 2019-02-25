@@ -16,7 +16,7 @@
               <span>
                 <img src='/assets/img/upload/country/{{$subcat->country_img}}'>
               </span>
-              <span><p class='mb-0 d-inline-block'>{{$subcat->country_name}}</p></span>
+              <span><p class='mb-0 d-inline-block'>{{str_limit($subcat->country_name,8)}}</p></span>
             </a>
           </div>
           @endforeach
