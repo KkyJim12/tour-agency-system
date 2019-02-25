@@ -40,8 +40,10 @@ Royaltour | เที่ยว {{$country->country_name}}
               <a class="card-body-link" href="#">
                  <h5 class="card-title">{{str_limit($show_tour->tour_name,27)}}</h5>
                  <h6>{{$show_tour->tour_country_name}} -  {{$show_tour->tour_day}} วัน {{$show_tour->tour_night}} คืน</h6>
-                 <div style="overflow:auto; width:100%; height:100px; align:center; color:black;">
-                   {!!$show_tour->tour_hightlight!!}
+                 <div style="overflow:auto; width:100%; height:100px; align:center;">
+                   <p style="height:100px;">
+                     {!!$show_tour->tour_hightlight!!}
+                   </p>
                  </div>
                  <h2>สายการบิน<span><img src="/assets/img/upload/airline/{{$show_tour->tour_airline_img}}" alt="airline_suggest"> {{$show_tour->tour_airline_name}}</span></h2>
                  @if($show_tour->tour_discount)
