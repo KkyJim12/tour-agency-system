@@ -24,15 +24,13 @@ class ReserveTourController extends Controller
       ]);
 
 
-      $reserve_tour_name = Tour::find($request->reserve_tour_id);
-
       $reserve = new ReserveTour;
       $reserve->reserve_name = $request->reserve_name;
       $reserve->reserve_qty = $request->reserve_qty;
       $reserve->reserve_tel = $request->reserve_tel;
       $reserve->reserve_info = $request->reserve_info;
       $reserve->reserve_tour_id = $request->reserve_tour_id;
-      $reserve->reserve_tour_name = $reserve_tour_name;
+      $reserve->reserve_tour_name = $request->reserve_tour_name;
       $reserve->reserve_tour_start_date = $request->reserve_tour_start_date;
       $reserve->reserve_tour_end_date = $request->reserve_tour_end_date;
       $reserve->save();

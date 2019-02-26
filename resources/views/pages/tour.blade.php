@@ -230,7 +230,8 @@
             <label>รายละเอียดอื่นๆ</label>
             <textarea class="form-control" name="reserve_info" rows="6" cols="80" placeholder="รายละเอียดเพิ่มเติม"></textarea>
           </div>
-          <input type="hidden" name="reserve_tour_id" value="{{$tour->_id[$tc]}}">
+          <input type="hidden" name="reserve_tour_id" value="{{$tour->_id}}">
+          <input type="hidden" name="reserve_tour_id" value="{{$tour->reserve_tour_name}}">
           <input type="hidden" name="reserve_tour_start_date" value="{{$tour->tour_start_date[$tc]}}">
           <input type="hidden" name="reserve_tour_end_date" value="{{$tour->tour_end_date[$tc]}}">
           @csrf
