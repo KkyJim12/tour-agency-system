@@ -1,17 +1,13 @@
 @if($first_slide !== null)
 <div id="carouselExampleControls" class="carousel slide d-none d-sm-block" data-ride="carousel">
    <div class="carousel-inner main-slide">
-      <a href="{{$first_slide->slide_link}}">
-        <div class="carousel-item active">
-          <img class="d-block slide-img" src="/assets/img/upload/slide/{{$first_slide->slide_img}}" alt="First slide">
-        </div>
-      </a>
+      <div class="carousel-item active">
+        <a href="{{$first_slide->slide_link}}"><img class="d-block slide-img" src="/assets/img/upload/slide/{{$first_slide->slide_img}}" alt="First slide" style="width:100%;"></a>
+      </div>
       @foreach($slide as $show_slide)
-      <a href="{{$show_slide->slide_link}}">
-        <div class="carousel-item">
-           <img class="d-block slide-img" src="/assets/img/upload/slide/{{$show_slide->slide_img}}" alt="other slide">
-        </div>
-      </a>
+      <div class="carousel-item">
+         <a href="{{$show_slide->slide_link}}"><img class="d-block slide-img" src="/assets/img/upload/slide/{{$show_slide->slide_img}}" alt="other slide" style="width:100%;"></a>
+      </div>
       @endforeach
    </div>
    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
