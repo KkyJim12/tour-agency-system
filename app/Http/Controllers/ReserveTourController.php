@@ -19,6 +19,7 @@ class ReserveTourController extends Controller
         'reserve_qty' => 'required',
         'reserve_tel' => 'required',
         'reserve_tour_id' => 'required',
+        'reserve_tour_name' => 'required',
         'reserve_tour_start_date' => 'required',
         'reserve_tour_end_date' => 'required',
       ]);
