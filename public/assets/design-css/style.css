@@ -1087,14 +1087,3 @@
 @media (min-width: 992px) and (max-width: 1199px) {
   .slide-img {
     height: 325px; } }
-
-.tourpdf-container-mobile-hack{
-    overflow: auto;
-    overflow-y: visible;
-    -webkit-overflow-scrolling: touch;
-    height: 500px;
-}
-.tourpdf-object-mobile-hack{
-    width: 500px;
-    height: 10000px;
-}
