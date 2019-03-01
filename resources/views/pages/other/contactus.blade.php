@@ -81,7 +81,6 @@ Royaltour | ติดต่อเรา
       </div>
       <div class="col-12 mb-4">
         <div class="staffTemp">
-          @foreach($show_branch->subcon as $show_con)
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -93,17 +92,18 @@ Royaltour | ติดต่อเรา
                 </tr>
               </thead>
               <tbody>
+                @foreach($show_branch->subcon as $show_con)
                 <tr>
                   <td class='text-center'>{{$show_con->staff_name}}</th>
                   <td class='text-center'>{{$show_con->staff_tel}}</td>
                   <td class='text-center'><a href="http://line.me/ti/p/@royaltour/{{$show_con->staff_line}}" target="_blank" rel="noopener noreferrer">{{$show_con->staff_line}}</a> </td>
                   <td class='text-center'><a href="{{$show_con->staff_facebook}}">Facebook</a> </td>
                 </tr>
+                @endforeach
               </tbody>
             </table>
           </div>
         </div>
-        @endforeach
         </div>
       @endforeach
     </div>

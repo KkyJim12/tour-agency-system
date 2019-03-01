@@ -90,7 +90,7 @@
                   <ul class="treeview-menu">
                      <li><a href="/admin/admin-continent"><i class="fas fa-globe-asia"></i>  ทวีป</a></li>
                      <li><a href="/admin/admin-country"><i class="fas fa-flag"></i>  ประเทศ</a></li>
-                     <li><a href="/admin/admin-city"><i class="fas fa-city"></i>  เมือง</a></li>
+                     <!-- <li><a href="/admin/admin-city"><i class="fas fa-city"></i>  เมือง</a></li> -->
                   </ul>
                </li>
                <li><a href="/admin/admin-airline"><i class="fas fa-plane"></i>  <span>สายการบิน</span></a></li>
@@ -99,9 +99,9 @@
                <li><a href="/admin/admin-tour"><i class="fas fa-map-marked"></i>  <span>ทัวร์</span></a></li>
                <li><a href="/admin/admin-banner"><i class="fas fa-chalkboard"></i> <span>แบนเนอร์</span></a></li>
                <li><a href="/admin/admin-slide"><i class="fab fa-slideshare"></i> <span>สไลด์</span></a></li>
-               <li><a href="/admin/admin-payment"><i class="fas fa-money-bill-alt"></i> <span>การชำระเงิน</span></a></li>
+               <!-- <li><a href="/admin/admin-payment"><i class="fas fa-money-bill-alt"></i> <span>การชำระเงิน</span></a></li>
                <li><a href="/admin/admin-aboutus"><i class="fas fa-info-circle"></i> <span>เกี่ยวกับเรา</span></a></li>
-               <li><a href="/admin/admin-contact"><i class="fas fa-phone-volume"></i> <span>ติดต่อเรา</span></a></li>
+               <li><a href="/admin/admin-contact"><i class="fas fa-phone-volume"></i> <span>ติดต่อเรา</span></a></li> -->
                <li class="treeview">
                   <a href="#"><i class="far fa-newspaper"></i>  <span>บทความ</span>
                   <span class="pull-right-container">
