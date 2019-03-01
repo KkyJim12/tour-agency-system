@@ -16,7 +16,7 @@
                               <div class="input-group-prepend">
                                  <span class="input-group-text" id="basic-addon1"><i class="fas fa-city"></i></span>
                               </div>
-                              <input type="text" class="form-control" placeholder="ชื่อประเทศ / เมือง" aria-label="Username" name="search_name" id="search_cname" aria-describedby="basic-addon1">
+                              <input type="text" class="form-control search_dynquery" placeholder="ชื่อประเทศ / เมือง" aria-label="Username" name="search_name" id="search_cname" aria-describedby="basic-addon1">
                            </div>
                         </div>
                         <div class="form-group col-lg-3 mb-2">
@@ -100,7 +100,7 @@
                                   <div class="input-group-prepend">
                                      <span class="input-group-text" id="basic-addon1"><i class="fas fa-city"></i></span>
                                   </div>
-                                  <input type="text" class="form-control" placeholder="ชื่อประเทศ / เมือง" aria-label="Username" name="search_name" aria-describedby="basic-addon1">
+                                  <input type="text" class="form-control search_dynquery" placeholder="ชื่อประเทศ / เมือง" aria-label="Username" name="search_name" aria-describedby="basic-addon1">
                                </div>
                             </div>
                             <div class="form-group col-12 mb-2">
@@ -167,7 +167,7 @@ jQuery(document).ready(function($) {
         queryTokenizer: Bloodhound.tokenizers.whitespace
     });
 
-    var ccSearchbox = $("#search_cname").typeahead({
+    var ccSearchbox = $(".search_dynquery").typeahead({
         hint: true,
         highlight: true,
         minLength: 1
