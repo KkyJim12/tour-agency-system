@@ -7,7 +7,7 @@
             <div class="input-group-prepend">
                <span class="input-group-text" id="basic-addon1"><i class="fas fa-city"></i></span>
             </div>
-            <input class="form-control" type="text" name="filter_name" value="" placeholder="ชื่อประเทศ/เมือง">
+            <input class="form-control" type="text" name="filter_name" id="search_cname" value="" placeholder="ชื่อประเทศ/เมือง">
          </div>
       </div>
       <div class="form-group col-lg-3">
@@ -173,3 +173,45 @@
 </div>
 
 <!-- End Mobile Filter -->
+
+
+<script src="/js/typeahead.js"></script>
+<script>
+jQuery(document).ready(function($) {
+    var engine = new Bloodhound({
+        remote: {
+            url: '/city-country-search.do?csquery=%QUERY%',
+            wildcard: '%QUERY%'
+        },
+        datumTokenizer: Bloodhound.tokenizers.whitespace('q'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace
+    });
+
+    var ccSearchbox = $("#search_cname").typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 1
+    }, {
+        source: engine.ttAdapter(),
+        templates: {
+            empty: [
+                '<div class="list-group search-results-dropdown"><div class="list-group-item">ไม่พบข้อมูล</div></div>'
+            ],
+            header: [
+                '<div class="list-group search-results-dropdown">'
+            ],
+            suggestion: function (data) {
+                if(data.type == "city"){
+                    // Is a city
+                    return '<p class="list-group-item">เมือง: ' + data.name + '</p>';
+                }else{
+                    // Is a country
+                    return '<p class="list-group-item">ประเทศ: ' + data.name + '</p>';
+                }
+            }
+        },
+    }).on('typeahead:selected', function(obj, os){
+        ccSearchbox.typeahead('val',os.name);
+    });
+});
+</script>
