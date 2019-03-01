@@ -36,6 +36,9 @@ Route::get('/tour/{tour_id}','UIViewController@ShowTour')->name('show-tour');
 /** Search Page **/
 Route::get('/search-result','UIViewController@ShowSearchResult');
 
+/** CountryCity search **/
+Route::any('/city-country-search.do', 'TourSearchController@getCityOrCountryList');
+
 /** Filter Page **/
 Route::get('/filter-result','TourSearchController@getMatchingTours');
 

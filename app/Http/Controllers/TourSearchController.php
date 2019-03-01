@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Continent;
 use App\Country;
+use App\City;
 use App\Tour;
 use App\PaymentPage;
 use App\Airline;
@@ -85,4 +86,32 @@ class TourSearchController extends Controller
                                               ]);
         }
     }
+
+
+    public function getCityOrCountryList(Request $request, City $city, Country $country){
+        if($request->input("csquery") != ""){
+            $qr = (string) $request->input("csquery");
+            $matchingCities = $city->where("city_name", "like", "%$qr%")->get();
+            $matchingCountries = $country->where("country_name", "like", "%$qr%")->get();
+            $results = [];
+            foreach($matchingCities as $mc){
+                $results[] = [
+                    "type" => "city",
+                    "name" => (string) $mc->city_name,
+                    "id" => (string) $mc->_id
+                ];
+            }
+            foreach($matchingCountries as $mc2){
+                $results[] = [
+                    "type" => "country",
+                    "name" => (string) $mc2->country_name,
+                    "id" => (string) $mc2->_id
+                ];
+            }
+            return response()->json($results);
+        }else{
+            return response()->json([]);
+        }
+    }
+
 }
