@@ -30,7 +30,7 @@ Royaltour | ภาพประทับใจ {{$this_country->country_name}}
     <div class="row">
       @foreach($gallery as $show_gallery)
       <div class="col-sm-6 col-md-4 col-lg-3 galleryTemp">
-         <a data-toggle="modal" data-target="#exampleModalCenter">
+         <a data-toggle="modal" data-target="#modal{{$show_gallery->_id}}">
             <section>
               <figure>
                 <img src="/assets/img/upload/gallery/img/{{$show_gallery->gallery_img}}" alt="gallery_img">
@@ -42,7 +42,7 @@ Royaltour | ภาพประทับใจ {{$this_country->country_name}}
          </a>
       </div>
       <!-- Modal -->
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal fade" id="modal{{$show_gallery->_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                <div class="modal-header">
