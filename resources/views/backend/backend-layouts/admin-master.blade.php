@@ -90,7 +90,7 @@
                   <ul class="treeview-menu">
                      <li><a href="/admin/admin-continent"><i class="fas fa-globe-asia"></i>  ทวีป</a></li>
                      <li><a href="/admin/admin-country"><i class="fas fa-flag"></i>  ประเทศ</a></li>
-                     <!-- <li><a href="/admin/admin-city"><i class="fas fa-city"></i>  เมือง</a></li> -->
+                     <li><a href="/admin/admin-city"><i class="fas fa-city"></i>  เมือง</a></li>
                   </ul>
                </li>
                <li><a href="/admin/admin-airline"><i class="fas fa-plane"></i>  <span>สายการบิน</span></a></li>
