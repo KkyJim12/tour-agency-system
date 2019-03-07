@@ -52,14 +52,14 @@ Royaltour | ภาพประทับใจ {{$this_country->country_name}}
                   </button>
                </div>
                <div class="modal-body">
-                  <div id="thumbnail_image_carousel" class="carousel thumbnail_image_carousel_fade thumbnail_image_carousel_wrapper" data-ride="carousel" data-interval="6000" data-pause="hover">
+                  <div id="thumbnail{{$show_gallery->_id}}" class="carousel thumbnail_image_carousel_fade thumbnail_image_carousel_wrapper" data-ride="carousel" data-interval="6000" data-pause="hover">
                      <!-- Indicators -->
                      <ol class="carousel-indicators thumbnail_image_carousel_indicators">
-                        <li data-target="#thumbnail_image_carousel" data-slide-to="0" class="active">
+                        <li data-target="#thumbnail{{$show_gallery->_id}}" data-slide-to="0" class="active">
                            <img src="/assets/img/upload/gallery/img/{{$show_gallery->gallery_img}}" alt="slider" />
                         </li>
                         @foreach($show_gallery->gallery_other_img as $gallery_other_img)
-                        <li data-target="#thumbnail_image_carousel" data-slide-to="{{$loop->iteration}}">
+                        <li data-target="#thumbnail{{$show_gallery->_id}}" data-slide-to="{{$loop->iteration}}">
                            <img src="/assets/img/upload/gallery/otherimg/{{$gallery_other_img}}" alt="slider" />
                         </li>
                         @endforeach
