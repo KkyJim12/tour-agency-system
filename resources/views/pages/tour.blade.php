@@ -117,22 +117,66 @@
                       </tr>
                     </thead>
                     <tbody>
+                        <?php
+                         $rowGroup = 0;
+                         $rowCounter = 0;
+                        ?>
                         @foreach($tour->tour_start_date as $tc => $tsd)
-                        <tr>
-                          <td class='text-center'>{{date('d/m/Y',strtotime($tour->tour_start_date[$tc]))}}</td>
-                          <td class='text-center'>{{date('d/m/Y',strtotime($tour->tour_end_date[$tc]))}}</td>
-                          <td class='text-center'>{{number_format($tour->tour_price[$tc])}}</td>
-                          <td class='text-center'>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btnCheckin py-1 px-3" data-toggle="modal" data-target="#modal{{$loop->iteration}}">
-                              จอง
-                            </button>
-                          </td>
-                        </tr>
+                            <?php
+                            if($rowCounter <= 4){
+                                $cgrp = $rowGroup;
+                                $rowCounter++;
+                            }else{
+                                $rowGroup++;
+                                $cgrp = $rowGroup;
+                                $rowCounter = 1;
+                            }
+                            ?>
+                            <tr class='tdrg tdatetable_rg_{{$cgrp}}'>
+                              <td class='text-center'>{{date('d/m/Y',strtotime($tour->tour_start_date[$tc]))}}</td>
+                              <td class='text-center'>{{date('d/m/Y',strtotime($tour->tour_end_date[$tc]))}}</td>
+                              <td class='text-center'>{{number_format($tour->tour_price[$tc])}}</td>
+                              <td class='text-center'>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btnCheckin py-1 px-3" data-toggle="modal" data-target="#modal{{$loop->iteration}}">
+                                  จอง
+                                </button>
+                              </td>
+                            </tr>
                         @endforeach
                     </tbody>
                   </table>
+
+                  <br />
+                  <a class="btn btn-primary btn-block" style="display: none;" id="btnShowMoreInDTable" href="#">แสดงเพิ่มเติม</a>
+
                 </div>
+
+                <script>
+                    var tdatetable_count_grps = parseInt({{ $rowGroup }});
+                    var current_tdp = 0;
+                    function showGroup(group){
+                        $(".tdatetable_rg_" + group).show();
+                    }
+                    $(function(){
+                        $(".tdrg").hide();
+                        showGroup(0);
+                        if(tdatetable_count_grps > 0){
+                            $("#btnShowMoreInDTable").show();
+                        }
+                    });
+                    $("#btnShowMoreInDTable").click(function(e){
+                        e.preventDefault();
+                        if(current_tdp < tdatetable_count_grps){
+                            current_tdp += 1;
+                            showGroup(current_tdp);
+                        }
+                        if(current_tdp == tdatetable_count_grps){
+                            $("#btnShowMoreInDTable").hide();
+                        }
+                    });
+                </script>
+
              </div>
              <div class="row mt-5">
                 <nav class="col-12">
