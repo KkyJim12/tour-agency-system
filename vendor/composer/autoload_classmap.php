@@ -69,6 +69,7 @@ return array(
     'App\\Staff' => $baseDir . '/app/Staff.php',
     'App\\Tour' => $baseDir . '/app/Tour.php',
     'App\\User' => $baseDir . '/app/User.php',
+    'BannerTableSeeder' => $baseDir . '/database/seeds/BannerTableSeeder.php',
     'BeyondCode\\DumpServer\\DumpServerCommand' => $vendorDir . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
     'BeyondCode\\DumpServer\\DumpServerServiceProvider' => $vendorDir . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
     'BeyondCode\\DumpServer\\Dumper' => $vendorDir . '/beyondcode/laravel-dump-server/src/Dumper.php',

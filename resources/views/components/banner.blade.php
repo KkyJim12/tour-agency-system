@@ -1,6 +1,3 @@
-<?php
-   try {
-       ?>
 <div class="container mt-5">
    <div class="row banner-ads-field">
       <div class="col-lg-4">
@@ -23,7 +20,3 @@
       </div>
    </div>
 </div>
-<?php
-   } catch (\Throwable $egg) {
-       }
-   ?>

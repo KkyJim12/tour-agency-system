@@ -428,6 +428,7 @@ class ComposerStaticInit2e3d43b40368bb95ea5258538f8876f7
         'App\\Staff' => __DIR__ . '/../..' . '/app/Staff.php',
         'App\\Tour' => __DIR__ . '/../..' . '/app/Tour.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'BannerTableSeeder' => __DIR__ . '/../..' . '/database/seeds/BannerTableSeeder.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
         'BeyondCode\\DumpServer\\DumpServerServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
         'BeyondCode\\DumpServer\\Dumper' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/Dumper.php',

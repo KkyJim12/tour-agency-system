@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use Hash;
 
 class MemberController extends Controller
 {
@@ -14,8 +15,7 @@ class MemberController extends Controller
 
       if (User::where('user_email',$request->user_email)->count() == 1)  {
         $that_user = User::where('user_email',$request->user_email)->first();
-        if ($that_user->user_password == $request->user_password) {
-
+        if (Hash::check($request->user_password,$that_user->user_password)) {
           session([
                     'user_log' => 1,
                     'user_email' => $that_user->user_email,
