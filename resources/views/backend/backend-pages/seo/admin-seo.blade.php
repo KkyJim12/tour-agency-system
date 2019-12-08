@@ -1,10 +1,11 @@
 @extends('backend.backend-layouts.admin-master')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
       <h3>ตั้งค่า SEO <i class="fas fa-cog"></i></h3>
+      <hr>
       <form action="/admin/admin-seo-process" method="post">
         <label>title</label>
         <input class="form-control" type="text" name="home_seo_title" value="@if($seo){{$seo->home_seo_title}}@endif" placeholder="title หน้าเว็บ">

@@ -1,65 +1,69 @@
-body  {
-  font-family: 'Kanit', sans-serif !important;
+body {
+    font-family: "Kanit", sans-serif !important;
 }
 
-h3  {
-  font-family: 'Kanit', sans-serif !important;
+h3 {
+    font-family: "Kanit", sans-serif !important;
 }
 
-span  {
-  font-family: 'Kanit', sans-serif !important;
+span {
+    font-family: "Kanit", sans-serif !important;
 }
 
 .admin-img-list {
-  width:100px;
-  height: 100px;
+    width: 100px;
+    height: 100px;
 }
 
-.admin-table  {
-  text-align: center;
+.admin-table {
+    text-align: center;
 }
 
-.admin-table th  {
-  text-align: center;
+.admin-table th {
+    text-align: center;
 }
 
-.table-field  {
-  padding:20px;
-  background-color: white;
-  margin-top:10px;
+.table-field {
+    padding: 20px;
+    background-color: white;
+    margin-top: 10px;
+    overflow-x: auto;
 }
 
-.admin-img-edit   {
-  width:200px;
-  height:200px;
+.admin-img-edit {
+    width: 200px;
+    height: 200px;
 }
 
-.admin-input  {
-  margin-bottom:20px;
+.admin-input {
+    margin-bottom: 20px;
 }
 
 .admin-form {
-  background-color: rgba(0,0,0,0.5);
-  padding:20px;
-  border-radius: 10px;
+    background-color: white;
+    padding: 20px;
 }
 
 .nav-banner-img {
-  width:728px;
-  height:90px;
+    width: 728px;
+    height: 90px;
 }
 
-.second-banner-img  {
-  width:350px;
-  height:280px;
+.second-banner-img {
+    width: 350px;
+    height: 280px;
 }
 
-.couple-banner-img  {
-  width:355px;
-  height:140px;
+.couple-banner-img {
+    width: 355px;
+    height: 140px;
 }
 
-.big-banner-img   {
-  width:730px;
-  height:500px;
+.big-banner-img {
+    width: 730px;
+    height: 500px;
+}
+
+.is-fixed {
+    position: fixed !important;
 }

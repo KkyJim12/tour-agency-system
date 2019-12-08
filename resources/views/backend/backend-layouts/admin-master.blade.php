@@ -10,22 +10,22 @@
       <link rel="stylesheet" href="/assets/admin-css/datatables.min.css">
       <link rel="stylesheet" href="/assets/admin-css/jquery-jvectormap.css">
       <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
       <script src="/assets/admin-js/jquery-3.3.1.min.js" type="text/javascript"></script>
       <script src="/assets/admin-js/bootstrap.min.js" type="text/javascript"></script>
       <script src="/assets/admin-js/adminlte.min.js" type="text/javascript"></script>
       <script src="/assets/admin-js/datatables.min.js" type="text/javascript"></script>
       <script src="/assets/tinymce/tinymce.min.js"></script>
+      <script src="https://kit.fontawesome.com/f5d3b3d49b.js" crossorigin="anonymous"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title></title>
    </head>
-   <body class="skin-blue">
+   <body class="skin-blue sidebar-mini sidebar-collapse"">
       <!-- Main Header -->
       <header class="main-header">
          <!-- Logo -->
-         <a href="/admin" class="logo">
+         <a href="/admin" class="logo is-fixed">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
+            <span class="logo-mini"><b>R</b>T</span>
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg">Royaltour</span>
          </a>
@@ -63,20 +63,9 @@
          </nav>
       </header>
       <!-- Left side column. contains the logo and sidebar -->
-      <aside class="main-sidebar">
+      <aside class="main-sidebar is-fixed">
          <!-- sidebar: style can be found in sidebar.less -->
          <section class="sidebar">
-            <!-- search form (Optional) -->
-            <form action="#" method="get" class="sidebar-form">
-               <div class="input-group">
-                  <input type="text" name="q" class="form-control" placeholder="Search...">
-                  <span class="input-group-btn">
-                  <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                  </button>
-                  </span>
-               </div>
-            </form>
-            <!-- /.search form -->
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu" data-widget="tree">
                <li class="header">เมนูหลัก</li>
@@ -113,7 +102,7 @@
                      <li><a href="/admin/admin-article"><i class="fas fa-book"></i>  บทความ</a></li>
                   </ul>
                </li>
-               <li><a href="/admin/admin-gallery"><i class="fas fa-image"></i> ภาพประทับใจ</span></a></li>
+               <li><a href="/admin/admin-gallery"><i class="fas fa-image"></i> <span> ภาพประทับใจ</span></a></li>
                <li><a href="/admin/admin-seo"><i class="fas fa-cog"></i> <span>ตั้งค่า SEO</span></a></li>
                <li><a href="/admin/admin-contactinfo"><i class="fab fa-telegram-plane"></i> <span>ข้อมูลติดต่อ</span></a></li>
                <li><a href="/admin/admin-holiday"><i class="fas fa-calendar-alt"></i> <span>วันหยุดพิเศษ</span></a></li>

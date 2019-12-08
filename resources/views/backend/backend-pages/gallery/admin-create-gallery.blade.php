@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
   <div class="row">
       <form class="col-lg-6 col-md-6 col-sm-6 admin-form" action="/admin/admin-create-gallery-process" method="post" enctype="multipart/form-data">
         @if ($errors->any())

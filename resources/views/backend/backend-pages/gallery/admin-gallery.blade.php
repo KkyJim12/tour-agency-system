@@ -7,9 +7,10 @@
 @section('content')
 @include('backend.backend-components.search-js')
 <a class="btn btn-success" href="/admin/admin-create-gallery">สร้างภาพประทับใจ</a>
-<div class="container">
+<hr>
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-11 table-field">
+    <div class="col-md-12 table-field">
       <table class="table table-bordered table-hover admin-table">
           <thead>
         <tr>

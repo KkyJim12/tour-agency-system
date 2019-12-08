@@ -7,7 +7,8 @@
 @section('content')
 @include('backend.backend-components.search-js')
 <a class="btn btn-success" href="/admin/admin-create-holiday">สร้างวันหยุดพิเศษ</a>
-<div class="container">
+<hr>
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-11 table-field">
       <table class="table table-bordered table-hover admin-table">

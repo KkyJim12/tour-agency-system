@@ -3,7 +3,7 @@
 <h3>แก้ไขรายชื่อพนักงาน <i class="fas fa-user-alt"></i></h3>
 @endsection
 @section('content')
-<div class="container">
+<div class="container-fluid">
    <div class="row">
       <form class="admin-form col-lg-6 col-md-6 col-sm-6" action="/admin/admin-edit-staff-process/{{$staff->_id}}" method="post" enctype="multipart/form-data">
          @if ($errors->any())

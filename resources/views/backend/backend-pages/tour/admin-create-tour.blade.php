@@ -3,7 +3,7 @@
 <h3>สร้างทัวร์ <i class="fas fa-map-marked-alt"></i></h3>
 @endsection
 @section('content')
-<div class="container">
+<div class="container-fluid">
    <div class="row">
       <form class="admin-form col-lg-6 col-md-6 col-sm-6" action="/admin/admin-create-tour-process" method="post" enctype="multipart/form-data">
          @if ($errors->any())
@@ -64,7 +64,7 @@
             </select>
          </div>
          <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
-            <label>>ช่วงเวลาเดินทาง (เริ่มต้น)</label>
+            <label>ช่วงเวลาเดินทาง (เริ่มต้น)</label>
             <select class="form-control" name="tour_month">
                <option value="">เลือกเดือน</option>
                <option value="มกราคม">มกราคม</option>
