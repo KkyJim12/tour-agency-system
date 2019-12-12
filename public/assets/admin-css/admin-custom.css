@@ -67,3 +67,12 @@ span {
 .is-fixed {
     position: fixed !important;
 }
+
+.country-filter {
+
+}
+
+.country-filter img {
+    width:100%;
+    height:100%;
+}

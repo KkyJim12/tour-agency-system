@@ -173,10 +173,12 @@ class AdminUIController extends Controller
     }
 
     /* Show Tour List */
-    public function ShowTour()  {
+    public function ShowTour(Request $request)  {
       $tour = Tour::all();
+      $country = Country::all();
       return view('backend.backend-pages.tour.admin-tour',[
                                                             'tour' => $tour,
+                                                            'country' => $country
                                                           ]);
     }
 

@@ -90,13 +90,13 @@ Route::middleware(['admin'])->group(function () {
   Route::get('/admin/admin-create-continent','AdminUIController@ShowCreateContinent');
 
   /* Create Continent Process */
-  Route::post('/admin/admin-create-continent-process','AdminContinentController@AdminCreateContinentProcess');
+  Route::post('/admin/admin-create-continent-process','AdminContinentController@AdminCreateContinentProcess')->middleware('optimizeImages');
 
   /* Show Edit Continent */
   Route::get('/admin/admin-edit-continent/{continent_id}','AdminUIController@ShowEditContinent');
 
   /* Edit Continent Process */
-  Route::post('/admin/admin-edit-continent-process/{continent_id}','AdminContinentController@AdminEditContinentProcess');
+  Route::post('/admin/admin-edit-continent-process/{continent_id}','AdminContinentController@AdminEditContinentProcess')->middleware('optimizeImages');
 
   /* Delete Continent Process */
   Route::post('/admin/admin-delete-continent-process/{continent_id}','AdminContinentController@AdminDeleteContinentProcess');
@@ -116,13 +116,13 @@ Route::middleware(['admin'])->group(function () {
   Route::get('/admin/admin-create-country','AdminUIController@ShowCreateCountry');
 
   /* Create Country Process */
-  Route::post('/admin/admin-create-country-process','AdminCountryController@AdminCreateCountryProcess');
+  Route::post('/admin/admin-create-country-process','AdminCountryController@AdminCreateCountryProcess')->middleware('optimizeImages');
 
   /* Show Edit Country */
   Route::get('/admin/admin-edit-country/{country_id}','AdminUIController@ShowEditCountry');
 
   /* Edit Country Process */
-  Route::post('/admin/admin-edit-country-process/{country_id}','AdminCountryController@AdminEditCountryProcess');
+  Route::post('/admin/admin-edit-country-process/{country_id}','AdminCountryController@AdminEditCountryProcess')->middleware('optimizeImages');
 
   /* Delete Country Process */
   Route::post('/admin/admin-delete-country-process/{country_id}','AdminCountryController@AdminDeleteCountryProcess');
@@ -139,13 +139,13 @@ Route::middleware(['admin'])->group(function () {
   Route::get('/admin/admin-create-city','AdminUIController@ShowCreateCity');
 
   /* Create Country Process */
-  Route::post('/admin/admin-create-city-process','AdminCityController@AdminCreateCityProcess');
+  Route::post('/admin/admin-create-city-process','AdminCityController@AdminCreateCityProcess')->middleware('optimizeImages');
 
   /* Show Edit City */
   Route::get('/admin/admin-edit-city/{city_id}','AdminUIController@ShowEditCity');
 
   /* Edit City Process */
-  Route::post('/admin/admin-edit-city-process/{city_id}','AdminCityController@AdminEditCityProcess');
+  Route::post('/admin/admin-edit-city-process/{city_id}','AdminCityController@AdminEditCityProcess')->middleware('optimizeImages');
 
   /* Delete City Process */
   Route::post('/admin/admin-delete-city-process/{city_id}','AdminCityController@AdminDeleteCityProcess');
@@ -161,13 +161,13 @@ Route::middleware(['admin'])->group(function () {
   Route::get('/admin/admin-create-airline','AdminUIController@ShowCreateAirline');
 
   /* Create Airline Process */
-  Route::post('/admin/admin-create-airline-process','AdminAirlineController@AdminCreateAirlineProcess');
+  Route::post('/admin/admin-create-airline-process','AdminAirlineController@AdminCreateAirlineProcess')->middleware('optimizeImages');
 
   /* Show Edit Airline */
   Route::get('/admin/admin-edit-airline/{airline_id}','AdminUIController@ShowEditAirline');
 
   /* Edit Airline Process */
-  Route::post('/admin/admin-edit-airline-process/{airline_id}','AdminAirlineController@AdminEditAirlineProcess');
+  Route::post('/admin/admin-edit-airline-process/{airline_id}','AdminAirlineController@AdminEditAirlineProcess')->middleware('optimizeImages');
 
   /* Delete Airline Process */
   Route::post('/admin/admin-delete-airline-process/{airline_id}','AdminAirlineController@AdminDeleteAirlineProcess');
@@ -205,13 +205,13 @@ Route::middleware(['admin'])->group(function () {
   Route::get('/admin/admin-create-staff','AdminUIController@ShowCreateStaff');
 
   /* Create Branch Process */
-  Route::post('/admin/admin-create-staff-process','AdminStaffController@AdminCreateStaffProcess');
+  Route::post('/admin/admin-create-staff-process','AdminStaffController@AdminCreateStaffProcess')->middleware('optimizeImages');
 
   /* Show Edit Staff */
   Route::get('/admin/admin-edit-staff/{staff_id}','AdminUIController@ShowEditStaff');
 
   /* Edit Staff Process */
-  Route::post('/admin/admin-edit-staff-process/{staff_id}','AdminStaffController@AdminEditStaffProcess');
+  Route::post('/admin/admin-edit-staff-process/{staff_id}','AdminStaffController@AdminEditStaffProcess')->middleware('optimizeImages');
 
   /* Delete Staff Process */
   Route::post('/admin/admin-delete-staff-process/{staff_id}','AdminStaffController@AdminDeleteStaffProcess');
@@ -227,13 +227,13 @@ Route::middleware(['admin'])->group(function () {
   Route::get('/admin/admin-create-tour','AdminUIController@ShowCreateTour');
 
   /* Create Tour Process */
-  Route::post('/admin/admin-create-tour-process','AdminTourController@AdminCreateTourProcess');
+  Route::post('/admin/admin-create-tour-process','AdminTourController@AdminCreateTourProcess')->middleware('optimizeImages');
 
   /* Show Edit Tour */
   Route::get('/admin/admin-edit-tour/{tour_id}','AdminUIController@ShowEditTour');
 
   /* Edit Tour Process */
-  Route::post('/admin/admin-edit-tour-process/{tour_id}','AdminTourController@AdminEditTourProcess');
+  Route::post('/admin/admin-edit-tour-process/{tour_id}','AdminTourController@AdminEditTourProcess')->middleware('optimizeImages');
 
   /* Delete Tour Process */
   Route::post('/admin/admin-delete-tour-process/{tour_id}','AdminTourController@AdminDeleteTourProcess');
@@ -249,10 +249,10 @@ Route::middleware(['admin'])->group(function () {
   Route::get('/admin/admin-create-slide','AdminUIController@ShowCreateSlide');
 
   /* Create Slide Process */
-  Route::post('/admin/admin-create-slide-process','AdminSlideController@AdminCreateSlideProcess');
+  Route::post('/admin/admin-create-slide-process','AdminSlideController@AdminCreateSlideProcess')->middleware('optimizeImages');
 
   /* Show Edit Slide */
-  Route::get('/admin/admin-edit-slide/{slide_id}','AdminUIController@ShowEditSlide');
+  Route::get('/admin/admin-edit-slide/{slide_id}','AdminUIController@ShowEditSlide')->middleware('optimizeImages');
 
   /* Edit Slide Process */
   Route::post('/admin/admin-edit-slide-process/{slide_id}','AdminSlideController@AdminEditSlideProcess');
@@ -292,7 +292,7 @@ Route::middleware(['admin'])->group(function () {
   Route::get('/admin/admin-banner','AdminUIController@ShowBanner');
 
   /* Save Banner */
-  Route::post('/admin/admin-banner-save','AdminBannerController@AdminBannerSave');
+  Route::post('/admin/admin-banner-save','AdminBannerController@AdminBannerSave')->middleware('optimizeImages');
 
   /**************************** End Tour Function **************************/
 
@@ -306,13 +306,13 @@ Route::middleware(['admin'])->group(function () {
   Route::get('/admin/admin-create-article-cat','AdminUIController@ShowCreateArticleCat');
 
   /* Create Article Category Process */
-  Route::post('/admin/admin-create-articlecat-process','AdminArticleCatController@CreateArticleCatProcess');
+  Route::post('/admin/admin-create-articlecat-process','AdminArticleCatController@CreateArticleCatProcess')->middleware('optimizeImages');
 
   /* Show Edit Article Category Page */
   Route::get('/admin/admin-edit-article-cat/{articlecat_id}','AdminUIController@ShowEditArticleCat');
 
   /* Edit Article Category Process */
-  Route::post('/admin/admin-edit-articlecat-process/{articlecat_id}','AdminArticleCatController@AdminEditArticleCatProcess');
+  Route::post('/admin/admin-edit-articlecat-process/{articlecat_id}','AdminArticleCatController@AdminEditArticleCatProcess')->middleware('optimizeImages');
 
   /* Delete Article Category Process */
   Route::post('/admin/admin-delete-article-cat-process/{articlecat_id}','AdminArticleCatController@AdminDeleteArticleCatProcess');
@@ -329,13 +329,13 @@ Route::middleware(['admin'])->group(function () {
   Route::get('/admin/admin-create-article','AdminUIController@ShowCreateArticle');
 
   /* Create Article Process */
-  Route::post('/admin/admin-create-article-process','AdminArticleController@AdminCreateArticleProcess');
+  Route::post('/admin/admin-create-article-process','AdminArticleController@AdminCreateArticleProcess')->middleware('optimizeImages');
 
   /* Show Edit Article Page */
   Route::get('/admin/admin-edit-article/{article_id}','AdminUIController@ShowEditArticle');
 
   /* Edit Article Process */
-  Route::post('/admin/admin-edit-article-process/{article_id}','AdminArticleController@AdminEditArticleProcess');
+  Route::post('/admin/admin-edit-article-process/{article_id}','AdminArticleController@AdminEditArticleProcess')->middleware('optimizeImages');
 
   /* Delete Article Process */
   Route::post('/admin/admin-delete-article-process/{article_id}','AdminArticleController@AdminDeleteArticleProcess');
@@ -351,13 +351,13 @@ Route::middleware(['admin'])->group(function () {
   Route::get('/admin/admin-create-gallery','AdminUIController@ShowCreateGallery');
 
   /* Create Gallery Process */
-  Route::post('/admin/admin-create-gallery-process','AdminGalleryController@AdminCreateGalleryProcess');
+  Route::post('/admin/admin-create-gallery-process','AdminGalleryController@AdminCreateGalleryProcess')->middleware('optimizeImages');
 
   /* Show Edit Gallery Page */
   Route::get('/admin/admin-edit-gallery/{gallery_id}','AdminUIController@ShowEditGallery');
 
   /* Edit Gallery Process */
-  Route::post('/admin/admin-edit-gallery-process','AdminGalleryController@AdminEditGalleryProcess');
+  Route::post('/admin/admin-edit-gallery-process','AdminGalleryController@AdminEditGalleryProcess')->middleware('optimizeImages');
 
   /* Delete Gallery Process */
   Route::post('/admin/admin-delete-gallery-process/{gallery_id}','AdminGalleryController@AdminDeleteGalleryProcess');
@@ -394,13 +394,13 @@ Route::middleware(['admin'])->group(function () {
   Route::get('/admin/admin-create-holiday','AdminUIController@ShowCreateHoliday');
 
   /* Create Holiday Process */
-  Route::post('/admin/admin-create-holiday-process','AdminHolidayController@AdminCreateHolidayProcess');
+  Route::post('/admin/admin-create-holiday-process','AdminHolidayController@AdminCreateHolidayProcess')->middleware('optimizeImages');
 
   /* Show Edit Holiday Page */
   Route::get('/admin/admin-edit-holiday/{holiday_id}','AdminUIController@ShowEditHoliday');
 
   /* Edit Holiday Process */
-  Route::post('/admin/admin-edit-holiday-process','AdminHolidayController@AdminEditHolidayProcess');
+  Route::post('/admin/admin-edit-holiday-process','AdminHolidayController@AdminEditHolidayProcess')->middleware('optimizeImages');
 
   /* Delete Holiday Process */
   Route::post('/admin/admin-delete-holiday-process/{holiday_id}','AdminHolidayController@AdminDeleteHolidayProcess');
