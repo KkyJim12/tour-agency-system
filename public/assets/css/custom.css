@@ -345,6 +345,11 @@ a:hover {
   width:10%;
 }
 
+.country-mobile-size img {
+  width:20%;
+}
+
+
 .btnSearch {
   background: linear-gradient(to bottom, #85ceff 0%, #038bed 100%);
   border: 1px solid #68c1f6;

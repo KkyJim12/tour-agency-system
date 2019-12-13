@@ -87,3 +87,7 @@ span {
     .navCountry img {
       height: 30px;
       width: auto; }
+
+.imgCountry {
+    width:30%;
+}
