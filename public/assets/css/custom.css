@@ -341,6 +341,15 @@ a:hover {
     width: 100%;
 }
 
+.country-mobile-size {
+  width:10%;
+}
+
+.btnSearch {
+  background: linear-gradient(to bottom, #85ceff 0%, #038bed 100%);
+  border: 1px solid #68c1f6;
+  color: #ffffff; }
+}
 
 /** Mobile Scrollbar **/
 

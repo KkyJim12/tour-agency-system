@@ -20,27 +20,17 @@ class AdminTourController extends Controller
         /* Validate First */
 
         $request->validate([
-      'tour_staff' => 'required',
-      'tour_country' => 'required',
-      'tour_airline' => 'required',
-      'tour_code' => 'required|max:255',
-      'tour_name' => 'required|max:255',
-      'tour_price_show' => 'required',
-      'tour_price' => 'required',
-      'tour_month' => 'required',
-      'tour_month_last' => 'required',
-      'tour_start_date' => 'required',
-      'tour_end_date' => 'required',
-      'tour_expire_date' => 'required',
-      'tour_day' => 'required',
-      'tour_night' => 'required',
-      'tour_hightlight' => 'required',
-      'tour_condition' => 'required',
-      'tour_sort' => 'required',
-      'tour_img' => 'nullable|required|image|max:2048',
-      'tour_other_img' => 'nullable|required',
-      'tour_pdf' => 'nullable|mimes:pdf|max:10000'
-      ]);
+            'tour_code' => 'required|max:255',
+            'tour_name' => 'required|max:255',
+            'tour_price_show' => 'required',
+            'tour_staff' => 'required',
+            'tour_country' => 'required',
+            'tour_airline' => 'required',
+            'tour_month' => 'required',
+            'tour_month_last' => 'required',
+            'tour_day' => 'required',
+            'tour_night' => 'required',
+        ]);
 
 
 
@@ -52,9 +42,9 @@ class AdminTourController extends Controller
         $tour = new Tour;
         $tour->tour_code = $request->tour_code;
         $tour->tour_name = $request->tour_name;
-        $tour->tour_price_show = (integer)$request->tour_price_show;
-        $tour->tour_price = array_map('intval',$request->tour_price);
-        $tour->tour_discount = (integer)$request->tour_discount;
+        $tour->tour_price_show = (int) $request->tour_price_show;
+        $tour->tour_price = array_map('intval', $request->tour_price);
+        $tour->tour_discount = (int) $request->tour_discount;
         $tour->tour_staff_id = $staff->_id;
         $tour->tour_staff_name = $staff->staff_name;
         $tour->tour_staff_tel = $staff->staff_tel;
@@ -90,25 +80,25 @@ class AdminTourController extends Controller
 
         if ($request->hasFile('tour_pdf')) {
             $pdf = $request->file('tour_pdf');
-            $name = time().'.'.$pdf->getClientOriginalExtension();
+            $name = time() . '.' . $pdf->getClientOriginalExtension();
             $destinationPath = public_path('/assets/img/upload/tour/pdf/');
             $pdf->move($destinationPath, $name);
             $tour->tour_pdf = $name;
 
             // Add WaterMark
-            $watermark = new Watermark($destinationPath.$name);
+            $watermark = new Watermark($destinationPath . $name);
             // Watermark with text
             $watermark->setFont('Arial');
             $watermark->setFontSize(18);
             $watermark->setPosition(Watermark::POSITION_TOP_RIGHT);
-            $watermark->withText($request->tour_code,$destinationPath.$name);
+            $watermark->withText($request->tour_code, $destinationPath . $name);
         }
 
         /* upload image */
 
         if ($request->hasFile('tour_img')) {
             $image = $request->file('tour_img');
-            $name = time().'.'.$image->getClientOriginalExtension();
+            $name = time() . '.' . $image->getClientOriginalExtension();
             $destinationPath = public_path('/assets/img/upload/tour/img');
             $image->move($destinationPath, $name);
             $tour->tour_img = $name;
@@ -118,7 +108,7 @@ class AdminTourController extends Controller
 
         if ($request->hasFile('tour_other_img')) {
             foreach ($request->file('tour_other_img') as $file) {
-                $name = uniqid().'.'.$file->getClientOriginalName();
+                $name = uniqid() . '.' . $file->getClientOriginalName();
                 $destinationPathOther = public_path('/assets/img/upload/tour/otherimg');
                 $file->move($destinationPathOther, $name);
                 $data[] = $name;
@@ -137,30 +127,30 @@ class AdminTourController extends Controller
     public function AdminEditTourProcess(Request $request)
     {
 
-      /* Validate First */
+        /* Validate First */
 
         $request->validate([
-      'tour_staff' => 'required',
-      'tour_country' => 'required',
-      'tour_airline' => 'required',
-      'tour_code' => 'required|max:255',
-      'tour_name' => 'required|max:255',
-      'tour_price_show' => 'required',
-      'tour_price' => 'required',
-      'tour_month' => 'required',
-      'tour_month_last' => 'required',
-      'tour_start_date' => 'required',
-      'tour_end_date' => 'required',
-      'tour_expire_date' => 'required',
-      'tour_day' => 'required',
-      'tour_night' => 'required',
-      'tour_hightlight' => 'required',
-      'tour_condition' => 'required',
-      'tour_sort' => 'required',
-      'tour_img' => 'nullable|image|max:2048',
-      'tour_other_img' => 'nullable',
-      'tour_pdf' => 'nullable|mimes:pdf|max:10000'
-      ]);
+            'tour_staff' => 'required',
+            'tour_country' => 'required',
+            'tour_airline' => 'required',
+            'tour_code' => 'required|max:255',
+            'tour_name' => 'required|max:255',
+            'tour_price_show' => 'required',
+            'tour_price' => 'required',
+            'tour_month' => 'required',
+            'tour_month_last' => 'required',
+            'tour_start_date' => 'required',
+            'tour_end_date' => 'required',
+            'tour_expire_date' => 'required',
+            'tour_day' => 'required',
+            'tour_night' => 'required',
+            'tour_hightlight' => 'required',
+            'tour_condition' => 'required',
+            'tour_sort' => 'required',
+            'tour_img' => 'nullable|image|max:2048',
+            'tour_other_img' => 'nullable',
+            'tour_pdf' => 'nullable|mimes:pdf|max:10000'
+        ]);
 
         /* End Validate */
 
@@ -170,9 +160,9 @@ class AdminTourController extends Controller
         $tour = Tour::find($request->tour_id);
         $tour->tour_code = $request->tour_code;
         $tour->tour_name = $request->tour_name;
-        $tour->tour_price_show = (integer) $request->tour_price_show;
-        $tour->tour_price = array_map('intval',$request->tour_price);
-        $tour->tour_discount = (integer)$request->tour_discount;
+        $tour->tour_price_show = (int) $request->tour_price_show;
+        $tour->tour_price = array_map('intval', $request->tour_price);
+        $tour->tour_discount = (int) $request->tour_discount;
         $tour->tour_staff_id = $staff->_id;
         $tour->tour_staff_name = $staff->staff_name;
         $tour->tour_staff_tel = $staff->staff_tel;
@@ -208,25 +198,25 @@ class AdminTourController extends Controller
 
         if ($request->hasFile('tour_pdf')) {
             $pdf = $request->file('tour_pdf');
-            $name = time().'.'.$pdf->getClientOriginalExtension();
+            $name = time() . '.' . $pdf->getClientOriginalExtension();
             $destinationPath = public_path('/assets/img/upload/tour/pdf/');
             $pdf->move($destinationPath, $name);
             $tour->tour_pdf = $name;
 
             // Add WaterMark
-            $watermark = new Watermark($destinationPath.$name);
+            $watermark = new Watermark($destinationPath . $name);
             // Watermark with text
             $watermark->setFont('Arial');
             $watermark->setFontSize(18);
             $watermark->setPosition(Watermark::POSITION_TOP_RIGHT);
-            $watermark->withText($request->tour_code,$destinationPath.$name);
+            $watermark->withText($request->tour_code, $destinationPath . $name);
         }
 
         /* upload image */
 
         if ($request->hasFile('tour_img')) {
             $image = $request->file('tour_img');
-            $name = time().'.'.$image->getClientOriginalExtension();
+            $name = time() . '.' . $image->getClientOriginalExtension();
             $destinationPath = public_path('/assets/img/upload/tour/img');
             $image->move($destinationPath, $name);
             $tour->tour_img = $name;
@@ -236,7 +226,7 @@ class AdminTourController extends Controller
 
         if ($request->hasFile('tour_other_img')) {
             foreach ($request->file('tour_other_img') as $file) {
-                $name = uniqid().'.'.$file->getClientOriginalName();
+                $name = uniqid() . '.' . $file->getClientOriginalName();
                 $destinationPathOther = public_path('/assets/img/upload/tour/otherimg');
                 $file->move($destinationPathOther, $name);
                 $data[] = $name;

@@ -74,7 +74,7 @@
   <div class="row">
     <div class="col-12">
       <p class="d-md-block d-lg-none d-xl-none">
-        <a class="btn btn-primary form-control" data-toggle="collapse" href="#mobilesearch" role="button" aria-expanded="false" aria-controls="mobilesearch">
+        <a class="btn btnSearch form-control" data-toggle="collapse" href="#mobilesearch" role="button" aria-expanded="false" aria-controls="mobilesearch">
           <i class="fas fa-search"></i> กล่องค้นหา
         </a>
       </p>

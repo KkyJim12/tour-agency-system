@@ -95,7 +95,7 @@
                     @foreach($continent as $all_continent)
                     <h1>{{$all_continent->continent_name}}</h1>
                     @foreach($all_continent->subcat as $subcat)
-                     <a href="/category/{{$subcat->_id}}">{{$subcat->country_name}}</a>
+                     <a href="/category/{{$subcat->_id}}"><img class="country-mobile-size" src="/assets/img/upload/country/{{$subcat->country_img}}"> {{$subcat->country_name}}</a>
                     @endforeach
                     @endforeach
                   </section>

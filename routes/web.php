@@ -225,6 +225,9 @@ Route::middleware(['admin'])->group(function () {
   /* Show Tour List */
   Route::get('/admin/admin-tour','AdminUIController@ShowTour')->name('admin-tour');
 
+  /* Show Tour CountryList */
+  Route::get('/admin/admin-tour/{id}','AdminUIController@ShowCountryTour');
+
   /* Show Create Tour */
   Route::get('/admin/admin-create-tour','AdminUIController@ShowCreateTour');
 
@@ -408,4 +411,22 @@ Route::middleware(['admin'])->group(function () {
   Route::post('/admin/admin-delete-holiday-process/{holiday_id}','AdminHolidayController@AdminDeleteHolidayProcess');
 
   /*********************** End Holiday Function ****************************/
+
+  Route::post('/admin/admin-add-tour','AdminAddTourController@AdminAddTourCreate');
+
+  Route::get('/admin/admin-add-tour-step-1/{id}','AdminAddTourController@AdminAddTourStep1');
+
+  Route::post('/admin/admin-add-tour-step-1/{id}','AdminAddTourController@AdminCreateTourStep1');
+
+  Route::get('/admin/admin-add-tour-step-2/{id}','AdminAddTourController@AdminAddTourStep2');
+
+  Route::post('/admin/admin-add-tour-step-2/{id}','AdminAddTourController@AdminCreateTourStep2');
+
+  Route::get('/admin/admin-add-tour-step-3/{id}','AdminAddTourController@AdminAddTourStep3');
+
+  Route::post('/admin/admin-add-tour-step-3/{id}','AdminAddTourController@AdminCreateTourStep3');
+
+  Route::get('/admin/admin-add-tour-step-4/{id}','AdminAddTourController@AdminAddTourStep4');
+
+  Route::post('/admin/admin-add-tour-step-4/{id}','AdminAddTourController@AdminCreateTourStep4');
 });
