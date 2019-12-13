@@ -145,7 +145,7 @@ class AdminAddTourController extends Controller
             $watermark->setFont('Arial');
             $watermark->setFontSize(18);
             $watermark->setPosition(Watermark::POSITION_TOP_RIGHT);
-            $watermark->withText('test', $destinationPath . $name);
+            $watermark->withText($request->tour_code, $destinationPath . $name);
         }
 
         /* upload image */
