@@ -8,7 +8,7 @@
 <div class="container-fluid">
    <div class="row">
       @foreach($country as $show_country)
-      <div class="col-md-1">
+      <div class="col-md-1 navCountryMain">
          <a class="navCountry" href="/admin/admin-tour/{{$show_country->_id}}">
             <img class="imgCountry" src="/assets/img/upload/country/{{$show_country->country_img}}">
             <span>{{str_limit($show_country->country_name,5)}}</span>
