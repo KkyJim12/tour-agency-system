@@ -153,9 +153,17 @@ class AdminAddTourController extends Controller
         if ($request->hasFile('tour_img')) {
             $image = $request->file('tour_img');
             $name = time() . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('/assets/img/upload/tour/img');
+            $destinationPath = public_path('/assets/img/upload/tour/img/');
             $image->move($destinationPath, $name);
             $tour->tour_img = $name;
+
+            // Add WaterMark
+            $watermark = new Watermark($destinationPath . $name);
+            // Watermark with text
+            $watermark->setFont('Arial');
+            $watermark->setFontSize(50);
+            $watermark->setPosition(Watermark::POSITION_TOP_RIGHT);
+            $watermark->withText('test', $destinationPath . $name);
         }
 
         /* upload multiple image */
