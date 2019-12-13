@@ -11,6 +11,8 @@
 |
 */
 
+/** Check ImageMagick Install */
+Route::get('/test','UIViewController@checkImagemagickInstallation');
 
 /** Index Page **/
 Route::get('/','UIViewController@ShowIndex');

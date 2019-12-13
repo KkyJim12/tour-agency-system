@@ -295,4 +295,13 @@ class UIViewController extends Controller
                                             'gallery' => $gallery,
                                           ]);
     }
+
+    public function checkImagemagickInstallation()
+    {
+        exec("convert -version", $out, $rcode);
+        if ($rcode) {
+            throw new \BadFunctionCallException("ImageMagick not found in this system.");
+        }
+        return true;
+    }
 }

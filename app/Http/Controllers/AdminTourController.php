@@ -9,6 +9,7 @@ use App\Staff;
 use App\Country;
 use App\Airline;
 use App\Holiday;
+use Ajaxray\PHPWatermark\Watermark;
 
 class AdminTourController extends Controller
 {
@@ -90,9 +91,17 @@ class AdminTourController extends Controller
         if ($request->hasFile('tour_pdf')) {
             $pdf = $request->file('tour_pdf');
             $name = time().'.'.$pdf->getClientOriginalExtension();
-            $destinationPath = public_path('/assets/img/upload/tour/pdf');
+            $destinationPath = public_path('/assets/img/upload/tour/pdf/');
             $pdf->move($destinationPath, $name);
             $tour->tour_pdf = $name;
+
+            // Add WaterMark
+            $watermark = new Watermark($destinationPath.$name);
+            // Watermark with text
+            $watermark->setFont('Arial');
+            $watermark->setFontSize(18);
+            $watermark->setPosition(Watermark::POSITION_TOP_RIGHT);
+            $watermark->withText($request->tour_code,$destinationPath.$name);
         }
 
         /* upload image */
@@ -200,9 +209,17 @@ class AdminTourController extends Controller
         if ($request->hasFile('tour_pdf')) {
             $pdf = $request->file('tour_pdf');
             $name = time().'.'.$pdf->getClientOriginalExtension();
-            $destinationPath = public_path('/assets/img/upload/tour/pdf');
+            $destinationPath = public_path('/assets/img/upload/tour/pdf/');
             $pdf->move($destinationPath, $name);
             $tour->tour_pdf = $name;
+
+            // Add WaterMark
+            $watermark = new Watermark($destinationPath.$name);
+            // Watermark with text
+            $watermark->setFont('Arial');
+            $watermark->setFontSize(18);
+            $watermark->setPosition(Watermark::POSITION_TOP_RIGHT);
+            $watermark->withText($request->tour_code,$destinationPath.$name);
         }
 
         /* upload image */
