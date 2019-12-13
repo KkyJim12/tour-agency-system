@@ -11,7 +11,7 @@
       <div class="col-md-1">
          <a class="navCountry" href="/admin/admin-tour/{{$show_country->_id}}">
             <img class="imgCountry" src="/assets/img/upload/country/{{$show_country->country_img}}">
-            <span>{{$show_country->country_name}}</span>
+            <span>{{str_limit($show_country->country_name,5)}}</span>
          </a>
       </div>
       @endforeach
