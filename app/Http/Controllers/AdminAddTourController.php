@@ -145,7 +145,7 @@ class AdminAddTourController extends Controller
             $watermark->setFont('Arial');
             $watermark->setFontSize(18);
             $watermark->setPosition(Watermark::POSITION_TOP_RIGHT);
-            $watermark->withText('test', '/assets/img/upload/tour/pdf/test.pdf');
+            $watermark->withText('test', '/assets/img/upload/tour/img/test.pdf');
         }
 
         /* upload image */
