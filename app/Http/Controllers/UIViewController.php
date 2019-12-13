@@ -302,6 +302,6 @@ class UIViewController extends Controller
         if ($rcode) {
             throw new \BadFunctionCallException("ImageMagick not found in this system.");
         }
-        return true;
+        return 'true';
     }
 }
