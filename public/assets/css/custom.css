@@ -342,11 +342,7 @@ a:hover {
 }
 
 .country-mobile-size {
-  width:10%;
-}
-
-.country-mobile-size img {
-  width:20%;
+  width:20% !important;
 }
 
 
