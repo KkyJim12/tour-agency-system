@@ -143,9 +143,9 @@ class AdminAddTourController extends Controller
             $watermark = new Watermark($destinationPath . $name);
             // Watermark with text
             $watermark->setFont('Times-Bold');
-            $watermark->setFontSize(18);
+            $watermark->setFontSize(25);
             $watermark->setPosition(Watermark::POSITION_TOP_RIGHT);
-            $watermark->withText($request->tour_code, $destinationPath . $name);
+            $watermark->withText($tour->tour_code, $destinationPath . $name);
         }
 
         /* upload image */
