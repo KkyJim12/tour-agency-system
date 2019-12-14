@@ -77,6 +77,7 @@ return array(
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'Cron\\' => array($vendorDir . '/dragonmantank/cron-expression/src/Cron'),
     'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
+    'Codedge\\Fpdf\\' => array($vendorDir . '/codedge/laravel-fpdf/src'),
     'BeyondCode\\DumpServer\\' => array($vendorDir . '/beyondcode/laravel-dump-server/src'),
     'App\\' => array($baseDir . '/app'),
     'Ajaxray\\PHPWatermark\\' => array($vendorDir . '/ajaxray/php-watermark/src/Ajaxray/PHPWatermark'),

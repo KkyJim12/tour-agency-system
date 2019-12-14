@@ -172,6 +172,7 @@ class ComposerStaticInit615a036a5a9e8a699684eeb6783800a6
         array (
             'Cron\\' => 5,
             'Composer\\Installers\\' => 20,
+            'Codedge\\Fpdf\\' => 13,
         ),
         'B' => 
         array (
@@ -473,6 +474,10 @@ class ComposerStaticInit615a036a5a9e8a699684eeb6783800a6
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
+        'Codedge\\Fpdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codedge/laravel-fpdf/src',
+        ),
         'BeyondCode\\DumpServer\\' => 
         array (
             0 => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src',
@@ -546,6 +551,7 @@ class ComposerStaticInit615a036a5a9e8a699684eeb6783800a6
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Gallery' => __DIR__ . '/../..' . '/app/Gallery.php',
         'App\\Holiday' => __DIR__ . '/../..' . '/app/Holiday.php',
+        'App\\Http\\Controllers\\AdminAddTourController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminAddTourController.php',
         'App\\Http\\Controllers\\AdminAirlineController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminAirlineController.php',
         'App\\Http\\Controllers\\AdminArticleCatController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminArticleCatController.php',
         'App\\Http\\Controllers\\AdminArticleController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminArticleController.php',
@@ -606,6 +612,9 @@ class ComposerStaticInit615a036a5a9e8a699684eeb6783800a6
         'Carbon\\Laravel\\ServiceProvider' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
         'Carbon\\Upgrade' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Upgrade.php',
+        'Codedge\\Fpdf\\Facades\\Fpdf' => __DIR__ . '/..' . '/codedge/laravel-fpdf/src/Facades/Fpdf.php',
+        'Codedge\\Fpdf\\FpdfServiceProvider' => __DIR__ . '/..' . '/codedge/laravel-fpdf/src/FpdfServiceProvider.php',
+        'Codedge\\Fpdf\\Fpdf\\Fpdf' => __DIR__ . '/..' . '/codedge/laravel-fpdf/src/Fpdf/Fpdf.php',
         'Composer\\Installers\\AglInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/AglInstaller.php',
         'Composer\\Installers\\AimeosInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/AimeosInstaller.php',
         'Composer\\Installers\\AnnotateCmsInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/AnnotateCmsInstaller.php',

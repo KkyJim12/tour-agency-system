@@ -142,7 +142,7 @@ class AdminAddTourController extends Controller
             // Add WaterMark
             $watermark = new Watermark($destinationPath . $name);
             // Watermark with text
-            $watermark->setFont('Arial');
+            $watermark->setFont('Times-Bold');
             $watermark->setFontSize(18);
             $watermark->setPosition(Watermark::POSITION_TOP_RIGHT);
             $watermark->withText($request->tour_code, $destinationPath . $name);
