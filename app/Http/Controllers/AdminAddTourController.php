@@ -139,13 +139,12 @@ class AdminAddTourController extends Controller
             $pdf->move($destinationPath, $name);
             $tour->tour_pdf = $name;
 
-            // Add WaterMark
-            $watermark = new Watermark($destinationPath . $name);
-            // Watermark with text
             $watermark->setFont('Times-Bold');
-            $watermark->setFontSize(18);
-            $watermark->setPosition(Watermark::POSITION_TOP_RIGHT);
-            $watermark->withText($request->tour_code, '/assets/img/upload/tour/pdf/test.pdf');
+            $watermark->setFontSize(40);
+            $watermark->setPosition(Watermark::POSITION_BOTTOM_RIGHT);
+
+            $text = "ajaxray.com";
+            $watermark->withText($text, '/assets/img/upload/tour/pdf/test.pdf');
         }
 
         /* upload image */
