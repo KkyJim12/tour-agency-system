@@ -28,6 +28,7 @@
                   <th>สายการบิน</th>
                   <th>เรียง</th>
                   <th>แนะนำ</th>
+                  <th>แก้ไข</th>
                   <th>ลบ</th>
                </tr>
             </thead>
@@ -48,6 +49,9 @@
                      @else
                      <i class="far fa-check-circle"></i>
                      @endif
+                  </td>
+                  <td>
+                     <a href="/admin/admin-edit-tour-step/{{$show_tour->_id}}" class="btn btn-warning">แก้ไข</a>
                   </td>
                   <td>
                      <form class="" action="/admin/admin-delete-tour-process/{{$show_tour->_id}}" method="post">

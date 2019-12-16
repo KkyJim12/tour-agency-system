@@ -21,6 +21,9 @@ class MemberController extends Controller
                     'user_email' => $that_user->user_email,
                   ]);
 
+          if($that_user->user_email == 'admin@royaltour.co.th') {
+            $that_user->assignRole('admin');
+          }
           return redirect('/admin');
         }
         else {

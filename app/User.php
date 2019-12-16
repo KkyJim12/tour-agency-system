@@ -3,8 +3,14 @@
 namespace App;
 
 use Moloquent;
+use Maklad\Permission\Traits\HasRoles;
 
 class User extends Moloquent
-{
-    protected $table = 'user';
+{   
+
+    use HasRoles;
+
+    protected $guard_name = 'web';
+
+    protected $table = 'users';
 }
