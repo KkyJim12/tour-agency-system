@@ -15,7 +15,8 @@ use Faker\Generator as Faker;
 
 $factory->define(App\User::class, function (Faker $faker) {
     return [
-        'user_email' => 'admin@royaltour.co.th',
-        'user_password' => Hash::make('admin123'),
+        'name'=> 'Royaltour',
+        'email' => 'admin@royaltour.co.th',
+        'password' => Hash::make('cvf,boivpy]my;iN'),
     ];
 });

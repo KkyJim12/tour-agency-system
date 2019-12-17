@@ -44,11 +44,15 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $exception
      * @return \Illuminate\Http\Response
      */
-     public function render($request, Exception $e)
-         {
-     if ($e instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
-         return redirect('/');
-     }
-     return parent::render($request, $e);
-     }
+    public function render($request, Exception $e)
+    {
+        if ($e instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
+            return redirect('/');
+        }
+
+        if ($e instanceof \Maklad\Permission\Exceptions\UnauthorizedException) {
+            return redirect('/login');
+        }
+        return parent::render($request, $e);
+    }
 }

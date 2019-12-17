@@ -47,7 +47,7 @@
                   <!-- The user image in the navbar-->
                   <i class="fas fa-user"></i>
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs">{{session('user_email')}}</span>
+                  <span class="hidden-xs">{{Auth::user()->email}}</span>
                </a>
                <ul class="dropdown-menu">
                   <!-- The user image in the menu -->

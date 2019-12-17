@@ -36,11 +36,23 @@ class AdminUserController extends Controller
         /* End Validate */
 
         $user = new User;
-        $user->user_email = $request->email;
-        $user->user_password = Hash::make($request->password);
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
         $user->save();
         $user->assignRole($request->role);
 
         return redirect('/admin/admin-user');
+    }
+
+    public function DestroyUser(Request $request) {
+        $user = User::find($request->user_id);
+
+        if($user->email == "admin@royaltour.co.th") {
+            return redirect()->back()->with('msg','ไม่สามารถลบ user นี้ได้');
+        }
+
+        $user->delete();
+
+        return redirect()->back();
     }
 }

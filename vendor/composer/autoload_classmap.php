@@ -53,6 +53,7 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\MemberController' => $baseDir . '/app/Http/Controllers/MemberController.php',
     'App\\Http\\Controllers\\ReserveTourController' => $baseDir . '/app/Http/Controllers/ReserveTourController.php',
+    'App\\Http\\Controllers\\TestController' => $baseDir . '/app/Http/Controllers/TestController.php',
     'App\\Http\\Controllers\\TourSearchController' => $baseDir . '/app/Http/Controllers/TourSearchController.php',
     'App\\Http\\Controllers\\UIViewController' => $baseDir . '/app/Http/Controllers/UIViewController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',

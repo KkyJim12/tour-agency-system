@@ -11,9 +11,6 @@
 |
 */
 
-/** Check ImageMagick Install */
-Route::get('/test', 'UIViewController@checkImagemagickInstallation');
-
 /** Index Page **/
 Route::get('/', 'UIViewController@ShowIndex');
 
@@ -22,12 +19,6 @@ Route::get('/category/{country_id}', 'UIViewController@ShowCategory');
 
 /** Aboutus Page **/
 Route::get('/aboutus', 'UIViewController@ShowAboutus');
-
-/** Admin Login Page **/
-Route::get('/login', 'UIViewController@ShowLogin');
-
-/** Admin Login Process **/
-Route::post('/login-process', 'MemberController@LoginProcess');
 
 /** Admin Logout Process **/
 Route::get('/logout-process', 'MemberController@LogoutProcess');
@@ -75,84 +66,18 @@ Route::post('/reserve-tour-process', 'ReserveTourController@ReserveTourProcess')
 /***************************** Backend Page *********************************/
 
 
-Route::middleware(['admin'])->group(function () {
 
 
-  /* Admin Dashboard */
+
+/* Admin Dashboard */
+Route::group(['middleware' => ['role:admin|writer|addtour']], function () {
   Route::get('/admin', 'AdminUIController@ShowDashboard')->name('admin-dashboard');
+});
 
 
+// Admin Only
 
-  /**************************** All Continent Function **************************/
-
-  /* Show Continent List */
-  Route::get('/admin/admin-continent', 'AdminUIController@ShowContinent')->name('admin-continent');
-
-  /* Show Create Continent */
-  Route::get('/admin/admin-create-continent', 'AdminUIController@ShowCreateContinent');
-
-  /* Create Continent Process */
-  Route::post('/admin/admin-create-continent-process', 'AdminContinentController@AdminCreateContinentProcess')->middleware('optimizeImages');
-
-  /* Show Edit Continent */
-  Route::get('/admin/admin-edit-continent/{continent_id}', 'AdminUIController@ShowEditContinent');
-
-  /* Edit Continent Process */
-  Route::post('/admin/admin-edit-continent-process/{continent_id}', 'AdminContinentController@AdminEditContinentProcess')->middleware('optimizeImages');
-
-  /* Delete Continent Process */
-  Route::post('/admin/admin-delete-continent-process/{continent_id}', 'AdminContinentController@AdminDeleteContinentProcess');
-
-  /**************************** End Continent Function **************************/
-
-
-
-
-
-  /**************************** All Country Function **************************/
-
-  /* Show Country List */
-  Route::get('/admin/admin-country', 'AdminUIController@ShowCountry')->name('admin-country');
-
-  /* Show Create country */
-  Route::get('/admin/admin-create-country', 'AdminUIController@ShowCreateCountry');
-
-  /* Create Country Process */
-  Route::post('/admin/admin-create-country-process', 'AdminCountryController@AdminCreateCountryProcess')->middleware('optimizeImages');
-
-  /* Show Edit Country */
-  Route::get('/admin/admin-edit-country/{country_id}', 'AdminUIController@ShowEditCountry');
-
-  /* Edit Country Process */
-  Route::post('/admin/admin-edit-country-process/{country_id}', 'AdminCountryController@AdminEditCountryProcess')->middleware('optimizeImages');
-
-  /* Delete Country Process */
-  Route::post('/admin/admin-delete-country-process/{country_id}', 'AdminCountryController@AdminDeleteCountryProcess');
-
-  /**************************** End Country Function **************************/
-
-
-  /**************************** All City Function **************************/
-
-  /* Show City List */
-  Route::get('/admin/admin-city', 'AdminUIController@ShowCity')->name('admin-city');
-
-  /* Show Create City */
-  Route::get('/admin/admin-create-city', 'AdminUIController@ShowCreateCity');
-
-  /* Create Country Process */
-  Route::post('/admin/admin-create-city-process', 'AdminCityController@AdminCreateCityProcess')->middleware('optimizeImages');
-
-  /* Show Edit City */
-  Route::get('/admin/admin-edit-city/{city_id}', 'AdminUIController@ShowEditCity');
-
-  /* Edit City Process */
-  Route::post('/admin/admin-edit-city-process/{city_id}', 'AdminCityController@AdminEditCityProcess')->middleware('optimizeImages');
-
-  /* Delete City Process */
-  Route::post('/admin/admin-delete-city-process/{city_id}', 'AdminCityController@AdminDeleteCityProcess');
-
-  /**************************** End City Function **************************/
+Route::group(['middleware' => ['role:admin']], function () {
 
   /**************************** All Airline Function **************************/
 
@@ -302,56 +227,6 @@ Route::middleware(['admin'])->group(function () {
   /**************************** End Tour Function **************************/
 
 
-  /**************************** All Article Category Function **************************/
-
-
-  Route::group(['middleware' => ['role:writer|admin']], function () {
-
-    /* Show Article Page */
-    Route::get('/admin/admin-article-cat', 'AdminUIController@ShowAdminArticleCategoryPage')->name('admin-article-cat');
-
-    /* Show Create Article Category Page */
-    Route::get('/admin/admin-create-article-cat', 'AdminUIController@ShowCreateArticleCat');
-
-    /* Create Article Category Process */
-    Route::post('/admin/admin-create-articlecat-process', 'AdminArticleCatController@CreateArticleCatProcess')->middleware('optimizeImages');
-
-    /* Show Edit Article Category Page */
-    Route::get('/admin/admin-edit-article-cat/{articlecat_id}', 'AdminUIController@ShowEditArticleCat');
-
-    /* Edit Article Category Process */
-    Route::post('/admin/admin-edit-articlecat-process/{articlecat_id}', 'AdminArticleCatController@AdminEditArticleCatProcess')->middleware('optimizeImages');
-
-    /* Delete Article Category Process */
-    Route::post('/admin/admin-delete-article-cat-process/{articlecat_id}', 'AdminArticleCatController@AdminDeleteArticleCatProcess');
-  });
-
-  /**************************** End Article Category Function **************************/
-
-
-  /**************************** All Article Function **************************/
-
-  Route::group(['middleware' => ['role:writer|admin']], function () {
-    /* Show Article Page */
-    Route::get('/admin/admin-article', 'AdminUIController@ShowArticle')->name('admin-article');
-
-    /* Show Create Article Page */
-    Route::get('/admin/admin-create-article', 'AdminUIController@ShowCreateArticle');
-
-    /* Create Article Process */
-    Route::post('/admin/admin-create-article-process', 'AdminArticleController@AdminCreateArticleProcess')->middleware('optimizeImages');
-
-    /* Show Edit Article Page */
-    Route::get('/admin/admin-edit-article/{article_id}', 'AdminUIController@ShowEditArticle');
-
-    /* Edit Article Process */
-    Route::post('/admin/admin-edit-article-process/{article_id}', 'AdminArticleController@AdminEditArticleProcess')->middleware('optimizeImages');
-
-    /* Delete Article Process */
-    Route::post('/admin/admin-delete-article-process/{article_id}', 'AdminArticleController@AdminDeleteArticleProcess');
-  });
-
-  /**************************** All Article Function **************************/
 
   /*************************** All Gallery Function ****************************/
 
@@ -417,6 +292,89 @@ Route::middleware(['admin'])->group(function () {
   Route::post('/admin/admin-delete-holiday-process/{holiday_id}', 'AdminHolidayController@AdminDeleteHolidayProcess');
 
   /*********************** End Holiday Function ****************************/
+});
+
+
+
+
+
+// Add Tour
+
+Route::group(['middleware' => ['role:admin|addtour']], function () {
+
+  /**************************** All Continent Function **************************/
+
+  /* Show Continent List */
+  Route::get('/admin/admin-continent', 'AdminUIController@ShowContinent')->name('admin-continent');
+
+  /* Show Create Continent */
+  Route::get('/admin/admin-create-continent', 'AdminUIController@ShowCreateContinent');
+
+  /* Create Continent Process */
+  Route::post('/admin/admin-create-continent-process', 'AdminContinentController@AdminCreateContinentProcess')->middleware('optimizeImages');
+
+  /* Show Edit Continent */
+  Route::get('/admin/admin-edit-continent/{continent_id}', 'AdminUIController@ShowEditContinent');
+
+  /* Edit Continent Process */
+  Route::post('/admin/admin-edit-continent-process/{continent_id}', 'AdminContinentController@AdminEditContinentProcess')->middleware('optimizeImages');
+
+  /* Delete Continent Process */
+  Route::post('/admin/admin-delete-continent-process/{continent_id}', 'AdminContinentController@AdminDeleteContinentProcess');
+
+  /**************************** End Continent Function **************************/
+
+
+
+
+
+  /**************************** All Country Function **************************/
+
+  /* Show Country List */
+  Route::get('/admin/admin-country', 'AdminUIController@ShowCountry')->name('admin-country');
+
+  /* Show Create country */
+  Route::get('/admin/admin-create-country', 'AdminUIController@ShowCreateCountry');
+
+  /* Create Country Process */
+  Route::post('/admin/admin-create-country-process', 'AdminCountryController@AdminCreateCountryProcess')->middleware('optimizeImages');
+
+  /* Show Edit Country */
+  Route::get('/admin/admin-edit-country/{country_id}', 'AdminUIController@ShowEditCountry');
+
+  /* Edit Country Process */
+  Route::post('/admin/admin-edit-country-process/{country_id}', 'AdminCountryController@AdminEditCountryProcess')->middleware('optimizeImages');
+
+  /* Delete Country Process */
+  Route::post('/admin/admin-delete-country-process/{country_id}', 'AdminCountryController@AdminDeleteCountryProcess');
+
+  /**************************** End Country Function **************************/
+
+
+  /**************************** All City Function **************************/
+
+  /* Show City List */
+  Route::get('/admin/admin-city', 'AdminUIController@ShowCity')->name('admin-city');
+
+  /* Show Create City */
+  Route::get('/admin/admin-create-city', 'AdminUIController@ShowCreateCity');
+
+  /* Create Country Process */
+  Route::post('/admin/admin-create-city-process', 'AdminCityController@AdminCreateCityProcess')->middleware('optimizeImages');
+
+  /* Show Edit City */
+  Route::get('/admin/admin-edit-city/{city_id}', 'AdminUIController@ShowEditCity');
+
+  /* Edit City Process */
+  Route::post('/admin/admin-edit-city-process/{city_id}', 'AdminCityController@AdminEditCityProcess')->middleware('optimizeImages');
+
+  /* Delete City Process */
+  Route::post('/admin/admin-delete-city-process/{city_id}', 'AdminCityController@AdminDeleteCityProcess');
+
+  /**************************** End City Function **************************/
+
+
+  /********************* Tour Functions **********************************/
 
   Route::post('/admin/admin-add-tour', 'AdminAddTourController@AdminAddTourCreate');
 
@@ -466,5 +424,71 @@ Route::middleware(['admin'])->group(function () {
 
   Route::post('/admin/admin-update-user/{id}', 'AdminUserController@UpdateUser');
 
-  Route::get('/test','TestController@Test');
+  Route::post('/admin/admin-destroy-user','AdminUserController@DestroyUser');
+
+  /********************* End Tour Functions **********************************/
+});
+
+// Writer
+
+Route::group(['middleware' => ['role:admin|writer']], function () {
+
+  /**************************** All Article Category Function **************************/
+
+
+
+  /* Show Article Page */
+  Route::get('/admin/admin-article-cat', 'AdminUIController@ShowAdminArticleCategoryPage')->name('admin-article-cat');
+
+  /* Show Create Article Category Page */
+  Route::get('/admin/admin-create-article-cat', 'AdminUIController@ShowCreateArticleCat');
+
+  /* Create Article Category Process */
+  Route::post('/admin/admin-create-articlecat-process', 'AdminArticleCatController@CreateArticleCatProcess')->middleware('optimizeImages');
+
+  /* Show Edit Article Category Page */
+  Route::get('/admin/admin-edit-article-cat/{articlecat_id}', 'AdminUIController@ShowEditArticleCat');
+
+  /* Edit Article Category Process */
+  Route::post('/admin/admin-edit-articlecat-process/{articlecat_id}', 'AdminArticleCatController@AdminEditArticleCatProcess')->middleware('optimizeImages');
+
+  /* Delete Article Category Process */
+  Route::post('/admin/admin-delete-article-cat-process/{articlecat_id}', 'AdminArticleCatController@AdminDeleteArticleCatProcess');
+
+
+  /**************************** End Article Category Function **************************/
+
+
+  /**************************** All Article Function **************************/
+
+  /* Show Article Page */
+  Route::get('/admin/admin-article', 'AdminUIController@ShowArticle')->name('admin-article');
+
+  /* Show Create Article Page */
+  Route::get('/admin/admin-create-article', 'AdminUIController@ShowCreateArticle');
+
+  /* Create Article Process */
+  Route::post('/admin/admin-create-article-process', 'AdminArticleController@AdminCreateArticleProcess')->middleware('optimizeImages');
+
+  /* Show Edit Article Page */
+  Route::get('/admin/admin-edit-article/{article_id}', 'AdminUIController@ShowEditArticle');
+
+  /* Edit Article Process */
+  Route::post('/admin/admin-edit-article-process/{article_id}', 'AdminArticleController@AdminEditArticleProcess')->middleware('optimizeImages');
+
+  /* Delete Article Process */
+  Route::post('/admin/admin-delete-article-process/{article_id}', 'AdminArticleController@AdminDeleteArticleProcess');
+
+
+  /**************************** All Article Function **************************/
+});
+
+
+Auth::routes([
+  'register' => false,
+  'reset' => false
+]);
+
+Route::get('/home', function () {
+  return redirect('/admin');
 });

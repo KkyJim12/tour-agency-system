@@ -17,5 +17,8 @@ class DatabaseSeeder extends Seeder
             BannerTableSeeder::class,
             RoleTableSeeder::class,
         ]);
+
+        $user = App\User::first();
+        $user->assignRole('admin');
     }
 }
