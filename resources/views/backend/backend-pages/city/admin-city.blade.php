@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<a class="btn btn-success" href="/admin/admin-create-city">สร้างทวีป</a>
+<a class="btn btn-success" href="/admin/admin-create-city">สร้างเมือง</a>
 <hr>
 <div class="container-fluid">
   <div class="row">

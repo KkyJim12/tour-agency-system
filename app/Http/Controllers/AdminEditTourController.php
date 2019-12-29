@@ -49,7 +49,7 @@ class AdminEditTourController extends Controller
         $country = Country::find($request->tour_country);
         $airline = Airline::find($request->tour_airline);
         $tour = Tour::find($id);
-        $tour->tour_code = $request->tour_code;
+        $tour->tour_code = 'T1234-'.$request->tour_code;
         $tour->tour_name = $request->tour_name;
         $tour->tour_price_show = (int) $request->tour_price_show;
         $tour->tour_discount = (int) $request->tour_discount;
