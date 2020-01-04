@@ -11,17 +11,17 @@ class RoleTableSeeder extends Seeder
      */
     public function run()
     {   
-        App\Role::create([
+        App\Role::firstOrCreate([
             'name' => 'admin',
             'guard_name' => 'web'
         ]);
 
-        App\Role::create([
+        App\Role::firstOrCreate([
             'name' => 'writer',
             'guard_name' => 'web'
         ]);
 
-        App\Role::create([
+        App\Role::firstOrCreate([
             'name' => 'addtour',
             'guard_name' => 'web'
         ]);

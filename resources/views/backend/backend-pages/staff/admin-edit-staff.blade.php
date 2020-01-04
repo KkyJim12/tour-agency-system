@@ -25,7 +25,7 @@
          </div>
          <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
             <label>เบอร์โทร</label>
-            <input class="form-control" type="text" name="staff_tel" placeholder="เบอร์โทร" value="{{$staff->tel}}">
+            <input class="form-control" type="text" name="staff_tel" placeholder="เบอร์โทร" value="{{$staff->staff_tel}}">
          </div>
          <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
             <label>อีเมลล์</label>

@@ -11,27 +11,27 @@ class BannerTableSeeder extends Seeder
      */
     public function run()
     {
-        App\Banner::create([
+        App\Banner::firstOrCreate([
             'banner_num' => '1'
         ]);
 
-        App\Banner::create([
+        App\Banner::firstOrCreate([
             'banner_num' => '2'
         ]);
 
-        App\Banner::create([
+        App\Banner::firstOrCreate([
             'banner_num' => '3'
         ]);
 
-        App\Banner::create([
+        App\Banner::firstOrCreate([
             'banner_num' => '4'
         ]);
 
-        App\Banner::create([
+        App\Banner::firstOrCreate([
             'banner_num' => '5'
         ]);
 
-        App\Banner::create([
+        App\Banner::firstOrCreate([
             'banner_num' => '6'
         ]);
     }

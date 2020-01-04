@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             BannerTableSeeder::class,
             RoleTableSeeder::class,
+            OtherPageTableSeeder::class,
         ]);
 
         $user = App\User::first();
