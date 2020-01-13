@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
             BannerTableSeeder::class,
             RoleTableSeeder::class,
             OtherPageTableSeeder::class,
+            SettingSeeder::class,
+            TourTableSeeder::class
         ]);
 
         $user = App\User::first();

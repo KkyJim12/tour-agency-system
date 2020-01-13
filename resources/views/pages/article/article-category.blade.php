@@ -12,7 +12,6 @@ Royaltour | ภาพประทับใจ {{$this_article_cat->article_cat_n
       <div class="row justify-content-center">
         <div class="col-md-10 col-lg-8">
           <div class="titleBanner">
-            <h1>Royal Tour And Travel</h1>
             <p>{{$this_article_cat->article_cat_name}}</p>
           </div>
         </div>

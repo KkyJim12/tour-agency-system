@@ -7,12 +7,11 @@ Royaltour | ภาพประทับใจ
 @endsection
 @section('content')
 <div class="galleryPage">
-  <div class="banner">
+  <div class="banner" style="background:url('{{$gallery_banner->content}}') no-repeat center center ; background-size: cover;">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-10 col-lg-8">
           <div class="titleBanner">
-            <h1>Royal Tour And Travel</h1>
             <p>- ภาพประทับใจ -</p>
           </div>
         </div>
@@ -39,7 +38,9 @@ Royaltour | ภาพประทับใจ
           <span>
             <img src="/assets/img/upload/country/{{$subcat->country_img}}" alt="country_img">
           </span>
-          <span><p class='mb-0 d-inline-block'>{{str_limit($subcat->country_name,8)}}</p></span>
+          <span>
+            <p class='mb-0 d-inline-block'>{{str_limit($subcat->country_name,8)}}</p>
+          </span>
         </a>
       </div>
       @endforeach

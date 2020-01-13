@@ -11,6 +11,7 @@ use App\PaymentPage;
 use App\Airline;
 use App\Banner;
 use App\Slide;
+use App\Setting;
 
 class TourSearchController extends Controller
 {
@@ -20,8 +21,8 @@ class TourSearchController extends Controller
         // Prep filter price
         try {
             $priceFilter = explode(";", $request->filter_price);
-            $minimumPrice = (integer) $priceFilter[0];
-            $maximumPrice = (integer) $priceFilter[1];
+            $minimumPrice = (int) $priceFilter[0];
+            $maximumPrice = (int) $priceFilter[1];
         } catch (\Throwable $priceError) {
             $minimumPrice = 0;
             $maximumPrice = 0;
@@ -38,7 +39,7 @@ class TourSearchController extends Controller
         }
 
         if ($request->filter_country != "") {
-          $searchConditions[] = ["tour_country_id", "=", $request->filter_country];
+            $searchConditions[] = ["tour_country_id", "=", $request->filter_country];
         }
 
         if ($request->filter_start_date != "") {
@@ -59,49 +60,54 @@ class TourSearchController extends Controller
 
         // Get all matching tours
         if (count($searchConditions) <= 0) {
-            $nav_banner = Banner::where('banner_num','1')->first();
+            $nav_banner = Banner::where('banner_num', '1')->first();
             $tours = Tour::all();
             $filter_country = Country::all();
             $continent = Continent::all();
             $airline = Airline::all();
+            $filter_banner = Setting::where('tag', 'background_filter')->first();
             return view('pages.filter-result', [
-                                              'nav_banner' => $nav_banner,
-                                              'continent' => $continent,
-                                              'airline' => $airline,
-                                              'filter_country' => $filter_country,
-                                              'tours' => $tours,
-                                            ]);
+                'nav_banner' => $nav_banner,
+                'continent' => $continent,
+                'airline' => $airline,
+                'filter_country' => $filter_country,
+                'tours' => $tours,
+                'filter_banner' => $filter_banner
+            ]);
         } else {
             $tours = Tour::where($searchConditions)->get();
-            $nav_banner = Banner::where('banner_num','1')->first();
+            $nav_banner = Banner::where('banner_num', '1')->first();
             $filter_country = Country::all();
             $airline = Airline::all();
             $continent = Continent::all();
+            $filter_banner = Setting::where('tag', 'background_filter')->first();
             return view('pages.filter-result', [
-                                                'nav_banner' => $nav_banner,
-                                                'continent' => $continent,
-                                                'tours' => $tours,
-                                                'airline' => $airline,
-                                                'filter_country' => $filter_country,
-                                              ]);
+                'nav_banner' => $nav_banner,
+                'continent' => $continent,
+                'tours' => $tours,
+                'airline' => $airline,
+                'filter_country' => $filter_country,
+                'filter_banner' => $filter_banner
+            ]);
         }
     }
 
 
-    public function getCityOrCountryList(Request $request, City $city, Country $country){
-        if($request->input("csquery") != ""){
+    public function getCityOrCountryList(Request $request, City $city, Country $country)
+    {
+        if ($request->input("csquery") != "") {
             $qr = (string) $request->input("csquery");
             $matchingCities = $city->where("city_name", "like", "%$qr%")->get();
             $matchingCountries = $country->where("country_name", "like", "%$qr%")->get();
             $results = [];
-            foreach($matchingCities as $mc){
+            foreach ($matchingCities as $mc) {
                 $results[] = [
                     "type" => "city",
                     "name" => (string) $mc->city_name,
                     "id" => (string) $mc->_id
                 ];
             }
-            foreach($matchingCountries as $mc2){
+            foreach ($matchingCountries as $mc2) {
                 $results[] = [
                     "type" => "country",
                     "name" => (string) $mc2->country_name,
@@ -109,9 +115,8 @@ class TourSearchController extends Controller
                 ];
             }
             return response()->json($results);
-        }else{
+        } else {
             return response()->json([]);
         }
     }
-
 }

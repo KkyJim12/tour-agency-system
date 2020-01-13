@@ -18,6 +18,7 @@ use App\Gallery;
 use App\SEO;
 use App\Branch;
 use App\Holiday;
+use App\Setting;
 
 class UIViewController extends Controller
 {
@@ -40,33 +41,30 @@ class UIViewController extends Controller
         $seo = SEO::first();
         $holiday = Holiday::all();
         $article = Article::take(7)->get();
-        $all_tour_holiday = Tour::where('tour_holiday_id', '!=', null)->get();
         if ($first_slide !== null) {
             $slide = Slide::where('_id', '!=', $first_slide->_id)->get();
         } else {
             $slide = null;
         }
         return view('index', [
-                            'tour_suggest' => $tour_suggest,
-                            'tour_discount' => $tour_discount,
-                            'continent' => $continent,
-                            'nav_banner' => $nav_banner,
-                            'second_banner' => $second_banner,
-                            'third_banner' => $third_banner,
-                            'fourth_banner' => $fourth_banner,
-                            'fifth_banner' => $fifth_banner,
-                            'sixth_banner' => $sixth_banner,
-                            'slide' => $slide,
-                            'first_slide' => $first_slide,
-                            'seo' => $seo,
-                            'holiday' => $holiday,
-                            'article' => $article,
-                            'gallery' => $gallery,
-                            'main_gallery' => $main_gallery,
-                            'all_tour_holiday' => $all_tour_holiday,
-                          ]);
+            'tour_suggest' => $tour_suggest,
+            'tour_discount' => $tour_discount,
+            'continent' => $continent,
+            'nav_banner' => $nav_banner,
+            'second_banner' => $second_banner,
+            'third_banner' => $third_banner,
+            'fourth_banner' => $fourth_banner,
+            'fifth_banner' => $fifth_banner,
+            'sixth_banner' => $sixth_banner,
+            'slide' => $slide,
+            'first_slide' => $first_slide,
+            'seo' => $seo,
+            'holiday' => $holiday,
+            'article' => $article,
+            'gallery' => $gallery,
+            'main_gallery' => $main_gallery,
+        ]);
     }
-
 
     /** Show Category Page **/
     public function ShowCategory($country_id)
@@ -77,14 +75,16 @@ class UIViewController extends Controller
         $country = Country::where('_id', $country_id)->first();
         $tour = Tour::where('tour_country_id', $country_id)->get();
         $nav_banner = Banner::where('banner_num', '1')->first();
+        $category_banner = Setting::where('tag', 'background_category')->first();
         return view('pages.category', [
-                                    'tour' => $tour,
-                                    'country' => $country,
-                                    'continent' => $continent,
-                                    'airline' => $airline,
-                                    'nav_banner' => $nav_banner,
-                                    'filter_country' => $filter_country,
-                                   ]);
+            'tour' => $tour,
+            'country' => $country,
+            'continent' => $continent,
+            'airline' => $airline,
+            'nav_banner' => $nav_banner,
+            'filter_country' => $filter_country,
+            'category_banner' => $category_banner
+        ]);
     }
 
 
@@ -95,10 +95,10 @@ class UIViewController extends Controller
         $continent = Continent::all();
         $content = PaymentPage::first();
         return view('pages.other.how-to-pay', [
-                                            'nav_banner' => $nav_banner,
-                                            'continent' => $continent,
-                                            'content' => $content,
-                                           ]);
+            'nav_banner' => $nav_banner,
+            'continent' => $continent,
+            'content' => $content,
+        ]);
     }
 
 
@@ -110,11 +110,11 @@ class UIViewController extends Controller
         $content = Contact::first();
         $branch = Branch::all();
         return view('pages.other.contactus', [
-                                            'nav_banner' => $nav_banner,
-                                            'continent' => $continent,
-                                            'content' => $content,
-                                            'branch' => $branch,
-                                           ]);
+            'nav_banner' => $nav_banner,
+            'continent' => $continent,
+            'content' => $content,
+            'branch' => $branch,
+        ]);
     }
 
 
@@ -125,10 +125,10 @@ class UIViewController extends Controller
         $continent = Continent::all();
         $content = Aboutus::first();
         return view('pages.other.aboutus', [
-                                    'continent' => $continent,
-                                    'nav_banner' => $nav_banner,
-                                    'content' => $content,
-                                  ]);
+            'continent' => $continent,
+            'nav_banner' => $nav_banner,
+            'content' => $content,
+        ]);
     }
 
 
@@ -149,6 +149,7 @@ class UIViewController extends Controller
     {
         $nav_banner = Banner::where('banner_num', '1')->first();
         $country = Country::all();
+        $tour_banner = Setting::where('tag', 'background_tour')->first();
 
         $tFG = Tour::where("tour_seo_url", trim($tour_id))->first();
         if ($tFG) {
@@ -158,11 +159,12 @@ class UIViewController extends Controller
         }
         $continent = Continent::all();
         return view('pages.tour', [
-                                'nav_banner' => $nav_banner,
-                                'country' => $country,
-                                'tour' => $tour,
-                                'continent' => $continent,
-                               ]);
+            'nav_banner' => $nav_banner,
+            'country' => $country,
+            'tour' => $tour,
+            'continent' => $continent,
+            'tour_banner' => $tour_banner
+        ]);
     }
 
     public function ShowSearchResult(Request $request)
@@ -172,6 +174,7 @@ class UIViewController extends Controller
         $continent = Continent::all();
         $airline = Airline::all();
         $search_word = $request->search_name;
+        $search_banner = Setting::where('tag', 'background_search')->first();
 
         $searchConditions = [];
 
@@ -180,33 +183,35 @@ class UIViewController extends Controller
         }
 
         if ($request->search_tour_month != "") {
-            $searchConditions[] = ["tour_month",$request->search_tour_month];
+            $searchConditions[] = ["tour_month", $request->search_tour_month];
         }
 
         if ($request->search_tour_code) {
-            $searchConditions[] = ["tour_code",$request->search_tour_code];
+            $searchConditions[] = ["tour_code", $request->search_tour_code];
         }
 
         if (count($searchConditions) <= 0) {
             $tour_result = Tour::all();
             return view('pages.search-result', [
-                                            'nav_banner' => $nav_banner,
-                                            'continent' => $continent,
-                                            'tour_result' => $tour_result,
-                                            'search_word' => $search_word,
-                                            'airline' => $airline,
-                                            'filter_country' => $filter_country,
-                                          ]);
+                'nav_banner' => $nav_banner,
+                'continent' => $continent,
+                'tour_result' => $tour_result,
+                'search_word' => $search_word,
+                'airline' => $airline,
+                'filter_country' => $filter_country,
+                'search_banner' => $search_banner
+            ]);
         } else {
             $tour_result = Tour::where($searchConditions)->get();
             return view('pages.search-result', [
-                                            'nav_banner' => $nav_banner,
-                                            'continent' => $continent,
-                                            'tour_result' => $tour_result,
-                                            'search_word' => $search_word,
-                                            'airline' => $airline,
-                                            'filter_country' => $filter_country,
-                                          ]);
+                'nav_banner' => $nav_banner,
+                'continent' => $continent,
+                'tour_result' => $tour_result,
+                'search_word' => $search_word,
+                'airline' => $airline,
+                'filter_country' => $filter_country,
+                'search_banner' => $search_banner
+            ]);
         }
     }
 
@@ -217,12 +222,14 @@ class UIViewController extends Controller
         $nav_banner = Banner::where('banner_num', '1')->first();
         $continent = Continent::all();
         $article_cat = ArticleCat::where('article_cat_hide', '=', null)->orderBy('article_cat_sort', 'DESC')->get();
+        $article_banner = Setting::where('tag', 'background_article')->first();
 
         return view('pages.article.article', [
-                                            'nav_banner' => $nav_banner,
-                                            'continent' => $continent,
-                                            'article_cat' => $article_cat,
-                                          ]);
+            'nav_banner' => $nav_banner,
+            'continent' => $continent,
+            'article_cat' => $article_cat,
+            'article_banner' => $article_banner
+        ]);
     }
 
 
@@ -235,11 +242,11 @@ class UIViewController extends Controller
         $this_article_cat = ArticleCat::find($article_category_id);
 
         return view('pages.article.article-category', [
-                                                    'nav_banner' => $nav_banner,
-                                                    'continent' => $continent,
-                                                    'show_article' => $show_article,
-                                                    'this_article_cat' => $this_article_cat,
-                                                   ]);
+            'nav_banner' => $nav_banner,
+            'continent' => $continent,
+            'show_article' => $show_article,
+            'this_article_cat' => $this_article_cat,
+        ]);
     }
 
 
@@ -259,11 +266,11 @@ class UIViewController extends Controller
         $article_cat = ArticleCat::all();
 
         return view('pages.article.article-content', [
-                                                    'nav_banner' => $nav_banner,
-                                                    'continent' => $continent,
-                                                    'article' => $article,
-                                                    'article_cat' => $article_cat,
-                                                  ]);
+            'nav_banner' => $nav_banner,
+            'continent' => $continent,
+            'article' => $article,
+            'article_cat' => $article_cat,
+        ]);
     }
 
 
@@ -272,11 +279,13 @@ class UIViewController extends Controller
     {
         $nav_banner = Banner::where('banner_num', '1')->first();
         $continent = Continent::all();
+        $galler_banner = Setting::where('tag', 'background_gallery')->first();
 
         return view('pages.gallery.gallery', [
-                                            'nav_banner' => $nav_banner,
-                                            'continent' => $continent,
-                                          ]);
+            'nav_banner' => $nav_banner,
+            'continent' => $continent,
+            'gallery_banner' => $galler_banner
+        ]);
     }
 
 
@@ -289,11 +298,11 @@ class UIViewController extends Controller
         $gallery = Gallery::where('gallery_country_id', $country_id)->orderBy('gallery_sort', 'DESC')->get();
 
         return view('pages.gallery.gallery-country', [
-                                            'nav_banner' => $nav_banner,
-                                            'continent' => $continent,
-                                            'this_country' => $this_country,
-                                            'gallery' => $gallery,
-                                          ]);
+            'nav_banner' => $nav_banner,
+            'continent' => $continent,
+            'this_country' => $this_country,
+            'gallery' => $gallery,
+        ]);
     }
 
     public function checkImagemagickInstallation()

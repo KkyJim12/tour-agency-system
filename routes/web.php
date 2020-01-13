@@ -424,7 +424,7 @@ Route::group(['middleware' => ['role:admin|addtour']], function () {
 
   Route::post('/admin/admin-update-user/{id}', 'AdminUserController@UpdateUser');
 
-  Route::post('/admin/admin-destroy-user','AdminUserController@DestroyUser');
+  Route::post('/admin/admin-destroy-user', 'AdminUserController@DestroyUser');
 
   /********************* End Tour Functions **********************************/
 });
@@ -480,7 +480,16 @@ Route::group(['middleware' => ['role:admin|writer']], function () {
   Route::post('/admin/admin-delete-article-process/{article_id}', 'AdminArticleController@AdminDeleteArticleProcess');
 
 
-  /**************************** All Article Function **************************/
+  /**************************** End All Article Function **************************/
+
+  /**************************** All Website Setting Function *********************************** */
+
+  /* Show Setting Page */
+  Route::get('/admin/admin-setting', 'AdminSettingController@ShowSetting');
+
+  Route::post('/admin/admin-edit-setting-1','AdminSettingController@EditSetting1');
+
+  Route::post('/admin/admin-edit-setting-2','AdminSettingController@EditSetting2');
 });
 
 

@@ -85,7 +85,18 @@
                   <li><a href="/admin/admin-city"><i class="fas fa-city"></i> เมือง</a></li>
                </ul>
             </li>
-            <li><a href="/admin/admin-tour"><i class="fas fa-map-marked"></i> <span>ทัวร์</span></a></li>
+            <li class="treeview">
+               <a href="#"><i class="fas fa-map-marked"></i> <span>ทัวร์</span>
+                  <span class="pull-right-container">
+                     <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+               </a>
+               <ul class="treeview-menu">
+                  <li><a href="/admin/admin-tour"><i class="fas fa-map-marked"></i> <span>ทัวร์</span></a></li>
+                  <li><a href="/admin/admin-holiday"><i class="fas fa-calendar-alt"></i> <span>วันหยุดพิเศษ</span></a></li>
+                  <li><a href="/admin/admin-reserve-tour"><i class="fas fa-envelope"></i> <span>ข้อมูลการจองทัวร์</span></a></li>
+               </ul>
+            </li>
             @endhasanyrole
             @hasanyrole('admin|writer')
             <li class="treeview">
@@ -110,11 +121,21 @@
             <li><a href="/admin/admin-aboutus"><i class="fas fa-info-circle"></i> <span>เกี่ยวกับเรา</span></a></li>
             <li><a href="/admin/admin-contact"><i class="fas fa-phone-volume"></i> <span>ติดต่อเรา</span></a></li>
             <li><a href="/admin/admin-gallery"><i class="fas fa-image"></i> <span> ภาพประทับใจ</span></a></li>
-            <li><a href="/admin/admin-seo"><i class="fas fa-cog"></i> <span>ตั้งค่า SEO</span></a></li>
             <li><a href="/admin/admin-contactinfo"><i class="fab fa-telegram-plane"></i> <span>ข้อมูลติดต่อ</span></a></li>
-            <li><a href="/admin/admin-holiday"><i class="fas fa-calendar-alt"></i> <span>วันหยุดพิเศษ</span></a></li>
-            <li><a href="/admin/admin-reserve-tour"><i class="fas fa-envelope"></i> <span>ข้อมูลการจองทัวร์</span></a></li>
+
             <li><a href="/admin/admin-user"><i class="fas fa-user"></i> <span>ผู้ใช้งาน</span></a></li>
+            <li class="treeview">
+               <a href="#"><i class="fas fa-cog"></i> <span>ตั้งค่าเว็บไซต์</span>
+                  <span class="pull-right-container">
+                     <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+               </a>
+               <ul class="treeview-menu">
+                  <li><a href="/admin/admin-seo"><i class="fas fa-cog"></i> <span>ตั้งค่า SEO</span></a></li>
+                  <li><a href="/admin/admin-setting"><i class="fas fa-cog"></i> <span>ตั้งค่าเว็บไซต์</span></a></li>
+               </ul>
+            </li>
+
             @endrole
          </ul>
          <!-- /.sidebar-menu -->
