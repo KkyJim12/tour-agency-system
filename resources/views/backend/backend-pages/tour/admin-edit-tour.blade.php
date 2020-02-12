@@ -18,8 +18,8 @@
             </div>
             @endif
             <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
-               <label>รหัสทัวร์</label>
-               <input class="form-control" type="text" name="tour_code" placeholder="รหัสทัวร์" value="{{$tour->tour_code}}">
+               <label>รหัสทัวร์</label> <small> (ขึ้นต้นด้วย T1234)</small>
+               <input class="form-control" type="text" name="tour_code" placeholder="รหัสทัวร์" value="{{substr($tour->tour_code,6)}}">
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
                <label>ชื่อทัวร์</label>

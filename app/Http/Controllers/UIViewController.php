@@ -26,6 +26,7 @@ class UIViewController extends Controller
     /** Show Index Page **/
     public function ShowIndex()
     {
+        $country_suggest = Country::where('country_suggest', '1')->get();
         $tour_suggest = Tour::where('tour_suggest', '1')->get();
         $tour_discount = Tour::where('tour_discount', '!=', 0)->get();
         $continent = Continent::all();
@@ -47,6 +48,7 @@ class UIViewController extends Controller
             $slide = null;
         }
         return view('index', [
+            'country_suggest' => $country_suggest,
             'tour_suggest' => $tour_suggest,
             'tour_discount' => $tour_discount,
             'continent' => $continent,

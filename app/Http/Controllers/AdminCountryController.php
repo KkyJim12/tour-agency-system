@@ -29,6 +29,7 @@ class AdminCountryController extends Controller
       $country->country_name = $request->country_name;
       $country->country_sort = $request->country_sort;
       $country->country_hide = $request->country_hide;
+      $country->country_suggest = $request->country_suggest;
       $country->continent_id = $continent->_id;
       $country->continent_name = $continent->continent_name;
 
@@ -67,6 +68,7 @@ class AdminCountryController extends Controller
       $country->country_name = $request->country_name;
       $country->country_sort = $request->country_sort;
       $country->country_hide = $request->country_hide;
+      $country->country_suggest = $request->country_suggest;
       $country->continent_id = $continent->_id;
       $country->continent_name = $continent->continent_name;
 

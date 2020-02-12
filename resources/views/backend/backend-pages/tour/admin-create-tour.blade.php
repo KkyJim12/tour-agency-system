@@ -19,7 +19,7 @@
             </div>
             @endif
             <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
-               <label>รหัสทัวร์</label>
+               <label>รหัสทัวร์</label><small> (ขึ้นต้นด้วย T1234)</small>
                <input class="form-control" type="text" name="tour_code" placeholder="รหัสทัวร์">
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
@@ -82,7 +82,7 @@
             <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
                <label>ช่วงเวลาเดินทาง (สุดท้าย)</label>
                <select class="form-control" name="tour_month_last">
-               <option value="">เลือกเดือน</option>
+                  <option value="">เลือกเดือน</option>
                   <option value="1">มกราคม</option>
                   <option value="2">กุมภาพันธ์</option>
                   <option value="3">มีนาคม</option>

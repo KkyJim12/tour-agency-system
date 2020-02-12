@@ -1,12 +1,12 @@
 <div class='homeCountry bgGray py-5'>
   <div class="container">
     <div class="row">
-       <div class="col-lg-12">
-          <h3 class="title"><img src='/assets/img/filter/worldwide.png' class='icon-title'>คิดจะเที่ยว คิดถึง รอยัลทัวร์</h3>
-       </div>
+      <div class="col-lg-12">
+        <h3 class="title"><img src='/assets/img/filter/worldwide.png' class='icon-title'>คิดจะเที่ยว คิดถึง รอยัลทัวร์</h3>
+      </div>
     </div>
     <div class="row">
-      <div class="countryTemp">
+      <div class="countryTemp w-100">
         @foreach($continent as $all_continent)
         <h1>{{$all_continent->continent_name}}</h1>
         <div class='row'>
@@ -16,7 +16,9 @@
               <span>
                 <img src='/assets/img/upload/country/{{$subcat->country_img}}'>
               </span>
-              <span><p class='mb-0 d-inline-block'>{{str_limit($subcat->country_name,8)}}</p></span>
+              <span>
+                <p class='mb-0 d-inline-block'>{{str_limit($subcat->country_name,8)}}</p>
+              </span>
             </a>
           </div>
           @endforeach
