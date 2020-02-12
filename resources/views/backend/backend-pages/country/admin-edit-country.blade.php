@@ -54,8 +54,11 @@
       <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
         <label>รูปภาพ</label>
         <input type="file" name="country_img">
-        <br>
-        <img class="admin-img-edit" src="/assets/img/upload/country/{{$country->country_img}}" alt="country_img">
+      </div>
+      <hr>
+      <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+        <label>รูปภาพแนะนำ (optional)</label>
+        <input type="file" name="country_suggest_img">
       </div>
       <input type="hidden" name="country_id" value="{{$country->_id}}">
       @csrf

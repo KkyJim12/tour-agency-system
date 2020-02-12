@@ -65,9 +65,9 @@
                 <p class='text-uppercase'>ช่วงเวลา:
                   <span>
                     @if($tour->tour_month == $tour->tour_month_last)
-                    {{$tour->tour_month}}
+                    {{formDateThai(DateTime::createFromFormat('!m', $tour->tour_month)->format('F'))}}
                     @else
-                    {{$tour->tour_month}} - {{$tour->tour_month_last}}
+                    {{formatDateThai(DateTime::createFromFormat('!m', $tour->tour_month)->format('F'))}} - {{formatDateThai(DateTime::createFromFormat('!m', $tour->tour_month_last)->format('F'))}}
                     @endif
                   </span>
                 </p>

@@ -7,11 +7,10 @@
     <div class="row">
         @foreach($country_suggest as $show)
         <div class="col-md-4">
-            <a href='#'>
+            <a href='/category/{{$show->_id}}'>
                 <div>
                     <figure>
-                        <img style="width:100%; border-radius:10px;" src='/assets/img/tour/tour-1.jpg'>
-
+                        <img style="width:100%; height:150px; object-fit:cover; border-radius:10px;" src='/assets/img/upload/country/{{$show->country_suggest_img}}'>
                     </figure>
                     <div class="text-center">
                         <h5>{{$show->country_name}}</h5>

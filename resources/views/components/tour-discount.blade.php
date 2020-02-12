@@ -23,9 +23,9 @@
                      <h2>สายการบิน<span><img src="/assets/img/upload/airline/{{$show_tour_discount->tour_airline_img}}" alt="airline_suggest"> {{$show_tour_discount->tour_airline_name}}</span></h2>
                      <section class='text-center'><i class="far fa-clock"></i><span>
                            @if($show_tour_discount->tour_month == $show_tour_discount->tour_month_last)
-                           {{DateTime::createFromFormat('!m', $show_tour_discount->tour_month)->format('F')}}
+                           {{formDateThai(DateTime::createFromFormat('!m', $show_tour_discount->tour_month)->format('F'))}}
                            @else
-                           {{DateTime::createFromFormat('!m', $show_tour_discount->tour_month)->format('F')}} - {{DateTime::createFromFormat('!m', $show_tour_discount->tour_month_last)->format('F')}}
+                           {{formatDateThai(DateTime::createFromFormat('!m', $show_tour_discount->tour_month)->format('F'))}} - {{formatDateThai(DateTime::createFromFormat('!m', $show_tour_discount->tour_month_last)->format('F'))}}
                            @endif
                      </section>
                   </a>

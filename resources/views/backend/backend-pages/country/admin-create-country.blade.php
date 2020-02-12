@@ -46,6 +46,11 @@
         <label>รูปภาพ</label>
         <input type="file" name="country_img">
       </div>
+      <hr>
+      <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
+        <label>รูปภาพแนะนำ (optional)</label>
+        <input type="file" name="country_suggest_img">
+      </div>
       @csrf
       <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-input">
         <button class="btn btn-success form-control" type="submit" name="button">สร้างประเทศ</button>

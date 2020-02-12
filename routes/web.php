@@ -406,7 +406,7 @@ Route::group(['middleware' => ['role:admin|addtour']], function () {
 
   Route::post('/admin/admin-edit-tour-step-2/{id}', 'AdminEditTourController@AdminUpdateTourStep2');
 
-  Route::get('/admin/admin-add-tour-step-3/{id}', 'AdminEditTourController@AdminEditTourStep3');
+  Route::get('/admin/admin-edit-tour-step-3/{id}', 'AdminEditTourController@AdminEditTourStep3');
 
   Route::post('/admin/admin-edit-tour-step-3/{id}', 'AdminEditTourController@AdminUpdateTourStep3');
 

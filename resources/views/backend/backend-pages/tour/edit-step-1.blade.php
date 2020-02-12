@@ -5,6 +5,17 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <ol class="breadcrumb">
+                <li><a href="/admin/admin-edit-tour-step/{{$tour->_id}}">ข้อมูลทั่วไป</a></li>
+                <li class="active">ข้อมูลอื่นๆ</li>
+                <li><a href="/admin/admin-edit-tour-step-2/{{$tour->_id}}">เพิ่มวันเดินทาง</a></li>
+                <li><a href="/admin/admin-edit-tour-step-3/{{$tour->_id}}">รูปภาพ และ PDF</a></li>
+                <li><a href="/admin/admin-edit-tour-step-4/{{$tour->_id}}">ตั่งค่า SEO</a></li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
         <!-- Column 2 -->
         <div class="col-lg-6 col-md-6 col-sm-6">
             @if ($errors->any())

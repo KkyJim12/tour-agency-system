@@ -185,7 +185,8 @@ class UIViewController extends Controller
         }
 
         if ($request->search_tour_month != "") {
-            $searchConditions[] = ["tour_month", $request->search_tour_month];
+            $searchConditions[] = ["tour_month", '<=', $request->search_tour_month];
+            $searchConditions[] = ["tour_month_last", '>=', $request->search_tour_month];
         }
 
         if ($request->search_tour_code) {

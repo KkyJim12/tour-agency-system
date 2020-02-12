@@ -3,7 +3,19 @@
 <h3>แก้ไขทัวร์ <i class="fas fa-map-marked-alt"></i></h3>
 @endsection
 @section('content')
+
 <div class="container-fluid">
+   <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6">
+         <ol class="breadcrumb">
+            <li class="active">ข้อมูลทั่วไป</li>
+            <li><a href="/admin/admin-edit-tour-step-1/{{$tour->_id}}">ข้อมูลอื่นๆ</a></li>
+            <li><a href="/admin/admin-edit-tour-step-2/{{$tour->_id}}">เพิ่มวันเดินทาง</a></li>
+            <li><a href="/admin/admin-edit-tour-step-3/{{$tour->_id}}">รูปภาพ และ PDF</a></li>
+            <li><a href="/admin/admin-edit-tour-step-4/{{$tour->_id}}">ตั่งค่า SEO</a></li>
+         </ol>
+      </div>
+   </div>
    <div class="row">
       <!-- Column 1 -->
       <div class="col-lg-6 col-md-6 col-sm-6">

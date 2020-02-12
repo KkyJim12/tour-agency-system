@@ -49,9 +49,9 @@
             <h3>ราคา<span>{{number_format($show_tour->tour_price_show)}}฿</span></h3>
             <section class='text-center'><i class="far fa-clock"></i><span>
                 @if($show_tour->tour_month == $show_tour->tour_month_last)
-                {{$show_tour->tour_month}}
+                {{formDateThai(DateTime::createFromFormat('!m', $show_tour->tour_month)->format('F'))}}
                 @else
-                {{$show_tour->tour_month}} - {{$show_tour->tour_month_last}}
+                {{formatDateThai(DateTime::createFromFormat('!m', $show_tour->tour_month)->format('F'))}} - {{formatDateThai(DateTime::createFromFormat('!m', $show_tour->tour_month_last)->format('F'))}}
                 @endif
             </section>
           </a>
